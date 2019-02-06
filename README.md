@@ -2,7 +2,9 @@
 A repository for plugins and plugin utilities for Adobe XD. 
 
 # Statistics plugin
-The Statistics plugin is live in the Adobe XD Plugin Manager. The code is offered here to learn and start from for your own plugins. This shows creating a list / basic datagrid of info with a scroll bar, walking down the scenegraph and using recursive functions. 
+The Statistics plugin is live in the Adobe XD Plugin Manager. The code is offered here to learn and start from for your own plugins. 
+
+This shows creating a dialog, showing a list / basic datagrid of data with a scroll bar, walking down the scenegraph and using recursive functions. 
 
 # Log Utilities
 The log file utilities are a set of methods and constants that have been helpful in creating plugins. There functions are listed below: 
