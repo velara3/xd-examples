@@ -1,4 +1,3 @@
-# xd-examples
 A repository for plugins and plugin utilities for Adobe XD. 
 
 # Statistics plugin
