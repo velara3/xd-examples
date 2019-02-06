@@ -31,4 +31,4 @@ The log file utilities are a set of methods and constants that have been helpful
  
  To use add the following line to your plugins main.js: 
  
-   const {log, object, getArtboard, getBoundsInParent, getClassName, getFunctionName, getStackTrace, getChangedProperties, DebugSettings} = require("./log");
+    const {log, object, getArtboard, getBoundsInParent, getClassName, getFunctionName, getStackTrace, getChangedProperties, DebugSettings} = require("./log");
