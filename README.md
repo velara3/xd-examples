@@ -10,6 +10,8 @@ It shows creating a class to store form data and references to UI controls. It a
 
 The project includes common XD icons, default plugin icons. 
 
+To use, clone the repository locally and copy the *statistics* folder into the XD *develop* folder and reload. 
+
 # Log Utilities
 The log file utilities are a set of methods and constants that have been helpful in creating plugins. There functions are listed below: 
 
