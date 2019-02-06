@@ -1,0 +1,12 @@
+Changes
+
+-----------
+1.0.0
+-----------
+Initial import
+
+
+-----------
+1.0.1
+-----------
+- fixed truncated text with large numbers

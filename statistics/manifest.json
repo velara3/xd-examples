@@ -1,0 +1,33 @@
+{
+    "name": "Statistics",
+    "id": "",
+    "version": "1.0.1",
+    "main": "main.js",
+    "description": "Display the amount of elements in your artboard",
+
+    "icons":[
+        {
+           "width":96,
+           "height":96,
+           "path":"images/icon.png"
+        },
+        {
+           "width":512,
+           "height":512,
+           "path":"images/icon2.png"
+        }
+    ],
+
+    "host": {
+        "app": "XD",
+        "minVersion": "13.0.0"
+    },
+
+    "uiEntryPoints": [
+        {
+            "type": "menu",
+            "label": "Statistics",
+            "commandId": "showMainDialog"
+        }
+    ]
+}

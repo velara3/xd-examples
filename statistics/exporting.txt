@@ -1,0 +1,16 @@
+How to create a new release
+
+1. Open your manifest file and increment the version number. For example, "1.0.0" to "1.0.1"
+2. Select all the files in the folder that it needs to run
+  - h.js
+  - icons
+  - images
+  - Library.js
+  - log.js
+  - main.js
+  - manifest.js
+3. Right click and select Compress
+4. Rename the Archived.zip to the name of your plugin, the version number and extension to "xdx". For example, "MyPlugin_1.0.1.xdx"
+5. Move the file into the releases folder
+6. List any changes you've made for this version into the changes.txt
+7. Submit the file on the Adobe IO site
