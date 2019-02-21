@@ -1,11 +1,18 @@
-# xd-examples
-A repository for plugins and plugin tools for Adobe XD. 
+A repository for plugins and plugin utilities for Adobe XD. 
 
 # Statistics plugin
-The Statistics plugin is live in the Adobe XD Plugin Manager. The code is offered here to learn and start from for your own plugins. 
+The Statistics plugin is available on the Adobe XD Plugin Manager. The code is offered here to learn from and start from for your own plugins. 
+
+This shows creating a dialog, showing a list / basic datagrid of data with a scroll bar, walking down the scenegraph and using recursive functions. 
+
+It shows creating a class to store form data and references to UI controls. It also shows creating a static getter and setter. 
+
+The project includes common XD icons, default plugin icons. 
+
+To use, clone the repository locally and copy the *statistics* folder into the XD *develop* folder and reload. 
 
 # Log Utilities
-The log file utilities are a set of methods and constants that have been helpful in creating plugins. There functions are listed below: 
+The log file utilities are a set of methods and constants that have been helpful in creating plugins. These are in the log.js file in the statistics folder. 
 
  - getArtboard() - Gets the artboard of the scene node passed in
  - getBoundsInParent() - Gets the relative bounds of the scenenode passed in including delta center points (npr-needs peer review)
@@ -21,3 +28,7 @@ The log file utilities are a set of methods and constants that have been helpful
  - DebugSettings.logFunctionName - When enabled shows the current function name when log is called or changes
  - DebugSettings.suppressLogMessages - When enabled suppresses any messages from the log method
  - DebugSettings.outlineOnClick - When enabled pressing a meta key and clicking on a dialog adds an outline around that element and prints the element type to the console
+ 
+ To use add the following line to your plugins main.js: 
+ 
+    const {log, object, getArtboard, getBoundsInParent, getClassName, getFunctionName, getStackTrace, getChangedProperties, DebugSettings} = require("./log");
