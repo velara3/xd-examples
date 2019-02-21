@@ -5,6 +5,40 @@
 const {Artboard, BooleanGroup, Blur, Matrix, Color, Ellipse, GraphicNode, Group, Line, LinkedGraphic, Path, Rectangle, RepeatGrid, RootNode, SceneNode, SymbolInstance, Text} = require("scenegraph");
 
 /**
+ * Writes a value to the console. Same as calling console.log and then returning true.
+ * Returns true so you can enable debugging options with var debug = enableDebugging && log("Debugging method()")
+ * @param {String} string value to write to the console
+ */
+function log(string) {
+  var indent = "";
+  if (string==null || string===undefined) {
+    string = "";
+  }
+
+  // supress all logging
+  if (DebugSettings.suppressLogMessages==true) {
+    console.log("Suppressing log")
+      return;
+  }
+
+  // log function name
+  if (DebugSettings.logFunctionName) {
+    var functionName = getFunctionName();
+    if (DebugSettings.lastFunctionName!=functionName) {
+      console.log(functionName+ "()");
+      DebugSettings.lastFunctionName = functionName;
+    }
+    if (functionName!="") {
+      indent = " ";
+    }
+  }
+
+  console.log(indent + string);
+  
+  return true;
+}
+
+/**
 * Lists the properties of an object in the console in name and value columns
 * @param {*} object An object
 * @param {String} description Optional description. If no description the constructor name is used.
@@ -85,43 +119,9 @@ function object(object, description = null, level = 1) {
 }
 
 /**
- * Writes a value to the console. Same as calling console.log and then returning true.
- * Returns true so you can enable debugging options with var debug = enableDebugging && log("Debugging method()")
- * @param {String} string value to write to the console
- */
-function log(string) {
-  var indent = "";
-  if (string==null || string===undefined) {
-    string = "";
-  }
-
-  // supress all logging
-  if (DebugSettings.suppressLogMessages==true) {
-    console.log("Suppressing log")
-      return;
-  }
-
-  // log function name
-  if (DebugSettings.logFunctionName) {
-    var functionName = getFunctionName();
-    if (DebugSettings.lastFunctionName!=functionName) {
-      console.log(functionName+ "()");
-      DebugSettings.lastFunctionName = functionName;
-    }
-    if (functionName!="") {
-      indent = " ";
-    }
-  }
-
-  console.log(indent + string);
-  
-  return true;
-}
-
-/**
  * Get the name of the function this method is called from. 
  * If this is method is called outside of a function the value of (function) is returned
- */
+ **/
 function getFunctionName() {
   var callStackArray = getStackArray();
 
@@ -141,7 +141,7 @@ function getFunctionName() {
 /**
  * Gets the class name of the object based on the constructor.name property or object to string conversion if no constructor name
  * @param {Object} object Object to get the class name of
- */
+ **/
 function getClassName(object) {
   var name = object && "constructor" in object? object.constructor.name : object;
   return name;
@@ -385,9 +385,9 @@ function getArtboard(item) {
 }
 
 /**
- * Get the relative bounds in a container
- * @param {SceneNode} item 
- */
+ * Gets bounds of scene node including relative bounds in container
+ * @param {SceneNode} item Get the bounds of the scene node
+ **/
 function getBoundsInParent(item) {
   var bounds = {};
   var x = 0;
@@ -505,6 +505,9 @@ function getBoundsInParent(item) {
 
       bounds.offsetX = offsetX;
       bounds.offsetY = offsetY;
+
+      bounds.right = bounds.parentWidth - bounds.width - bounds.x;
+      bounds.bottom = bounds.parentHeight - bounds.height - bounds.y;
   }
 
   return bounds;
@@ -521,5 +524,161 @@ function getCenterPoint(node) {
 	}
 }
 
-module.exports = {object, log, getArtboard, getCenterPoint, getBoundsInParent, getClassName, getFunctionName, 
-  getStackTrace, getStackArray, getChangedProperties, XDConstants, DebugSettings};
+/**
+ * Calls the passed in function on the passed in node and it's descendants 
+ * @param {SceneNode} node SceneNode 
+ * @param {Function} command Function to call on each node
+ * @param {*} value Optional value to pass to command
+ **/
+function walkDownTree(node, command, value = null) {
+  command(node, value);
+
+  if (node.isContainer) {
+    var childNodes = node.children;
+
+    for(var i=0;i<childNodes.length;i++) {
+      let childNode = childNodes.at(i);
+
+      walkDownTree(childNode, command, value);
+    }
+  }
+}
+
+/**
+ * Returns true if the node is in the edit context
+ * @param {SceneNode} editContext A reference to selection.editContext
+ * @param {SceneNode} node The node to check
+ **/
+function isInEditContext(editContext, node) {
+
+	if (editContext==node) {
+		return true;
+	}
+  
+	if (editContext.isContainer && isChildNode(editContext, node)) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
+ * Returns true if nodes are siblings
+ * @param {SceneNode} nodeA
+ * @param {SceneNode} nodeB
+ * @return {Boolean}
+ **/
+function isSiblingNode(nodeA, nodeB) {
+  return nodeA.parent == nodeB.parent;
+}
+
+/**
+ * Returns true if node is descendant of parentNode
+ * @param {SceneNode} parentNode 
+ * @param {SceneNode} node 
+ * @return {Boolean}
+ **/
+function isDescendantNode(parentNode, node) {
+
+	if (parentNode==node) {
+		return true;
+	}
+
+	if (parentNode.isContainer) {
+		var childNodes = parentNode.children;
+
+		for(var i=0;i<childNodes.length;i++) {
+			let childNode = childNodes.at(i);
+
+			// found the node
+			if (childNode==node) {
+				return true;
+			}
+
+			if (childNode.isContainer) {
+				return isDescendantNode(childNode, node);
+			}
+		}
+	}
+
+	return false;
+}
+
+/**
+ * Returns true if node is a child (not descendant) of parentNode
+ * @param {SceneNode} parentNode 
+ * @param {SceneNode} node 
+ * @return {Boolean}
+ **/
+function isChildNode(parentNode, node) {
+
+	if (parentNode==node) {
+		return true;
+	}
+
+	if (parentNode.isContainer) {
+		var childNodes = parentNode.children;
+
+		for(var i=0;i<childNodes.length;i++) {
+			let childNode = childNodes.at(i);
+
+			if (childNode==node) {
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+/**
+ * Gets a number with less places
+ * @param {Number} value 
+ * @param {Number} places 
+ */
+function getShortNumber(value, places = 3) {
+	value = Math.round(value * Math.pow(10, places)) / Math.pow(10, places);
+	return value;
+}
+
+/**
+ * Gets short string and replaces line breaks
+ * @param {String} value 
+ * @param {Number} characters 
+ */
+function getShortString(value, characters = 20) {
+    if (value==null) {
+      return "";
+    }
+
+    if (value===undefined) {
+      return "";
+    }
+
+    if (typeof value === "string") {
+      value = value.replace(/\n|\r/g, " ");
+      return value.substr(0, characters);
+    }
+  
+    return "Not a string";
+}
+
+/**
+ * Trims whitespace
+ * @param {String} value 
+ * @returns {String}
+ */
+function trim(value) {
+    if (value==null) {
+      return "";
+    }
+
+    if (value===undefined) {
+      return "";
+    }
+  
+    return value.trim();
+}
+
+module.exports = {log, object, getArtboard, getCenterPoint, getBoundsInParent, getClassName, getFunctionName, 
+  getStackTrace, getStackArray, getShortNumber, getShortString, trim, isInEditContext, isSiblingNode, isDescendantNode, isChildNode, getChangedProperties, XDConstants, DebugSettings};
