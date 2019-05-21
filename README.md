@@ -11,6 +11,9 @@ The project includes common XD icons, default plugin icons.
 
 To use, clone the repository locally and copy the *statistics* folder into the XD *develop* folder and reload. 
 
+# Web Export Examples
+A set of XD example projects that show how to use features in the Web Export plugin for Adobe XD. You can read more about them here https://discuss.velara3.com/t/web-export-example-projects/132.
+
 # Log Utilities
 The log file utilities are a set of methods and constants that have been helpful in creating plugins. These are in the log.js file in the statistics folder. 
 
