@@ -8,8 +8,9 @@ const {Artboard, BooleanGroup, Blur, Matrix, Color, Ellipse, GraphicNode, Group,
  * Writes a value to the console. Same as calling console.log and then returning true.
  * Returns true so you can enable debugging options with var debug = enableDebugging && log("Debugging method()")
  * @param {String} string value to write to the console
+ * @param {Array} args 
  */
-function log(string) {
+function log(string, ...args) {
   var indent = "";
   if (string==null || string===undefined) {
     string = "";
@@ -18,14 +19,14 @@ function log(string) {
   // supress all logging
   if (DebugSettings.suppressLogMessages==true) {
     console.log("Suppressing log")
-      return;
+    return;
   }
 
   // log function name
   if (DebugSettings.logFunctionName) {
     var functionName = getFunctionName();
     if (DebugSettings.lastFunctionName!=functionName) {
-      console.log(functionName+ "()");
+      console.log(functionName+ "()", ...args);
       DebugSettings.lastFunctionName = functionName;
     }
     if (functionName!="") {
@@ -33,18 +34,19 @@ function log(string) {
     }
   }
 
-  console.log(indent + string);
+  console.log(indent + string, ...args);
   
   return true;
 }
 
 /**
 * Lists the properties of an object in the console in name and value columns
-* @param {*} object An object
+* @param {*} obj An object
 * @param {String} description Optional description. If no description the constructor name is used.
 * @param {Number} level If set to 1 lists properties of objects one level deep 
-*/
-function object(object, description = null, level = 1) {
+* @param {Boolean} logToConsole do not write to the console
+**/
+function object(obj, description = null, level = 1, logToConsole = true) {
   let output = "";
   var className = "";
   var value;
@@ -53,13 +55,13 @@ function object(object, description = null, level = 1) {
   var indentCharacter = " ";
   var properties = [];
   var separatorCharacter = "   "; // ": ";
-
   var indent = "";
+
   if (DebugSettings.logFunctionName) {
     var functionName = getFunctionName();
 
     if (DebugSettings.lastFunctionName!=functionName) {
-      console.log(functionName+ "()");
+      logToConsole && console.log(functionName+ "()");
       DebugSettings.lastFunctionName = functionName;
     }
     if (functionName!="") {
@@ -71,15 +73,15 @@ function object(object, description = null, level = 1) {
     className = description;
   }
   else {
-    className = object ? object.constructor.name : "Object";
+    className = obj ? obj.constructor.name : "Object";
   }
 
-  if (object==null) {
-    console.log(indent+"Object is null");
-    return;
+  if (obj==null) {
+    logToConsole && console.log(indent+className + " is null");
+    return indent += className + " is null";
   }
 
-  for (var property in object) {
+  for (var property in obj) {
     if (property && property.length>minCharacterLength) {
       minCharacterLength = property.length;
     }
@@ -94,7 +96,7 @@ function object(object, description = null, level = 1) {
   
   for (var j=0;j<properties.length;j++) {
     property = properties[j];
-    value = object[property];
+    value = obj[property];
     
     if (value=="[object Object]" && level == 1) {
       output += indent + " " + property + ": {\n";
@@ -109,13 +111,15 @@ function object(object, description = null, level = 1) {
       output += indent +" }\n";
     }
     else {
-      value = object[property];
+      value = obj[property];
       for (var i=property.length;i<minCharacterLength;i++) property += indentCharacter;
       output += indent + " " + property + separatorCharacter + value + "\n";
     }
   }
 
-  console.log(`${indent}${className} {\n${output}${indent}}`);
+  var result = `${indent}${className} {\n${output}${indent}}`;
+  logToConsole && console.log(result);
+  return result;
 }
 
 /**
@@ -175,6 +179,15 @@ function getChangedProperties(target, source) {
 }
 
 /**
+ * Logs the stack trace
+ * @param {Error} error 
+ * @param {String} separator 
+ **/
+function logStackTrace(error = null, separator = " > ") {
+  log(getStackTrace(error, separator))
+}
+
+/**
  * Get the call stack separated by ">"
  * @param {Error} error 
  */
@@ -185,6 +198,9 @@ function getStackTrace(error = null, separator = " > ") {
     array.shift();
   }
   if (array && array[0]=="getStackArray") {
+    array.shift();
+  }
+  if (array && array[0]=="logStackArray") {
     array.shift();
   }
 
@@ -325,6 +341,7 @@ class DebugSettings {
    * Add or remove outline around element when META key + click event
    **/
   static outlineOnClick (element) {
+    const _outlineOnClick = "_outlineOnClick";
     
     if ("_outlineOnClick" in DebugSettings===false) {
       DebugSettings._outlineOnClick = element; // save element to remove listeners 
@@ -347,32 +364,415 @@ class DebugSettings {
   }
 
   /**
+   * Set to input form 
+   **/
+  static get form () {
+    return DebugSettings._form;
+  }
+
+  static set form (value) {
+    DebugSettings._form = value;
+  }
+
+  /**
+   * Highlights the component. Set outline to false to not highlight
+   * @param {Object} component 
+   * @param {Boolean} outline 
+   * @param {String} color 
+   **/
+  static highlight(component, outline = true, color = "red") {
+    var style = component.style;
+
+    if ("style" in component && "border" in component.style) {
+      if (outline) {
+        style.border = "1px dashed " + color;
+      }
+      else {
+        style.border = "0px dashed " + color;
+      }
+    }
+  }
+
+  /**
+   * Updates the form component.
+   * @param {Object} component 
+   * @param {Object} prevComponent 
+   **/
+  static updateComponent(component, prevComponent = null) {
+    prevComponent!=null ? DebugSettings.highlight(prevComponent, false) : 0;
+    var element = component;
+    DebugSettings.form.component = element;
+    DebugSettings.highlight(element);
+    var index = Array.prototype.slice.call(element.parentElement.children).indexOf(element);
+    DebugSettings.form.elementIndex.innerHTML = index+"";
+    DebugSettings.form.elementIndex.title = element.nodeName;
+  }
+
+  /**
+   * Toggle outline of the component
+   * @param {Object} component 
+   * @param {String} color
+   **/
+  static toggleHighlight(component, color = "red") {
+
+    if ("style" in component && "border" in component.style) {
+      var style = component.style;
+      var isString = typeof style.border=="string"; 
+      var borderWidth = 0;
+
+      if (isString) {
+        borderWidth = parseInt(style.border);
+      }
+      else {
+        borderWidth = style.border && style.border.width && style.border.width.top ? style.border.width.top.value : 0 ;
+      }
+
+      if (borderWidth==0 || isNaN(borderWidth)) {
+        style.border = "1px dashed " + color;
+      }
+      else {
+        style.border = "0px dashed " + color;
+      }
+    }
+  }
+
+  /**
    * Adds or removes an outline on the event target 
    **/
   static formClick(event, color = "red") {
+    var component = event.target;
 
-    if (event.metaKey) {
-      var component = event.target;
+    if (((event.ctrlKey || event.metaKey) && event.shiftKey==false)) {
 
-      if ("style" in component && "border" in component.style) {
-        var style = component.style;
-        var borderWidth = style.border && style.border.width.top ? style.border.width.top.value : 0 ;
+      if (DebugSettings.form && DebugSettings.form.component) {
+        DebugSettings.highlight(DebugSettings.form.component, false);
+      }
 
-        if (borderWidth==0) {
-          style.border = "1px dashed " + color;
+      component = event.target;
+      if (component.style) {
+        DebugSettings.toggleHighlight(component, color);
+      }
+    }
+
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey) {
+      component = event.target;
+      
+      if (DebugSettings.form) {
+        DebugSettings.form.remove();
+      }
+
+      var group = document.createElement("form");
+      var inputName = document.createElement("input");
+      var inputValue = document.createElement("input");
+      var parent = document.createElement("label");
+      var descendants = document.createElement("div");
+      var prevSibling = document.createElement("span");
+      var nextSibling = document.createElement("span");
+      var nameError = document.createElement("span");
+      var valueError = document.createElement("span");
+      var close = document.createElement("span");
+      var elementIndex = document.createElement("span");
+      var index = 0;
+      
+      group.onsubmit = function(e) {
+        e.preventDefault();
+        return false
+      };
+      inputName.type = "text";
+      inputValue.type = "text";
+      inputName.style.flex = "1";
+      inputName.style.margin = "0";
+      inputName.style.marginRight = "0";
+      inputValue.style.flex = "1";
+      inputValue.style.margin = "0";
+      inputName.placeholder = "name";
+      inputValue.placeholder = "value";
+      inputValue.placeholder = "value";
+      parent.innerHTML = "&#8593;";
+      descendants.innerHTML = "&#8595;"; 
+      parent.title = "Parent element";
+      descendants.title = "Descendant elements"; 
+      close.innerHTML = "X";
+      prevSibling.innerHTML = "<";
+      nextSibling.innerHTML = ">";
+      prevSibling.title = "Previous element";
+      nextSibling.title = "Next element";
+      nameError.innerHTML = "!";
+      nameError.style.color = "red";
+      nameError.title = "Property not found";
+      valueError.title = "Value not found";
+      nameError.style.display = "none";
+      valueError.style.display = "none";
+      close.style.padding = "0px 4px";
+      close.style.margin = "0";
+      close.style.cursor = "pointer";
+      parent.style.padding = "0px 4px";
+      parent.style.cursor = "pointer";
+      descendants.style.padding = "0px 4px";
+      descendants.style.cursor = "pointer";
+      prevSibling.style.padding = "0px 4px";
+      prevSibling.style.cursor = "pointer";
+      nextSibling.style.padding = "0px 4px";
+      nextSibling.style.cursor = "pointer";
+      elementIndex.style.padding = "0px 6px";
+      elementIndex.style.textAlign = "center";
+      index = Array.prototype.slice.call(component.parentElement.children).indexOf(component);
+      elementIndex.innerHTML = index+"";
+      elementIndex.style.cursor = "pointer";
+
+      close.addEventListener("click", function(e) {
+        group.remove();
+        DebugSettings.highlight(DebugSettings.form.component, false);
+        DebugSettings.form = null;
+      })
+
+      parent.addEventListener("click", function(e) {
+        var element = DebugSettings.form.component;
+        if (element.parentNode) {
+          DebugSettings.updateComponent(element.parentNode, element);
+        }
+      })
+
+      descendants.addEventListener("click", function(e) {
+        var element = DebugSettings.form.component;
+        if (element.children.length) {
+          DebugSettings.updateComponent(element.children[0], element);
+        }
+      })
+
+      prevSibling.addEventListener("click", function(e) {
+        var element = DebugSettings.form.component;
+        if (element.previousElementSibling) {
+          DebugSettings.updateComponent(element.previousElementSibling, element);
+        }
+      })
+
+      nextSibling.addEventListener("click", function(e) {
+        var element = DebugSettings.form.component;
+        if (element.nextElementSibling && element.nextElementSibling!=DebugSettings.form) {
+          DebugSettings.updateComponent(element.nextElementSibling, element);
+        }
+      })
+
+      elementIndex.addEventListener("click", function(e) {
+        var element = DebugSettings.form.component;
+        if (element) {
+          DebugSettings.form.inputName.value = "nodeName";
+          DebugSettings.inputNameHandler(e, true);
+        }
+      })
+
+      inputName.addEventListener("change", DebugSettings.inputNameHandler);
+      inputName.addEventListener("input", DebugSettings.inputNameHandler);
+      inputValue.addEventListener("change", DebugSettings.inputValueHandler);
+
+      group.appendChild(parent);
+      group.appendChild(prevSibling);
+      group.appendChild(elementIndex);
+      group.appendChild(nextSibling);
+      group.appendChild(descendants);
+      group.appendChild(inputName);
+      group.appendChild(nameError);
+      group.appendChild(inputValue);
+      group.appendChild(valueError);
+      group.appendChild(close);
+
+      group.style.position = "absolute";
+      group.style.top = "0px";
+      group.style.gap = "0px";
+      group.style.left = "0px";
+      group.style.zIndex = "100";
+      group.style.padding = "6px";
+      group.style.margin = "8px";
+      group.style.border = "1px solid rgba(0, 0, 0, .25)";
+      group.style.filter = "drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.161));";
+      group.style.backgroundColor = "rgba(255, 255, 255, .85)";
+      group.style.alignItems = "center";
+      group.style.display = "flex";
+      group.style.fontWeight = "bold";
+      group.className = "row";
+
+      component.parentNode.appendChild(group);
+
+      DebugSettings.form = group;
+      DebugSettings.form.component = component;
+      DebugSettings.form.inputName = inputName;
+      DebugSettings.form.inputValue = inputValue;
+      DebugSettings.form.nameError = nameError;
+      DebugSettings.form.valueError = valueError;
+      DebugSettings.form.elementIndex = elementIndex;
+
+      DebugSettings.updateComponent(component);
+    }
+  }
+
+  static inputNameHandler(e, getValue = false) {
+    var inputName = DebugSettings.form.inputName;
+    var inputValue = DebugSettings.form.inputValue;
+    var nameError = DebugSettings.form.nameError;
+    var component = DebugSettings.form.component;
+    var name = inputName.value;
+    var value = null;
+    var object = component;
+    var names = [];
+    var hasError = false;
+
+    if (name==null || name=="") {
+      nameError.style.display = "none"; // hide error
+      return false;
+    }
+
+    if (name && name.indexOf(".")!=-1) {
+      names = name.split(".");
+
+      for(var i=0;i<names.length;i++) {
+        name = names[i];
+
+        if (name in object) {
+          
+          if (i<names.length-1) {
+            object = object[name];
+
+            if ("getPropertyValue" in object) {
+              value = object.getPropertyValue(name);
+            }
+            else {
+              value = object[name];
+            }
+          }
+          else {
+
+            if ("getPropertyValue" in object) {
+              value = object.getPropertyValue(name);
+            }
+            else {
+              value = object[name];
+            }
+          }
         }
         else {
-          style.border = "0px dashed " + color;
+          hasError = true;
         }
       }
-      console.log(component.nodeName)
+    }
+    else {
+      if (name in object) {
+        value = object[name];
+      }
+      else {
+        hasError = true;
+      }
+    }
+
+    
+    // can't find property show error
+    if (hasError) {
+      nameError.style.display = "inline-block"; // show error
+      //inputName.style.outline = "1px solid red"; // show error
+      
+      if (e.type=="change") {
+        inputName.focus();
+      }
+      return false;
+    }
+    else {
+      nameError.style.display = "none"; // hide error
+      //inputName.style.outline = null; // hide error
+
+      if (e.type=="change" || getValue) {
+        inputValue.value = value;
+        inputValue.focus();
+      }
+    }
+  }
+
+  static inputValueHandler(e) {
+    var inputName = DebugSettings.form.inputName;
+    var inputValue = DebugSettings.form.inputValue;
+    var nameError = DebugSettings.form.nameError;
+    var valueError = DebugSettings.form.valueError;
+    var component = DebugSettings.form.component;
+    var name = inputName.value;
+    var value = inputValue.value;
+    var object = component;
+    var names;
+    var hasError = false;
+
+
+    try {
+
+      if (name && name.indexOf(".")!=-1) {
+        names = name.split(".");
+
+        for(var i=0;i<names.length;i++) {
+          name = names[i];
+
+          if (name in object) {
+
+            if (i<names.length-1) {
+
+              object = object[name];
+            }
+          }
+          else {
+            hasError = true;
+          }
+        }
+      }
+      
+      if (name in object) {
+
+        if ("setPropertyValue" in object) {
+          object.setPropertyValue(name, value);
+        }
+        else {
+
+          if (typeof object[name]=="number" || typeof object[name]=="bigint") {
+            object[name] = Number(value);
+          }
+          else if (typeof object[name]=="boolean") {
+            var booleanValue = value && value!=="0" && value!=="false" ? true : false;
+            object[name] = booleanValue;
+          }
+          else {
+            object[name] = value;
+          }
+        }
+      }
+      else {
+        hasError = true;
+      }
+
+    }
+    catch(e) {
+      console.log(e);
+    }
+    
+    if (hasError) {
+      valueError.style.display = "inline-block"; // show error
+      valueError.title = e + "";
+    }
+    else {
+      valueError.style.display = "none"; // hide error
+      valueError.title = "";
+    }
+
+    if (e.type=="change") {
+      inputValue.focus();
     }
   }
 }
 
 /**
- * Get the artboard of the scene node passed in
- * @param {SceneNode} item 
+ * Get the time in milliseconds
+ */
+function getTime() {
+  return new Date().getTime();
+}
+
+/**
+ * Get the artboard of the current scene node
+ * @param {SceneNode} item Scene node
  **/
 function getArtboard(item) {
 
@@ -382,6 +782,7 @@ function getArtboard(item) {
       if (parent instanceof Artboard) return parent;
       parent = parent.parent;
   }
+  return null;
 }
 
 /**
@@ -416,6 +817,7 @@ function getBoundsInParent(item) {
   var yInArtboard = 0;
   var parentXInArtboard = 0;
   var parentYInArtboard = 0;
+  var usePrev = false;
 
   if (item.parent) {
       artboard = getArtboard(item);
@@ -456,8 +858,15 @@ function getBoundsInParent(item) {
       globalCenterX = parentX + centerX;
       globalCenterY = parentY + centerY;
       
-      centerDeltaX = centerX - offsetX;
-      centerDeltaY = centerY - offsetY;
+      if (usePrev) {
+        centerDeltaX = centerX - offsetX;
+        centerDeltaY = centerY - offsetY;
+      }
+      else {
+        centerDeltaX = offsetX - centerX;
+        centerDeltaY = offsetY - centerY;
+      }
+
       
       globalDeltaX = x + centerDeltaX;
       globalDeltaY = y - centerDeltaY;
@@ -503,6 +912,12 @@ function getBoundsInParent(item) {
       bounds.parentX = parentX;
       bounds.parentY = parentY;
 
+      bounds.localBoundsWidth = item.localBounds.width;
+      bounds.localBoundsHeight = item.localBounds.height;
+
+      bounds.localBoundsX = item.localBounds.x;
+      bounds.localBoundsY = item.localBounds.y;
+
       bounds.offsetX = offsetX;
       bounds.offsetY = offsetY;
 
@@ -514,14 +929,25 @@ function getBoundsInParent(item) {
 }
 
 /**
- * Get the center point
+ * One method used to get the center bounds position. Must call get bounds in parent first.
  * @param {SceneNode} node 
- */
+ **/
 function getCenterPoint(node) {
 	return {
 		x: node.boundsInParent.x + node.boundsInParent.width/2,
 		y: node.boundsInParent.y + node.boundsInParent.height/2
 	}
+}
+
+/**
+ * Move a scene node to a specific x and y position in its parent container
+ * @param {SceneNode} element
+ * @param {Number} x
+ * @param {Number} y
+ **/
+function moveTo(element, x, y) {
+  var bounds = getBoundsInParent(element);
+  element.moveInParentCoordinates(-bounds.x+x, -bounds.y+y);
 }
 
 /**
@@ -647,38 +1073,123 @@ function getShortNumber(value, places = 3) {
  * @param {Number} characters 
  */
 function getShortString(value, characters = 20) {
-    if (value==null) {
-      return "";
-    }
+  if (value==null) {
+    return "";
+  }
 
-    if (value===undefined) {
-      return "";
-    }
+  if (value===undefined) {
+    return "";
+  }
 
-    if (typeof value === "string") {
-      value = value.replace(/\n|\r/g, " ");
-      return value.substr(0, characters);
-    }
-  
-    return "Not a string";
+  if (typeof value === "string") {
+    value = value.replace(/[\r\n\x0B\x0C\u0085\u2028\u2029]+/g, " ");
+    return value.substr(0, characters);
+  }
+
+  return "Not a string";
+}
+
+/**
+ * Adds a string onto the end of other strings and adds a space between
+ * if needed. Separator is space by default but can be any character
+ * @param {String} value 
+ * @param {String} anotherValue 
+ * @param {String} separator 
+ **/
+function addString(value, anotherValue, separator = " ") {
+  var char = "";
+
+  // if value is not null 
+  if (value!=null && value!="") {
+
+	  if (anotherValue!=null) {
+      char = value.charAt(value.length-1);
+
+      // if space at end just add value
+      if (char==separator) {
+        value += anotherValue;
+      }
+      else {
+        value += separator + anotherValue;
+      }
+	  }
+  }
+  else {
+    value = "";
+    
+	  if (anotherValue!=null) {
+      value += anotherValue;
+	  }
+  }
+  return value;
+}
+
+/**
+ * Get value with pixels. Pass in a number 10 and get "10px"
+ * @param {Number} value 
+ * @returns {String}
+ **/
+function getPx(value) {
+  return value + "px";
 }
 
 /**
  * Trims whitespace
  * @param {String} value 
  * @returns {String}
- */
+ **/
 function trim(value) {
-    if (value==null) {
-      return "";
-    }
+  if (value==null) {
+    return "";
+  }
 
-    if (value===undefined) {
-      return "";
-    }
-  
-    return value.trim();
+  if (value===undefined) {
+    return "";
+  }
+
+  return value.trim();
 }
 
-module.exports = {log, object, getArtboard, getCenterPoint, getBoundsInParent, getClassName, getFunctionName, 
-  getStackTrace, getStackArray, getShortNumber, getShortString, trim, isInEditContext, isSiblingNode, isDescendantNode, isChildNode, getChangedProperties, XDConstants, DebugSettings};
+/**
+ * Deletes all properties except any exceptions, and except values that start with value 
+ * or delete only values specified in the properties array
+ * @param {Object} value 
+ * @param {Array} exceptions 
+ * @param {Array} startsWith 
+ * @param {Array} properties 
+ **/
+function deleteProperties(value, exceptions = null, startsWith = null, properties = null) {
+  if (value==null) return;
+
+  for(var name in value) {
+
+    // do not delete if in exceptions
+    if (exceptions && exceptions.includes(name)) {
+      // skip
+      continue;
+    }
+
+    // delete only properties starting with value
+    if (startsWith) {
+      const exclude = startsWith.some(str => name.startsWith(str));
+      if (exclude) {
+        // skip
+        continue;
+      }
+    }
+
+    // delete only specified properties
+    if (properties) {
+      if (properties.includes(name)) {
+        delete value[name];
+      }
+      continue;
+    }
+
+    delete value[name];
+  }
+}
+
+module.exports = {object, log, getShortNumber, getArtboard, getCenterPoint, getBoundsInParent, getClassName, getFunctionName, 
+  getStackTrace, getStackArray, logStackTrace, getShortString, getTime, getPx, getChangedProperties, trim, deleteProperties, addString, walkDownTree, XDConstants, DebugSettings,
+  isInEditContext, isSiblingNode, isDescendantNode, isChildNode, moveTo};

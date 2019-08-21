@@ -10,3 +10,8 @@ Initial import
 1.0.1
 -----------
 - fixed truncated text with large numbers
+
+-----------
+1.0.2
+-----------
+- fixed UXP layout

@@ -6,7 +6,7 @@
 
 const {AlertForm, MainForm, Items} = require("./library");
 const {Artboard, BooleanGroup, Color, Ellipse, GraphicsNode, Group, Line, LinkedGraphic, Path, Rectangle, RepeatGrid, RootNode, SceneNode, SymbolInstance, Text} = require("scenegraph");
-const {log, object, getClassName, getFunctionName, getStackTrace, getChangedProperties, XDConstants, DebugSettings} = require("./log");
+const {log, object, getClassName, getFunctionName, getStackTrace, getChangedProperties, XDConstants, DebugSettings, getPx} = require("./log");
 const h = require("./h");
 const platform = require("os").platform();
 
@@ -14,6 +14,7 @@ const platform = require("os").platform();
 // DIALOGs
 ///////////////////////////////////////////////////////////////////////////
 
+MainForm.debug = false;
 DebugSettings.logFunctionName = true;
 
 var mainForm = new MainForm();
@@ -21,9 +22,9 @@ var alertForm = new AlertForm();
 
 let alertDialog =
 	h("dialog", {name:"Alert"},
-		h("form", { method:"dialog", style: { width: 380 }, },
+		h("form", { method:"dialog", style: { width: getPx(380) }, },
 		alertForm.header = h("h2", "Header"),
-		h("label", { class: "row", style: {paddingTop: 18 } },
+		h("label", { class: "row", style: {paddingTop: getPx(18) } },
 			alertForm.message = h("span", { }, "Message"),
 		),
 		h("footer",
@@ -34,23 +35,24 @@ let alertDialog =
 
 var mainDialog =
 	 h("dialog", {name:"Main"},
-		h("form", { method:"dialog", style: { width: mainForm.mainDialogWidth }, onsubmit(e) { preventClose(e)}  },
-		  h("label", { class: "row", alignItems:"bottom" },
+		h("form", { method:"dialog", style: { width: getPx(mainForm.mainDialogWidth) }, 
+			onsubmit(e) { preventClose(e)}  },
+		  h("label", { class: "row", style: {alignItems:"bottom" }},
 			 mainForm.headerLabel = h("h2", { onclick(e) { headerLabelClicked(e) } }, "Artboard Statistics"),
-			 h("span", { style: { flex: "1", marginTop:"8" } }, ""),
-			 mainForm.nameLabel = h("span", { textAlign: "right", fontSize: 10.5 , minWidth: 160, style: { marginTop:"6"}, 
+			 h("span", { style: { flex: "1", marginTop:getPx(8) } }, ""),
+			 mainForm.nameLabel = h("span", { style: { textAlign: "right", fontSize: getPx(10.5) , minWidth: getPx(160), marginTop:getPx(6)}, 
 				onclick(e) { artboardLabelClicked(e) } }, "TEST"),
 		  ),
 
-		  h("hr", { height:1, marginTop: -2 }, ""),
+		  h("hr", { height: getPx(1), marginTop: getPx(-2) }, ""),
 
 		  h("label", { class: "row" },
-			h("div", { style: { flex:"1", height: mainForm.listHeight, overflow:"scroll", border: "0px solid gray", padding:0} }, 
+			h("div", { style: { flex:"1", height: getPx(mainForm.listHeight), overflow: "scroll", border: "0px solid gray", padding:getPx(0)} }, 
 			 	mainForm.messageList = h("p", { textContent:"", style: {  opacity: 1, border: "0px solid #bcbcbc"} } )
 			)
 		  ),
 		  
-		  h("footer", { class: "row", style: { alignItems:"center", paddingTop:0} },
+		  h("footer", { class: "row", style: { alignItems:"center", paddingTop:getPx(0)} },
 
 			h("button", { uxpVariant: "primary", title: "Close", 
 				style: {  },
@@ -100,7 +102,11 @@ async function showMainDialog(selection, documentRoot) {
 	* Add the main dialog to the document and open the window
 	*/
   async function showMainDialogWindow() {
+	MainForm.debug && log("In " + getFunctionName() + "()");
   
+	// show layout outline on shift + click - disable in production mode
+	DebugSettings.outlineOnClick(mainDialog);
+
 	document.body.appendChild(mainDialog);
 	
 	updateUILabels();
@@ -128,6 +134,7 @@ async function showMainDialog(selection, documentRoot) {
 	}
 
   async function showAlertDialog(message, header) {
+	MainForm.debug && log("In " + getFunctionName() + "()");
   
 	document.body.appendChild(alertDialog);
 	
@@ -420,7 +427,7 @@ function getDisplayName(type) {
 			value = "Repeat Grids";
 		   break;
 		case XDConstants.SYMBOL_INSTANCE:
-			value = "Symbols";
+			value = "Components";
 		   break;
 		case XDConstants.ARTBOARD:
 			value = "Artboards";
@@ -519,10 +526,10 @@ function calculateResults() {
 	}
 
 	var row = addRow(MainForm.TOTAL, false, true);
-	row.style.marginTop = 5;
+	row.style.marginTop = getPx(5);
 	row.nameLabel.style.fontWeight = "bold";
 	row.countLabel.style.fontWeight = "bold";
-	row.countLabel.style.fontSize = 11;
+	row.countLabel.style.fontSize = getPx(11);
 	//updateRowCounts(sortedAscendingTypes);
 }
 
@@ -678,7 +685,7 @@ function addRow(type, firstRow = false, lastRow = false, isHeader = false) {
 		var image;
 		var topBorderWeight = firstRow ? 0 : 0;
 		var bottomBorderWeight = lastRow ? 0 : 1;
-		var textMarginTop = "-2px";
+		var textMarginTop = -2;
 		var toolTip;
 		var borderBottomColor = "#BCBCBC";
 		var iconSize = 10;
@@ -711,16 +718,16 @@ function addRow(type, firstRow = false, lastRow = false, isHeader = false) {
 		var row =
 		h("div", {
 			class: "row", 
-			display: "flex",
-			height: rowHeight, 
 			title: toolTip,
 			style: {
+				display: "flex",
+				height: getPx(rowHeight), 
 				borderTop: topBorderWeight + "px solid " + borderBottomColor, 
 				borderBottom: bottomBorderWeight + "px solid " + borderBottomColor, 
 				alignItems: "center" 
 			}, onclick(e) {} },
 			
-			h("span", { width: 0, style: { display: "none", border: borderWeight + "px solid black"} } ),
+			h("span", { style: { display: "none", width: getPx(0), border: borderWeight + "px solid black"} } ),
 
 			image = h("img", {
 				display: mainForm.showIcon ? "block" : "none", 
@@ -728,33 +735,34 @@ function addRow(type, firstRow = false, lastRow = false, isHeader = false) {
 				src: iconPath, 
 				width: iconSize, 
 				height: iconSize, 
-				marginRight: 5,
 				style: {
+					marginRight: getPx(5),
 					border: borderWeight + "px solid green"} 
 				}
 			),
 
-			nameLabel = h("span", { marginLeft: marginLeftOffset,
+			nameLabel = h("span", {
 				style: {
-					fontSize: fontSize,
+					margin: 0,
+					marginLeft: marginLeftOffset,
+					fontSize: getPx(fontSize),
 					whiteSpace: "nowrap", 
 					overflow: "hidden", 
 					textOverflow: "ellipsis", 
-					marginTop:textMarginTop, 
-					border: borderWeight + "px solid black"}
-				}, 
+					border: borderWeight + "px solid black"
+					}
+				},
 				displayName
 			),
 
 			h("span", { style: { flex:"1", border: borderWeight + "px solid black"} } ),
 
 			countLabel = h("span", {
-				textAlign: "right", 
-				marginRight: -1,
-				style: { 
-					fontSize: fontSize,
-					width: 60, 
-					marginTop: textMarginTop, 
+				style: {
+					textAlign: "right", 
+					marginRight: getPx(-1),
+					fontSize: getPx(fontSize),
+					width: getPx(60),  
 					whiteSpace: "nowrap",
 					overflow: "hidden", 
 					textOverflow: "ellipsis", 

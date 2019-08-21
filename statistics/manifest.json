@@ -1,26 +1,49 @@
 {
-    "name": "Statistics",
     "id": "",
-    "version": "1.0.1",
-    "main": "main.js",
+    "name": "Statistics",
+    "version": "1.0.2",
     "description": "Display the amount of elements in your artboard",
+    "summary": "Display element artboard count",
+    "author": "Velara 3",
+    "publisher": "Velara 3",
+    "releaseNotes": "Updated layout for UXP changes",
+    "website": "https://www.velara3.com",
+    "helpUrl": "https://discuss.velara3.com/",
+    
+    "keywords": [
+        "tools",
+        "reports",
+        "artboard",
+        "total",
+        "scenegraph",
+        "node",
+        "statistics",
+        "web app",
+        "elements"
+    ],
 
-    "icons":[
-        {
-           "width":96,
-           "height":96,
-           "path":"images/icon.png"
-        },
-        {
-           "width":512,
-           "height":512,
-           "path":"images/icon2.png"
-        }
+    "languages": [
+        "en",
+        "fr",
+        "de",
+        "ja",
+        "ko",
+        "zh",
+        "es",
+        "pt"
+    ],
+
+    "icons": [
+        { "width": 24, "height": 24, "path": "images/icon@1x.png" },
+        { "width": 48, "height": 48, "path": "images/icon@2x.png" },
+        { "width": 96, "height": 96, "path": "images/icon@3x.png" },
+        { "width": 144, "height": 144, "path": "images/icon@4x.png" },
+        { "width": 192, "height": 192, "path": "images/icon@5x.png" }
     ],
 
     "host": {
         "app": "XD",
-        "minVersion": "13.0.0"
+        "minVersion": "21.0"
     },
 
     "uiEntryPoints": [
