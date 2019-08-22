@@ -21,7 +21,10 @@ class MainForm {
     this.currentArtboard = null;
     this.sortedAscendingTypes = [];
     this.showIcon = true;
-    this.listHeight = 247;
+    this.iconWidth = 12;
+    this.iconHeight = 12;
+    this.closeIconPath = "icons/Close Icon.png";
+    this.listHeight = 287;
     this.submitButton = null;
     this.isMac = false;
     this.rows = {};
@@ -69,6 +72,7 @@ class Items {
       this.linkedGraphics = 0;
       this.paths = 0;
       this.pointText = 0;
+      this.polygons = 0;
       this.rectangles = 0;
       this.repeatGrids = 0;
       this.symbolInstances = 0;

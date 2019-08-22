@@ -35,16 +35,21 @@ let alertDialog =
 
 var mainDialog =
 	 h("dialog", {name:"Main"},
-		h("form", { method:"dialog", style: { width: getPx(mainForm.mainDialogWidth) }, 
+		h("form", { method:"dialog", style: { width: getPx(mainForm.mainDialogWidth), margin: getPx(-8) }, 
 			onsubmit(e) { preventClose(e)}  },
 		  h("label", { class: "row", style: {alignItems:"bottom" }},
-			 mainForm.headerLabel = h("h2", { onclick(e) { headerLabelClicked(e) } }, "Artboard Statistics"),
+			 mainForm.headerLabel = h("h2", { style: { cursor: "pointer" }, 
+			 	onclick(e) { headerLabelClicked(e) } }, "Artboard Statistics"),
 			 h("span", { style: { flex: "1", marginTop:getPx(8) } }, ""),
-			 mainForm.nameLabel = h("span", { style: { textAlign: "right", fontSize: getPx(10.5) , minWidth: getPx(160), marginTop:getPx(6)}, 
-				onclick(e) { artboardLabelClicked(e) } }, "TEST"),
+			 mainForm.nameLabel = h("span", { 
+				 style: { textAlign: "right", fontSize: getPx(10.5) , minWidth: getPx(160), marginTop:getPx(6), cursor: "pointer"}, 
+				 onclick(e) { artboardLabelClicked(e) } }, ""),
+			 h("img", { src: mainForm.closeIconPath, height: getPx(mainForm.iconWidth), width: getPx(mainForm.iconWidth), 
+					style: { display:"none", position:"absolute", cursor: "pointer", top: getPx(10), right:getPx(10) },
+					onclick(e){ closeDialog(mainDialog) } }, "")
 		  ),
 
-		  h("hr", { height: getPx(1), marginTop: getPx(-2) }, ""),
+		  h("hr", { style: {height: getPx(1), marginTop: getPx(-2)} }, ""),
 
 		  h("label", { class: "row" },
 			h("div", { style: { flex:"1", height: getPx(mainForm.listHeight), overflow: "scroll", border: "0px solid gray", padding:getPx(0)} }, 
@@ -52,11 +57,17 @@ var mainDialog =
 			)
 		  ),
 		  
-		  h("footer", { class: "row", style: { alignItems:"center", paddingTop:getPx(0)} },
 
-			h("button", { uxpVariant: "primary", title: "Close", 
-				style: {  },
-				onclick(e){ closeDialog(mainDialog) } }, "Close"),
+		  h("div", { class: "row", style: { alignItems:"center", paddingTop:getPx(0)} },
+			  h("a", { style:{color: "gray", fontSize: getPx(8), marginLeft: getPx(8)}, 
+			  href:"https://www.velara3.com", }, "More plugins at https://www.velara3.com"),
+				h("span", { style:{ flex:"1" }}, ""),
+				h("button", { uxpVariant: "primary", title: "Close", 
+					style: { display:"none" },
+					onclick(e){ closeDialog(mainDialog) } }, "Close"),
+
+				h("span", { style:{color: "gray", fontSize: getPx(9), cursor: "pointer" }, 
+					onclick(e){ closeDialog(mainDialog) } }, "close"),
 		  )
 		)
 	 )
@@ -206,7 +217,7 @@ function artboardLabelClicked(event) {
  * @param {Event} event 
  */
 function headerLabelClicked(event) {
-	mainForm.showIcon = !mainForm.showIcon;
+	mainForm.showIcon = !!!mainForm.showIcon;
 	showStatistics();
 }
 
@@ -368,6 +379,8 @@ function getIconPath(type) {
 		case XDConstants.RECTANGLE:
 		   break;
 		case XDConstants.PATH:
+			break;
+		case XDConstants.POLYGON:
 		   break;
 		case XDConstants.LINE:
 		   break;
@@ -411,6 +424,9 @@ function getDisplayName(type) {
 		case XDConstants.PATH:
 			value = "Paths";
 		   break;
+		case XDConstants.POLYGON:
+			value = "Polygons";
+			break;
 		case XDConstants.LINE:
 			value = "Lines";
 		   break;
@@ -511,7 +527,7 @@ function preventClose(event) {
 }
 
 function calculateResults() {
-	var types = [XDConstants.BOOLEAN_GROUP, XDConstants.ELLIPSE, XDConstants.GROUP, XDConstants.LINE, XDConstants.PATH, XDConstants.RECTANGLE, XDConstants.REPEAT_GRID, XDConstants.SYMBOL_INSTANCE, XDConstants.TEXT];
+	var types = [XDConstants.BOOLEAN_GROUP, XDConstants.ELLIPSE, XDConstants.GROUP, XDConstants.LINE, XDConstants.PATH, XDConstants.POLYGON, XDConstants.RECTANGLE, XDConstants.REPEAT_GRID, XDConstants.SYMBOL_INSTANCE, XDConstants.TEXT];
 	var addHeader = false;
 
 	mainForm.sortedAscendingTypes = sortTypesByCount(types);
@@ -566,6 +582,10 @@ function addToTypeCount(node) {
 			items.paths++;
 			items[XDConstants.PATH] = items.paths;
 		   break;
+		case XDConstants.POLYGON:
+			items.polygons++;
+			items[XDConstants.POLYGON] = items.polygons;
+			break;
 		case XDConstants.LINE:
 			items.lines++;
 			items[XDConstants.LINE] = items.lines;
@@ -622,38 +642,41 @@ function getTypeCount(type) {
 
 	switch(type) {
 	 
+		case XDConstants.ARTBOARD:
+			value = items.artboards;
+			break;
+		case XDConstants.BOOLEAN_GROUP:
+			value = items.booleanGroups;
+			break;
 		case XDConstants.ELLIPSE:
 			value = items.ellipses;
 		   break;
-		case XDConstants.RECTANGLE:
-			value = items.rectangles;
-		   break;
+		case XDConstants.GROUP:
+			value = items.groups;
+			break;
+		case XDConstants.LINE:
+			value = items.lines;
+			break;
 		case XDConstants.PATH:
 			value = items.paths;
 		   break;
-		case XDConstants.LINE:
-			value = items.lines;
+		case XDConstants.POLYGON:
+			value = items.polygons;
+			break;
+		case XDConstants.RECTANGLE:
+			value = items.rectangles;
+			break;
+		case XDConstants.REPEAT_GRID:
+			value = items.repeatGrids;
+			break;
+		case XDConstants.SYMBOL_INSTANCE:
+			value = items.symbolInstances;
 		   break;
 		case XDConstants.TEXT:
 			value = items.texts;
 		   break;
-		case XDConstants.GROUP:
-			value = items.groups;
-		   break;
-		case XDConstants.BOOLEAN_GROUP:
-			value = items.booleanGroups;
-			break;
 		case MainForm.TOTAL_GROUPS:
 			value = items.totalGroups;
-			break;
-		case XDConstants.REPEAT_GRID:
-			value = items.repeatGrids;
-		   break;
-		case XDConstants.SYMBOL_INSTANCE:
-			value = items.symbolInstances;
-		   break;
-		case XDConstants.ARTBOARD:
-			value = items.artboards;
 			break;
 		case MainForm.TOTAL:
 			value = items.totals;
@@ -730,12 +753,12 @@ function addRow(type, firstRow = false, lastRow = false, isHeader = false) {
 			h("span", { style: { display: "none", width: getPx(0), border: borderWeight + "px solid black"} } ),
 
 			image = h("img", {
-				display: mainForm.showIcon ? "block" : "none", 
 				title: type, 
 				src: iconPath, 
 				width: iconSize, 
 				height: iconSize, 
 				style: {
+					display: mainForm.showIcon ? "block" : "none", 
 					marginRight: getPx(5),
 					border: borderWeight + "px solid green"} 
 				}

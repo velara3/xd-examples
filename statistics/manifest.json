@@ -1,14 +1,14 @@
 {
     "id": "",
     "name": "Statistics",
-    "version": "1.0.2",
-    "description": "Display the amount of elements in your artboard",
-    "summary": "Display element artboard count",
+    "version": "1.1.0",
+    "description": "Show the total number of rectangles, ellipses, polygons and text fields you are using in your artboards!",
+    "summary": "Show number of graphics",
     "author": "Velara 3",
     "publisher": "Velara 3",
-    "releaseNotes": "Updated layout for UXP changes",
     "website": "https://www.velara3.com",
     "helpUrl": "https://discuss.velara3.com/",
+    "releaseNotes": "Updated layout for UXP changes\nAdded support for Polygons",
     
     "keywords": [
         "tools",
