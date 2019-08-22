@@ -30,7 +30,7 @@ The log file utilities are a set of methods and constants that have been helpful
  - DebugSettings - Class that sets options for the log function utilities
  - DebugSettings.logFunctionName - When enabled shows the current function name when log is called or changes
  - DebugSettings.suppressLogMessages - When enabled suppresses any messages from the log method
- - DebugSettings.outlineOnClick - When enabled pressing a meta key and clicking on a dialog adds an outline around that element and lets you get and set styles and properties
+ - DebugSettings.outlineOnClick - When enabled pressing a meta key and clicking on a dialog adds an outline around that element and lets you get and set styles and properties. Demonstration https://youtu.be/qPdm3tSe4BU
 
 
  
