@@ -288,6 +288,7 @@ class XDConstants {
   static get LINE () { return "Line"; }
   static get LINKED_GRAPHIC () { return "LinkedGraphic"; }
   static get PATH () { return "Path"; }
+  static get POLYGON () { return "Polygon"; }
   static get RECTANGLE () { return "Rectangle"; }
   static get REPEAT_GRID () { return "RepeatGrid"; }
   static get ROOT_NODE () { return "RootNode"; }
