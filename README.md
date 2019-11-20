@@ -26,6 +26,27 @@ The log file utilities are a set of methods and constants that have been helpful
  - getChangedProperties() - Get an array of the names of properties that have different values for the same property
  - getStackTrace() - Get the call stack separated by ">"
  - getStackArray() - Gets the call stack as an array of functions
+ - removeFromArray() - removes items from an array 
+ - getAllArtboards() - Returns all artboards excluding pasteboard items
+ - sleep() - waits the specified amount of time before continuing must use `await sleep()`
+ - getIsGraphicNode() - returns if graphic node
+ - toggleLayerVisibility() - toggles layer visibility
+ - getIsGraphicNodeWithImageFilled() 
+ - getComputedTranslation() - get translated values
+ - isPortrait() - returns if scene node is portrait
+ - isLandscape() - returns true if scene node is landscape
+ - getChildNodes() - get child nodes of a scene node
+ - getIsArtboard() - get is artboard
+ - getIsPasteboardItem() - get is pasteboard item
+ - addStrings() - add strings together separating by delimiter 
+ - indentMultiline() - indents multiple lines
+ - positioning methods: moveTo(), centerLeft(), center(), centerRight(), topLeft(), topCenter(), top(), topRight(), bottomLeft(), bottom(), bottomCenter(), bottomRight(), left(), right(), centerHorizontally(), centerVertically()
+ - sizing methods: anchorToEdges(), anchorToVerticalEdges(), anchorToHorizontalEdges()
+ - getZeroPoint() - returns a zero point object
+ - getBase64FromSceneNode() - get base 64 string from layer
+ - getArrayBufferFromSceneNode() - get undecoded PNG array buffer of a layer
+ - getTempImageFromSceneNode() - get file reference of exported layer to PNG
+ - getBase64ArrayBuffer() - get base 64 array buffer of layer
  - XDConstants - Contains constants for commonly used names including XD classes, line breaks, image types and platform name
  - DebugSettings - Class that sets options for the log function utilities
  - DebugSettings.logFunctionName - When enabled shows the current function name when log is called or changes
@@ -36,4 +57,4 @@ The log file utilities are a set of methods and constants that have been helpful
  
  To use add the following line to your plugins main.js: 
  
-    const {log, object, getArtboard, getBoundsInParent, getClassName, getFunctionName, getStackTrace, getChangedProperties, DebugSettings} = require("./log");
+    const {log, getTime, getBase64FromSceneNode, getArrayBufferFromSceneNode, getIsArtboard, sleep, centerHorizontally, centerVertically, getAllArtboards, getTempImageFromSceneNode, getIsGraphicNode, getIsGraphicNodeWithImageFill, isInEditContext, isDescendantNode, getIsPasteboardItem, isPortrait, isLandscape, isSiblingNode, isChildNode, getChildNodes, object, trim, getPx, getArtboard, addString, addStrings, getShortNumber, getShortString, getClassName, getFunctionName, getStackTrace, logStackTrace, getBoundsInParent, getChangedProperties, deleteProperties, DebugSettings, indentMultiline} = require("./log");
