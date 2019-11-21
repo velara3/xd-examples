@@ -373,6 +373,21 @@ class DebugSettings {
   }
 
   /**
+   * Highlight color
+   **/
+  static get highlightColor () {
+    if (DebugSettings.hasOwnProperty("_highlightColor")===false) {
+      DebugSettings._highlightColor = "#1594E8";
+    }
+
+    return DebugSettings._highlightColor;
+  }
+
+  static set highlightColor (value) {
+    DebugSettings._highlightColor = value;
+  }
+
+  /**
    * Outline form 
    **/
   static get form () {
@@ -392,26 +407,6 @@ class DebugSettings {
 
   static set excludeForm (value) {
     DebugSettings._excludeForm = value;
-  }
-
-  /**
-   * Highlights the component. Set outline to false to not highlight
-   * @param {Object} component 
-   * @param {Boolean} outline 
-   * @param {String} color 
-   **/
-  static highlight(component, outline = true, color = "red") {
-    if (component==null) return;
-    var style = component.style;
-
-    if ("style" in component && "border" in component.style) {
-      if (outline) {
-        style.border = "1px dashed " + color;
-      }
-      else {
-        style.border = "0px dashed " + color;
-      }
-    }
   }
 
   /**
@@ -445,29 +440,57 @@ class DebugSettings {
   }
 
   /**
+   * Highlights the component. Set outline to false to not highlight
+   * @param {Object} component 
+   * @param {Boolean} outline 
+   * @param {String} color 
+   **/
+  static highlight(component, outline = true, color = null) {
+    if (component==null) return;
+    if (color==null) {
+      color = DebugSettings.highlightColor;
+    }
+
+    var style = component.style;
+
+    if ("style" in component && "outline" in component.style) {
+      
+      if (outline) {
+        style.outline = "1.5px dashed " + color;
+      }
+      else {
+        style.outline = "0px dashed " + color;
+      }
+    }
+  }
+
+  /**
    * Toggle outline of the component
    * @param {Object} component 
    * @param {String} color
    **/
-  static toggleHighlight(component, color = "red") {
+  static toggleHighlight(component, color = null) {
+    if (color==null) {
+      color = DebugSettings.highlightColor;
+    }
 
-    if ("style" in component && "border" in component.style) {
+    if ("style" in component && "outline" in component.style) {
       var style = component.style;
-      var isString = typeof style.border=="string"; 
+      var isString = typeof style.outline=="string"; 
       var borderWidth = 0;
 
       if (isString) {
-        borderWidth = parseInt(style.border);
+        borderWidth = parseFloat(style.outlineWidth);
       }
       else {
-        borderWidth = style.border && style.border.width && style.border.width.top ? style.border.width.top.value : 0 ;
+        borderWidth = style.outline && style.outline.width && style.outline.width.top ? style.outline.width.top.value : 0 ;
       }
 
       if (borderWidth==0 || isNaN(borderWidth)) {
-        style.border = "1px dashed " + color;
+        style.outline = "1.5px dashed " + color;
       }
       else {
-        style.border = "0px dashed " + color;
+        style.outline = "0px dashed " + color;
       }
     }
   }
@@ -475,8 +498,11 @@ class DebugSettings {
   /**
    * Adds or removes an outline on the event target 
    **/
-  static outlineOnFormClickHandler(event, color = "red") {
+  static outlineOnFormClickHandler(event, color = null) {
     var component = event.target;
+    if (color==null) {
+      color = DebugSettings.highlightColor;
+    }
 
     if (((event.ctrlKey || event.metaKey) && event.shiftKey==false)) {
 
@@ -517,6 +543,7 @@ class DebugSettings {
       group.style.top = "0px";
       group.style.gap = "0px";
       group.style.left = "0px";
+      group.style.right = "20px";
       group.style.zIndex = "100";
       group.style.padding = "6px";
       group.style.margin = "8px";
@@ -526,7 +553,9 @@ class DebugSettings {
       group.style.alignItems = "center";
       group.style.display = "flex";
       group.style.fontWeight = "bold";
+      group.style.fontSize = "13px";
       group.style.flex = "1";
+      group.style.minHeight = "40px";
       group.className = "row";
 
       inputName.type = "text";
@@ -584,14 +613,9 @@ class DebugSettings {
       nameLabel.style.textTransform = "uppercase";
       nameLabel.style.display = "inline-block";
 
-      elementIndex.style.position = "absolute";
-      elementIndex.style.right = "2px";
-      elementIndex.style.top = "1px";
-      elementIndex.style.fontSize = "8px";
+      elementIndex.style.fontSize = "9px";
       elementIndex.style.textTransform = "uppercase";
       elementIndex.style.display = "inline-block";
-
-      elementIndex.style.textAlign = "right";
       
       elementIndex.innerHTML = DebugSettings.getPositionOfElement(component);
       nameLabel.innerText = component.nodeName;
