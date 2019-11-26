@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hide Visible Elements</title>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="Hide_Visible_Elements.css"/>
+<script id="applicationScript" type="text/javascript" src="Hide_Visible_Elements.js"></script>
+</head>
+<body>
+<div id="Hide_Visible_Elements">
+	<div id="Hide_Visible_Elements_">
+		<span>Hide Visible Elements </span>
+	</div>
+	<hr class="Line_85" viewBox="0 0 585 1">
+		<path fill="transparent" stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_85" d="M 0 0 L 585 0">
+		</path>
+	</hr>
+	<div id="Elements_below_will_hide_as_yo">
+		<span>Elements below will hide as you shrink the width of the screen</span>
+	</div>
+	<div id="Resize_the_browser_to_see_the_">
+		<span>Resize the browser to see the effects</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries">
+	<div id="https___developer_mozilla_org_">
+		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries</span>
+	</div>
+	</a>
+	<div id="Icon">
+		<div id="Rectangle_177_1">
+		</div>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="Mobile" class="hide-on-tablet hide-on-desktop">
+	<svg style="width:inherit;height:inherit;overflow:visible;">
+		<rect fill="url(#Mobile_2_pattern)" width="100%" height="100%"></rect>
+			<pattern elementId="Mobile_2" id="Mobile_2_pattern" x="0" y="0" width="100%" height="100%">
+				<image x="0" y="0" width="100%" height="100%" href="Mobile_2_pattern.png" xlink:href="Mobile_2_pattern.png"></image>
+			</pattern>
+			</svg>
+		</div>
+	<div id="Tablet" class="hide-on-mobile hide-on-desktop">
+	<svg style="width:inherit;height:inherit;overflow:visible;">
+		<rect fill="url(#Tablet_3_pattern)" width="100%" height="100%"></rect>
+			<pattern elementId="Tablet_3" id="Tablet_3_pattern" x="0" y="0" width="100%" height="100%">
+				<image x="0" y="0" width="100%" height="100%" href="Tablet_3_pattern.png" xlink:href="Tablet_3_pattern.png"></image>
+			</pattern>
+			</svg>
+		</div>
+	<div id="Desktop" class="hide-on-mobile hide-on-tablet">
+	<svg style="width:inherit;height:inherit;overflow:visible;">
+		<rect fill="url(#Desktop_4_pattern)" width="100%" height="100%"></rect>
+			<pattern elementId="Desktop_4" id="Desktop_4_pattern" x="0" y="0" width="100%" height="100%">
+				<image x="0" y="0" width="100%" height="100%" href="Desktop_4_pattern.png" xlink:href="Desktop_4_pattern.png"></image>
+			</pattern>
+			</svg>
+		</div>
+	<div id="HIDE_STYLES">
+		<style>
+
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .display-on-mobile {
+    display: block !important;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .display-on-tablet {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .display-on-desktop {
+    display: block !important;
+  }
+}
+</style>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+.mediaViewInfo {
+	--web-view-name: Vertical Page;
+	--web-view-id: Vertical_Page;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-application: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Vertical_Page;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Vertical_Page {
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	background: #E5E5E5;
+	width: 671px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	--web-view-name: Vertical Page;
+	--web-view-id: Vertical_Page;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-scale-on-resize: true;
+	--web-center-horizontally: true;
+	--web-application: true;
+	--web-enable-deep-linking: true;
+}
+#Group_78 {
+	position: relative;
+	width: 671px;
+	height: 381px;
+	align-self: auto;
+	overflow: visible;
+}
+#Group_1 {
+	position: absolute;
+	width: 671px;
+	height: 381px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#FlexGroup {
+	position: relative;
+	width: 629px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	align-self: auto;
+	overflow: visible;
+}
+#My_summer_vacation_in_the_moun {
+	position: relative;
+	align-self: auto;
+	overflow: visible;
+	width: 576px;
+	height: 41px;
+	text-align: left;
+	font-family: Malayalam Sangam MN;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(34,44,65,1);
+}
+#content {
+	position: relative;
+	align-self: auto;
+	overflow: visible;
+	width: 628px;
+	text-align: justify;
+	font-family: Malayalam Sangam MN;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(34,44,65,1);
+}
+#Button {
+	position: relative;
+	width: 271px;
+	height: 60px;
+	align-self: flex-end;
+	overflow: visible;
+}
+#Rectangle_448 {
+	position: absolute;
+	width: 271px;
+	height: 60px;
+	left: 0px;
+	top: 0px;
+	background-color: rgba(41,101,4,1);
+	border-radius: 8px 8px 8px 8px;
+	border: 0;
+	overflow: hidden;
+}
+#Read_More {
+	position: absolute;
+	left: 84.5px;
+	top: 16.491px;
+	overflow: visible;
+	width: 103px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Malayalam Sangam MN;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	color: rgba(255,255,255,1);
+}
+#Rectangle_454 {
+	position: relative;
+	width: 100%;
+	height: 52px;
+	align-self: auto;
+	background-color: rgba(77,77,77,1);
+	border-radius: 0px 0px 12px 12px;
+	border: 0;
+	overflow: hidden;
+}
+#Add_more_content_on_load {
+	position: relative;
+	align-self: auto;
+	overflow: visible;
+	width: 307px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Malayalam Sangam MN;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	color: rgba(95,90,90,1);
+}
+#Item_gap {
+	position: relative;
+	align-self: auto;
+	overflow: visible;
+	width: 106px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Malayalam Sangam MN;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	color: rgba(95,90,90,1);
+}
