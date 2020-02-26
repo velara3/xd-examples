@@ -1,15 +1,4 @@
-A repository for plugins and plugin utilities for Adobe XD. 
-
-# Statistics plugin
-The Statistics plugin is available on the Adobe XD Plugin Manager. The code is offered here to learn from and start from for your own plugins. 
-
-This shows creating a dialog, showing a list / basic datagrid of data with a scroll bar, walking down the scenegraph and using recursive functions. 
-
-It shows creating a class to store form data and references to UI controls. It also shows creating a static getter and setter. 
-
-The project includes common XD icons, default plugin icons. 
-
-To use, clone the repository locally and copy the *statistics* folder into the XD *develop* folder and reload. 
+A repository for Web Export example projects and plugin utilities for Adobe XD. 
 
 # Web Export Examples
 A set of XD example projects that show how to use features in the Web Export plugin for Adobe XD. You can read more about them here https://discuss.velara3.com/t/web-export-example-projects/132.
@@ -53,11 +42,19 @@ The log file utilities are a set of methods and constants that have been helpful
  - DebugSettings.suppressLogMessages - When enabled suppresses any messages from the log method
  - DebugSettings.outlineOnFormClickHandler - When enabled pressing a meta key and clicking on a dialog adds an outline around that element and lets you get and set styles and properties. 
  
- 
  Video https://youtu.be/qPdm3tSe4BU
 
-
- 
  To use add the following line to your plugins main.js: 
  
     const {log, getTime, getBase64FromSceneNode, getArrayBufferFromSceneNode, getIsArtboard, sleep, centerHorizontally, centerVertically, getAllArtboards, getTempImageFromSceneNode, getIsGraphicNode, getIsGraphicNodeWithImageFill, isInEditContext, isDescendantNode, getIsPasteboardItem, isPortrait, isLandscape, isSiblingNode, isChildNode, getChildNodes, object, trim, getPx, getArtboard, addString, addStrings, getShortNumber, getShortString, getClassName, getFunctionName, getStackTrace, logStackTrace, getBoundsInParent, getChangedProperties, deleteProperties, DebugSettings, indentMultiline} = require("./log");
+
+# Statistics plugin
+The Statistics plugin is available on the Adobe XD Plugin Manager. The code is offered here to learn from and start from for your own plugins. 
+
+This shows creating a dialog, showing a list / basic datagrid of data with a scroll bar, walking down the scenegraph and using recursive functions. 
+
+It shows creating a class to store form data and references to UI controls. It also shows creating a static getter and setter. 
+
+The project includes common XD icons, default plugin icons. 
+
+To use, clone the repository locally and copy the *statistics* folder into the XD *develop* folder and reload. 
