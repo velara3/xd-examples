@@ -1,0 +1,15 @@
+
+
+{
+    "compilerOptions": {
+        "debug": false,
+        "source-map": true,
+        "html-template": "src/template.html",
+        "theme": "${royalelib}/themes/JewelTheme/src/main/resources/defaults.css"
+    },
+    "copySourcePathAssets": true,
+    "files":
+    [
+        "src/HelloWorld.mxml"
+    ]
+}
