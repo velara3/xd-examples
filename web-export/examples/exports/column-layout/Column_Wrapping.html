@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Column Wrapping</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Column Wrapping;
+		--web-view-id: Column_Wrapping;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Column_Wrapping;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Column_Wrapping {
+		position: absolute;
+		width: 700px;
+		height: 512px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Column Wrapping;
+		--web-view-id: Column_Wrapping;
+		--web-enable-deep-linking: true;
+	}
+	#Line_83 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_83 {
+		overflow: visible;
+		position: absolute;
+		width: 660px;
+		height: 1px;
+		left: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_88 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_88 {
+		overflow: visible;
+		position: absolute;
+		width: 608.5px;
+		height: 1px;
+		left: 20px;
+		top: 108.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Column_Wrapping_gp {
+		left: 50px;
+		top: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 172px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Group_85 {
+		position: absolute;
+		width: 44px;
+		height: 159px;
+		left: 21px;
+		top: 123px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		overflow: visible;
+	}
+	#Home {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 31px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Products {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Services {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 43px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#About {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 31px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Contact {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 40px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#ADD_OUTLINE_AROUND_GROUP {
+		left: 494px;
+		top: 422px;
+		position: absolute;
+		overflow: visible;
+		width: 180px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#PADDING_TO_ITEMS {
+		left: 562px;
+		top: 449px;
+		position: absolute;
+		overflow: visible;
+		width: 112px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#No_wrap_visible {
+		left: 20px;
+		top: 85px;
+		position: absolute;
+		overflow: visible;
+		width: 90px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_86 {
+		position: absolute;
+		width: 64px;
+		height: 199px;
+		left: 331px;
+		top: 123px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		overflow: visible;
+	}
+	#ID1Home {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 43px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID2Products {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 59px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID3Services {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 57px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID4About {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 43px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID6Contact {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID5Subscribe {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 65px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_101 {
+		position: absolute;
+		width: 64px;
+		height: 199px;
+		left: 558px;
+		top: 123px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap-reverse;
+		overflow: visible;
+	}
+	#ID1Home_g {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 43px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID2Products_g {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 59px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID3Services_g {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 57px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID4About_ha {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 43px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID6Contact_hb {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#ID5Subscribe_hc {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 65px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Wrap {
+		left: 331px;
+		top: 85px;
+		position: absolute;
+		overflow: visible;
+		width: 29px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Wrap_Reverse {
+		left: 548px;
+		top: 85px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_92 {
+		position: absolute;
+		width: 48px;
+		height: 158px;
+		left: 166px;
+		top: 123px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		overflow: hidden;
+	}
+	#Home_hg {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Products_hh {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Services_hi {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#About_hj {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Contact_hk {
+		position: relative;
+		align-self: auto;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#No_wrap_hidden {
+		left: 151px;
+		top: 85px;
+		position: absolute;
+		overflow: visible;
+		width: 93px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd {
+		left: 20px;
+		top: 453px;
+		position: absolute;
+		overflow: visible;
+		width: 266px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd_hn {
+		left: 20px;
+		top: 473px;
+		position: absolute;
+		overflow: visible;
+		width: 293px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#RESIZE_HEIGHT_TRANSITION {
+		left: 511px;
+		top: 476px;
+		position: absolute;
+		overflow: visible;
+		width: 163px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#When_the_height_is_reduced_the {
+		left: 21px;
+		top: 363px;
+		position: absolute;
+		overflow: visible;
+		width: 503px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_hs {
+		fill: url(#Rectangle_177_hs);
+	}
+	.Rectangle_177_hs {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME {
+		left: 450px;
+		top: 392px;
+		position: absolute;
+		overflow: visible;
+		width: 228px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+</style>
+</head>
+<body>
+<div id="Column_Wrapping">
+	<svg class="Line_83" viewBox="0 0 660 1">
+		<path id="Line_83" d="M 0 0 L 660 0">
+		</path>
+	</svg>
+	<svg class="Line_88" viewBox="0 0 608.5 1">
+		<path id="Line_88" d="M 0 0 L 608.5 0">
+		</path>
+	</svg>
+	<div id="Column_Wrapping_gp">
+		<span>Column Wrapping</span>
+	</div>
+	<div id="Group_85" class="group">
+		<div id="Home">
+			<span>Home</span>
+		</div>
+		<div id="Products">
+			<span>Products</span>
+		</div>
+		<div id="Services">
+			<span>Services</span>
+		</div>
+		<div id="About">
+			<span>About</span>
+		</div>
+		<div id="Contact">
+			<span>Contact</span>
+		</div>
+	</div>
+	<style>
+/* add outline around group */
+.group {
+   outline: 1px solid rgba(0,0,0,.2);
+}
+
+/* add padding to right of each group item */
+.group > div {
+   padding-right: 2px;
+}
+</style>
+
+	<style>
+/* add padding to right of each group item */
+.menu > div {
+   padding-right: 2px;
+}
+</style>
+
+	<div id="No_wrap_visible">
+		<span>No wrap (visible)</span>
+	</div>
+	<div id="Group_86" class="group">
+		<div id="ID1Home">
+			<span>1.Home</span>
+		</div>
+		<div id="ID2Products">
+			<span>2.Products</span>
+		</div>
+		<div id="ID3Services">
+			<span>3.Services</span>
+		</div>
+		<div id="ID4About">
+			<span>4.About</span>
+		</div>
+		<div id="ID6Contact">
+			<span>6.Contact</span>
+		</div>
+		<div id="ID5Subscribe">
+			<span>5.Subscribe</span>
+		</div>
+	</div>
+	<div id="Group_101" class="group">
+		<div id="ID1Home_g">
+			<span>1.Home</span>
+		</div>
+		<div id="ID2Products_g">
+			<span>2.Products</span>
+		</div>
+		<div id="ID3Services_g">
+			<span>3.Services</span>
+		</div>
+		<div id="ID4About_ha">
+			<span>4.About</span>
+		</div>
+		<div id="ID6Contact_hb">
+			<span>6.Contact</span>
+		</div>
+		<div id="ID5Subscribe_hc">
+			<span>5.Subscribe</span>
+		</div>
+	</div>
+	<div id="Wrap">
+		<span>Wrap</span>
+	</div>
+	<div id="Wrap_Reverse">
+		<span>Wrap Reverse</span>
+	</div>
+	<div id="Group_92" class="group">
+		<div id="Home_hg">
+			<span>Home</span>
+		</div>
+		<div id="Products_hh">
+			<span>Products</span>
+		</div>
+		<div id="Services_hi">
+			<span>Services</span>
+		</div>
+		<div id="About_hj">
+			<span>About</span>
+		</div>
+		<div id="Contact_hk">
+			<span>Contact</span>
+		</div>
+	</div>
+	<div id="No_wrap_hidden">
+		<span>No wrap (hidden)</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Glossary/Flexbox</span>
+	</div>
+	</a>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">
+	<div id="httpsdevelopermozillaorgen-USd_hn">
+		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction</span>
+	</div>
+	</a>
+	<style>
+/* add animation to class  */
+.group, .group2 {
+	animation: resize 6000ms linear 0s infinite;
+}
+
+/* size width transition */
+@keyframes resize {
+	0% {
+		height: 42%;
+	}
+	37.5% {
+		height: 42%;
+	}
+	50% {
+		height: 10%;
+	}
+	87.5% {
+		height: 10%;
+	}
+	100% {
+		height: 42%;
+	}
+}
+</style>
+
+	<div id="When_the_height_is_reduced_the">
+		<span>When the height is reduced the columns will wrap their contents according to the wrap setting</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_hs">
+			<linearGradient id="Rectangle_177_hs" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_hs" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME">
+		<style>
+
+*:hover {
+    background: rgba(59, 143, 220, .20);
+    cursor: pointer;
+    outline: 1px dashed rgba(59, 143, 220, .40);
+}
+
+</style>
+	</div>
+</div>
+</body>
+</html>

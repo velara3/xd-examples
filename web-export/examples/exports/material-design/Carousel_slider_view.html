@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <title>Carousel slider view</title>
+      <style id="applicationStylesheet" type="text/css">
+      .fillContainer {
+         width:100%;
+         height:100%;
+         position:absolute;
+      }
+      	.mediaViewInfo {
+      		--web-view-name: Carousel slider view;
+      		--web-view-id: Carousel_slider_view;
+      		--web-refresh-for-changes: true;
+      		--web-enable-deep-linking: true;
+      	}
+      	:root {
+      		--web-view-ids: Carousel_slider_view;
+      	}
+      	* {
+      		margin: 0;
+      		padding: 0;
+      		box-sizing: border-box;
+      		border: none;
+      	}
+      	#Carousel_slider_view {
+      		position: absolute;
+      		width: 600px;
+      		height: 661px;
+      		background-color: rgba(255,255,255,1);
+      		overflow: hidden;
+      		--web-view-name: Carousel slider view;
+      		--web-view-id: Carousel_slider_view;
+      		--web-refresh-for-changes: true;
+      		--web-enable-deep-linking: true;
+      	}
+      	#Form {
+      		position: absolute;
+      		width: 440px;
+      		height: 240px;
+      		left: 22px;
+      		top: 122px;
+      		overflow: hidden;
+      	}
+      	#Slide_1 {
+      		position: absolute;
+      		width: 440px;
+      		height: 240px;
+      		left: 0px;
+      		top: 0px;
+      		overflow: visible;
+      	}
+      	#Rectangle_455 {
+      		fill: rgba(221,130,165,1);
+      	}
+      	.Rectangle_455 {
+      		position: absolute;
+      		overflow: visible;
+      		width: 440px;
+      		height: 240px;
+      		left: 0px;
+      		top: 0px;
+      	}
+      	#View_1_text {
+      		left: 196.5px;
+      		top: 111px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 48px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 16px;
+      		color: rgba(239,239,239,1);
+      	}
+      	#Slide_2 {
+      		position: absolute;
+      		width: 440px;
+      		height: 240px;
+      		left: 0px;
+      		top: 0px;
+      		overflow: visible;
+      	}
+      	#Rectangle_455_gx {
+      		fill: rgba(42,187,173,1);
+      	}
+      	.Rectangle_455_gx {
+      		position: absolute;
+      		overflow: visible;
+      		width: 440px;
+      		height: 240px;
+      		left: 0px;
+      		top: 0px;
+      	}
+      	#View_2_text {
+      		left: 196.5px;
+      		top: 111px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 48px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 16px;
+      		color: rgba(255,255,255,1);
+      	}
+      	#Slide_3 {
+      		position: absolute;
+      		width: 440px;
+      		height: 240px;
+      		left: 0px;
+      		top: 0px;
+      		overflow: visible;
+      	}
+      	#Rectangle_455_g {
+      		fill: rgba(255,241,67,1);
+      	}
+      	.Rectangle_455_g {
+      		position: absolute;
+      		overflow: visible;
+      		width: 440px;
+      		height: 240px;
+      		left: 0px;
+      		top: 0px;
+      	}
+      	#View_2_text_g {
+      		left: 196.5px;
+      		top: 111px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 48px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 16px;
+      		color: rgba(82,82,82,1);
+      	}
+      	#Carousel_slide_view {
+      		left: 50px;
+      		top: 21px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 187px;
+      		white-space: nowrap;
+      		line-height: 56px;
+      		margin-top: -18px;
+      		text-align: left;
+      		font-family: Arial;
+      		font-style: normal;
+      		font-weight: bold;
+      		font-size: 20px;
+      		color: rgba(93,93,93,1);
+      	}
+      	#A_slider_showing_a_slider_with {
+      		left: 22px;
+      		top: 84px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 196px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 10px;
+      		color: rgba(112,112,112,1);
+      	}
+      	#The_element_below_defines_a_ca {
+      		left: 402px;
+      		top: 34px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 178px;
+      		white-space: nowrap;
+      		text-align: right;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 10.5px;
+      		color: rgba(112,112,112,1);
+      	}
+      	#Line_93 {
+      		fill: transparent;
+      		stroke: rgba(177,177,177,1);
+      		stroke-width: 1px;
+      		stroke-linejoin: miter;
+      		stroke-linecap: butt;
+      		stroke-miterlimit: 4;
+      		shape-rendering: auto;
+      	}
+      	.Line_93 {
+      		overflow: visible;
+      		position: absolute;
+      		width: 560px;
+      		height: 1px;
+      		left: 20px;
+      		top: 53.74px;
+      		transform: matrix(1,0,0,1,0,0);
+      	}
+      	#httpsmaterializecsscomcarousel {
+      		left: 22px;
+      		top: 628px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 219px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 12px;
+      		color: rgba(112,112,112,1);
+      	}
+      	#httpsmaterializecsscomgetting- {
+      		left: 22px;
+      		top: 606px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 253px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 12px;
+      		color: rgba(112,112,112,1);
+      	}
+      	#httpsmaterializecsscom {
+      		left: 22px;
+      		top: 584px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 143px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 12px;
+      		color: rgba(112,112,112,1);
+      	}
+      	#Icon {
+      		position: absolute;
+      		width: 24px;
+      		height: 24px;
+      		left: 20px;
+      		top: 20px;
+      		overflow: visible;
+      	}
+      	#Rectangle_177_hb {
+      		fill: url(#Rectangle_177_hb);
+      	}
+      	.Rectangle_177_hb {
+      		position: absolute;
+      		overflow: visible;
+      		width: 24px;
+      		height: 24px;
+      		left: 0px;
+      		top: 0px;
+      	}
+      	#W {
+      		left: 50%;
+      		transform: translateX(-50%) translateY(-50%);
+      		top: 50%;
+      		position: absolute;
+      		overflow: visible;
+      		width: 10px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica;
+      		font-style: normal;
+      		font-weight: bold;
+      		font-size: 10px;
+      		color: rgba(255,255,255,1);
+      	}
+      </style>
+      <script id="applicationScript" type="text/javascript" src="Carousel_slider_view.js"></script>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+      <div id="Carousel_slider_view">
+      	<div id="Form" class="carousel carousel-slider">
+      		<div id="Slide_1" class="carousel-item">
+      			<svg class="Rectangle_455">
+      				<rect id="Rectangle_455" rx="0" ry="0" x="0" y="0" width="440" height="240">
+      				</rect>
+      			</svg>
+      			<div id="View_1_text">
+      				<span>View 1</span>
+      			</div>
+      		</div>
+      		<div id="Slide_2" class="carousel-item">
+      			<svg class="Rectangle_455_gx">
+      				<rect id="Rectangle_455_gx" rx="0" ry="0" x="0" y="0" width="440" height="240">
+      				</rect>
+      			</svg>
+      			<div id="View_2_text">
+      				<span>View 2</span>
+      			</div>
+      		</div>
+      		<div id="Slide_3" class="carousel-item">
+      			<svg class="Rectangle_455_g">
+      				<rect id="Rectangle_455_g" rx="0" ry="0" x="0" y="0" width="440" height="240">
+      				</rect>
+      			</svg>
+      			<div id="View_2_text_g">
+      				<span>View 3</span>
+      			</div>
+      		</div>
+      	</div>
+      	<div id="Carousel_slide_view">
+      		<span>Carousel slide view</span>
+      	</div>
+      	<div id="A_slider_showing_a_slider_with">
+      		<span>A slider showing a slider with existing views</span>
+      	</div>
+      	<div id="The_element_below_defines_a_ca">
+      		<span>The element below defines a carousel</span>
+      	</div>
+      	<svg class="Line_93" viewBox="0 0 560 1">
+      		<path id="Line_93" d="M 0 0 L 560 0">
+      		</path>
+      	</svg>
+      	<a href="https://materializecss.com/carousel.html">
+      	<div id="httpsmaterializecsscomcarousel">
+      		<span>https://materializecss.com/carousel.html</span>
+      	</div>
+      	</a>
+      	<a href="https://materializecss.com/getting-started.html">
+      	<div id="httpsmaterializecsscomgetting-">
+      		<span>https://materializecss.com/getting-started.html</span>
+      	</div>
+      	</a>
+      	<a href="https://materializecss.com">
+      	<div id="httpsmaterializecsscom">
+      		<span>https://materializecss.com</span>
+      	</div>
+      	</a>
+      	<div id="Icon">
+      		<svg class="Rectangle_177_hb">
+      			<linearGradient id="Rectangle_177_hb" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+      				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+      				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+      			</linearGradient>
+      			<rect id="Rectangle_177_hb" rx="3" ry="3" x="0" y="0" width="24" height="24">
+      			</rect>
+      		</svg>
+      		<div id="W">
+      			<span>W</span>
+      		</div>
+      	</div>
+      </div>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

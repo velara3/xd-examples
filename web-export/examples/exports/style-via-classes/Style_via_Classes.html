@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style via Classes</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Style via Classes;
+		--web-view-id: Style_via_Classes;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Style_via_Classes;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	.Style_via_Classes_Class {
+		position: absolute;
+		width: 917px;
+		height: 418px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Style via Classes;
+		--web-view-id: Style_via_Classes;
+		--web-enable-deep-linking: true;
+	}
+	.Ellipse_1_Class {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 139px;
+		height: 139px;
+		left: 32px;
+		top: 140px;
+	}
+	.Hello_World_Class {
+		left: 44.5px;
+		top: 99px;
+		position: absolute;
+		overflow: visible;
+		width: 104px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	.Style_via_Classes_i_Class {
+		left: 50px;
+		top: 20px;
+		position: absolute;
+		overflow: visible;
+		width: 161px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(112,112,112,1);
+	}
+	.Line_85_Class {
+		opacity: 0.486;
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		width: 876.502px;
+		height: 3px;
+		left: 20px;
+		top: 54.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.The_page_has_style_via_classes_Class {
+		left: 756px;
+		top: 34px;
+		position: absolute;
+		overflow: visible;
+		width: 143px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	.Icon_Class {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	.Rectangle_177_n_Class {
+		fill: url(#Rectangle_177_n);
+	}
+	.Rectangle_177_n {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	.W_Class {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+</style>
+</head>
+<body>
+<div id="Style_via_Classes" class="Style_via_Classes_Class">
+	<svg class="Ellipse_1">
+		<ellipse class="Ellipse_1_Class" rx="69.5" ry="69.5" cx="69.5" cy="69.5">
+		</ellipse>
+	</svg>
+	<div class="Hello_World_Class">
+		<span>Hello World</span>
+	</div>
+	<div class="Style_via_Classes_i_Class">
+		<span>Style via Classes</span>
+	</div>
+	<svg class="Line_85" viewBox="0 0 876.5 2">
+		<path class="Line_85_Class" d="M 0 2 L 876.5 0">
+		</path>
+	</svg>
+	<div class="The_page_has_style_via_classes_Class">
+		<span>The page has style via classes</span>
+	</div>
+	<div class="Icon_Class">
+		<svg class="Rectangle_177_n">
+			<linearGradient id="Rectangle_177_n" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect class="Rectangle_177_n_Class" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div class="W_Class">
+			<span>W</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

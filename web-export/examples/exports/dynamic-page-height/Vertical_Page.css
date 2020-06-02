@@ -5,7 +5,6 @@
 	--web-scale-to-fit-type: width;
 	--web-scale-on-resize: true;
 	--web-center-horizontally: true;
-	--web-application: true;
 	--web-enable-deep-linking: true;
 }
 :root {
@@ -21,7 +20,6 @@
 	position: absolute;
 	transform: translateX(-50%);
 	left: 50%;
-	background: #E5E5E5;
 	width: 671px;
 	background-color: rgba(255,255,255,1);
 	overflow: hidden;
@@ -36,7 +34,6 @@
 	--web-scale-to-fit-type: width;
 	--web-scale-on-resize: true;
 	--web-center-horizontally: true;
-	--web-application: true;
 	--web-enable-deep-linking: true;
 }
 #Group_78 {
@@ -97,21 +94,18 @@
 	align-self: flex-end;
 	overflow: visible;
 }
-#Rectangle_448 {
+.Rectangle_448 {
 	position: absolute;
+	overflow: visible;
 	width: 271px;
 	height: 60px;
 	left: 0px;
 	top: 0px;
-	background-color: rgba(41,101,4,1);
-	border-radius: 8px 8px 8px 8px;
-	border: 0;
-	overflow: hidden;
 }
 #Read_More {
-	position: absolute;
 	left: 84.5px;
 	top: 16.491px;
+	position: absolute;
 	overflow: visible;
 	width: 103px;
 	white-space: nowrap;
@@ -122,39 +116,36 @@
 	font-size: 22px;
 	color: rgba(255,255,255,1);
 }
-#Rectangle_454 {
+.Rectangle_454 {
 	position: relative;
+	overflow: hidden;
 	width: 100%;
 	height: 52px;
 	align-self: auto;
-	background-color: rgba(77,77,77,1);
-	border-radius: 0px 0px 12px 12px;
-	border: 0;
-	overflow: hidden;
 }
-#Add_more_content_on_load {
+#ADD_MORE_CONTENT_ON_LOAD {
 	position: relative;
 	align-self: auto;
 	overflow: visible;
-	width: 307px;
+	width: 306px;
 	white-space: nowrap;
 	text-align: left;
-	font-family: Malayalam Sangam MN;
+	font-family: Helvetica;
 	font-style: normal;
-	font-weight: bold;
-	font-size: 28px;
+	font-weight: normal;
+	font-size: 20px;
 	color: rgba(95,90,90,1);
 }
-#Item_gap {
+#ITEM_GAP {
 	position: relative;
 	align-self: auto;
 	overflow: visible;
-	width: 106px;
+	width: 97px;
 	white-space: nowrap;
 	text-align: left;
-	font-family: Malayalam Sangam MN;
+	font-family: Helvetica;
 	font-style: normal;
-	font-weight: bold;
-	font-size: 28px;
+	font-weight: normal;
+	font-size: 20px;
 	color: rgba(95,90,90,1);
 }

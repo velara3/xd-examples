@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Order</title>
+<style id="applicationStylesheet" type="text/css">
+:root {
+	--web-view-ids: Coffee_Order,Side_Nav,Recipes,Add,Recipe_Side_Nav;
+	--web-view-name: Coffee Order;
+	--web-view-id: Coffee_Order;
+	--web-scale-to-fit: false;
+	--web-scale-to-fit-type: default;
+	--web-enable-scale-up: false;
+	--web-scale-on-resize: true;
+	--web-show-scale-controls: false;
+	--web-scale-on-double-click: false;
+	--web-center-horizontally: false;
+	--web-center-vertically: false;
+	--web-actual-size-on-double-click: false;
+	--web-navigate-on-keypress: false;
+	--web-refresh-for-changes: false;
+	--web-add-image-compare: false;
+	--web-show-by-media-query: false;
+	--web-application: true;
+	--web-show-navigation-controls: false;
+	--web-enable-deep-linking: true;
+	--web-is-overlay: false;
+}
+#Coffee_Order,
+#Side_Nav,
+#Recipes,
+#Add,
+#Recipe_Side_Nav {
+	display: none;
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Coffee Order;
+		--web-view-id: Coffee_Order;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Coffee_Order {
+		display: block;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Coffee Order;
+		--web-view-id: Coffee_Order;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	#Coffee_Bean {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 117px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Side Nav;
+		--web-view-id: Side_Nav;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Coffee_Bean_ {
+		left: 6px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 117px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Home {
+		left: 9px;
+		top: 41px;
+		position: absolute;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#About {
+		left: 9px;
+		top: 72px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Divider {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Divider {
+		overflow: visible;
+		position: absolute;
+		width: 101px;
+		height: 1px;
+		left: 9.5px;
+		top: 104.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Contact {
+		left: 9px;
+		top: 115px;
+		position: absolute;
+		overflow: visible;
+		width: 70px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Recipes;
+		--web-view-id: Recipes;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Menu_Items {
+		left: 183px;
+		top: 8px;
+		position: absolute;
+		overflow: visible;
+		width: 84px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -6px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Add;
+		--web-view-id: Add;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Group_1_bm {
+		position: absolute;
+		width: 465px;
+		height: 35px;
+		left: 20px;
+		top: 12px;
+		overflow: visible;
+	}
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Recipe Side Nav;
+		--web-view-id: Recipe_Side_Nav;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Recipe_Container {
+		position: absolute;
+		width: 505px;
+		height: 170px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#New_Recipe {
+		left: 6px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 113px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Divider_bv {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Divider_bv {
+		overflow: visible;
+		position: absolute;
+		width: 101px;
+		height: 1px;
+		left: 9.5px;
+		top: 38.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Name_Input {
+		left: 9px;
+		top: 51px;
+		position: absolute;
+		overflow: visible;
+		width: 104px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Ingredients {
+		left: 9px;
+		top: 80px;
+		position: absolute;
+		overflow: visible;
+		width: 99px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Add_Group {
+		position: absolute;
+		width: 35px;
+		height: 22px;
+		left: 9px;
+		top: 125px;
+		overflow: visible;
+	}
+	#Add_bz {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 36px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+}
+
+</style>
+
+  <!-- materialize icons, css & js -->
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+<link rel="manifest" href="/manifest.json">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+  <meta name="theme-color" content="#FFE1C4">
+
+</head>
+<body class="grey lighten-4">
+<div id="Coffee_Order">
+	<!-- top nav -->
+	<nav class="z-depth-0">
+		<div class="nav-wrapper container">
+			<a href="/">
+			<span>Coffee Bean</span>
+		
+		</a>
+			<span class="right grey-text text-darken-1">
+				<i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+			</span>
+		</div>
+	</nav>
+</div>
+<div id="Side_Nav" class="grey lighten-4">
+	<!-- top nav -->
+	<ul id="side-menu" class="sidenav side-menu">
+		<li>
+			<a class="subheader">Coffee Bean</a>
+		</li>
+		<li>
+			<a class="waves-effect" href="/">Home</a>
+		</li>
+		<li>
+			<a class="waves-effect" href="/pages/about.html">About</a>
+		</li>
+		<li>
+			<div class="divider">
+			</div>
+		</li>
+		<li>
+			    <a href="/pages/contact.html" class="waves-effect">
+      <i class="material-icons">mail_outline</i>Contact
+    </a>
+    
+		</li>
+	</ul>
+</div>
+<div id="Recipes" class="recipes container grey-text text-darken-1">
+	<h6 class="center">
+		Menu Items
+	</h6>
+</div>
+<div id="Add" class="container grey-text text-darken-1">
+	<div class="center">
+		<a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
+			<i class="material-icons">add</i>
+		</a>
+	</div>
+</div>
+<div id="Recipe_Side_Nav" class="grey lighten-4">
+	<!-- top nav -->
+	<div id="side-form" class="sidenav side-form">
+		<form class="add-recipe container section">
+			<h6>
+				New Recipe
+			</h6>
+			
+				<div class="divider">
+				</div>
+			
+			<div class="input-field">
+				    <input placeholder="Coffee Type" id="title" type="text" class="validate">
+    <label for="title">Coffee Title</label>
+			</div>
+			<div class="input-field">
+				    <input placeholder="Ingredients" id="ingredients" type="text" class="validate">
+    <label for="ingredients">Ingredients</label>
+			</div>
+			<div class="input-field center">
+				<button class="btn-small">
+					Add
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<style>
+#Coffee_Order,#Side_Nav,#Recipes,#Add,#Recipe_Side_Nav {
+     display: block;
+}
+</style>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUrGte99fzVzPLkYyCMwKLUj44xi9WBAo",
+    authDomain: "webexport-a4558.firebaseapp.com",
+    databaseURL: "https://webexport-a4558.firebaseio.com",
+    projectId: "webexport-a4558",
+    storageBucket: "webexport-a4558.appspot.com",
+    messagingSenderId: "7257624656",
+    appId: "1:7257624656:web:de40cc10b8f3cf15e8c155"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/data.js"></script>
+  <script type="text/javascript" src="/js/ui.js"></script>
+</body>
+</html>

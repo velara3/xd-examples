@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Attributes</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Event Attributes;
+		--web-view-id: Event_Attributes;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: Event_Attributes;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Event_Attributes {
+		position: absolute;
+		width: 782px;
+		height: 325px;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Event Attributes;
+		--web-view-id: Event_Attributes;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	#Rectangle_1 {
+		fill: rgba(98,164,255,1);
+	}
+	.Rectangle_1 {
+		position: absolute;
+		overflow: visible;
+		width: 73px;
+		height: 56px;
+		left: 20px;
+		top: 101px;
+		cursor: pointer;
+	}
+	#Click_the_box {
+		left: 20px;
+		top: 81px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Adding_a_Click_Attribute {
+		left: 50px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 227px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		width: 722.269px;
+		height: 1px;
+		left: 22.231px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#The_element_below_has_an_oncli {
+		left: 510px;
+		top: 34px;
+		position: absolute;
+		overflow: visible;
+		width: 235px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#The_onclick_attribute_is_added {
+		left: 20px;
+		top: 186px;
+		position: absolute;
+		overflow: visible;
+		width: 340px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Note_Javascript_must_be_enable {
+		left: 20px;
+		top: 259px;
+		position: absolute;
+		overflow: visible;
+		width: 357px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd {
+		left: 20px;
+		top: 289px;
+		position: absolute;
+		overflow: visible;
+		width: 412px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_bp {
+		fill: url(#Rectangle_177_bp);
+	}
+	.Rectangle_177_bp {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="Event_Attributes.js"></script>
+</head>
+<body>
+<div id="Event_Attributes">
+	<svg class="Rectangle_1" onclick="alert('hello world')">
+		<rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="73" height="56">
+		</rect>
+	</svg>
+	<div id="Click_the_box">
+		<span>Click the box</span>
+	</div>
+	<div id="Adding_a_Click_Attribute">
+		<span>Adding a Click Attribute</span>
+	</div>
+	<svg class="Line_85" viewBox="0 0 722.269 1">
+		<path id="Line_85" d="M 0 0 L 722.2686767578125 0">
+		</path>
+	</svg>
+	<div id="The_element_below_has_an_oncli">
+		<span>The element below has an onclick attribute added</span>
+	</div>
+	<div id="The_onclick_attribute_is_added">
+		<span>The onclick attribute is added to the rectangle above. <br/>You can show a message when the user clicks on the rectangle</span>
+	</div>
+	<div id="Note_Javascript_must_be_enable">
+		<span>Note: Javascript must be enabled in your browser to see this event</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers</span>
+	</div>
+	</a>
+	<div id="Icon">
+		<svg class="Rectangle_177_bp">
+			<linearGradient id="Rectangle_177_bp" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_bp" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

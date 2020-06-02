@@ -1,0 +1,413 @@
+.mediaViewInfo {
+	--web-view-name: List;
+	--web-view-id: List;
+	--web-enable-deep-linking: true;
+	--web-page-font: sans-serif;
+}
+:root {
+	--web-view-ids: List;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#List {
+	position: absolute;
+	width: 782px;
+	height: 575px;
+	font-family: sans-serif;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: List;
+	--web-view-id: List;
+	--web-enable-deep-linking: true;
+	--web-page-font: sans-serif;
+}
+#List_via_Repeat_Grid {
+	left: 50px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 188px;
+	white-space: nowrap;
+	line-height: 56px;
+	margin-top: -18px;
+	text-align: left;
+	font-family: Arial, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	color: rgba(93,93,93,1);
+	letter-spacing: -0.03px;
+}
+.Line_85 {
+	overflow: visible;
+	position: absolute;
+	width: 722.269px;
+	height: 1px;
+	left: 22.231px;
+	top: 53.74px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#The_elements_below_have_an_add {
+	left: 481px;
+	top: 34px;
+	position: absolute;
+	overflow: visible;
+	width: 264px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10.5px;
+	color: rgba(112,112,112,1);
+}
+#httpsdevelopermozillaorgen-USd {
+	left: 20px;
+	top: 522px;
+	position: absolute;
+	overflow: visible;
+	width: 290px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	color: rgba(112,112,112,1);
+}
+#httpsdevelopermozillaorgen-USd_p {
+	left: 20px;
+	top: 500px;
+	position: absolute;
+	overflow: visible;
+	width: 286px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	color: rgba(112,112,112,1);
+}
+#httpsdevelopermozillaorgen-USd_q {
+	left: 20px;
+	top: 544px;
+	position: absolute;
+	overflow: visible;
+	width: 290px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	color: rgba(112,112,112,1);
+}
+#Icon {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 20px;
+	top: 20px;
+	overflow: visible;
+}
+.Rectangle_177_t {
+	position: absolute;
+	overflow: visible;
+	width: 24px;
+	height: 24px;
+	left: 0px;
+	top: 0px;
+}
+#W {
+	left: 50%;
+	transform: translateX(-50%);
+	top: 7.5px;
+	position: absolute;
+	overflow: visible;
+	width: 10px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 10px;
+	color: rgba(255,255,255,1);
+}
+#Unordered_list_in_Repeat_Grid {
+	left: 33px;
+	top: 81px;
+	position: absolute;
+	overflow: visible;
+	width: 183px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Ordered_list_in_Repeat_Grid {
+	left: 270px;
+	top: 81px;
+	position: absolute;
+	overflow: visible;
+	width: 168px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1 {
+	position: absolute;
+	width: 100px;
+	height: 102px;
+	left: 44px;
+	top: 118px;
+	overflow: visible;
+}
+#Repeat_Grid_1_0 {
+	position: absolute;
+	width: 36px;
+	height: 16px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+#Apple {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_1 {
+	position: absolute;
+	width: 46px;
+	height: 16px;
+	left: 0px;
+	top: 23px;
+	overflow: visible;
+}
+#Grapes {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 47px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_2 {
+	position: absolute;
+	width: 72px;
+	height: 16px;
+	left: 0px;
+	top: 44px;
+	overflow: visible;
+}
+#Honey_Dew {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 73px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_3 {
+	position: absolute;
+	width: 75px;
+	height: 16px;
+	left: 0px;
+	top: 65px;
+	overflow: visible;
+}
+#Watermelon {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 76px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_4 {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	left: 0px;
+	top: 86px;
+	overflow: visible;
+}
+#Cantelope {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2 {
+	position: absolute;
+	width: 100px;
+	height: 102px;
+	left: 283px;
+	top: 118px;
+	overflow: visible;
+}
+#Repeat_Grid_2_0 {
+	position: absolute;
+	width: 36px;
+	height: 16px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+#Apple_ba {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_1 {
+	position: absolute;
+	width: 46px;
+	height: 16px;
+	left: 0px;
+	top: 23px;
+	overflow: visible;
+}
+#Grapes_bc {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 47px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_2 {
+	position: absolute;
+	width: 72px;
+	height: 16px;
+	left: 0px;
+	top: 44px;
+	overflow: visible;
+}
+#Honey_Dew_be {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 73px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_3 {
+	position: absolute;
+	width: 75px;
+	height: 16px;
+	left: 0px;
+	top: 65px;
+	overflow: visible;
+}
+#Watermelon_bg {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 76px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_4 {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	left: 0px;
+	top: 86px;
+	overflow: visible;
+}
+#Cantelope_bi {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+.Line_86 {
+	overflow: visible;
+	position: absolute;
+	width: 712px;
+	height: 1px;
+	left: 32.5px;
+	top: 107.5px;
+	transform: matrix(1,0,0,1,0,0);
+}

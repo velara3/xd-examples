@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masked Items</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Masked Items;
+		--web-view-id: Masked_Items;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: Masked_Items;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Masked_Items {
+		position: absolute;
+		width: 100%;
+		height: 575px;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Masked Items;
+		--web-view-id: Masked_Items;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+		min-width:  650px;
+	}
+	#Masked_Items_g {
+		left: 50px;
+		top: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 132px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 20px;
+		right: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+		border:  .5px solid #b1b1b1;
+	}
+	#Elements_that_are_masked_are_e {
+		right: 28px;
+		top: 34px;
+		position: absolute;
+		overflow: visible;
+		width: 236px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	.Rectangle_177_l {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#Mobile {
+		position: absolute;
+		width: 69px;
+		height: 126px;
+		left: 38px;
+		top: 218px;
+		overflow: visible;
+	}
+	#Tablet {
+		position: absolute;
+		width: 142px;
+		height: 187px;
+		left: 147px;
+		top: 187px;
+		overflow: visible;
+	}
+	#Desktop {
+		position: absolute;
+		width: 350px;
+		height: 211px;
+		left: 315px;
+		top: 175px;
+		overflow: visible;
+	}
+</style>
+</head>
+<body>
+<div id="Masked_Items">
+	<div id="Masked_Items_g">
+		<span>Masked Items</span>
+	</div>
+	<hr class="Line_85" viewBox="0 0 653 1">
+		<path fill="transparent" stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_85" d="M 0 0 L 653 0">
+		</path>
+	</hr>
+	<div id="Elements_that_are_masked_are_e">
+		<span>Elements that are masked are exported as images</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_l">
+			<linearGradient id="Rectangle_177_l" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect fill="url(#Rectangle_177_l)" id="Rectangle_177_l" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<svg style="width:inherit;height:inherit;overflow:visible;">
+		<rect fill="url(#Mobile_q_pattern)" width="100%" height="100%"></rect>
+			<pattern elementId="Mobile_q" id="Mobile_q_pattern" x="0" y="0" width="100%" height="100%">
+				<image x="0" y="0" width="100%" height="100%" href="Mobile_q_pattern.png" xlink:href="Mobile_q_pattern.png"></image>
+			</pattern>
+			<img id="Mobile" src="images/Mobile.png" srcset="images/Mobile.png 1x, images/Mobile@2x.png 2x">
+			</svg>
+	<svg style="width:inherit;height:inherit;overflow:visible;">
+		<rect fill="url(#Tablet_r_pattern)" width="100%" height="100%"></rect>
+			<pattern elementId="Tablet_r" id="Tablet_r_pattern" x="0" y="0" width="100%" height="100%">
+				<image x="0" y="0" width="100%" height="100%" href="Tablet_r_pattern.png" xlink:href="Tablet_r_pattern.png"></image>
+			</pattern>
+			<img id="Tablet" src="images/Tablet.png" srcset="images/Tablet.png 1x, images/Tablet@2x.png 2x">
+			</svg>
+	<svg style="width:inherit;height:inherit;overflow:visible;">
+		<rect fill="url(#Desktop_s_pattern)" width="100%" height="100%"></rect>
+			<pattern elementId="Desktop_s" id="Desktop_s_pattern" x="0" y="0" width="100%" height="100%">
+				<image x="0" y="0" width="100%" height="100%" href="Desktop_s_pattern.png" xlink:href="Desktop_s_pattern.png"></image>
+			</pattern>
+			<img id="Desktop" class="hide-on-mobile hide-on-tablet" src="images/Desktop.png" srcset="images/Desktop.png 1x, images/Desktop@2x.png 2x">
+			</svg>
+</div>
+</body>
+</html>

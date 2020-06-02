@@ -16,6 +16,7 @@ var Application = function() {
 	this.VIEW_CHANGE = "viewChange";
 	this.STATE_NOT_FOUND = "stateNotFound";
 	this.APPLICATION_COMPLETE = "applicationComplete";
+	this.APPLICATION_RESIZE = "applicationResize";
 	this.SIZE_STATE_NAME = "data-is-view-scaled";
 
 	this.lastView = null;
@@ -37,7 +38,10 @@ var Application = function() {
 	this.addedViews = [];
 	this.views = {};
 	this.viewIds = [];
+	this.viewIds = [];
 	this.viewQueries = {};
+	this.overlays = {};
+	this.overlayIds = [];
 	this.numberOfViews = 0;
 	this.verticalPadding = 0;
 	this.horizontalPadding = 0;
@@ -81,6 +85,7 @@ var Application = function() {
 		var view = self.getVisibleView();
 		if (view==null) view = self.getInitialView();
 		self.collectViews();
+		self.collectOverlays();
 		self.collectMediaQueries();
 		self.setViewOptions(view);
 		self.setViewVariables(view);
@@ -125,6 +130,7 @@ var Application = function() {
 		}
 		else if (view) {
 			self.viewScale = self.getViewScaleValue(view);
+			self.centerView(view);
 			self.updateSliderValue(self.viewScale);
 		}
 		else {
@@ -592,6 +598,22 @@ var Application = function() {
 	}
 
 	/**
+	 * Hide overlay
+	 * @param {Object} overlay element to hide
+	 **/
+	self.hideOverlay = function(overlay) {
+		var rule = overlay ? self.mediaQueryDictionary[overlay.id] : null;
+
+		if (rule) {
+			self.disableMediaQuery(rule);
+
+			//if (self.showByMediaQuery) {
+				overlay.style.display = "none";
+			//}
+		}
+	}
+
+	/**
 	 * Show the view by media query. Does not hide current views
 	 * Sets view options by default
 	 * @param {Object} view element to show
@@ -653,14 +675,14 @@ var Application = function() {
 
 	/**
 	 * Show overlay over view
-	 * @param {String} id id of view
+	 * @param {String} id id of view or view reference
 	 * @param {Number} x x location
 	 * @param {Number} y y location
 	 * @param {Event | HTMLElement} event event or html element with styles applied
 	 */
 	self.showOverlay = function(id, x, y, event) {
-		var view = id ? self.getViewById(id) : null;
-		var query = id ? self.mediaQueryDictionary[id] : null;
+		var overlay = id && typeof id === 'string' ? self.getViewById(id) : id ? id : null;
+		var query = overlay ? self.mediaQueryDictionary[overlay.id] : null;
 		var centerHorizontally = false;
 		var centerVertically = false;
 		var display = null;
@@ -670,13 +692,17 @@ var Application = function() {
 			var button = event.currentTarget || event; // can be event or htmlelement
 			var buttonComputedStyles = getComputedStyle(button);
 			var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
-			var targetAnimation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
+			var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
 			var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
 			var actionTarget = self.application ? null : self.getElement(actionTargetValue);
 			var actionTargetStyles = actionTarget ? actionTarget.style : null;
 
 			if (actionTargetStyles) {
-				actionTargetStyles.setProperty("animation", targetAnimation);
+				actionTargetStyles.setProperty("animation", animation);
+			}
+
+			if ("stopImmediatePropagation" in event) {
+				event.stopImmediatePropagation();
 			}
 		}
 		
@@ -685,35 +711,59 @@ var Application = function() {
 			return;
 		}
 
+		// remove any current overlays
+		if (self.currentOverlay) {
+			self.removeOverlay();
+		}
+
 		if (query) {
+			//self.setElementAnimation(overlay, null);
+			//overlay.style.animation = animation;
 			self.enableMediaQuery(query);
+			
+			var display = overlay && overlay.style.display;
+			
+			if (overlay && display=="" || display=="none") {
+				overlay.style.display = "block";
+				self.setViewOptions(overlay);
+			}
+
+			// add animation defined in event target style declaration
+			if (animation && self.supportAnimations) {
+				self.fadeIn(overlay, false, animation);
+			}
 		}
 		else if (id) {
-			if (view==null) {
-				self.log("View not found, '"+ id + "'");
+			if (overlay==null || overlay==false) {
+				self.log("Overlay not found, '"+ id + "'");
 				return;
 			}
 
-			display = window.getComputedStyle(view).getPropertyValue("display");
+			display = window.getComputedStyle(overlay).getPropertyValue("display");
 
 			if (display=="" || display=="none") {
-				view.style.display = "block";
+				overlay.style.display = "block";
+			}
+
+			// add animation defined in event target style declaration
+			if (animation && self.supportAnimations) {
+				self.fadeIn(overlay, false, animation);
 			}
 		}
 
 		// do not set x or y position if centering
-		centerHorizontally = self.getViewPreferenceBoolean(view, self.prefix + "center-horizontally");
-		centerVertically = self.getViewPreferenceBoolean(view, self.prefix + "center-vertically");
+		centerHorizontally = self.getViewPreferenceBoolean(overlay, self.prefix + "center-horizontally", false);
+		centerVertically = self.getViewPreferenceBoolean(overlay, self.prefix + "center-vertically", false);
 
-		if (view && centerHorizontally==false) {
-			view.style.left = x + "px";
+		if (overlay && centerHorizontally==false) {
+			overlay.style.left = x + "px";
 		}
 		
-		if (view && centerVertically==false) {
-			view.style.top = y + "px";
+		if (overlay && centerVertically==false) {
+			overlay.style.top = y + "px";
 		}
 
-		self.currentOverlay = view;
+		self.currentOverlay = overlay;
 	}
 
 	self.goBack = function() {
@@ -725,18 +775,26 @@ var Application = function() {
 		}
 	}
 
-	self.removeOverlay = function() {
+	self.removeOverlay = function(animate) {
 		var overlay = self.currentOverlay;
+		animate = animate===false ? false : true;
 
 		if (overlay) {
 			var style = overlay.style;
 			
-			if (style.animation) {
+			if (style.animation && self.supportAnimations && animate) {
 				self.reverseAnimation(overlay, true);
+
+				var duration = self.getAnimationDuration(style.animation, true);
+		
+				setTimeout(function() {
+					self.setElementAnimation(overlay, null);
+					self.hideOverlay(overlay);
+				}, duration);
 			}
 			else {
-				self.setViewVariables(null, self.currentOverlay);
-				self.hideView(self.currentOverlay);
+				self.setElementAnimation(overlay, null);
+				self.hideOverlay(overlay);
 			}
 		}
 	}
@@ -756,7 +814,21 @@ var Application = function() {
 		style.animationPlayState = "paused";
 
 		if (hide) {
-			target.addEventListener("animationend", self.animationEndHideHandler);
+			//target.addEventListener("animationend", self.animationEndHideHandler);
+	
+			var duration = self.getAnimationDuration(lastAnimation, true);
+			var isOverlay = self.isOverlay(target);
+	
+			setTimeout(function() {
+				self.setElementAnimation(target, null);
+
+				if (isOverlay) {
+					self.hideOverlay(target);
+				}
+				else {
+					self.hideView(target);
+				}
+			}, duration);
 		}
 
 		setTimeout(function() {
@@ -769,6 +841,13 @@ var Application = function() {
 
 	self.animationEndHandler = function(event) {
 		var target = event.currentTarget;
+		self.dispatchEvent(new Event(event.type));
+	}
+
+	self.isOverlay = function(view) {
+		var result = view ? self.getViewPreferenceBoolean(view, self.prefix + "is-overlay") : false;
+
+		return result;
 	}
 
 	self.animationEndHideHandler = function(event) {
@@ -787,6 +866,7 @@ var Application = function() {
 
 		if (view) {
 			self.minimumScale = self.getViewPreferenceValue(view, self.prefix + "minimum-scale");
+			self.maximumScale = self.getViewPreferenceValue(view, self.prefix + "maximum-scale");
 			self.scaleViewsToFit = self.getViewPreferenceBoolean(view, self.prefix + "scale-to-fit");
 			self.scaleToFitType = self.getViewPreferenceValue(view, self.prefix + "scale-to-fit-type");
 			self.scaleToFitOnDoubleClick = self.getViewPreferenceBoolean(view, self.prefix + "scale-on-double-click");
@@ -817,6 +897,8 @@ var Application = function() {
 			}
 			else {
 				self.viewScale = self.getViewScaleValue(view);
+				self.viewToFitWidthScale = self.getViewFitToViewportWidthScale(view, self.enableScaleUp)
+				self.viewToFitHeightScale = self.getViewFitToViewportScale(view, self.enableScaleUp);
 				self.updateSliderValue(self.viewScale);
 			}
 
@@ -953,6 +1035,7 @@ var Application = function() {
 		for (var i=0;i<numberOfRules;i++) {
 			if (rules[i].media!=null) { numberOfQueries++; }
 		}
+		
 		return numberOfQueries;
 	}
 
@@ -1032,7 +1115,9 @@ var Application = function() {
 		var enableScaleUp = self.enableScaleUp;
 		var scaleToFitType = self.scaleToFitType;
 		var minimumScale = self.minimumScale;
-		var hasMinimumScale = !isNaN(minimumScale) && minimumScale!=""
+		var maximumScale = self.maximumScale;
+		var hasMinimumScale = !isNaN(minimumScale) && minimumScale!="";
+		var hasMaximumScale = !isNaN(maximumScale) && maximumScale!="";
 		var scaleNeededToFit = self.getViewFitToViewportScale(view, enableScaleUp);
 		var scaleNeededToFitWidth = self.getViewFitToViewportWidthScale(view, enableScaleUp);
 		var scaleNeededToFitHeight = self.getViewFitToViewportHeightScale(view, enableScaleUp);
@@ -1050,10 +1135,8 @@ var Application = function() {
 		var canCenterVertically = true;
 		var canCenterHorizontally = true;
 
-		//console.log("height:"+scaleNeededToFitHeight+",width:"+scaleNeededToFitWidth+",fit:"+scaleNeededToFit,"desired:"+desiredScale);
-
 		if (scaleToFit && isSliderChange!=true) {
-			if (scaleToFitType=="fit") {
+			if (scaleToFitType=="fit" || scaleToFitType=="") {
 				desiredScale = scaleNeededToFit;
 			}
 			else if (scaleToFitType=="width") {
@@ -1087,8 +1170,14 @@ var Application = function() {
 				desiredScale = Math.max(desiredScale, Number(minimumScale));
 			}
 
-			//desiredScale = self.getShortNumber(desiredScale);
+			if (hasMaximumScale) {
+				desiredScale = Math.min(desiredScale, Number(maximumScale));
+			}
+
 			desiredScale = self.getShortNumber(desiredScale);
+
+			canCenterHorizontally = self.canCenterHorizontally(view, "width", enableScaleUp, desiredScale, minimumScale, maximumScale);
+			canCenterVertically = self.canCenterVertically(view, "width", enableScaleUp, desiredScale, minimumScale, maximumScale);
 
 			if (desiredScale>1 && (enableScaleUp || isSliderChange)) {
 				transformValue = "scale(" + desiredScale + ")";
@@ -1142,6 +1231,8 @@ var Application = function() {
 			view.style.transform = transformValue;
 
 			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
 			self.viewLeft = leftPosition;
 			self.viewTop = topPosition;
 
@@ -1166,7 +1257,15 @@ var Application = function() {
 				desiredScale = Math.max(desiredScale, Number(minimumScale));
 			}
 
+			if (hasMaximumScale) {
+				desiredScale = Math.min(desiredScale, Number(maximumScale));
+				//canCenterVertically = desiredScale>=scaleNeededToFitHeight && enableScaleUp==false;
+			}
+
 			desiredScale = self.getShortNumber(desiredScale);
+
+			canCenterHorizontally = self.canCenterHorizontally(view, "height", enableScaleUp, desiredScale, minimumScale, maximumScale);
+			canCenterVertically = self.canCenterVertically(view, "height", enableScaleUp, desiredScale, minimumScale, maximumScale);
 
 			if (desiredScale>1 && (enableScaleUp || isSliderChange)) {
 				transformValue = "scale(" + desiredScale + ")";
@@ -1220,6 +1319,8 @@ var Application = function() {
 			view.style.transform = transformValue;
 
 			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
 			self.viewLeft = leftPosition;
 			self.viewTop = topPosition;
 
@@ -1248,6 +1349,9 @@ var Application = function() {
 
 			transformValue = "scale(" + desiredScale + ")";
 
+			//canCenterHorizontally = self.canCenterHorizontally(view, "fit", false, desiredScale);
+			//canCenterVertically = self.canCenterVertically(view, "fit", false, desiredScale);
+			
 			if (self.centerVertically) {
 				if (canCenterVertically) {
 					translateY = "-50%";
@@ -1290,6 +1394,77 @@ var Application = function() {
 			view.style.transform = transformValue;
 
 			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			self.updateSliderValue(desiredScale);
+			
+			return desiredScale;
+		}
+
+		if (scaleToFitType=="default" || scaleToFitType=="") {
+			desiredScale = 1;
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+			if (hasMaximumScale) {
+				desiredScale = Math.min(desiredScale, Number(maximumScale));
+			}
+
+			canCenterHorizontally = self.canCenterHorizontally(view, "none", false, desiredScale, minimumScale, maximumScale);
+			canCenterVertically = self.canCenterVertically(view, "none", false, desiredScale, minimumScale, maximumScale);
+
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+				else {
+					transformValue += " translateX(" + 0 + ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+
+			self.viewScale = desiredScale;
+			self.viewToFitWidthScale = scaleNeededToFitWidth;
+			self.viewToFitHeightScale = scaleNeededToFitHeight;
 			self.viewLeft = leftPosition;
 			self.viewTop = topPosition;
 
@@ -1299,6 +1474,113 @@ var Application = function() {
 		}
 	}
 
+	/**
+	 * Returns true if view can be centered horizontally
+	 * @param {HTMLElement} view view
+	 * @param {String} type type of scaling - width, height, all, none
+	 * @param {Boolean} scaleUp if scale up enabled 
+	 * @param {Number} scale target scale value 
+	 */
+	self.canCenterHorizontally = function(view, type, scaleUp, scale, minimumScale, maximumScale) {
+		var scaleNeededToFit = self.getViewFitToViewportScale(view, scaleUp);
+		var scaleNeededToFitHeight = self.getViewFitToViewportHeightScale(view, scaleUp);
+		var scaleNeededToFitWidth = self.getViewFitToViewportWidthScale(view, scaleUp);
+		var canCenter = false;
+		var minScale;
+
+		type = type==null ? "none" : type;
+		scale = scale==null ? scale : scaleNeededToFitWidth;
+		scaleUp = scaleUp == null ? false : scaleUp;
+
+		if (type=="width") {
+	
+			if (scaleUp && maximumScale==null) {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitWidth>=1) {
+				canCenter = true;
+			}
+		}
+		else if (type=="height") {
+			minScale = Math.min(1, scaleNeededToFitHeight);
+			if (minimumScale!="" && maximumScale!="") {
+				minScale = Math.max(minimumScale, Math.min(maximumScale, scaleNeededToFitHeight));
+			}
+			else {
+				if (minimumScale!="") {
+					minScale = Math.max(minimumScale, scaleNeededToFitHeight);
+				}
+				if (maximumScale!="") {
+					minScale = Math.max(minimumScale, Math.min(maximumScale, scaleNeededToFitHeight));
+				}
+			}
+	
+			if (scaleUp && maximumScale=="") {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitWidth>=minScale) {
+				canCenter = true;
+			}
+		}
+		else if (type=="fit") {
+			canCenter = scaleNeededToFitWidth>=scaleNeededToFit;
+		}
+		else {
+			if (scaleUp) {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitWidth>=1) {
+				canCenter = true;
+			}
+		}
+
+		self.horizontalScrollbarsNeeded = canCenter;
+		
+		return canCenter;
+	}
+
+	/**
+	 * Returns true if view can be centered horizontally
+	 * @param {HTMLElement} view view to scale
+	 * @param {String} type type of scaling
+	 * @param {Boolean} scaleUp if scale up enabled 
+	 * @param {Number} scale target scale value 
+	 */
+	self.canCenterVertically = function(view, type, scaleUp, scale, minimumScale, maximumScale) {
+		var scaleNeededToFit = self.getViewFitToViewportScale(view, scaleUp);
+		var scaleNeededToFitWidth = self.getViewFitToViewportWidthScale(view, scaleUp);
+		var scaleNeededToFitHeight = self.getViewFitToViewportHeightScale(view, scaleUp);
+		var canCenter = false;
+		var minScale;
+
+		type = type==null ? "none" : type;
+		scale = scale==null ? 1 : scale;
+		scaleUp = scaleUp == null ? false : scaleUp;
+	
+		if (type=="width") {
+			canCenter = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+		}
+		else if (type=="height") {
+			minScale = Math.max(minimumScale, Math.min(maximumScale, scaleNeededToFit));
+			canCenter = scaleNeededToFitHeight>=minScale;
+		}
+		else if (type=="fit") {
+			canCenter = scaleNeededToFitHeight>=scaleNeededToFit;
+		}
+		else {
+			if (scaleUp) {
+				canCenter = false;
+			}
+			else if (scaleNeededToFitHeight>=1) {
+				canCenter = true;
+			}
+		}
+
+		self.verticalScrollbarsNeeded = canCenter;
+		
+		return canCenter;
+	}
+
 	self.getViewFitToViewportScale = function(view, scaleUp) {
 		var enableScaleUp = scaleUp;
 		var availableWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -1306,6 +1588,11 @@ var Application = function() {
 		var elementWidth = parseFloat(getComputedStyle(view, "style").width);
 		var elementHeight = parseFloat(getComputedStyle(view, "style").height);
 		var newScale = 1;
+
+		// if element is not added to the document computed values are NaN
+		if (isNaN(elementWidth) || isNaN(elementHeight)) {
+			return newScale;
+		}
 
 		availableWidth -= self.horizontalPadding;
 		availableHeight -= self.verticalPadding;
@@ -1321,10 +1608,17 @@ var Application = function() {
 	}
 
 	self.getViewFitToViewportWidthScale = function(view, scaleUp) {
+		// need to get browser viewport width when element
+		var isParentWindow = view && view.parentNode && view.parentNode===document.body;
 		var enableScaleUp = scaleUp;
 		var availableWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		var elementWidth = parseFloat(getComputedStyle(view, "style").width);
 		var newScale = 1;
+
+		// if element is not added to the document computed values are NaN
+		if (isNaN(elementWidth)) {
+			return newScale;
+		}
 
 		availableWidth -= self.horizontalPadding;
 
@@ -1343,6 +1637,11 @@ var Application = function() {
 		var availableHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 		var elementHeight = parseFloat(getComputedStyle(view, "style").height);
 		var newScale = 1;
+
+		// if element is not added to the document computed values are NaN
+		if (isNaN(elementHeight)) {
+			return newScale;
+		}
 
 		availableHeight -= self.verticalPadding;
 
@@ -1616,6 +1915,24 @@ var Application = function() {
 		self.viewIds = viewIds;
 	}
 
+	self.collectOverlays = function() {
+		var viewIds = self.getViewIds();
+		var ids = [];
+
+		for (let index = 0; index < viewIds.length; index++) {
+			const id = viewIds[index];
+			const view = self.getViewById(id);
+			const isOverlay = view && self.isOverlay(view);
+			
+			if (isOverlay) {
+				ids.push(id);
+				self.overlays[id] = view;
+			}
+		}
+		
+		self.overlayIds = ids;
+	}
+
 	self.collectMediaQueries = function() {
 		var viewIds = self.getViewIds();
 		var styleSheet = self.getApplicationStylesheet();
@@ -1745,6 +2062,10 @@ var Application = function() {
 		// if view is found
 		if (targetView) {
 
+			if (self.currentOverlay) {
+				self.removeOverlay(false);
+			}
+
 			// add animation set in event target style declaration
 			if (animation && self.supportAnimations) {
 				self.crossFade(self.currentView, targetView, false, animation);
@@ -1754,6 +2075,7 @@ var Application = function() {
 				self.hideViews();
 				self.enableMediaQuery(state.rule);
 				self.scaleViewIfNeeded(targetView);
+				self.centerView(targetView);
 				self.updateViewLabel();
 				self.updateURL();
 			}
@@ -1763,7 +2085,8 @@ var Application = function() {
 			self.stateName = name;
 			window.dispatchEvent(stateEvent);
 		}
-		
+
+		event.stopImmediatePropagation();
 	}
 
 	/**
@@ -1810,6 +2133,7 @@ var Application = function() {
 					self.setElementAnimation(from, null);
 					self.hideView(from);
 					self.updateURL();
+					self.setViewVariables(to);
 				}, duration)
 			}
 		}
@@ -1820,6 +2144,7 @@ var Application = function() {
 
 		if (update) {
 			self.updateURL(element);
+
 			element.addEventListener("animationend", function(event) {
 				element.style.animation = null;
 				self.setViewVariables(element);
@@ -1827,6 +2152,8 @@ var Application = function() {
 				element.removeEventListener("animationend", arguments.callee);
 			});
 		}
+
+		self.setElementAnimation(element, null);
 		
 		element.style.animation = animation;
 	}
@@ -1862,12 +2189,17 @@ var Application = function() {
 		return animation;
 	}
 
+	/**
+	 * Get duration in animation string
+	 * @param {String} animation animation value
+	 * @param {Boolean} inMilliseconds length in milliseconds if true
+	 */
 	self.getAnimationDuration = function(animation, inMilliseconds) {
 		var duration = 0;
 		var expression = /.+(\d\.\d)s.+/;
 
 		if (animation && animation.match(expression)) {
-			duration = animation.replace(expression, "$" + "1");
+			duration = parseFloat(animation.replace(expression, "$" + "1"));
 			if (duration && inMilliseconds) duration = duration * 1000;
 		}
 
@@ -1886,7 +2218,17 @@ var Application = function() {
 	}
 
 	self.resizeHandler = function(event) {
-		self.scaleViewIfNeeded();
+		var view = self.getVisibleView();
+
+		if (self.showByMediaQuery && view) {
+			self.setViewOptions(view);
+			self.setViewVariables(view);
+		}
+		else {
+			self.scaleViewIfNeeded();
+		}
+
+		window.dispatchEvent(new Event(self.APPLICATION_RESIZE));
 	}
 
 	self.scaleViewIfNeeded = function(view) {
@@ -1904,6 +2246,19 @@ var Application = function() {
 			else {
 				self.scaleViewToActualSize(view);
 			}
+		}
+		else if (view) {
+			self.centerView(view);
+		}
+	}
+
+	self.centerView = function(view) {
+
+		if (self.scaleToFit) {
+			self.scaleViewToFit(view, true);
+		}
+		else {
+			self.scaleViewToActualSize(view);  // for centering support for now
 		}
 	}
 
@@ -2013,6 +2368,11 @@ var Application = function() {
 
 	self.onloadHandler = function(event) {
 		self.initialize();
+	}
+
+	self.setElementHTML = function(id, value) {
+		var element = self.getElement(id);
+		element.innerHTML = value;
 	}
 
 	self.getStackArray = function(error) {

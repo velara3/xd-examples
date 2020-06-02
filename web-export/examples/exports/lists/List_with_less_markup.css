@@ -1,0 +1,762 @@
+.mediaViewInfo {
+	--web-view-name: List with less markup;
+	--web-view-id: List_with_less_markup;
+	--web-enable-deep-linking: true;
+	--web-page-font: sans-serif;
+}
+:root {
+	--web-view-ids: List_with_less_markup;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#List_with_less_markup {
+	position: absolute;
+	width: 800px;
+	height: 575px;
+	font-family: sans-serif;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: List with less markup;
+	--web-view-id: List_with_less_markup;
+	--web-enable-deep-linking: true;
+	--web-page-font: sans-serif;
+}
+#List_with_less_markup_bm {
+	left: 50px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 203px;
+	white-space: nowrap;
+	line-height: 56px;
+	margin-top: -18px;
+	text-align: left;
+	font-family: Arial, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	color: rgba(93,93,93,1);
+	letter-spacing: -0.03px;
+}
+.Line_85 {
+	overflow: visible;
+	position: absolute;
+	width: 760px;
+	height: 1px;
+	left: 20px;
+	top: 53.74px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#List_with_elements_having_less {
+	left: 605px;
+	top: 34px;
+	position: absolute;
+	overflow: visible;
+	width: 176px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10.5px;
+	color: rgba(112,112,112,1);
+}
+#httpsdevelopermozillaorgen-USd {
+	left: 20px;
+	top: 522px;
+	position: absolute;
+	overflow: visible;
+	width: 290px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	color: rgba(112,112,112,1);
+}
+#httpsdevelopermozillaorgen-USd_bq {
+	left: 20px;
+	top: 500px;
+	position: absolute;
+	overflow: visible;
+	width: 286px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	color: rgba(112,112,112,1);
+}
+#httpsdevelopermozillaorgen-USd_br {
+	left: 20px;
+	top: 544px;
+	position: absolute;
+	overflow: visible;
+	width: 290px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	color: rgba(112,112,112,1);
+}
+#Icon {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 20px;
+	top: 20px;
+	overflow: visible;
+}
+.Rectangle_177_bu {
+	position: absolute;
+	overflow: visible;
+	width: 24px;
+	height: 24px;
+	left: 0px;
+	top: 0px;
+}
+#W {
+	left: 50%;
+	transform: translateX(-50%);
+	top: 7.5px;
+	position: absolute;
+	overflow: visible;
+	width: 10px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 10px;
+	color: rgba(255,255,255,1);
+}
+#Text_without_Div_container {
+	left: 214px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 163px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Text_without_Span_container {
+	left: 391px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 175px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Text_without_any_container {
+	left: 585px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 165px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Text_no_container_or_styles {
+	left: 585px;
+	top: 278px;
+	position: absolute;
+	overflow: visible;
+	width: 165px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#View_the_code_In_the_original_ {
+	left: 20px;
+	top: 288px;
+	position: absolute;
+	overflow: visible;
+	width: 486px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Normal_list_in_Repeat_Grid {
+	left: 32px;
+	top: 91px;
+	position: absolute;
+	overflow: visible;
+	width: 162px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1 {
+	position: absolute;
+	width: 111px;
+	height: 102px;
+	left: 236px;
+	top: 121px;
+	overflow: visible;
+}
+#Repeat_Grid_1_0 {
+	position: absolute;
+	width: 36px;
+	height: 16px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+#Apple {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_1 {
+	position: absolute;
+	width: 46px;
+	height: 16px;
+	left: 0px;
+	top: 23px;
+	overflow: visible;
+}
+#Grapes {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 47px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_2 {
+	position: absolute;
+	width: 67px;
+	height: 16px;
+	left: 0px;
+	top: 44px;
+	overflow: visible;
+}
+#Honeydew {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 68px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_3 {
+	position: absolute;
+	width: 75px;
+	height: 16px;
+	left: 0px;
+	top: 65px;
+	overflow: visible;
+}
+#Watermelon {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 76px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_4 {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	left: 0px;
+	top: 86px;
+	overflow: visible;
+}
+#Cantelope {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_3 {
+	position: absolute;
+	width: 100px;
+	height: 102px;
+	left: 413px;
+	top: 121px;
+	overflow: visible;
+}
+#Repeat_Grid_3_0 {
+	position: absolute;
+	width: 36px;
+	height: 16px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+#Apple_cf {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_3_1 {
+	position: absolute;
+	width: 46px;
+	height: 16px;
+	left: 0px;
+	top: 23px;
+	overflow: visible;
+}
+#Grapes_ch {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 47px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_3_2 {
+	position: absolute;
+	width: 67px;
+	height: 16px;
+	left: 0px;
+	top: 44px;
+	overflow: visible;
+}
+#Honeydew_cj {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 68px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_3_3 {
+	position: absolute;
+	width: 75px;
+	height: 16px;
+	left: 0px;
+	top: 65px;
+	overflow: visible;
+}
+#Watermelon_cl {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 76px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_3_4 {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	left: 0px;
+	top: 86px;
+	overflow: visible;
+}
+#Cantelope_cn {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_4 {
+	position: absolute;
+	width: 100px;
+	height: 102px;
+	left: 607px;
+	top: 121px;
+	overflow: visible;
+}
+#Repeat_Grid_4_0 {
+	position: absolute;
+	width: 36px;
+	height: 16px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+#Apple_cq {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_4_1 {
+	position: absolute;
+	width: 46px;
+	height: 16px;
+	left: 0px;
+	top: 23px;
+	overflow: visible;
+}
+#Grapes_cs {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 47px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_4_2 {
+	position: absolute;
+	width: 67px;
+	height: 16px;
+	left: 0px;
+	top: 44px;
+	overflow: visible;
+}
+#Honeydew_cu {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 68px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_4_3 {
+	position: absolute;
+	width: 75px;
+	height: 16px;
+	left: 0px;
+	top: 65px;
+	overflow: visible;
+}
+#Watermelon_cw {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 76px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_4_4 {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	left: 0px;
+	top: 86px;
+	overflow: visible;
+}
+#Cantelope_cy {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_19 {
+	position: absolute;
+	width: 100px;
+	height: 102px;
+	left: 607px;
+	top: 308px;
+	overflow: visible;
+}
+#Repeat_Grid_19_0 {
+	position: absolute;
+	width: 36px;
+	height: 16px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+#Repeat_Grid_19_1 {
+	position: absolute;
+	width: 46px;
+	height: 16px;
+	left: 0px;
+	top: 23px;
+	overflow: visible;
+}
+#Repeat_Grid_19_2 {
+	position: absolute;
+	width: 67px;
+	height: 16px;
+	left: 0px;
+	top: 44px;
+	overflow: visible;
+}
+#Repeat_Grid_19_3 {
+	position: absolute;
+	width: 75px;
+	height: 16px;
+	left: 0px;
+	top: 65px;
+	overflow: visible;
+}
+#Repeat_Grid_19_4 {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	left: 0px;
+	top: 86px;
+	overflow: visible;
+}
+#Repeat_Grid_2 {
+	position: absolute;
+	width: 100px;
+	height: 102px;
+	left: 54px;
+	top: 121px;
+	overflow: visible;
+}
+#Repeat_Grid_2_0 {
+	position: absolute;
+	width: 36px;
+	height: 16px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+#Apple_dc {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_1 {
+	position: absolute;
+	width: 46px;
+	height: 16px;
+	left: 0px;
+	top: 23px;
+	overflow: visible;
+}
+#Grapes_de {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 47px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_2 {
+	position: absolute;
+	width: 67px;
+	height: 16px;
+	left: 0px;
+	top: 44px;
+	overflow: visible;
+}
+#Honeydew_dg {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 68px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_3 {
+	position: absolute;
+	width: 75px;
+	height: 16px;
+	left: 0px;
+	top: 65px;
+	overflow: visible;
+}
+#Watermelon_di {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 76px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+#Repeat_Grid_2_4 {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	left: 0px;
+	top: 86px;
+	overflow: visible;
+}
+#Cantelope_dk {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+.Line_86 {
+	overflow: visible;
+	position: absolute;
+	width: 712px;
+	height: 1px;
+	left: 32.5px;
+	top: 109.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Line_89 {
+	overflow: visible;
+	position: absolute;
+	width: 164px;
+	height: 1px;
+	left: 585.5px;
+	top: 298.5px;
+	transform: matrix(1,0,0,1,0,0);
+}

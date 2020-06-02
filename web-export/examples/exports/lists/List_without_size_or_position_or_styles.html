@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>List without size or position or styles</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: List without size or position or styles;
+		--web-view-id: List_without_size_or_position_or_styles;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: List_without_size_or_position_or_styles;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#List_without_size_or_position_or_styles {
+		position: absolute;
+		width: 800px;
+		height: 530px;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: List without size or position or styles;
+		--web-view-id: List_without_size_or_position_or_styles;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	#List_without_size_or_position {
+		left: 50px;
+		top: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 264px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		width: 760px;
+		height: 1px;
+		left: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#The_elements_below_have_size_a {
+		left: 476px;
+		top: 34px;
+		position: absolute;
+		overflow: visible;
+		width: 305px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd {
+		left: 20px;
+		top: 477px;
+		position: absolute;
+		overflow: visible;
+		width: 290px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd_dt {
+		left: 20px;
+		top: 455px;
+		position: absolute;
+		overflow: visible;
+		width: 286px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd_du {
+		left: 20px;
+		top: 499px;
+		position: absolute;
+		overflow: visible;
+		width: 290px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	.Rectangle_177_dx {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#List_without_size {
+		left: 214px;
+		top: 91px;
+		position: absolute;
+		overflow: visible;
+		width: 102px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#List_without_position {
+		left: 371px;
+		top: 91px;
+		position: absolute;
+		overflow: visible;
+		width: 127px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#List_with_no_styles {
+		left: 548px;
+		top: 91px;
+		position: absolute;
+		overflow: visible;
+		width: 113px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#View_the_code_In_the_original_ {
+		left: 20px;
+		top: 298px;
+		position: absolute;
+		overflow: visible;
+		width: 486px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Normal_list_in_Repeat_Grid {
+		left: 32px;
+		top: 91px;
+		position: absolute;
+		overflow: visible;
+		width: 162px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_1 {
+		position: absolute;
+		width: 111px;
+		height: 102px;
+		left: 226px;
+		top: 121px;
+		overflow: visible;
+	}
+	#Repeat_Grid_1_0 {
+		position: absolute;
+		width: 36px;
+		height: 16px;
+		left: 0px;
+		top: 2px;
+		overflow: visible;
+	}
+	#Apple {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_1_1 {
+		position: absolute;
+		width: 46px;
+		height: 16px;
+		left: 0px;
+		top: 23px;
+		overflow: visible;
+	}
+	#Grapes {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_1_2 {
+		position: absolute;
+		width: 67px;
+		height: 16px;
+		left: 0px;
+		top: 44px;
+		overflow: visible;
+	}
+	#Honeydew {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_1_3 {
+		position: absolute;
+		width: 75px;
+		height: 16px;
+		left: 0px;
+		top: 65px;
+		overflow: visible;
+	}
+	#Watermelon {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_1_4 {
+		position: absolute;
+		width: 64px;
+		height: 16px;
+		left: 0px;
+		top: 86px;
+		overflow: visible;
+	}
+	#Cantelope {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_3 {
+		position: absolute;
+		width: 100px;
+		height: 102px;
+		left: 383px;
+		top: 121px;
+		overflow: visible;
+	}
+	#Repeat_Grid_3_0 {
+		position: absolute;
+		width: 36px;
+		height: 16px;
+		left: 0px;
+		top: 2px;
+		overflow: visible;
+	}
+	#Apple_eh {
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_3_1 {
+		position: absolute;
+		width: 46px;
+		height: 16px;
+		left: 0px;
+		top: 23px;
+		overflow: visible;
+	}
+	#Grapes_ej {
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_3_2 {
+		position: absolute;
+		width: 67px;
+		height: 16px;
+		left: 0px;
+		top: 44px;
+		overflow: visible;
+	}
+	#Honeydew_el {
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		width: 68px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_3_3 {
+		position: absolute;
+		width: 75px;
+		height: 16px;
+		left: 0px;
+		top: 65px;
+		overflow: visible;
+	}
+	#Watermelon_en {
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		width: 76px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_3_4 {
+		position: absolute;
+		width: 64px;
+		height: 16px;
+		left: 0px;
+		top: 86px;
+		overflow: visible;
+	}
+	#Cantelope_ep {
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		width: 65px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_4 {
+		position: absolute;
+		width: 100px;
+		height: 102px;
+		left: 560px;
+		top: 121px;
+		overflow: visible;
+	}
+	#Apple_es {
+		outline: 1px dashed red;
+	}
+	#Grapes_eu {
+		outline: 1px dashed red;
+	}
+	#Honeydew_ew {
+		outline: 1px dashed red;
+	}
+	#Watermelon_ey {
+		outline: 1px dashed red;
+	}
+	#Cantelope_e {
+		outline: 1px dashed red;
+	}
+	#Repeat_Grid_2 {
+		position: absolute;
+		width: 100px;
+		height: 102px;
+		left: 44px;
+		top: 121px;
+		overflow: visible;
+	}
+	#Repeat_Grid_2_0 {
+		position: absolute;
+		width: 36px;
+		height: 16px;
+		left: 0px;
+		top: 2px;
+		overflow: visible;
+	}
+	#Apple_e {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_2_1 {
+		position: absolute;
+		width: 46px;
+		height: 16px;
+		left: 0px;
+		top: 23px;
+		overflow: visible;
+	}
+	#Grapes_e {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_2_2 {
+		position: absolute;
+		width: 67px;
+		height: 16px;
+		left: 0px;
+		top: 44px;
+		overflow: visible;
+	}
+	#Honeydew_e {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 68px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_2_3 {
+		position: absolute;
+		width: 75px;
+		height: 16px;
+		left: 0px;
+		top: 65px;
+		overflow: visible;
+	}
+	#Watermelon_e {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	#Repeat_Grid_2_4 {
+		position: absolute;
+		width: 64px;
+		height: 16px;
+		left: 0px;
+		top: 86px;
+		overflow: visible;
+	}
+	#Cantelope_fb {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 65px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(112,112,112,1);
+	}
+	.Line_86 {
+		overflow: visible;
+		position: absolute;
+		width: 712px;
+		height: 1px;
+		left: 32.5px;
+		top: 109.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="List_without_size_or_position_or_styles.js"></script>
+</head>
+<body>
+<div id="List_without_size_or_position_or_styles">
+	<div id="List_without_size_or_position">
+		<span>List without size or position</span>
+	</div>
+	<svg class="Line_85" viewBox="0 0 760 1">
+		<path fill="transparent" stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_85" d="M 0 0 L 760 0">
+		</path>
+	</svg>
+	<div id="The_elements_below_have_size_a">
+		<span>The elements below have size and positions and styles removed </span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol</span>
+	</div>
+	</a>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">
+	<div id="httpsdevelopermozillaorgen-USd_dt">
+		<span>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li</span>
+	</div>
+	</a>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">
+	<div id="httpsdevelopermozillaorgen-USd_du">
+		<span>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul</span>
+	</div>
+	</a>
+	<div id="Icon">
+		<svg class="Rectangle_177_dx">
+			<linearGradient id="Rectangle_177_dx" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect fill="url(#Rectangle_177_dx)" id="Rectangle_177_dx" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="List_without_size">
+		<span>List without size</span>
+	</div>
+	<div id="List_without_position">
+		<span>List without position</span>
+	</div>
+	<div id="List_with_no_styles">
+		<span>List with no styles</span>
+	</div>
+	<div id="View_the_code_In_the_original_">
+		<span>View the code.<br/>In the original the text is in a Span inside a Div. <br/>In the second, the width and height is removed<br/>In the third, the position is removed<br/>In the forth, all styles are removed<br/><br/>We are removing tags by using the ‘none’ value in the text Tag Name property</span>
+	</div>
+	<div id="Normal_list_in_Repeat_Grid">
+		<span>Normal list in Repeat Grid</span>
+	</div>
+	<ul id="Repeat_Grid_1">
+		<li id="Repeat_Grid_1_0" class="">
+			<div id="Apple">
+				<span>Apple</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_1_1" class="">
+			<div id="Grapes">
+				<span>Grapes</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_1_2" class="">
+			<div id="Honeydew">
+				<span>Honeydew</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_1_3" class="">
+			<div id="Watermelon">
+				<span>Watermelon</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_1_4" class="">
+			<div id="Cantelope">
+				<span>Cantelope</span>
+			</div>
+		</li>
+	</ul>
+	<ul id="Repeat_Grid_3">
+		<li id="Repeat_Grid_3_0" class="">
+			<div id="Apple_eh">
+				Apple
+			</div>
+		</li>
+		<li id="Repeat_Grid_3_1" class="">
+			<div id="Grapes_ej">
+				Grapes
+			</div>
+		</li>
+		<li id="Repeat_Grid_3_2" class="">
+			<div id="Honeydew_el">
+				Honeydew
+			</div>
+		</li>
+		<li id="Repeat_Grid_3_3" class="">
+			<div id="Watermelon_en">
+				Watermelon
+			</div>
+		</li>
+		<li id="Repeat_Grid_3_4" class="">
+			<div id="Cantelope_ep">
+				Cantelope
+			</div>
+		</li>
+	</ul>
+	<ul id="Repeat_Grid_4">
+		<li id="Repeat_Grid_4_0" class="">
+			Apple
+		
+		</li>
+		<li id="Repeat_Grid_4_1" class="">
+			Grapes
+		
+		</li>
+		<li id="Repeat_Grid_4_2" class="">
+			Honeydew
+		
+		</li>
+		<li id="Repeat_Grid_4_3" class="">
+			Watermelon
+		
+		</li>
+		<li id="Repeat_Grid_4_4" class="">
+			Cantelope
+		
+		</li>
+	</ul>
+	<ul id="Repeat_Grid_2">
+		<li id="Repeat_Grid_2_0" class="">
+			<div id="Apple_e">
+				<span>Apple</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_2_1" class="">
+			<div id="Grapes_e">
+				<span>Grapes</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_2_2" class="">
+			<div id="Honeydew_e">
+				<span>Honeydew</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_2_3" class="">
+			<div id="Watermelon_e">
+				<span>Watermelon</span>
+			</div>
+		</li>
+		<li id="Repeat_Grid_2_4" class="">
+			<div id="Cantelope_fb">
+				<span>Cantelope</span>
+			</div>
+		</li>
+	</ul>
+	<svg class="Line_86" viewBox="0 0 712 1">
+		<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_86" d="M 0 0 L 712 0">
+		</path>
+	</svg>
+</div>
+</body>
+</html>

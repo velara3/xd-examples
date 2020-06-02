@@ -1,0 +1,227 @@
+<html><head><meta charset="utf-8"/>
+    <style>
+    * {font-size:10px;font-family: monospace; white-space:pre-wrap; -moz-tab-size:3; -o-tab-size:3; tab-size:3; letter-spacing: .1rem; line-height:1.2rem}
+    ins {background:#e6ffe6;text-decoration:none;}
+    del {background:#ffe6e6;}
+    .style {font-style:italic;outline:.5px dotted rgba(0,0,0,.35);text-decoration:underline;}
+    .style:before {content:'\25BA';display:block;position:absolute;margin-top:-1.2rem; margin-left:-1rem;}
+    .style:after {content:'\25C4';display:block;position:absolute;margin-top:-1.2rem;margin-left:-1rem;right:1rem;}
+    .title {background: rgba(0,0,0,.1); display: block; padding: 1rem; margin-bottom: 2em; margin-top: 2em}
+    .header {position: fixed; top:0;right:0; margin-right: 2em; margin-top: 2em}
+    body {margin:2rem;margin-top:2rem;outline:1px solid rgba(0,0,0,.1)}
+    </style>
+    <script>
+    var current = -1;
+    var nodes = null;
+    var lastElement = null;
+
+    function scrollIntoView(element, index) {
+      element.scrollIntoView({behavior:'smooth', block:'center'});
+      if (lastElement) {
+        lastElement.classList.remove("style");
+      }
+      lastElement = element;
+      if (index!=0) {
+        lastElement.classList.add("style");
+      }
+    }
+    
+    window.addEventListener("keyup", function (e) {
+      if (nodes==null) {
+        var editor = document.getElementById("editor");
+        nodes = [];
+        editor.childNodes.forEach((item,i) => {
+          var name = item.nodeName.toLowerCase();
+          if (name=="ins" || name=="del" || i==0) {
+            nodes.push(item);
+          }
+        })
+      }
+
+      var insCount = nodes.length;
+
+      if (e.keyCode==13 && insCount) {
+        if (e.shiftKey) {
+          if (current-1<0) {
+            current = insCount-1;
+          }
+          else {
+            current = current-1;
+          }
+        }
+        else {
+          current = current+1>=insCount ? 0 : current+1;
+        }
+        element = nodes[current];
+        scrollIntoView(element, current);
+      }
+    });
+    </script>
+    <body><div id="editor"><span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"/&gt;
+&lt;</span><ins>meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;</ins><span>title&gt;Expected Page Output&lt;/title&gt;
+&lt;style id="applicationStylesheet" type="text/css"&gt;
+	</span><del>bo</del><ins>.me</ins><span>d</span><del>y</del><ins>iaViewInfo</ins><span> {
+		</span><ins>--web-view-na</ins><span>m</span><ins>e: Expected P</ins><span>a</span><del>r</del><span>g</span><ins>e Output;
+		--web-v</ins><span>i</span><del>n</del><ins>ew-id</ins><span>: </span><del>0</del><ins>Expected_Page_Output</ins><span>;
+		</span><del>p</del><ins>--web-en</ins><span>a</span><del>d</del><ins>ble-</ins><span>d</span><ins>eep-link</ins><span>ing: </span><del>0</del><ins>true</ins><span>;
+	}
+	:root {
+		--web-view-ids: Expected_Page_Output;
+	}
+	</span><del>#Expected_Page_Output </del><span>* {
+		margin: 0;
+		padding: 0;
+	</span><ins>	box-sizing: border-box;
+		border: none;
+	</ins><span>}
+	#Expected_Page_Output {
+		position: absolute;
+		</span><del>box-sizing: border-box;
+		background: #E5E5E5;
+		</del><span>width: </span><del>85</del><span>7</span><ins>40</ins><span>px;
+		height: </span><del>2</del><span>9</span><del>2</del><ins>17</ins><span>px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		</span><del>margin: 0;
+		padding: 0;
+		opacity: 1;
+		</del><span>--web-view-name: Expected Page Output;
+		--web-view-id: Expected_Page_Output;
+		--web-enable-deep-linking: true;
+	}
+	</span><del>#Rectangle_1 {
+		opacity: 1;
+		fill: rgba(244,244,244,1);
+		stroke: rgb(112, 112, 112);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	</del><span>.Rectangle_1 {
+		position: absolute;
+		overflow: visible;
+		width: 75px;
+		height: 75px;
+		left: </span><del>2</del><ins>3</ins><span>2px;
+		top: </span><del>9</del><ins>8</ins><span>0px;
+	}
+	#Group_76 {</span><del>
+		opacity: 1;</del><span>
+		position: absolute;
+		width: </span><del>80</del><span>6</span><ins>89</ins><span>.5px;
+		height: 31.74px;
+		left: 22px;
+		top: 22px;
+		overflow: visible;
+	}
+	</span><del>#Line_85 {
+		opacity: 1;
+		fill: transparent;
+		stroke: rgb(177, 177, 177);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	</del><span>.Line_85 {
+		overflow: visible;
+		position: absolute;
+		</span><ins>wid</ins><span>t</span><del>o</del><ins>h: 689.302</ins><span>p</span><ins>x;
+		height</ins><span>: </span><del>3</del><span>1</span><del>.74</del><span>px;
+		left: 0.</span><del>23</del><span>1</span><ins>98</ins><span>px;
+		</span><del>wid</del><span>t</span><del>h</del><ins>op</ins><span>: </span><del>806</del><ins>31</ins><span>.</span><del>269</del><ins>74</ins><span>px;
+		</span><del>heigh</del><span>t</span><ins>ransform</ins><span>: </span><del>1p</del><ins>matri</ins><span>x</span><ins>(1,0,0,1,0,0)</ins><span>;
+	}
+	#This_page_has_a_expected_page_ {
+		</span><del>opacity: 1;
+		position: absolute;
+		</del><span>left: </span><del>62</del><span>5</span><ins>08</ins><span>px;
+		top: 10px;
+		</span><del>b</del><ins>p</ins><span>o</span><del>x-</del><span>si</span><del>z</del><ins>t</ins><span>i</span><ins>o</ins><span>n</span><del>g</del><span>: </span><ins>a</ins><span>b</span><ins>s</ins><span>o</span><del>rd</del><ins>lut</ins><span>e</span><del>r-box;
+		margin: 0;
+		padding: 0</del><span>;
+		overflow: visible;
+		width: 182px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Expected_Page_Output_</span><del>A0_Text_2</del><ins>k</ins><span> {
+		</span><del>opacity: 1;
+		position: absolute;
+		</del><span>left: 0px;
+		top: 0px;
+		</span><del>b</del><ins>p</ins><span>o</span><del>x-</del><span>si</span><del>z</del><ins>t</ins><span>i</span><ins>o</ins><span>n</span><del>g</del><span>: </span><ins>a</ins><span>b</span><ins>s</ins><span>o</span><del>rd</del><ins>lut</ins><span>e</span><del>r-box;
+		margin: 0;
+		padding: 0</del><span>;
+		overflow: visible;
+		width: 2</span><del>1</del><span>3</span><ins>6</ins><span>px;
+		white-space: nowrap;
+		line-height: </span><del>56</del><ins>48</ins><span>px;
+		margin-top: -1</span><del>8</del><ins>3</ins><span>px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 2</span><del>0</del><ins>2</ins><span>px;
+		color: rgba(93,93,93,1);
+	</span><del>	letter-spacing: -0.03px;
+	</del><span>}
+	#myLabel {
+		</span><del>opacity: 1;
+		position: absolute;
+		</del><span>left: 22px;
+		top: 201px;
+		</span><del>b</del><ins>p</ins><span>o</span><del>x-</del><span>si</span><del>z</del><ins>t</ins><span>i</span><ins>o</ins><span>n</span><del>g</del><span>: </span><ins>a</ins><span>b</span><ins>s</ins><span>o</span><del>rd</del><ins>lut</ins><span>e</span><del>r-box;
+		margin: 0;
+		padding: 0</del><span>;
+		overflow: visible;
+		width: 4px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="Expected_Page_Output"&gt;
+	&lt;svg class="Rectangle_1"&gt;
+		&lt;rect </span><ins>fill="rgba(244,244,244,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" </ins><span>id="Rectangle_1" rx="14" ry="14" x="0" y="0" width="75" height="75"&gt;
+		&lt;/rect&gt;
+	&lt;/svg&gt;
+	&lt;div id="Group_76"&gt;
+		&lt;svg class="Line_85"</span><ins> viewBox="0 0 689.302 1"</ins><span>&gt;
+			&lt;path </span><ins>fill="transparent" stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" </ins><span>id="Line_85" d="M 0 0 L </span><ins>6</ins><span>8</span><del>06</del><ins>9</ins><span>.</span><ins>30</ins><span>2</span><del>6867</del><ins>24</ins><span>6</span><ins>093</ins><span>75</span><del>78125</del><span> 0"&gt;
+			&lt;/path&gt;
+		&lt;/svg&gt;
+		&lt;div id="This_page_has_a_expected_page_"&gt;
+			&lt;span&gt;This page has a expected page output&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div id="Expected_Page_Output_</span><del>A0_Text_2</del><ins>k</ins><span>"&gt;
+			&lt;span&gt;Expected Page Output&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div id="myLabel"&gt;
+		&lt;span&gt; &lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span></div></body>
+    <div class="header">CHANGES - Press enter to step through changes</div>
+    </html>

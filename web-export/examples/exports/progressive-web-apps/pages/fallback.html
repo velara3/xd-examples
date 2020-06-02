@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fallback</title>
+<style id="applicationStylesheet" type="text/css">
+:root {
+	--web-view-ids: Side_Nav,Fallback;
+	--web-view-name: Fallback;
+	--web-view-id: Fallback;
+	--web-scale-to-fit: false;
+	--web-scale-to-fit-type: default;
+	--web-enable-scale-up: false;
+	--web-scale-on-resize: true;
+	--web-show-scale-controls: false;
+	--web-scale-on-double-click: false;
+	--web-center-horizontally: false;
+	--web-center-vertically: false;
+	--web-actual-size-on-double-click: false;
+	--web-navigate-on-keypress: false;
+	--web-refresh-for-changes: false;
+	--web-add-image-compare: false;
+	--web-show-by-media-query: false;
+	--web-application: true;
+	--web-show-navigation-controls: false;
+	--web-enable-deep-linking: true;
+	--web-is-overlay: false;
+}
+#Side_Nav,
+#Fallback {
+	display: none;
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Side Nav;
+		--web-view-id: Side_Nav;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Coffee_Bean {
+		left: 6px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 117px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Home {
+		left: 9px;
+		top: 41px;
+		position: absolute;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#About {
+		left: 9px;
+		top: 72px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Divider {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Divider {
+		overflow: visible;
+		position: absolute;
+		width: 101px;
+		height: 1px;
+		left: 9.5px;
+		top: 104.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Contact {
+		left: 9px;
+		top: 115px;
+		position: absolute;
+		overflow: visible;
+		width: 70px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Fallback;
+		--web-view-id: Fallback;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Fallback {
+		display: block;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Fallback;
+		--web-view-id: Fallback;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	#Coffee_Bean_ {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 117px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Group_2 {
+		position: absolute;
+		width: 299px;
+		height: 111px;
+		left: 44px;
+		top: 89px;
+		overflow: visible;
+	}
+	#Oops {
+		left: 122px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Currently_you_cannot_view_this {
+		left: 1px;
+		top: 45px;
+		position: absolute;
+		overflow: visible;
+		width: 299px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Go_to_homepage {
+		left: 0px;
+		top: 94px;
+		position: absolute;
+		overflow: visible;
+		width: 120px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+}
+
+</style>
+
+  <!-- materialize icons, css & js -->
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+<link rel="manifest" href="/manifest.json">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+  <meta name="theme-color" content="#FFE1C4">
+
+</head>
+<body class="grey lighten-4">
+<div id="Side_Nav" class="grey lighten-4">
+	<!-- top nav -->
+	<ul id="side-menu" class="sidenav side-menu">
+		<li>
+			<a class="subheader">Coffee Bean</a>
+		</li>
+		<li>
+			<a class="waves-effect" href="/">Home</a>
+		</li>
+		<li>
+			<a class="waves-effect" href="/pages/about.html">About</a>
+		</li>
+		<li>
+			<div class="divider">
+			</div>
+		</li>
+		<li>
+			    <a href="/pages/contact.html" class="waves-effect">
+      <i class="material-icons">mail_outline</i>Contact
+    </a>
+    
+		</li>
+	</ul>
+</div>
+<div id="Fallback">
+	<!-- top nav -->
+	<nav class="z-depth-0">
+		<div class="nav-wrapper container">
+			<a href="/">
+			<span>Coffee Bean</span>
+		
+		</a>
+			<span class="right grey-text text-darken-1">
+				<i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+			</span>
+		</div>
+	</nav>
+	<div class="container grey-text center">
+		<h5 class="center">
+			Oops!
+		</h5>
+		<p>
+			<span>Currently you cannot view this page offline</span>
+		</p>
+		<a href="/">
+		<div class="btn-small orange">
+			Go to homepage
+		</div>
+		</a>
+	</div>
+</div>
+
+  <script src="/js/app.js"></script>
+  <script type="text/javascript" src="/js/ui.js"></script>
+</body>
+<style>
+#Side_Nav,#Fallback {
+     display: block;
+}
+</style>
+</html>
