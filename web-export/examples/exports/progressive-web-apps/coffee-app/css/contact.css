@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fallback</title>
-<style id="applicationStylesheet" type="text/css">
 :root {
-	--web-view-ids: Side_Nav,Fallback;
-	--web-view-name: Fallback;
-	--web-view-id: Fallback;
+	--web-view-ids: Side_Nav,Contact_Us;
+	--web-view-name: Contact Us;
+	--web-view-id: Contact_Us;
 	--web-scale-to-fit: false;
 	--web-scale-to-fit-type: default;
 	--web-enable-scale-up: false;
@@ -29,7 +21,7 @@
 	--web-is-overlay: false;
 }
 #Side_Nav,
-#Fallback {
+#Contact_Us {
 	display: none;
 }
 @media (min-width: 0px) {
@@ -111,7 +103,7 @@
 		position: absolute;
 		width: 101px;
 		height: 1px;
-		left: 9.5px;
+		left: 9.418px;
 		top: 104.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
@@ -135,8 +127,8 @@
 }
 @media (min-width: 0px) {
 	.mediaViewInfo {
-		--web-view-name: Fallback;
-		--web-view-id: Fallback;
+		--web-view-name: Contact Us;
+		--web-view-id: Contact_Us;
 		--web-scale-on-resize: true;
 		--web-application: true;
 		--web-enable-deep-linking: true;
@@ -147,47 +139,163 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Fallback {
+	#Contact_Us {
+		position: absolute;
 		display: block;
-		background-color: rgba(255,255,255,1);
+		width: 100%;
+		height: 537px;
+		background-color: rgba(245,245,245,1);
 		overflow: hidden;
-		--web-view-name: Fallback;
-		--web-view-id: Fallback;
+		--web-view-name: Contact Us;
+		--web-view-id: Contact_Us;
 		--web-scale-on-resize: true;
 		--web-application: true;
 		--web-enable-deep-linking: true;
 	}
-	#Coffee_Bean_ {
+	#Nav {
+		position: absolute;
+		width: 100%;
+		height: 59px;
 		left: 0px;
 		top: 0px;
+		overflow: visible;
+	}
+	#header_container {
+		position: absolute;
+		width: 100%;
+		height: 59px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Top_Background {
+		fill: rgba(238,110,114,1);
+	}
+	.Top_Background {
 		position: absolute;
 		overflow: visible;
-		width: 117px;
+		width: 100%;
+		height: 48.4px;
+		left: 0px;
+		top: 0px;
+	}
+	#Bottom_Background {
+		fill: rgba(253,225,196,1);
+	}
+	.Bottom_Background {
+		position: absolute;
+		overflow: visible;
+		width: 100%;
+		height: 11px;
+		left: 0px;
+		top: 48px;
+	}
+	#Header {
+		position: absolute;
+		width: 80%;
+		height: 17px;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 20.5px;
+		overflow: visible;
+		max-width: 900px;
+	}
+	#COFFEE_BEAN {
+		left: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+		overflow: visible;
+		width: 115px;
 		white-space: nowrap;
-		line-height: 50px;
-		margin-top: -15px;
 		text-align: left;
 		font-family: Arial;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 20px;
-		color: rgba(93,93,93,1);
+		font-size: 16px;
+		color: rgba(255,255,255,1);
 		letter-spacing: -0.03px;
+	}
+	#Group_4 {
+		position: absolute;
+		width: 19px;
+		height: 10px;
+		right: 0px;
+		top: 3.5px;
+		overflow: visible;
+		cursor: pointer;
+	}
+	#Line_92 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_92 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_93 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_93 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_94 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_94 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 10px;
+		transform: matrix(1,0,0,1,0,0);
 	}
 	#Group_2 {
 		position: absolute;
-		width: 299px;
-		height: 111px;
-		left: 44px;
+		width: 80%;
+		height: 275px;
+		left: 50%;
+		transform: translateX(-50%);
 		top: 89px;
 		overflow: visible;
+		max-width: 900px;
 	}
-	#Oops {
-		left: 122px;
+	#Contact_Us_bi {
+		left: 50%;
+		transform: translateX(-50%);
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 54px;
+		width: 99px;
 		white-space: nowrap;
 		line-height: 50px;
 		margin-top: -15px;
@@ -199,13 +307,11 @@
 		color: rgba(0,0,0,1);
 		letter-spacing: -0.03px;
 	}
-	#Currently_you_cannot_view_this {
-		left: 1px;
+	#Lorem_ipsum_dolor_sit_amet_con {
+		left: 0px;
 		top: 45px;
 		position: absolute;
 		overflow: visible;
-		width: 299px;
-		white-space: nowrap;
 		text-align: left;
 		font-family: Arial;
 		font-style: normal;
@@ -214,12 +320,45 @@
 		color: rgba(0,0,0,1);
 		letter-spacing: -0.03px;
 	}
-	#Go_to_homepage {
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: relative;
+		width: 272px;
+		height: 1px;
+		left: 0.5px;
+		top: 151.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Find_us_at {
 		left: 0px;
-		top: 94px;
+		top: 186px;
 		position: absolute;
 		overflow: visible;
-		width: 120px;
+		width: 75px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#ID1234_Coffee_Bean_Lane_New_Yo {
+		left: 2px;
+		top: 222px;
+		position: absolute;
+		overflow: visible;
+		width: 169px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Arial;
@@ -230,80 +369,3 @@
 		letter-spacing: -0.03px;
 	}
 }
-
-</style>
-
-  <!-- materialize icons, css & js -->
-  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
-  <link type="text/css" href="/css/styles.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script type="text/javascript" src="/js/materialize.min.js"></script>
-<link rel="manifest" href="/manifest.json">
-  <!-- ios support -->
-  <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
-  <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
-  <meta name="theme-color" content="#FFE1C4">
-
-</head>
-<body class="grey lighten-4">
-<div id="Side_Nav" class="grey lighten-4">
-	<!-- top nav -->
-	<ul id="side-menu" class="sidenav side-menu">
-		<li>
-			<a class="subheader">Coffee Bean</a>
-		</li>
-		<li>
-			<a class="waves-effect" href="/">Home</a>
-		</li>
-		<li>
-			<a class="waves-effect" href="/pages/about.html">About</a>
-		</li>
-		<li>
-			<div class="divider">
-			</div>
-		</li>
-		<li>
-			    <a href="/pages/contact.html" class="waves-effect">
-      <i class="material-icons">mail_outline</i>Contact
-    </a>
-    
-		</li>
-	</ul>
-</div>
-<div id="Fallback">
-	<!-- top nav -->
-	<nav class="z-depth-0">
-		<div class="nav-wrapper container">
-			<a href="/">
-			<span>Coffee Bean</span>
-		
-		</a>
-			<span class="right grey-text text-darken-1">
-				<i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-			</span>
-		</div>
-	</nav>
-	<div class="container grey-text center">
-		<h5 class="center">
-			Oops!
-		</h5>
-		<p>
-			<span>Currently you cannot view this page offline</span>
-		</p>
-		<a href="/">
-		<div class="btn-small orange">
-			Go to homepage
-		</div>
-		</a>
-	</div>
-</div>
-
-  <script src="/js/app.js"></script>
-  <script type="text/javascript" src="/js/ui.js"></script>
-</body>
-<style>
-#Side_Nav,#Fallback {
-     display: block;
-}
-</style>
-</html>

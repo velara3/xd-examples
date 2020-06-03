@@ -7,7 +7,7 @@
 <title>Coffee Order</title>
 <style id="applicationStylesheet" type="text/css">
 :root {
-	--web-view-ids: Coffee_Order,Side_Nav,Recipes,Add,Recipe_Side_Nav;
+	--web-view-ids: Side_Nav,Recipe_Side_Nav,Coffee_Order;
 	--web-view-name: Coffee Order;
 	--web-view-id: Coffee_Order;
 	--web-scale-to-fit: false;
@@ -27,55 +27,12 @@
 	--web-show-navigation-controls: false;
 	--web-enable-deep-linking: true;
 	--web-is-overlay: false;
+	--web-page-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
-#Coffee_Order,
 #Side_Nav,
-#Recipes,
-#Add,
-#Recipe_Side_Nav {
+#Recipe_Side_Nav,
+#Coffee_Order {
 	display: none;
-}
-@media (min-width: 0px) {
-	.mediaViewInfo {
-		--web-view-name: Coffee Order;
-		--web-view-id: Coffee_Order;
-		--web-scale-on-resize: true;
-		--web-application: true;
-		--web-enable-deep-linking: true;
-	}
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		border: none;
-	}
-	#Coffee_Order {
-		display: block;
-		background-color: rgba(255,255,255,1);
-		overflow: hidden;
-		--web-view-name: Coffee Order;
-		--web-view-id: Coffee_Order;
-		--web-scale-on-resize: true;
-		--web-application: true;
-		--web-enable-deep-linking: true;
-	}
-	#Coffee_Bean {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 117px;
-		white-space: nowrap;
-		line-height: 50px;
-		margin-top: -15px;
-		text-align: left;
-		font-family: Arial;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		color: rgba(93,93,93,1);
-		letter-spacing: -0.03px;
-	}
 }
 @media (min-width: 0px) {
 	.mediaViewInfo {
@@ -91,7 +48,7 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Coffee_Bean_ {
+	#Coffee_Bean {
 		left: 6px;
 		top: 10px;
 		position: absolute;
@@ -156,7 +113,7 @@
 		position: absolute;
 		width: 101px;
 		height: 1px;
-		left: 9.5px;
+		left: 9.418px;
 		top: 104.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
@@ -176,61 +133,6 @@
 		font-size: 20px;
 		color: rgba(0,0,0,1);
 		letter-spacing: -0.03px;
-	}
-}
-@media (min-width: 0px) {
-	.mediaViewInfo {
-		--web-view-name: Recipes;
-		--web-view-id: Recipes;
-		--web-scale-on-resize: true;
-		--web-application: true;
-		--web-enable-deep-linking: true;
-	}
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		border: none;
-	}
-	#Menu_Items {
-		left: 183px;
-		top: 8px;
-		position: absolute;
-		overflow: visible;
-		width: 84px;
-		white-space: nowrap;
-		line-height: 28px;
-		margin-top: -6px;
-		text-align: left;
-		font-family: Arial;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 16px;
-		color: rgba(0,0,0,1);
-		letter-spacing: -0.03px;
-	}
-}
-@media (min-width: 0px) {
-	.mediaViewInfo {
-		--web-view-name: Add;
-		--web-view-id: Add;
-		--web-scale-on-resize: true;
-		--web-application: true;
-		--web-enable-deep-linking: true;
-	}
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		border: none;
-	}
-	#Group_1_bm {
-		position: absolute;
-		width: 465px;
-		height: 35px;
-		left: 20px;
-		top: 12px;
-		overflow: visible;
 	}
 }
 @media (min-width: 0px) {
@@ -272,7 +174,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Divider_bv {
+	#Divider_bb {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -281,7 +183,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Divider_bv {
+	.Divider_bb {
 		overflow: visible;
 		position: absolute;
 		width: 101px;
@@ -332,7 +234,7 @@
 		top: 125px;
 		overflow: visible;
 	}
-	#Add_bz {
+	#Add_bf {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -350,8 +252,279 @@
 		letter-spacing: -0.03px;
 	}
 }
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Coffee Order;
+		--web-view-id: Coffee_Order;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Coffee_Order {
+		position: absolute;
+		display: block;
+		width: 100%;
+		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+		background-color: rgba(245,245,245,1);
+		overflow: visible;
+		--web-view-name: Coffee Order;
+		--web-view-id: Coffee_Order;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	}
+	#Menu_Header {
+		position: relative;
+		width: 100%;
+		height: 40px;
+		margin-left: 0px;
+		margin-top: 59px;
+		overflow: visible;
+	}
+	#Menu_Items {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 89px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		color: rgba(0,0,0,0.584);
+		letter-spacing: -0.03px;
+	}
+	#Recipe_Container_bl {
+		position: relative;
+		overflow: hidden;
+	}
+	#recipes {
+		position: relative;
+		width: 80%;
+		height: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0px;
+		overflow: visible;
+		max-width: 900px;
+	}
+	#Footer_Group {
+		position: relative;
+		width: 100%;
+		height: 40px;
+		overflow: visible;
+	}
+	#footer {
+		position: absolute;
+		width: 80%;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0px;
+		overflow: visible;
+		max-width: 900px;
+	}
+	#Group_8 {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		overflow: visible;
+		cursor: pointer;
+	}
+	#Ellipse_1 {
+		fill: rgba(255,136,22,1);
+	}
+	.Ellipse_1 {
+		filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.404));
+		position: absolute;
+		overflow: visible;
+		width: 39px;
+		height: 39px;
+		left: 0px;
+		top: 0px;
+	}
+	#Group_7 {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		overflow: visible;
+	}
+	#Line_95 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_95 {
+		overflow: visible;
+		position: absolute;
+		width: 2px;
+		height: 12px;
+		left: 6px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_96 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_96 {
+		overflow: visible;
+		position: absolute;
+		width: 12px;
+		height: 2px;
+		left: 0px;
+		top: 6px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#header_container {
+		position: absolute;
+		width: 100%;
+		height: 59px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Top_Background {
+		fill: rgba(238,110,114,1);
+	}
+	.Top_Background {
+		position: absolute;
+		overflow: visible;
+		width: 100%;
+		height: 48.4px;
+		left: 0px;
+		top: 0px;
+	}
+	#Bottom_Background {
+		fill: rgba(253,225,196,1);
+	}
+	.Bottom_Background {
+		position: absolute;
+		overflow: visible;
+		width: 100%;
+		height: 11px;
+		left: 0px;
+		top: 48px;
+	}
+	#Header {
+		position: absolute;
+		width: 80%;
+		height: 17px;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 20.5px;
+		overflow: visible;
+		max-width: 900px;
+	}
+	#COFFEE_BEAN {
+		left: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		color: rgba(255,255,255,1);
+		letter-spacing: -0.03px;
+	}
+	#Group_4 {
+		position: absolute;
+		width: 19px;
+		height: 10px;
+		right: 0px;
+		top: 3.5px;
+		overflow: visible;
+		cursor: pointer;
+	}
+	#Line_92 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_92 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_93 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_93 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_94 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_94 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 10px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+}
 
 </style>
+
 
   <!-- materialize icons, css & js -->
   <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
@@ -366,20 +539,6 @@
 
 </head>
 <body class="grey lighten-4">
-<div id="Coffee_Order">
-	<!-- top nav -->
-	<nav class="z-depth-0">
-		<div class="nav-wrapper container">
-			<a href="/">
-			<span>Coffee Bean</span>
-		
-		</a>
-			<span class="right grey-text text-darken-1">
-				<i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-			</span>
-		</div>
-	</nav>
-</div>
 <div id="Side_Nav" class="grey lighten-4">
 	<!-- top nav -->
 	<ul id="side-menu" class="sidenav side-menu">
@@ -403,18 +562,6 @@
     
 		</li>
 	</ul>
-</div>
-<div id="Recipes" class="recipes container grey-text text-darken-1">
-	<h6 class="center">
-		Menu Items
-	</h6>
-</div>
-<div id="Add" class="container grey-text text-darken-1">
-	<div class="center">
-		<a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
-			<i class="material-icons">add</i>
-		</a>
-	</div>
 </div>
 <div id="Recipe_Side_Nav" class="grey lighten-4">
 	<!-- top nav -->
@@ -443,13 +590,71 @@
 		</form>
 	</div>
 </div>
+<div id="Coffee_Order">
+	<div id="Menu_Header">
+		<div id="Menu_Items">
+			<span>Menu Items</span>
+		</div>
+	</div>
+	<div id="Recipe_Container_bl">
+		<div id="recipes" class="recipes">
+		</div>
+	</div>
+	<div id="Footer_Group">
+		<div id="footer">
+		</div>
+		<div id="Group_8" class="sidenav-trigger" data-target="side-form">
+			<svg class="Ellipse_1">
+				<ellipse id="Ellipse_1" rx="15" ry="15" cx="15" cy="15">
+				</ellipse>
+			</svg>
+			<div id="Group_7">
+				<svg class="Line_95" viewBox="0 0 2 12">
+					<path id="Line_95" d="M 0 0 L 0 12">
+					</path>
+				</svg>
+				<svg class="Line_96" viewBox="0 0 12 2">
+					<path id="Line_96" d="M 0 0 L 12 0">
+					</path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<nav id="Nav" class="Nav z-depth-0">
+		<div id="header_container" class="z-depth-0">
+			<svg class="Top_Background">
+				<rect id="Top_Background" rx="0" ry="0" x="0" y="0" width="100%" height="48.4">
+				</rect>
+			</svg>
+			<svg class="Bottom_Background">
+				<rect id="Bottom_Background" rx="0" ry="0" x="0" y="0" width="100%" height="11">
+				</rect>
+			</svg>
+			<div id="Header">
+				<a href="/">
+				<div id="COFFEE_BEAN">
+					<span>COFFEE BEAN</span>
+				</div>
+				</a>
+				<div id="Group_4" class="sidenav-trigger" data-target="side-menu">
+					<svg class="Line_92" viewBox="0 0 19 2">
+						<path id="Line_92" d="M 0 0 L 19 0">
+						</path>
+					</svg>
+					<svg class="Line_93" viewBox="0 0 19 2">
+						<path id="Line_93" d="M 0 0 L 19 0">
+						</path>
+					</svg>
+					<svg class="Line_94" viewBox="0 0 19 2">
+						<path id="Line_94" d="M 0 0 L 19 0">
+						</path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
 
-
-<style>
-#Coffee_Order,#Side_Nav,#Recipes,#Add,#Recipe_Side_Nav {
-     display: block;
-}
-</style>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
@@ -472,7 +677,12 @@
 </script>
 
   <script src="/js/app.js"></script>
-  <script src="/js/data.js"></script>
+  <script src="/js/db.js"></script>
   <script type="text/javascript" src="/js/ui.js"></script>
 </body>
+<style>
+#Side_Nav,#Recipe_Side_Nav,#Coffee_Order {
+     display: block;
+}
+</style>
 </html>

@@ -42,7 +42,7 @@ form.addEventListener('submit', evt => {
 // remove a recipe
 const recipeContainer = document.querySelector('.recipes');
 recipeContainer.addEventListener('click', evt => {
-  if(evt.target.tagName === 'I'){
+  if(evt.target.classList && evt.target.classList.contains("delete")) {
     const id = evt.target.getAttribute('data-id');
     //console.log(id);
     db.collection('recipes').doc(id).delete();

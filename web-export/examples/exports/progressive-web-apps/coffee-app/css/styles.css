@@ -5,7 +5,7 @@
   --title: #FF8816;
 }
 
-/* layout styles */
+/* layout styles 
 nav{
   background: var(--primary);
   border-bottom: 10px solid var(--secondary);
@@ -19,9 +19,9 @@ nav a span{
 }
 nav .sidenav-trigger{
   margin: 0;
-}
+}*/
 
-/* recipe styles */
+/* recipe styles 
 .recipes{
   margin-top: 20px;
 }
@@ -56,7 +56,7 @@ nav .sidenav-trigger{
 }
 .recipe-ingredients{
   font-size: 0.8em;
-}
+}*/
 
 /* form-styles */
 .add-btn{
