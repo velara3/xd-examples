@@ -1391,6 +1391,7 @@ var Application = function() {
 	this.SIZE_STATE_NAME = "data-is-view-scaled";
 	this.STATE_NAME = this.prefix + "state";
 
+	this.lastTrigger = null;
 	this.lastView = null;
 	this.lastState = null;
 	this.lastOverlay = null;
@@ -1419,6 +1420,8 @@ var Application = function() {
 	this.viewScale = 1;
 	this.viewLeft = 0;
 	this.viewTop = 0;
+	this.horizontalScrollbarsNeeded = false;
+	this.verticalScrollbarsNeeded = false;
 
 	// view settings
 	this.showUpdateNotification = false;
@@ -2017,13 +2020,19 @@ var Application = function() {
 	self.showViewByMediaQuery = function(view, setViewOptions) {
 		var id = view ? view.id : null;
 		var query = id ? self.mediaQueryDictionary[id] : null;
-		var display = null;
+		var isOverlay = view ? self.isOverlay(view) : false;
 		setViewOptions = setViewOptions==null ? true : setViewOptions;
 
 		if (query) {
 			self.enableMediaQuery(query);
-			if (view && setViewOptions) self.setViewOptions(view);
-			if (view && setViewOptions) self.setViewVariables(view);
+
+			if (isOverlay && view && setViewOptions) {
+				self.setViewVariables(null, view);
+			}
+			else {
+				if (view && setViewOptions) self.setViewOptions(view);
+				if (view && setViewOptions) self.setViewVariables(view);
+			}
 		}
 	}
 
@@ -2068,19 +2077,42 @@ var Application = function() {
 		self.log("View not found '" + id + "'");
 	}
 
+	self.getElementView = function(element) {
+		var view = element;
+		var viewFound = false;
+
+		while (viewFound==false || view==null) {
+			if (view && self.viewsDictionary[view.id]) {
+				return view;
+			}
+			view = view.parentNode;
+		}
+	}
+
 	/**
 	 * Show overlay over view
+	 * @param {Event | HTMLElement} event event or html element with styles applied
 	 * @param {String} id id of view or view reference
 	 * @param {Number} x x location
 	 * @param {Number} y y location
-	 * @param {Event | HTMLElement} event event or html element with styles applied
 	 */
-	self.showOverlay = function(id, x, y, event) {
+	self.showOverlay = function(event, id, x, y) {
 		var overlay = id && typeof id === 'string' ? self.getViewById(id) : id ? id : null;
 		var query = overlay ? self.mediaQueryDictionary[overlay.id] : null;
 		var centerHorizontally = false;
 		var centerVertically = false;
+		var anchorLeft = false;
+		var anchorTop = false;
+		var anchorRight = false;
+		var anchorBottom = false;
 		var display = null;
+		var reparent = true;
+		var view = null;
+		
+		if (overlay==null || overlay==false) {
+			self.log("Overlay not found, '"+ id + "'");
+			return;
+		}
 
 		// get enter animation - event target must have css variables declared
 		if (event) {
@@ -2088,6 +2120,7 @@ var Application = function() {
 			var buttonComputedStyles = getComputedStyle(button);
 			var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
 			var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
+			var isAnimated = animation!="";
 			var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
 			var actionTarget = self.application ? null : self.getElement(actionTargetValue);
 			var actionTargetStyles = actionTarget ? actionTarget.style : null;
@@ -2108,7 +2141,24 @@ var Application = function() {
 
 		// remove any current overlays
 		if (self.currentOverlay) {
-			self.removeOverlay();
+
+			// act as switch if same button
+			if (self.currentOverlay==actionTarget || self.currentOverlay==null) {
+				if (self.lastTrigger==button) {
+					self.removeOverlay(isAnimated);
+					return;
+				}
+			}
+			else {
+				self.removeOverlay(isAnimated);
+			}
+		}
+
+		if (reparent) {
+			view = self.getElementView(button);
+			if (view) {
+				view.appendChild(overlay);
+			}
 		}
 
 		if (query) {
@@ -2120,7 +2170,7 @@ var Application = function() {
 			
 			if (overlay && display=="" || display=="none") {
 				overlay.style.display = "block";
-				self.setViewOptions(overlay);
+				//self.setViewOptions(overlay);
 			}
 
 			// add animation defined in event target style declaration
@@ -2129,10 +2179,6 @@ var Application = function() {
 			}
 		}
 		else if (id) {
-			if (overlay==null || overlay==false) {
-				self.log("Overlay not found, '"+ id + "'");
-				return;
-			}
 
 			display = window.getComputedStyle(overlay).getPropertyValue("display");
 
@@ -2147,18 +2193,59 @@ var Application = function() {
 		}
 
 		// do not set x or y position if centering
-		centerHorizontally = self.getViewPreferenceBoolean(overlay, self.prefix + "center-horizontally", false);
-		centerVertically = self.getViewPreferenceBoolean(overlay, self.prefix + "center-vertically", false);
+		var horizontal = self.prefix + "center-horizontally";
+		var vertical = self.prefix + "center-vertically";
+		var style = overlay.style;
+		var transform = [];
 
-		if (overlay && centerHorizontally==false) {
-			overlay.style.left = x + "px";
+		centerHorizontally = self.getIsStyleDefined(id, horizontal) ? self.getViewPreferenceBoolean(overlay, horizontal) : false;
+		centerVertically = self.getIsStyleDefined(id, vertical) ? self.getViewPreferenceBoolean(overlay, vertical) : false;
+		anchorLeft = self.getIsStyleDefined(id, "left");
+		anchorRight = self.getIsStyleDefined(id, "right");
+		anchorTop = self.getIsStyleDefined(id, "top");
+		anchorBottom = self.getIsStyleDefined(id, "bottom");
+
+		
+		if (self.viewsDictionary[overlay.id] && self.viewsDictionary[overlay.id].styleDeclaration) {
+			style = self.viewsDictionary[overlay.id].styleDeclaration.style;
 		}
 		
-		if (overlay && centerVertically==false) {
-			overlay.style.top = y + "px";
+		if (centerHorizontally) {
+			style.left = "50%";
+			style.transformOrigin = "0 0";
+			transform.push("translateX(-50%)");
+		}
+		else if (anchorRight && anchorLeft) {
+			style.left = x + "px";
+		}
+		else if (anchorRight) {
+			//style.right = x + "px";
+		}
+		else {
+			style.left = x + "px";
+		}
+		
+		if (centerVertically) {
+			style.top = "50%";
+			transform.push("translateY(-50%)");
+			style.transformOrigin = "0 0";
+		}
+		else if (anchorTop && anchorBottom) {
+			style.top = y + "px";
+		}
+		else if (anchorBottom) {
+			//style.bottom = y + "px";
+		}
+		else {
+			style.top = y + "px";
+		}
+
+		if (transform.length) {
+			style.transform = transform.join(" ");
 		}
 
 		self.currentOverlay = overlay;
+		self.lastTrigger = button;
 	}
 
 	self.goBack = function() {
@@ -2185,11 +2272,13 @@ var Application = function() {
 				setTimeout(function() {
 					self.setElementAnimation(overlay, null);
 					self.hideOverlay(overlay);
+					self.currentOverlay = null;
 				}, duration);
 			}
 			else {
 				self.setElementAnimation(overlay, null);
 				self.hideOverlay(overlay);
+				self.currentOverlay = null;
 			}
 		}
 	}
@@ -2529,6 +2618,11 @@ var Application = function() {
 		var transformValue = "";
 		var canCenterVertically = true;
 		var canCenterHorizontally = true;
+		var style = view.style;
+
+		if (view && self.viewsDictionary[view.id] && self.viewsDictionary[view.id].styleDeclaration) {
+			style = self.viewsDictionary[view.id].styleDeclaration.style;
+		}
 
 		if (scaleToFit && isSliderChange!=true) {
 			if (scaleToFitType=="fit" || scaleToFitType=="") {
@@ -2594,8 +2688,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -2613,8 +2707,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -2622,8 +2716,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 			self.viewScale = desiredScale;
 			self.viewToFitWidthScale = scaleNeededToFitWidth;
@@ -2682,8 +2776,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -2701,8 +2795,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -2710,8 +2804,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 			self.viewScale = desiredScale;
 			self.viewToFitWidthScale = scaleNeededToFitWidth;
@@ -2757,8 +2851,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -2776,8 +2870,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -2785,8 +2879,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 			self.viewScale = desiredScale;
 			self.viewToFitWidthScale = scaleNeededToFitWidth;
@@ -2822,8 +2916,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -2841,8 +2935,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -2853,8 +2947,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 
 			self.viewScale = desiredScale;
@@ -3362,6 +3456,11 @@ var Application = function() {
 		return value;
 	}
 
+	/**
+	 * Get the first defined value of property. Returns empty string if not defined
+	 * @param {String} id id of element
+	 * @param {String} property 
+	 */
 	self.getCSSPropertyValueForElement = function(id, property) {
 		var styleSheets = document.styleSheets;
 		var numOfStylesheets = styleSheets.length;
@@ -3388,7 +3487,7 @@ var Application = function() {
 						
 						if (mediaRule.selectorText==selectorIDText || mediaRule.selectorText==selectorClassText) {
 							
-							if (mediaRule.style && property in mediaRule.style) {
+							if (mediaRule.style && mediaRule.style.getPropertyValue(property)!="") {
 								value = mediaRule.style.getPropertyValue(property);
 								values.push(value);
 							}
@@ -3398,7 +3497,7 @@ var Application = function() {
 				else {
 
 					if (cssRule.selectorText==selectorIDText || cssRule.selectorText==selectorClassText) {
-						if (cssRule.style && property in cssRule.style) {
+						if (cssRule.style && cssRule.style.getPropertyValue(property)!="") {
 							value = cssRule.style.getPropertyValue(property);
 							values.push(value);
 						}
@@ -3406,8 +3505,13 @@ var Application = function() {
 				}
 			}
 		}
-		
+
 		return values.pop();
+	}
+
+	self.getIsStyleDefined = function(id, property) {
+		var value = self.getCSSPropertyValueForElement(id, property);
+		return value!==undefined && value!="";
 	}
 
 	self.collectViews = function() {
@@ -3416,7 +3520,6 @@ var Application = function() {
 		for (let index = 0; index < viewIds.length; index++) {
 			const id = viewIds[index];
 			const view = self.getElement(id);
-			//view && view.addEventListener("animationend", self.animationEndHandler);
 			self.views[id] = view;
 		}
 		
@@ -3463,18 +3566,22 @@ var Application = function() {
 			if (cssRule.media) {
 				var mediaRules = cssRule.cssRules;
 				var numOfMediaRules = mediaRules ? mediaRules.length : 0;
+				var mediaViewInfoFound = false;
+				var mediaId = null;
 				
 				for(var k=0;k<numOfMediaRules;k++) {
 					var mediaRule = mediaRules[k];
-					var mediaId = null;
 
 					selectorText = mediaRule.selectorText;
 					
-					if (selectorText==".mediaViewInfo") {
+					if (selectorText==".mediaViewInfo" && mediaViewInfoFound==false) {
 
 						mediaId = self.getStyleRuleValue(mediaRule, property);
 						stateValue = self.getStyleRuleValue(mediaRule, stateName);
 
+						selectorIDText = "#" + mediaId;
+						selectorClassText = "." + mediaId + "_Class";
+						
 						// prevent duplicates from load and domcontentloaded events
 						if (self.addedViews.indexOf(mediaId)==-1) {
 							self.addView(mediaId, cssRule, mediaRule, stateValue);
@@ -3486,6 +3593,14 @@ var Application = function() {
 							viewsNotFound.splice(viewsNotFound.indexOf(mediaId));
 						}
 
+						mediaViewInfoFound = true;
+					}
+
+					if (selectorIDText==selectorText || selectorClassText==selectorText) {
+						var styleObject = self.viewsDictionary[mediaId];
+						if (styleObject) {
+							styleObject.styleDeclaration = mediaRule;
+						}
 						break;
 					}
 				}
@@ -3494,7 +3609,6 @@ var Application = function() {
 				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
-					//stateValue = self.getStyleRuleValue(cssRule, stateName);
 					self.addView(selectorText, cssRule, null, stateValue);
 
 					if (viewsNotFound.indexOf(selectorText)!=-1) {
@@ -3566,7 +3680,7 @@ var Application = function() {
 		var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
 		var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
 		var targetView = self.application ? null : self.getElement(actionTargetValue);
-		var targetState = self.getStateNameByViewId(targetView.id);
+		var targetState = targetView ? self.getStateNameByViewId(targetView.id) : null;
 		var actionTargetStyles = targetView ? targetView.style : null;
 		var state = self.viewsDictionary[actionTargetValue];
 		
@@ -3762,7 +3876,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3792,7 +3907,7 @@ var Application = function() {
 
 	self.centerView = function(view) {
 
-		if (self.scaleToFit) {
+		if (self.scaleViewsToFit) {
 			self.scaleViewToFit(view, true);
 		}
 		else {
@@ -3874,7 +3989,13 @@ var Application = function() {
 			if (viewChangingEvent.defaultPrevented==false) {
 				for (var index = 0; index < hideViews.length; index++) {
 					var view = hideViews[index];
-					self.hideElement(view);
+
+					if (self.isOverlay(view)) {
+						self.removeOverlay(view);
+					}
+					else {
+						self.hideElement(view);
+					}
 				}
 
 				for (var index = 0; index < showViews.length; index++) {

@@ -24,6 +24,15 @@
 	--web-show-navigation-controls: true;
 	--web-enable-deep-linking: true;
 }
+#Rectangle_1 {
+	fill: rgba(244,244,244,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
 .Rectangle_1 {
 	position: absolute;
 	overflow: visible;
@@ -31,6 +40,15 @@
 	height: 75px;
 	left: 20px;
 	top: 80px;
+}
+#Line_85 {
+	fill: transparent;
+	stroke: rgba(177,177,177,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
 }
 .Line_85 {
 	overflow: visible;

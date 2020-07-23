@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop Up Menu</title>
+<style id="applicationStylesheet" type="text/css">
+:root {
+	--web-view-ids: Pop_Up_Menu,MainMenu,MainMenu_Right;
+	--web-view-name: Pop Up Menu;
+	--web-view-id: Pop_Up_Menu;
+	--web-scale-to-fit: false;
+	--web-scale-to-fit-type: default;
+	--web-enable-scale-up: false;
+	--web-scale-on-resize: false;
+	--web-show-scale-controls: false;
+	--web-scale-on-double-click: false;
+	--web-center-horizontally: false;
+	--web-center-vertically: false;
+	--web-actual-size-on-double-click: false;
+	--web-navigate-on-keypress: false;
+	--web-refresh-for-changes: false;
+	--web-add-image-compare: false;
+	--web-show-by-media-query: false;
+	--web-application: true;
+	--web-show-navigation-controls: false;
+	--web-enable-deep-linking: true;
+	--web-is-overlay: false;
+	--web-page-font: sans-serif;
+}
+#Pop_Up_Menu,
+#MainMenu,
+#MainMenu_Right {
+	display: none;
+}
+@media (min-width: 603px) {
+	.mediaViewInfo {
+		--web-view-name: Pop Up Menu;
+		--web-view-id: Pop_Up_Menu;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Pop_Up_Menu {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		font-family: sans-serif;
+		background-color: rgba(242,242,242,1);
+		overflow: hidden;
+		--web-view-name: Pop Up Menu;
+		--web-view-id: Pop_Up_Menu;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	@keyframes slide-left {
+	
+		0% {
+			transform: translateX(100%);
+		}
+	
+	}
+	@keyframes slide-right {
+	
+		0% {
+			transform: translateX(-100%);
+		}
+	
+	}
+	#Slide_in_View {
+		left: 51px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 122px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85_ {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85_ {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 22.231px;
+		right: 21.5px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Clickin_on_the_links_will_show {
+		right: 21px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 195px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Slide_in {
+		right: 21px;
+		top: 93px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Slide_in_a_view_from_the_side {
+		left: 20px;
+		top: 68px;
+		position: absolute;
+		overflow: visible;
+		width: 132px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Be_sure_to_export_as_a_single_ {
+		left: 20px;
+		bottom: 37px;
+		position: absolute;
+		overflow: visible;
+		width: 533px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_z {
+		fill: url(#Rectangle_177_z);
+	}
+	.Rectangle_177_z {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#menu-group {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		right: 22.5px;
+		top: 115.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-left 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: MainMenu_Right;
+	}
+	#Group_60 {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#Slide_in_ {
+		left: 22px;
+		top: 108px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#menu-group_ {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 24.5px;
+		top: 130.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-right 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: MainMenu;
+	}
+	#Group_60_ {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#Line_85_ {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85_ {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 22.231px;
+		right: 21.5px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: MainMenu;
+		--web-view-id: MainMenu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#MainMenu {
+		position: absolute;
+		display: block;
+		width: 211px;
+		height: 500px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: MainMenu;
+		--web-view-id: MainMenu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	#Line_90 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_90 {
+		overflow: visible;
+		position: absolute;
+		width: 189px;
+		height: 1px;
+		left: 11.5px;
+		top: 52.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Menu_ba {
+		left: 9px;
+		top: 15px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Item_1 {
+		left: 14px;
+		top: 74px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_2 {
+		left: 14px;
+		top: 110px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_3 {
+		left: 14px;
+		top: 145px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_61 {
+		position: absolute;
+		width: 19px;
+		height: 19px;
+		left: 180px;
+		top: 12px;
+		overflow: visible;
+	}
+	#Ellipse_1 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		height: 19px;
+		left: 0px;
+		top: 0px;
+	}
+	#Line_88 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_88 {
+		overflow: visible;
+		position: absolute;
+		width: 11.673px;
+		height: 10.74px;
+		left: 4px;
+		top: 4.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_89 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_89 {
+		overflow: visible;
+		position: absolute;
+		width: 10.707px;
+		height: 10.707px;
+		left: 4.5px;
+		top: 4.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: MainMenu Right;
+		--web-view-id: MainMenu_Right;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#MainMenu_Right {
+		position: absolute;
+		display: block;
+		width: 211px;
+		height: 500px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: MainMenu Right;
+		--web-view-id: MainMenu_Right;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+		right: 0px;
+	}
+	#Line_90_bk {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_90_bk {
+		overflow: visible;
+		position: absolute;
+		width: 189px;
+		height: 1px;
+		left: 11.5px;
+		top: 52.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Menu_bl {
+		left: 9px;
+		top: 15px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Item_1_bm {
+		left: 14px;
+		top: 74px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_2_bn {
+		left: 14px;
+		top: 110px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_3_bo {
+		left: 14px;
+		top: 145px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 21px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_61_bp {
+		position: absolute;
+		width: 19px;
+		height: 19px;
+		left: 180px;
+		top: 12px;
+		overflow: visible;
+	}
+	#Ellipse_1_bq {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_1_bq {
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		height: 19px;
+		left: 0px;
+		top: 0px;
+	}
+	#Line_88_br {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_88_br {
+		overflow: visible;
+		position: absolute;
+		width: 11.673px;
+		height: 10.74px;
+		left: 4px;
+		top: 4.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_89_bs {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_89_bs {
+		overflow: visible;
+		position: absolute;
+		width: 10.707px;
+		height: 10.707px;
+		left: 4.5px;
+		top: 4.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+}
+
+</style>
+<script id="applicationScript" type="text/javascript" src="Pop_Up_Menu.js"></script>
+</head>
+<body>
+<div id="Pop_Up_Menu">
+	<div id="Slide_in_View">
+		<span>Slide in View</span>
+	</div>
+	<svg class="Line_85_" viewBox="0 0 559.269 1">
+		<path id="Line_85_" d="M 0 0 L 559.2686767578125 0">
+		</path>
+	</svg>
+	<div id="Clickin_on_the_links_will_show">
+		<span>Clickin on the links will show pop up view</span>
+	</div>
+	<div id="Slide_in">
+		<span>Slide in</span>
+	</div>
+	<div id="Slide_in_a_view_from_the_side">
+		<span>Slide in a view from the side</span>
+	</div>
+	<div id="Be_sure_to_export_as_a_single_">
+		<span>Be sure to export as a single page application and include the pop up in the artboards to export (select artboards)</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_z">
+			<linearGradient id="Rectangle_177_z" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_z" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div onclick="application.showOverlay(event,'MainMenu_Right',392,0)" id="menu-group" class="menu_group">
+		<img id="Group_60" src="images/Group_60.png" srcset="images/Group_60.png 1x, images/Group_60@2x.png 2x">
+	</div>
+	<div id="Slide_in_">
+		<span>Slide in</span>
+	</div>
+	<div onclick="application.showOverlay(event,'MainMenu',0,0)" id="menu-group_" class="menu_group">
+		<img id="Group_60_" src="images/Group_60_.png" srcset="images/Group_60_.png 1x, images/Group_60_@2x.png 2x">
+	</div>
+	<svg class="Line_85_" viewBox="0 0 559.269 1">
+		<path id="Line_85_" d="M 0 0 L 559.2686767578125 0">
+		</path>
+	</svg>
+</div>
+<div id="MainMenu" onclick="application.goBack()">
+	<svg class="Line_90" viewBox="0 0 189 1">
+		<path id="Line_90" d="M 0 0 L 189 0">
+		</path>
+	</svg>
+	<div id="Menu_ba">
+		<span>Menu</span>
+	</div>
+	<div id="Item_1">
+		<span>Item 1</span>
+	</div>
+	<div id="Item_2">
+		<span>Item 2</span>
+	</div>
+	<div id="Item_3">
+		<span>Item 3</span>
+	</div>
+	<div id="Group_61">
+		<svg class="Ellipse_1">
+			<ellipse id="Ellipse_1" rx="9.5" ry="9.5" cx="9.5" cy="9.5">
+			</ellipse>
+		</svg>
+		<svg class="Line_88" viewBox="0 0 11 10">
+			<path id="Line_88" d="M 0 0 L 11 10">
+			</path>
+		</svg>
+		<svg class="Line_89" viewBox="0 0 10 10">
+			<path id="Line_89" d="M 10 0 L 0 10">
+			</path>
+		</svg>
+	</div>
+</div>
+<div id="MainMenu_Right" onclick="application.goBack()">
+	<svg class="Line_90_bk" viewBox="0 0 189 1">
+		<path id="Line_90_bk" d="M 0 0 L 189 0">
+		</path>
+	</svg>
+	<div id="Menu_bl">
+		<span>Menu</span>
+	</div>
+	<div id="Item_1_bm">
+		<span>Item 1</span>
+	</div>
+	<div id="Item_2_bn">
+		<span>Item 2</span>
+	</div>
+	<div id="Item_3_bo">
+		<span>Item 3</span>
+	</div>
+	<div id="Group_61_bp">
+		<svg class="Ellipse_1_bq">
+			<ellipse id="Ellipse_1_bq" rx="9.5" ry="9.5" cx="9.5" cy="9.5">
+			</ellipse>
+		</svg>
+		<svg class="Line_88_br" viewBox="0 0 11 10">
+			<path id="Line_88_br" d="M 0 0 L 11 10">
+			</path>
+		</svg>
+		<svg class="Line_89_bs" viewBox="0 0 10 10">
+			<path id="Line_89_bs" d="M 10 0 L 0 10">
+			</path>
+		</svg>
+	</div>
+</div>
+
+</body>
+</html>

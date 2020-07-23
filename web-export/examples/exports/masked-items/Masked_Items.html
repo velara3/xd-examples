@@ -23,7 +23,7 @@
 	}
 	#Masked_Items {
 		position: absolute;
-		width: 100%;
+		width: 693px;
 		height: 575px;
 		font-family: sans-serif;
 		background-color: rgba(255,255,255,1);
@@ -32,7 +32,6 @@
 		--web-view-id: Masked_Items;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
-		min-width:  650px;
 	}
 	#Masked_Items_g {
 		left: 50px;
@@ -50,6 +49,15 @@
 		font-size: 20px;
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
 	}
 	.Line_85 {
 		overflow: visible;
@@ -82,6 +90,9 @@
 		left: 20px;
 		top: 20px;
 		overflow: visible;
+	}
+	#Rectangle_177_l {
+		fill: url(#Rectangle_177_l);
 	}
 	.Rectangle_177_l {
 		position: absolute;
@@ -138,7 +149,7 @@
 		<span>Masked Items</span>
 	</div>
 	<hr class="Line_85" viewBox="0 0 653 1">
-		<path fill="transparent" stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_85" d="M 0 0 L 653 0">
+		<path id="Line_85" d="M 0 0 L 653 0">
 		</path>
 	</hr>
 	<div id="Elements_that_are_masked_are_e">
@@ -150,34 +161,19 @@
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect fill="url(#Rectangle_177_l)" id="Rectangle_177_l" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_l" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
 		<div id="W">
 			<span>W</span>
 		</div>
 	</div>
-	<svg style="width:inherit;height:inherit;overflow:visible;">
-		<rect fill="url(#Mobile_q_pattern)" width="100%" height="100%"></rect>
-			<pattern elementId="Mobile_q" id="Mobile_q_pattern" x="0" y="0" width="100%" height="100%">
-				<image x="0" y="0" width="100%" height="100%" href="Mobile_q_pattern.png" xlink:href="Mobile_q_pattern.png"></image>
-			</pattern>
-			<img id="Mobile" src="images/Mobile.png" srcset="images/Mobile.png 1x, images/Mobile@2x.png 2x">
-			</svg>
-	<svg style="width:inherit;height:inherit;overflow:visible;">
-		<rect fill="url(#Tablet_r_pattern)" width="100%" height="100%"></rect>
-			<pattern elementId="Tablet_r" id="Tablet_r_pattern" x="0" y="0" width="100%" height="100%">
-				<image x="0" y="0" width="100%" height="100%" href="Tablet_r_pattern.png" xlink:href="Tablet_r_pattern.png"></image>
-			</pattern>
-			<img id="Tablet" src="images/Tablet.png" srcset="images/Tablet.png 1x, images/Tablet@2x.png 2x">
-			</svg>
-	<svg style="width:inherit;height:inherit;overflow:visible;">
-		<rect fill="url(#Desktop_s_pattern)" width="100%" height="100%"></rect>
-			<pattern elementId="Desktop_s" id="Desktop_s_pattern" x="0" y="0" width="100%" height="100%">
-				<image x="0" y="0" width="100%" height="100%" href="Desktop_s_pattern.png" xlink:href="Desktop_s_pattern.png"></image>
-			</pattern>
-			<img id="Desktop" class="hide-on-mobile hide-on-tablet" src="images/Desktop.png" srcset="images/Desktop.png 1x, images/Desktop@2x.png 2x">
-			</svg>
+	<img id="Mobile" src="images/Mobile.png" srcset="images/Mobile.png 1x, images/Mobile@2x.png 2x">
+	</svg>
+	<img id="Tablet" src="images/Tablet.png" srcset="images/Tablet.png 1x, images/Tablet@2x.png 2x">
+	</svg>
+	<img id="Desktop" src="images/Desktop.png" srcset="images/Desktop.png 1x, images/Desktop@2x.png 2x">
+	</svg>
 </div>
 </body>
 </html>
