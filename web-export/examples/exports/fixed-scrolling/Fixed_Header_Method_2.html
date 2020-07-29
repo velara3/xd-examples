@@ -4,16 +4,16 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fixed Header</title>
+<title>Fixed Header Method 2</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Fixed Header 2;
-		--web-view-id: Fixed_Header_2;
+		--web-view-name: Fixed Header Method 2;
+		--web-view-id: Fixed_Header_Method_2;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Fixed_Header_2;
+		--web-view-ids: Fixed_Header_Method_2;
 	}
 	* {
 		margin: 0;
@@ -21,28 +21,30 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Fixed_Header_2 {
+	#Fixed_Header_Method_2 {
 		position: absolute;
 		width: 778px;
-		height: 1086px;
-		background-color: rgba(239,239,239,1);
-		overflow: visible;
-		--web-view-name: Fixed Header 2;
-		--web-view-id: Fixed_Header_2;
+		height: 100%;
+		background-color: rgba(181,224,250,1);
+		overflow: hidden;
+		--web-view-name: Fixed Header Method 2;
+		--web-view-id: Fixed_Header_Method_2;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	#Content {
 		position: absolute;
-		width: 753px;
-		height: 1011px;
-		margin-left: 12px;
-		margin-top: 52px;
-		overflow: visible;
+		width: 778px;
+		top: 63.5px;
+		bottom: 63.5px;
+		background-color: rgba(255,190,225,1);
+		border: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
 	}
 	#This_is_the_same_as_setting__p {
-		left: 8px;
-		top: 187px;
+		left: 20px;
+		top: 52px;
 		position: absolute;
 		overflow: visible;
 		width: 402px;
@@ -55,8 +57,8 @@
 		color: rgba(112,112,112,1);
 	}
 	#This_page_has_a_header_that_st {
-		left: 8px;
-		top: 146px;
+		left: 20px;
+		top: 18px;
 		position: absolute;
 		overflow: visible;
 		width: 350px;
@@ -68,12 +70,12 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd {
-		left: 28px;
-		top: 980px;
+	#Bottom_of_the_page {
+		left: 40px;
+		top: 928px;
 		position: absolute;
 		overflow: visible;
-		width: 318px;
+		width: 105px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
@@ -81,6 +83,7 @@
 		font-weight: normal;
 		font-size: 12px;
 		color: rgba(112,112,112,1);
+		margin-bottom:  10px;
 	}
 	#Header {
 		position: absolute;
@@ -107,7 +110,7 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Fixed_Header_2_p {
+	#Fixed_Header_2 {
 		left: 50px;
 		top: 14px;
 		position: absolute;
@@ -157,6 +160,48 @@
 		font-weight: bold;
 		font-size: 10px;
 		color: rgba(255,255,255,1);
+	}
+	#Header_u {
+		position: absolute;
+		width: 778px;
+		height: 47px;
+		left: 0px;
+		bottom: 0px;
+		background-color: rgba(226,226,226,1);
+		border: 0;
+		filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+		overflow: visible;
+	}
+	#The_footer_group_is_fixed_to_t {
+		left: 430px;
+		top: 24px;
+		position: absolute;
+		overflow: visible;
+		width: 329px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Fixed_Footer {
+		left: 50px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 121px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
 	}
 </style>
 <script id="applicationScript">
@@ -2988,7 +3033,7 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Fixed_Header_2">
+<div id="Fixed_Header_Method_2">
 	<div id="Content">
 		<div id="This_is_the_same_as_setting__p">
 			<span>This is the same as setting { position: sticky; top: 0px; left: 0px; z-index: 1 }</span>
@@ -2997,8 +3042,8 @@ window.application = new Application();
 			<span>This page has a header that stays fixed in position when scrolling</span>
 		</div>
 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline">
-		<div id="httpsdevelopermozillaorgen-USd">
-			<span>https://developer.mozilla.org/en-US/docs/Web/CSS/outline</span>
+		<div id="Bottom_of_the_page">
+			<span>Bottom of the page</span>
 		</div>
 		</a>
 	</div>
@@ -3006,7 +3051,7 @@ window.application = new Application();
 		<div id="The_header_group_is_fixed_to_t">
 			<span>The header group is fixed to the top of the page as the page scrolls</span>
 		</div>
-		<div id="Fixed_Header_2_p">
+		<div id="Fixed_Header_2">
 			<span>Fixed Header 2</span>
 		</div>
 		<div id="Icon">
@@ -3021,6 +3066,14 @@ window.application = new Application();
 			<div id="W">
 				<span>W</span>
 			</div>
+		</div>
+	</div>
+	<div id="Header_u">
+		<div id="The_footer_group_is_fixed_to_t">
+			<span>The footer group is fixed to the bottom of the page as the page scrolls</span>
+		</div>
+		<div id="Fixed_Footer">
+			<span>Fixed Footer</span>
 		</div>
 	</div>
 </div>
