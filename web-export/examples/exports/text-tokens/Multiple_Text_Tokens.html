@@ -38,7 +38,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83 {
+	#Line_83_bi {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -47,7 +47,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_bi {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -56,7 +56,7 @@
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#The_text_in_the_text_field_is_ {
+	#The_text_in_the_text_field_is__bj {
 		left: 331px;
 		top: 34px;
 		position: absolute;
@@ -70,7 +70,7 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Multiple_Text_Tokens_bb {
+	#Multiple_Text_Tokens_bk {
 		left: 50px;
 		top: 22px;
 		position: absolute;
@@ -101,9 +101,9 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#The_quick_brown_fox_jumps_over {
+	#The_quick_brown_fox_jumps_over_bm {
 		left: 20px;
-		top: 72px;
+		top: 94px;
 		position: absolute;
 		overflow: visible;
 		width: 269px;
@@ -115,7 +115,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_bn {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -123,10 +123,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_bg {
-		fill: url(#Rectangle_177_bg);
+	#Rectangle_177_bp {
+		fill: url(#Rectangle_177_bp);
 	}
-	.Rectangle_177_bg {
+	.Rectangle_177_bp {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -134,7 +134,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_bq {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -149,7 +149,7 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-	#httpsdevelopermozillaorgen-USd {
+	#httpsdevelopermozillaorgen-USd_br {
 		left: 20px;
 		top: 253px;
 		position: absolute;
@@ -162,6 +162,56 @@
 		font-weight: normal;
 		font-size: 10px;
 		color: rgba(112,112,112,1);
+	}
+	#The_quick_brown_fox_jumps_over_bs {
+		left: 311px;
+		top: 94px;
+		position: absolute;
+		overflow: visible;
+		width: 269px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Original_bt {
+		left: 311px;
+		top: 72px;
+		position: absolute;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Replaced_bu {
+		left: 20px;
+		top: 72px;
+		position: absolute;
+		overflow: visible;
+		width: 55px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Image_18 {
+		position: absolute;
+		width: 342px;
+		height: 28.082px;
+		left: 20px;
+		top: 195px;
+		overflow: visible;
 	}
 
 /* change the fill of the MyRectangle element on hover */
@@ -195,6 +245,7 @@ var Application = function() {
 	this.SIZE_STATE_NAME = "data-is-view-scaled";
 	this.STATE_NAME = this.prefix + "state";
 
+	this.lastTrigger = null;
 	this.lastView = null;
 	this.lastState = null;
 	this.lastOverlay = null;
@@ -223,6 +274,8 @@ var Application = function() {
 	this.viewScale = 1;
 	this.viewLeft = 0;
 	this.viewTop = 0;
+	this.horizontalScrollbarsNeeded = false;
+	this.verticalScrollbarsNeeded = false;
 
 	// view settings
 	this.showUpdateNotification = false;
@@ -821,13 +874,19 @@ var Application = function() {
 	self.showViewByMediaQuery = function(view, setViewOptions) {
 		var id = view ? view.id : null;
 		var query = id ? self.mediaQueryDictionary[id] : null;
-		var display = null;
+		var isOverlay = view ? self.isOverlay(view) : false;
 		setViewOptions = setViewOptions==null ? true : setViewOptions;
 
 		if (query) {
 			self.enableMediaQuery(query);
-			if (view && setViewOptions) self.setViewOptions(view);
-			if (view && setViewOptions) self.setViewVariables(view);
+
+			if (isOverlay && view && setViewOptions) {
+				self.setViewVariables(null, view);
+			}
+			else {
+				if (view && setViewOptions) self.setViewOptions(view);
+				if (view && setViewOptions) self.setViewVariables(view);
+			}
 		}
 	}
 
@@ -872,19 +931,42 @@ var Application = function() {
 		self.log("View not found '" + id + "'");
 	}
 
+	self.getElementView = function(element) {
+		var view = element;
+		var viewFound = false;
+
+		while (viewFound==false || view==null) {
+			if (view && self.viewsDictionary[view.id]) {
+				return view;
+			}
+			view = view.parentNode;
+		}
+	}
+
 	/**
 	 * Show overlay over view
+	 * @param {Event | HTMLElement} event event or html element with styles applied
 	 * @param {String} id id of view or view reference
 	 * @param {Number} x x location
 	 * @param {Number} y y location
-	 * @param {Event | HTMLElement} event event or html element with styles applied
 	 */
-	self.showOverlay = function(id, x, y, event) {
+	self.showOverlay = function(event, id, x, y) {
 		var overlay = id && typeof id === 'string' ? self.getViewById(id) : id ? id : null;
 		var query = overlay ? self.mediaQueryDictionary[overlay.id] : null;
 		var centerHorizontally = false;
 		var centerVertically = false;
+		var anchorLeft = false;
+		var anchorTop = false;
+		var anchorRight = false;
+		var anchorBottom = false;
 		var display = null;
+		var reparent = true;
+		var view = null;
+		
+		if (overlay==null || overlay==false) {
+			self.log("Overlay not found, '"+ id + "'");
+			return;
+		}
 
 		// get enter animation - event target must have css variables declared
 		if (event) {
@@ -892,6 +974,7 @@ var Application = function() {
 			var buttonComputedStyles = getComputedStyle(button);
 			var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
 			var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
+			var isAnimated = animation!="";
 			var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
 			var actionTarget = self.application ? null : self.getElement(actionTargetValue);
 			var actionTargetStyles = actionTarget ? actionTarget.style : null;
@@ -912,7 +995,24 @@ var Application = function() {
 
 		// remove any current overlays
 		if (self.currentOverlay) {
-			self.removeOverlay();
+
+			// act as switch if same button
+			if (self.currentOverlay==actionTarget || self.currentOverlay==null) {
+				if (self.lastTrigger==button) {
+					self.removeOverlay(isAnimated);
+					return;
+				}
+			}
+			else {
+				self.removeOverlay(isAnimated);
+			}
+		}
+
+		if (reparent) {
+			view = self.getElementView(button);
+			if (view) {
+				view.appendChild(overlay);
+			}
 		}
 
 		if (query) {
@@ -924,7 +1024,7 @@ var Application = function() {
 			
 			if (overlay && display=="" || display=="none") {
 				overlay.style.display = "block";
-				self.setViewOptions(overlay);
+				//self.setViewOptions(overlay);
 			}
 
 			// add animation defined in event target style declaration
@@ -933,10 +1033,6 @@ var Application = function() {
 			}
 		}
 		else if (id) {
-			if (overlay==null || overlay==false) {
-				self.log("Overlay not found, '"+ id + "'");
-				return;
-			}
 
 			display = window.getComputedStyle(overlay).getPropertyValue("display");
 
@@ -951,18 +1047,59 @@ var Application = function() {
 		}
 
 		// do not set x or y position if centering
-		centerHorizontally = self.getViewPreferenceBoolean(overlay, self.prefix + "center-horizontally", false);
-		centerVertically = self.getViewPreferenceBoolean(overlay, self.prefix + "center-vertically", false);
+		var horizontal = self.prefix + "center-horizontally";
+		var vertical = self.prefix + "center-vertically";
+		var style = overlay.style;
+		var transform = [];
 
-		if (overlay && centerHorizontally==false) {
-			overlay.style.left = x + "px";
+		centerHorizontally = self.getIsStyleDefined(id, horizontal) ? self.getViewPreferenceBoolean(overlay, horizontal) : false;
+		centerVertically = self.getIsStyleDefined(id, vertical) ? self.getViewPreferenceBoolean(overlay, vertical) : false;
+		anchorLeft = self.getIsStyleDefined(id, "left");
+		anchorRight = self.getIsStyleDefined(id, "right");
+		anchorTop = self.getIsStyleDefined(id, "top");
+		anchorBottom = self.getIsStyleDefined(id, "bottom");
+
+		
+		if (self.viewsDictionary[overlay.id] && self.viewsDictionary[overlay.id].styleDeclaration) {
+			style = self.viewsDictionary[overlay.id].styleDeclaration.style;
 		}
 		
-		if (overlay && centerVertically==false) {
-			overlay.style.top = y + "px";
+		if (centerHorizontally) {
+			style.left = "50%";
+			style.transformOrigin = "0 0";
+			transform.push("translateX(-50%)");
+		}
+		else if (anchorRight && anchorLeft) {
+			style.left = x + "px";
+		}
+		else if (anchorRight) {
+			//style.right = x + "px";
+		}
+		else {
+			style.left = x + "px";
+		}
+		
+		if (centerVertically) {
+			style.top = "50%";
+			transform.push("translateY(-50%)");
+			style.transformOrigin = "0 0";
+		}
+		else if (anchorTop && anchorBottom) {
+			style.top = y + "px";
+		}
+		else if (anchorBottom) {
+			//style.bottom = y + "px";
+		}
+		else {
+			style.top = y + "px";
+		}
+
+		if (transform.length) {
+			style.transform = transform.join(" ");
 		}
 
 		self.currentOverlay = overlay;
+		self.lastTrigger = button;
 	}
 
 	self.goBack = function() {
@@ -989,11 +1126,13 @@ var Application = function() {
 				setTimeout(function() {
 					self.setElementAnimation(overlay, null);
 					self.hideOverlay(overlay);
+					self.currentOverlay = null;
 				}, duration);
 			}
 			else {
 				self.setElementAnimation(overlay, null);
 				self.hideOverlay(overlay);
+				self.currentOverlay = null;
 			}
 		}
 	}
@@ -1333,6 +1472,11 @@ var Application = function() {
 		var transformValue = "";
 		var canCenterVertically = true;
 		var canCenterHorizontally = true;
+		var style = view.style;
+
+		if (view && self.viewsDictionary[view.id] && self.viewsDictionary[view.id].styleDeclaration) {
+			style = self.viewsDictionary[view.id].styleDeclaration.style;
+		}
 
 		if (scaleToFit && isSliderChange!=true) {
 			if (scaleToFitType=="fit" || scaleToFitType=="") {
@@ -1398,8 +1542,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -1417,8 +1561,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -1426,8 +1570,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 			self.viewScale = desiredScale;
 			self.viewToFitWidthScale = scaleNeededToFitWidth;
@@ -1486,8 +1630,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -1505,8 +1649,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -1514,8 +1658,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 			self.viewScale = desiredScale;
 			self.viewToFitWidthScale = scaleNeededToFitWidth;
@@ -1561,8 +1705,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -1580,8 +1724,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -1589,8 +1733,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 			self.viewScale = desiredScale;
 			self.viewToFitWidthScale = scaleNeededToFitWidth;
@@ -1626,8 +1770,8 @@ var Application = function() {
 					topPosition = "0";
 				}
 				
-				if (view.style.top != topPosition) {
-					view.style.top = topPosition + "";
+				if (style.top != topPosition) {
+					style.top = topPosition + "";
 				}
 
 				if (canCenterVertically) {
@@ -1645,8 +1789,8 @@ var Application = function() {
 					leftPosition = "0";
 				}
 
-				if (view.style.left != leftPosition) {
-					view.style.left = leftPosition + "";
+				if (style.left != leftPosition) {
+					style.left = leftPosition + "";
 				}
 
 				if (canCenterHorizontally) {
@@ -1657,8 +1801,8 @@ var Application = function() {
 				}
 			}
 
-			view.style.transformOrigin = "0 0";
-			view.style.transform = transformValue;
+			style.transformOrigin = "0 0";
+			style.transform = transformValue;
 
 
 			self.viewScale = desiredScale;
@@ -2166,6 +2310,11 @@ var Application = function() {
 		return value;
 	}
 
+	/**
+	 * Get the first defined value of property. Returns empty string if not defined
+	 * @param {String} id id of element
+	 * @param {String} property 
+	 */
 	self.getCSSPropertyValueForElement = function(id, property) {
 		var styleSheets = document.styleSheets;
 		var numOfStylesheets = styleSheets.length;
@@ -2192,7 +2341,7 @@ var Application = function() {
 						
 						if (mediaRule.selectorText==selectorIDText || mediaRule.selectorText==selectorClassText) {
 							
-							if (mediaRule.style && property in mediaRule.style) {
+							if (mediaRule.style && mediaRule.style.getPropertyValue(property)!="") {
 								value = mediaRule.style.getPropertyValue(property);
 								values.push(value);
 							}
@@ -2202,7 +2351,7 @@ var Application = function() {
 				else {
 
 					if (cssRule.selectorText==selectorIDText || cssRule.selectorText==selectorClassText) {
-						if (cssRule.style && property in cssRule.style) {
+						if (cssRule.style && cssRule.style.getPropertyValue(property)!="") {
 							value = cssRule.style.getPropertyValue(property);
 							values.push(value);
 						}
@@ -2210,8 +2359,13 @@ var Application = function() {
 				}
 			}
 		}
-		
+
 		return values.pop();
+	}
+
+	self.getIsStyleDefined = function(id, property) {
+		var value = self.getCSSPropertyValueForElement(id, property);
+		return value!==undefined && value!="";
 	}
 
 	self.collectViews = function() {
@@ -2220,7 +2374,6 @@ var Application = function() {
 		for (let index = 0; index < viewIds.length; index++) {
 			const id = viewIds[index];
 			const view = self.getElement(id);
-			//view && view.addEventListener("animationend", self.animationEndHandler);
 			self.views[id] = view;
 		}
 		
@@ -2267,18 +2420,22 @@ var Application = function() {
 			if (cssRule.media) {
 				var mediaRules = cssRule.cssRules;
 				var numOfMediaRules = mediaRules ? mediaRules.length : 0;
+				var mediaViewInfoFound = false;
+				var mediaId = null;
 				
 				for(var k=0;k<numOfMediaRules;k++) {
 					var mediaRule = mediaRules[k];
-					var mediaId = null;
 
 					selectorText = mediaRule.selectorText;
 					
-					if (selectorText==".mediaViewInfo") {
+					if (selectorText==".mediaViewInfo" && mediaViewInfoFound==false) {
 
 						mediaId = self.getStyleRuleValue(mediaRule, property);
 						stateValue = self.getStyleRuleValue(mediaRule, stateName);
 
+						selectorIDText = "#" + mediaId;
+						selectorClassText = "." + mediaId + "_Class";
+						
 						// prevent duplicates from load and domcontentloaded events
 						if (self.addedViews.indexOf(mediaId)==-1) {
 							self.addView(mediaId, cssRule, mediaRule, stateValue);
@@ -2290,15 +2447,26 @@ var Application = function() {
 							viewsNotFound.splice(viewsNotFound.indexOf(mediaId));
 						}
 
+						mediaViewInfoFound = true;
+					}
+
+					if (selectorIDText==selectorText || selectorClassText==selectorText) {
+						var styleObject = self.viewsDictionary[mediaId];
+						if (styleObject) {
+							styleObject.styleDeclaration = mediaRule;
+						}
 						break;
 					}
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
-					//stateValue = self.getStyleRuleValue(cssRule, stateName);
 					self.addView(selectorText, cssRule, null, stateValue);
 
 					if (viewsNotFound.indexOf(selectorText)!=-1) {
@@ -2370,7 +2538,7 @@ var Application = function() {
 		var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
 		var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
 		var targetView = self.application ? null : self.getElement(actionTargetValue);
-		var targetState = self.getStateNameByViewId(targetView.id);
+		var targetState = targetView ? self.getStateNameByViewId(targetView.id) : null;
 		var actionTargetStyles = targetView ? targetView.style : null;
 		var state = self.viewsDictionary[actionTargetValue];
 		
@@ -2549,6 +2717,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2566,7 +2741,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2596,7 +2772,7 @@ var Application = function() {
 
 	self.centerView = function(view) {
 
-		if (self.scaleToFit) {
+		if (self.scaleViewsToFit) {
 			self.scaleViewToFit(view, true);
 		}
 		else {
@@ -2678,7 +2854,13 @@ var Application = function() {
 			if (viewChangingEvent.defaultPrevented==false) {
 				for (var index = 0; index < hideViews.length; index++) {
 					var view = hideViews[index];
-					self.hideElement(view);
+
+					if (self.isOverlay(view)) {
+						self.removeOverlay(view);
+					}
+					else {
+						self.hideElement(view);
+					}
 				}
 
 				for (var index = 0; index < showViews.length; index++) {
@@ -2879,40 +3061,50 @@ window.application = new Application();
 </head>
 <body>
 <div id="Multiple_Text_Tokens">
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+	<svg class="Line_83_bi" viewBox="0 0 560 1">
+		<path id="Line_83_bi" d="M 0 0 L 560 0">
 		</path>
 	</svg>
-	<div id="The_text_in_the_text_field_is_">
+	<div id="The_text_in_the_text_field_is__bj">
 		<span>The text in the text field is replaced by custom HTML</span>
 	</div>
-	<div id="Multiple_Text_Tokens_bb">
+	<div id="Multiple_Text_Tokens_bk">
 		<span>Multiple Text Tokens</span>
 	</div>
 	<div id="In_the_text_above_the_word_qui">
 		<span>In the text above the word ‘quick’ is replaced with ‘clever’ and ‘sleeping’ is replaced with ‘determined’</span>
 	</div>
-	<div id="The_quick_brown_fox_jumps_over">
+	<div id="The_quick_brown_fox_jumps_over_bm">
 		<span>The clever fox jumps over the determined dog </span>
 	</div>
-	<div id="Icon">
-		<svg class="Rectangle_177_bg">
-			<linearGradient id="Rectangle_177_bg" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+	<div id="Icon_bn">
+		<svg class="Rectangle_177_bp">
+			<linearGradient id="Rectangle_177_bp" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_bg" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_bp" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_bq">
 			<span>W</span>
 		</div>
 	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
-	<div id="httpsdevelopermozillaorgen-USd">
+	<div id="httpsdevelopermozillaorgen-USd_br">
 		<span>https://developer.mozilla.org/en-US/docs/Glossary/HTML</span>
 	</div>
 	</a>
+	<div id="The_quick_brown_fox_jumps_over_bs">
+		<span>The quick brown fox jumps over the sleeping dog </span>
+	</div>
+	<div id="Original_bt">
+		<span>Original:</span>
+	</div>
+	<div id="Replaced_bu">
+		<span>Replaced:</span>
+	</div>
+	<img id="Image_18" src="data:image/png;base64,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">
 </div>
 </body>
 </html>

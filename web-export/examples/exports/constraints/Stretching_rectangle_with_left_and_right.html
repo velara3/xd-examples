@@ -38,7 +38,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83 {
+	#Line_83_c {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -47,7 +47,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_c {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -73,7 +73,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Group_82 {
+	#Group_82_c {
 		position: absolute;
 		width: 558px;
 		height: 86px;
@@ -91,7 +91,7 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_445 {
+	#Rectangle_445_c {
 		fill: rgba(234,234,234,1);
 		stroke: rgba(183,183,183,1);
 		stroke-width: 1px;
@@ -100,7 +100,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_445 {
+	.Rectangle_445_c {
 		position: absolute;
 		overflow: visible;
 		width: 100%;
@@ -121,7 +121,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#View_the_page_source_to_see_th {
+	#View_the_page_source_to_see_th_c {
 		left: 20px;
 		top: 326px;
 		position: absolute;
@@ -135,7 +135,7 @@
 		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
-	#RESIZE_TRANSITION {
+	#RESIZE_TRANSITION_c {
 		left: 465px;
 		top: 326px;
 		position: absolute;
@@ -149,7 +149,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Using_left_and_right_anchors_t {
+	#Using_left_and_right_anchors_t_c {
 		right: 45px;
 		top: 240px;
 		position: absolute;
@@ -163,7 +163,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_da {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -182,7 +182,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_dd {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -205,7 +205,7 @@
 		top: 299px;
 		overflow: visible;
 	}
-	#ADD_HOVER_STYLE_TO_EVERY_ELEME {
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME_df {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -2730,7 +2730,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3049,17 +3050,17 @@ window.application = new Application();
 </head>
 <body>
 <div id="Stretching_rectangle_with_left_and_right">
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+	<svg class="Line_83_c" viewBox="0 0 560 1">
+		<path id="Line_83_c" d="M 0 0 L 560 0">
 		</path>
 	</svg>
 	<div id="Stretching_rectangle_with_left">
 		<span>Stretching rectangle with left and right</span>
 	</div>
-	<div id="Group_82" class="resize92to50">
+	<div id="Group_82_c" class="resize92to50">
 		<div id="Group_83">
-			<svg class="Rectangle_445">
-				<rect id="Rectangle_445" rx="0" ry="0" x="0" y="0" width="100%" height="66">
+			<svg class="Rectangle_445_c">
+				<rect id="Rectangle_445_c" rx="0" ry="0" x="0" y="0" width="100%" height="66">
 				</rect>
 			</svg>
 		</div>
@@ -3067,7 +3068,7 @@ window.application = new Application();
 			<span>The rectangle (in a group) is anchored 16px from the left and right edge of the group</span>
 		</div>
 	</div>
-	<div id="View_the_page_source_to_see_th">
+	<div id="View_the_page_source_to_see_th_c">
 		<span>View the page source to see the left and right properties in use</span>
 	</div>
 	<style>
@@ -3091,10 +3092,10 @@ window.application = new Application();
 	}
 </style>
 
-	<div id="Using_left_and_right_anchors_t">
+	<div id="Using_left_and_right_anchors_t_c">
 		<span>Using left and right anchors the rectangle dynamically fills in the container it is in. The width and height have been removed in the additional styles field in the element options</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_da">
 		<svg class="Rectangle_177_dc">
 			<linearGradient id="Rectangle_177_dc" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3103,12 +3104,12 @@ window.application = new Application();
 			<rect id="Rectangle_177_dc" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_dd">
 			<span>W</span>
 		</div>
 	</div>
 	<div id="Component_2__4" class="Component_2___4">
-		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME">
+		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME_df">
 			<style>
 
 *:hover {

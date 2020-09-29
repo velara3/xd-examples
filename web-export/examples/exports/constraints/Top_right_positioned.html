@@ -38,7 +38,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83 {
+	#Line_83_ {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -47,7 +47,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_ {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -73,7 +73,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#The_text_is_20_pixels_from_the {
+	#The_text_is_20_pixels_from_the_ {
 		right: 20px;
 		top: 80px;
 		position: absolute;
@@ -87,7 +87,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_82 {
+	#Group_82_ {
 		position: absolute;
 		width: 554px;
 		height: 66px;
@@ -127,7 +127,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#View_the_page_source_to_see_th {
+	#View_the_page_source_to_see_th_bb {
 		left: 20px;
 		top: 286px;
 		position: absolute;
@@ -155,7 +155,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_bd {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -174,7 +174,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_bg {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -197,7 +197,7 @@
 		top: 316px;
 		overflow: visible;
 	}
-	#ADD_HOVER_STYLE_TO_EVERY_ELEME {
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME_bi {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -2722,7 +2722,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3041,17 +3042,17 @@ window.application = new Application();
 </head>
 <body>
 <div id="Top_right_positioned">
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+	<svg class="Line_83_" viewBox="0 0 560 1">
+		<path id="Line_83_" d="M 0 0 L 560 0">
 		</path>
 	</svg>
 	<div id="Top_right_positioned_">
 		<span>Top right positioned</span>
 	</div>
-	<div id="The_text_is_20_pixels_from_the">
+	<div id="The_text_is_20_pixels_from_the_">
 		<span>The text is 20 pixels from the right and 80 pixels from the top</span>
 	</div>
-	<div id="Group_82" class="resize95to75">
+	<div id="Group_82_" class="resize95to75">
 		<svg class="Rectangle_445">
 			<rect id="Rectangle_445" rx="0" ry="0" x="0" y="0" width="100%" height="66">
 			</rect>
@@ -3060,7 +3061,7 @@ window.application = new Application();
 			<span>The text in this group is 10 pixels from the right and 10 pixels from the top</span>
 		</div>
 	</div>
-	<div id="View_the_page_source_to_see_th">
+	<div id="View_the_page_source_to_see_th_bb">
 		<span>View the page source to see the top and right properties in use</span>
 	</div>
 	<style>
@@ -3084,7 +3085,7 @@ window.application = new Application();
 	}
 </style>
 
-	<div id="Icon">
+	<div id="Icon_bd">
 		<svg class="Rectangle_177_bf">
 			<linearGradient id="Rectangle_177_bf" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3093,12 +3094,12 @@ window.application = new Application();
 			<rect id="Rectangle_177_bf" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_bg">
 			<span>W</span>
 		</div>
 	</div>
 	<div id="Component_2__9" class="Component_2___9">
-		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME">
+		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME_bi">
 			<style>
 
 *:hover {

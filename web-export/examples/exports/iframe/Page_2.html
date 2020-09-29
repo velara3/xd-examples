@@ -32,7 +32,7 @@
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
-	#Page_2_t {
+	#Page_2_w {
 		left: 35px;
 		top: 30px;
 		position: absolute;
@@ -2565,6 +2565,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2582,7 +2589,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2901,7 +2909,7 @@ window.application = new Application();
 </head>
 <body>
 <div id="Page_2">
-	<div id="Page_2_t">
+	<div id="Page_2_w">
 		<span>Page 2</span>
 	</div>
 	<div id="Hello_World">

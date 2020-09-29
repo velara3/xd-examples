@@ -2490,6 +2490,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2507,7 +2514,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 

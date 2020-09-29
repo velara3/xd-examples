@@ -60,7 +60,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_bw {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -70,7 +70,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_bw {
 		overflow: visible;
 		position: absolute;
 		width: 600.002px;
@@ -79,10 +79,10 @@
 		top: 56.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_443 {
+	#Rectangle_443_bx {
 		fill: rgba(255,93,93,1);
 	}
-	.Rectangle_443 {
+	.Rectangle_443_bx {
 		position: absolute;
 		overflow: visible;
 		width: 600px;
@@ -118,7 +118,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_b {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -126,10 +126,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_b {
-		fill: url(#Rectangle_177_b);
+	#Rectangle_177_ca {
+		fill: url(#Rectangle_177_ca);
 	}
-	.Rectangle_177_b {
+	.Rectangle_177_ca {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -137,7 +137,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_b {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2393,7 +2393,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2646,6 +2650,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2663,7 +2674,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2985,12 +2997,12 @@ window.application = new Application();
 	<div id="Scale_down_to_fit_with_centeri">
 		<span>Scale down to fit with centering</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 600 1">
-		<path id="Line_1" d="M 0 1 L 600 0">
+	<svg class="Line_1_bw" viewBox="0 0 600 1">
+		<path id="Line_1_bw" d="M 0 1 L 600 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_443">
-		<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="600" height="95">
+	<svg class="Rectangle_443_bx">
+		<rect id="Rectangle_443_bx" rx="0" ry="0" x="0" y="0" width="600" height="95">
 		</rect>
 	</svg>
 	<div id="This_page_will_scale_down_to_t">
@@ -2999,16 +3011,16 @@ window.application = new Application();
 	<div id="In_response_to_the_private_sal">
 		<span>In response to the private sale of royal (or common) lands, Paine proposed a detailed plan to tax land owners once per generation to pay for the needs of those who have no land. This can be considered a precursor of the modern idea of citizen's dividend or basic income. The money would be raised by taxing all direct inheritances at 10%, and "indirect" inheritances – those not going to close relations – at a somewhat higher rate; this would, he estimated, raise around £5,700,000 per year in England.<br/><br/>Around two-thirds of the fund would be spent on pension payments of £10 per year to every person over the age of fifty, which Paine had taken as his average adult life expectancy.<br/><br/>Most of the remainder would be used to make fixed payments of £15 to every man and woman on reaching the age of twenty-one, legal majority.<br/><br/>The small remainder of the money raised still un-used would be used for paying pensions to "the lame and blind".<br/><br/>For context, the average weekly wage of an agricultural labourer was around 9 shillings, which would mean an annual income of about £23 for an able-bodied man working throughout the year.</span>
 	</div>
-	<div id="Icon">
-		<svg class="Rectangle_177_b">
-			<linearGradient id="Rectangle_177_b" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+	<div id="Icon_b">
+		<svg class="Rectangle_177_ca">
+			<linearGradient id="Rectangle_177_ca" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_b" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_ca" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_b">
 			<span>W</span>
 		</div>
 	</div>

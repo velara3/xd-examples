@@ -38,7 +38,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83 {
+	#Line_83_ck {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -47,7 +47,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_ck {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -87,7 +87,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_82 {
+	#Group_82_cn {
 		position: absolute;
 		width: 554px;
 		height: 66px;
@@ -96,7 +96,7 @@
 		overflow: visible;
 		animation:  resize92to50 2500ms linear 0s infinite;
 	}
-	#Rectangle_445 {
+	#Rectangle_445_co {
 		fill: rgba(234,234,234,1);
 		stroke: rgba(183,183,183,1);
 		stroke-width: 1px;
@@ -105,7 +105,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_445 {
+	.Rectangle_445_co {
 		position: absolute;
 		overflow: visible;
 		width: 100%;
@@ -127,7 +127,7 @@
 		color: rgba(112,112,112,1);
 		background-color: lightblue;
 	}
-	#View_the_page_source_to_see_th {
+	#View_the_page_source_to_see_th_cq {
 		left: 20px;
 		top: 321px;
 		position: absolute;
@@ -169,7 +169,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_ct {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -188,7 +188,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_cw {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -211,7 +211,7 @@
 		top: 308px;
 		overflow: visible;
 	}
-	#ADD_HOVER_STYLE_TO_EVERY_ELEME {
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME_cy {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -2736,7 +2736,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3055,8 +3056,8 @@ window.application = new Application();
 </head>
 <body>
 <div id="Stretching_text_width_with_left_and_right">
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+	<svg class="Line_83_ck" viewBox="0 0 560 1">
+		<path id="Line_83_ck" d="M 0 0 L 560 0">
 		</path>
 	</svg>
 	<div id="Stretching_text_with_left_and_">
@@ -3065,16 +3066,16 @@ window.application = new Application();
 	<div id="The_text_is_as_wide_as_its_anc">
 		<span>The text is as wide as it’s anchor points</span>
 	</div>
-	<div id="Group_82" class="resize92to50">
-		<svg class="Rectangle_445">
-			<rect id="Rectangle_445" rx="0" ry="0" x="0" y="0" width="100%" height="66">
+	<div id="Group_82_cn" class="resize92to50">
+		<svg class="Rectangle_445_co">
+			<rect id="Rectangle_445_co" rx="0" ry="0" x="0" y="0" width="100%" height="66">
 			</rect>
 		</svg>
 		<div id="The_text_is_anchored_to_the_le">
 			<span>The text is anchored to the left and right edge of the group</span>
 		</div>
 	</div>
-	<div id="View_the_page_source_to_see_th">
+	<div id="View_the_page_source_to_see_th_cq">
 		<span>View the page source to see the left and right properties in use</span>
 	</div>
 	<style>
@@ -3101,7 +3102,7 @@ window.application = new Application();
 	<div id="Using_left_and_right_anchors_t">
 		<span>Using left and right anchors the text dynamically fills in the container it is in. The width and height have been removed to allow it to grow or shrink in the additional styles field in the element options</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_ct">
 		<svg class="Rectangle_177_cv">
 			<linearGradient id="Rectangle_177_cv" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3110,12 +3111,12 @@ window.application = new Application();
 			<rect id="Rectangle_177_cv" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_cw">
 			<span>W</span>
 		</div>
 	</div>
 	<div id="Component_2__3" class="Component_2___3">
-		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME">
+		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME_cy">
 			<style>
 
 *:hover {

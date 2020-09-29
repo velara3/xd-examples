@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hover Effect Styles</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
@@ -147,7 +148,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_x {
+	#httpsdevelopermozillaorgen-USd_w {
 		left: 20px;
 		top: 249px;
 		position: absolute;
@@ -2669,6 +2670,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2686,7 +2694,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3034,7 +3043,7 @@ window.application = new Application();
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">
-	<div id="httpsdevelopermozillaorgen-USd_x">
+	<div id="httpsdevelopermozillaorgen-USd_w">
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/:hover</span>
 	</div>
 	</a>

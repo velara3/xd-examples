@@ -51,6 +51,8 @@ var Application = function() {
 	this.viewScale = 1;
 	this.viewLeft = 0;
 	this.viewTop = 0;
+	this.horizontalScrollbarsNeeded = false;
+	this.verticalScrollbarsNeeded = false;
 
 	// view settings
 	this.showUpdateNotification = false;
@@ -2505,7 +2507,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 

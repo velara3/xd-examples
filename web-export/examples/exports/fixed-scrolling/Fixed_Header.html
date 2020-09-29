@@ -7,13 +7,13 @@
 <title>Fixed Header</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Fixed Header 2;
-		--web-view-id: Fixed_Header_2;
+		--web-view-name: Fixed Header;
+		--web-view-id: Fixed_Header;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Fixed_Header_2;
+		--web-view-ids: Fixed_Header;
 	}
 	* {
 		margin: 0;
@@ -21,28 +21,20 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Fixed_Header_2 {
+	#Fixed_Header {
 		position: absolute;
 		width: 778px;
 		height: 1086px;
-		background-color: rgba(239,239,239,1);
+		background-color: rgba(244,244,244,1);
 		overflow: visible;
-		--web-view-name: Fixed Header 2;
-		--web-view-id: Fixed_Header_2;
+		--web-view-name: Fixed Header;
+		--web-view-id: Fixed_Header;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
-	#Content {
-		position: absolute;
-		width: 753px;
-		height: 1011px;
-		margin-left: 12px;
-		margin-top: 52px;
-		overflow: visible;
-	}
 	#This_is_the_same_as_setting__p {
-		left: 8px;
-		top: 187px;
+		left: 20px;
+		top: 239px;
 		position: absolute;
 		overflow: visible;
 		width: 402px;
@@ -55,8 +47,8 @@
 		color: rgba(112,112,112,1);
 	}
 	#This_page_has_a_header_that_st {
-		left: 8px;
-		top: 146px;
+		left: 20px;
+		top: 77px;
 		position: absolute;
 		overflow: visible;
 		width: 350px;
@@ -69,8 +61,8 @@
 		color: rgba(112,112,112,1);
 	}
 	#httpsdevelopermozillaorgen-USd {
-		left: 28px;
-		top: 980px;
+		left: 40px;
+		top: 1032px;
 		position: absolute;
 		overflow: visible;
 		width: 318px;
@@ -83,15 +75,16 @@
 		color: rgba(112,112,112,1);
 	}
 	#Header {
-		position: absolute;
+		position: sticky;
 		width: 778px;
 		height: 47px;
 		left: 0px;
 		top: 0px;
-		background-color: rgba(226,226,226,1);
+		background-color: rgba(239,239,239,1);
 		border: 0;
 		filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
 		overflow: visible;
+		z-index: 1;
 	}
 	#The_header_group_is_fixed_to_t {
 		left: 443px;
@@ -107,12 +100,12 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Fixed_Header_2_p {
+	#Fixed_Header_o {
 		left: 50px;
 		top: 14px;
 		position: absolute;
 		overflow: visible;
-		width: 143px;
+		width: 126px;
 		white-space: nowrap;
 		line-height: 56px;
 		margin-top: -18px;
@@ -132,10 +125,10 @@
 		top: 13px;
 		overflow: visible;
 	}
-	#Rectangle_177_s {
-		fill: url(#Rectangle_177_s);
+	#Rectangle_177_r {
+		fill: url(#Rectangle_177_r);
 	}
-	.Rectangle_177_s {
+	.Rectangle_177_r {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -2652,6 +2645,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2988,34 +2988,32 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Fixed_Header_2">
-	<div id="Content">
-		<div id="This_is_the_same_as_setting__p">
-			<span>This is the same as setting { position: sticky; top: 0px; left: 0px; z-index: 1 }</span>
-		</div>
-		<div id="This_page_has_a_header_that_st">
-			<span>This page has a header that stays fixed in position when scrolling</span>
-		</div>
-		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline">
-		<div id="httpsdevelopermozillaorgen-USd">
-			<span>https://developer.mozilla.org/en-US/docs/Web/CSS/outline</span>
-		</div>
-		</a>
+<div id="Fixed_Header">
+	<div id="This_is_the_same_as_setting__p">
+		<span>This is the same as setting { position: sticky; top: 0px; left: 0px; z-index: 1 }</span>
 	</div>
+	<div id="This_page_has_a_header_that_st">
+		<span>This page has a header that stays fixed in position when scrolling</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/outline</span>
+	</div>
+	</a>
 	<div id="Header">
 		<div id="The_header_group_is_fixed_to_t">
 			<span>The header group is fixed to the top of the page as the page scrolls</span>
 		</div>
-		<div id="Fixed_Header_2_p">
-			<span>Fixed Header 2</span>
+		<div id="Fixed_Header_o">
+			<span>Fixed Header</span>
 		</div>
 		<div id="Icon">
-			<svg class="Rectangle_177_s">
-				<linearGradient id="Rectangle_177_s" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+			<svg class="Rectangle_177_r">
+				<linearGradient id="Rectangle_177_r" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 					<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 					<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 				</linearGradient>
-				<rect id="Rectangle_177_s" rx="3" ry="3" x="0" y="0" width="24" height="24">
+				<rect id="Rectangle_177_r" rx="3" ry="3" x="0" y="0" width="24" height="24">
 				</rect>
 			</svg>
 			<div id="W">

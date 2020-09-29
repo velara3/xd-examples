@@ -16,7 +16,7 @@
 #External_Stylesheet {
 	position: absolute;
 	width: 857px;
-	height: 292px;
+	height: 371px;
 	background-color: rgba(255,255,255,1);
 	overflow: hidden;
 	--web-view-name: External Stylesheet;
@@ -73,7 +73,21 @@
 	font-size: 10.5px;
 	color: rgba(112,112,112,1);
 }
-#External_Stylesheet_j {
+#Check_the_source_code_to_see_t {
+	left: 22px;
+	top: 243px;
+	position: absolute;
+	overflow: visible;
+	width: 296px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10.5px;
+	color: rgba(112,112,112,1);
+}
+#External_Stylesheet_k {
 	left: 22px;
 	top: 22px;
 	position: absolute;
@@ -89,4 +103,18 @@
 	font-size: 20px;
 	color: rgba(93,93,93,1);
 	letter-spacing: -0.03px;
+}
+#httpsdevelopermozillaorgen-USd {
+	left: 22px;
+	top: 341px;
+	position: absolute;
+	overflow: visible;
+	width: 329px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	color: rgba(112,112,112,1);
 }

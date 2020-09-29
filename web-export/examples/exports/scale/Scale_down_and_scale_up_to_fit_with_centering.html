@@ -58,7 +58,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_b {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -68,7 +68,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_b {
 		overflow: visible;
 		position: absolute;
 		width: 600.002px;
@@ -77,10 +77,10 @@
 		top: 56.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_443 {
+	#Rectangle_443_b {
 		fill: rgba(255,93,93,1);
 	}
-	.Rectangle_443 {
+	.Rectangle_443_b {
 		position: absolute;
 		overflow: visible;
 		width: 600px;
@@ -116,7 +116,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_cb {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -135,7 +135,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_ce {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2391,7 +2391,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2644,6 +2648,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2661,7 +2672,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2983,12 +2995,12 @@ window.application = new Application();
 	<div id="Scale_down_and_scaled_up_to_fi">
 		<span>Scale down and scaled up to fit with centering</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 600 1">
-		<path id="Line_1" d="M 0 1 L 600 0">
+	<svg class="Line_1_b" viewBox="0 0 600 1">
+		<path id="Line_1_b" d="M 0 1 L 600 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_443">
-		<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="600" height="130">
+	<svg class="Rectangle_443_b">
+		<rect id="Rectangle_443_b" rx="0" ry="0" x="0" y="0" width="600" height="130">
 		</rect>
 	</svg>
 	<div id="This_page_is_centered_and_scal">
@@ -2997,7 +3009,7 @@ window.application = new Application();
 	<div id="The_work_is_based_on_the_conte">
 		<span>The work is based on the contention that in the state of nature, "the earth, in its natural uncultivated state... was the common property of the human race"; the concept of private ownership arose as a necessary result of the development of agriculture, since it was impossible to distinguish the possession of improvements to the land from the possession of the land itself. Thus, Paine viewed private property as necessary while at the same time asserting that the basic needs of all humanity must be provided for by those with property, who have originally taken it from the general public. This in some sense is their "payment" to non-property holders for the right to hold private property.</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_cb">
 		<svg class="Rectangle_177_cd">
 			<linearGradient id="Rectangle_177_cd" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3006,7 +3018,7 @@ window.application = new Application();
 			<rect id="Rectangle_177_cd" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_ce">
 			<span>W</span>
 		</div>
 	</div>

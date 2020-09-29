@@ -54,7 +54,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_di {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -64,7 +64,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_di {
 		overflow: visible;
 		position: absolute;
 		width: 960px;
@@ -73,7 +73,7 @@
 		top: 57.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#This_page_will_scaled_down_to_ {
+	#This_page_will_scaled_down_to__dj {
 		left: 24px;
 		top: 89px;
 		position: absolute;
@@ -87,7 +87,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#In_the_latter_equality_is_impo {
+	#In_the_latter_equality_is_impo_dk {
 		left: 500px;
 		top: 113px;
 		position: absolute;
@@ -101,10 +101,10 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Rectangle_444 {
+	#Rectangle_444_dl {
 		fill: rgba(93,218,255,1);
 	}
-	.Rectangle_444 {
+	.Rectangle_444_dl {
 		position: absolute;
 		overflow: visible;
 		width: 960px;
@@ -112,7 +112,7 @@
 		left: 20px;
 		top: 1095px;
 	}
-	#Image_3 {
+	#Image_3_dm {
 		position: absolute;
 		width: 445px;
 		height: 614px;
@@ -120,7 +120,7 @@
 		top: 113px;
 		overflow: visible;
 	}
-	#THE_plan_contained_in_this_wor {
+	#THE_plan_contained_in_this_wor_dn {
 		left: 24px;
 		top: 737px;
 		position: absolute;
@@ -134,7 +134,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_do {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -153,7 +153,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_dr {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2409,7 +2409,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2662,6 +2666,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2679,7 +2690,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3001,25 +3013,25 @@ window.application = new Application();
 	<div id="Scale_down_to_fit_width_with_v">
 		<span>Scale down to fit width with vertical centering</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 960 1">
-		<path id="Line_1" d="M 0 0 L 960 0">
+	<svg class="Line_1_di" viewBox="0 0 960 1">
+		<path id="Line_1_di" d="M 0 0 L 960 0">
 		</path>
 	</svg>
-	<div id="This_page_will_scaled_down_to_">
+	<div id="This_page_will_scaled_down_to__dj">
 		<span>This page will scaled down to fit the available width if needed and center vertically</span>
 	</div>
-	<div id="In_the_latter_equality_is_impo">
+	<div id="In_the_latter_equality_is_impo_dk">
 		<span>In the latter, equality is impossible; for to distribute it equally it would be necessary that all should have contributed in the same proportion, which can never be the case; and this being the case, every individual would hold on to his own property, as his right share. Equality of natural property is the subject of this little essay. Every individual in the world is born therein with legitimate claims on a certain kind of property, or its equivalent.<br/><br/>The right of voting for persons charged with the execution of the laws that govern society is inherent in the word liberty, and constitutes the equality of personal rights. But even if that right (of voting) were inherent in property, which I deny, the right of suffrage would still belong to all equally, because, as I have said, all individuals have legitimate birthrights in a certain species of property.<br/><br/>I have always considered the present Constitution of the French Republic the best organized system the human mind has yet produced. But I hope my former colleagues will not be offended if I warn them of an error which has slipped into its principle. Equality of the right of suffrage is not maintained. This right is in it connected with a condition on which it ought not to depend; that is, with a proportion of a certain tax called”direct.”<br/><br/>The dignity of suffrage is thus lowered; and, in placing it in the scale with an inferior thing, the enthusiasm that right is capable of inspiring is diminished. It is impossible to find any equivalent counterpoise for the right of suffrage, because it is alone worthy to be its own basis, and cannot thrive as a graft, or an appendage.<br/><br/>Since the Constitution was established we have seen two conspiracies stranded—that of Babeuf, and that of some obscure personages who decorate themselves with the despicable name of “royalists.” The defect in principle of the Constitution was the origin of Babeuf’s conspiracy.<br/><br/>He availed himself of the resentment caused by this flaw, and instead of seeking a remedy by legitimate and constitutional means, or proposing some measure useful to society, the conspirators did their best to renew disorder and confusion, and constituted themselves personally into a Directory, which is formally destructive of election and representation. They were, in fine, extravagant enough to suppose that society, occupied with its domestic affairs, would blindly yield to them a directorship usurped by violence.<br/><br/>The conspiracy of Babeuf was followed in a few months by that of the royalists, who foolishly flattered themselves with the notion of doing great things by feeble or foul means. They counted on all the discontented, from whatever cause, and tried to rouse, in their turn, the class of people who had been following the others. But these new chiefs acted as if they thought society had nothing more at heart than to maintain courtiers, pensioners, and all their train, under the contemptible title of royalty. My little essay will disabuse them, by showing that society is aiming at a very different end—maintaining itself.<br/><br/>We all know or should know, that the time during which a revolution is proceeding is not the time when its resulting advantages can be enjoyed. But had Babenf and his accomplices taken into consideration the condition of France under this Constitution, and compared it with what it was under the tragical revolutionary government, and during the execrable Reign of Terror, the rapidity of the alteration must have appeared to them very striking and astonishing. Famine has been replaced by abundance, and by the well-founded hope of a near and increasing prosperity.<br/><br/>As for the defect in the Constitution, I am fully convinced that it will be rectified constitutionally, and that this step is indispensable; for so long as it continues it will inspire the hopes and furnish the means of conspirators; and for the rest, it is regrettable that a Constitution so wisely organized should err so much in its principle. This fault exposes it to other dangers which will make themselves felt.<br/><br/>Intriguing candidates will go about among those who have not the means to pay the direct tax and pay it for them, on condition of receiving their votes. Let us maintain inviolably equality in the sacred right of suffrage: public security can never have a basis more solid. Salut et Fraternité.<br/><br/>From Agrarian Justice</span>
 	</div>
-	<svg class="Rectangle_444">
-		<rect id="Rectangle_444" rx="0" ry="0" x="0" y="0" width="960" height="140">
+	<svg class="Rectangle_444_dl">
+		<rect id="Rectangle_444_dl" rx="0" ry="0" x="0" y="0" width="960" height="140">
 		</rect>
 	</svg>
-	<img id="Image_3" src="Image_3.png" srcset="Image_3.png 1x, Image_3@2x.png 2x">
-	<div id="THE_plan_contained_in_this_wor">
+	<img id="Image_3_dm" src="Image_3_dm.png" srcset="Image_3_dm.png 1x, Image_3_dm@2x.png 2x">
+	<div id="THE_plan_contained_in_this_wor_dn">
 		<span>THE plan contained in this work is not adapted for any particular country alone: the principle on which it is based is general. But as the rights of man are a new study in this world, and one needing protection from priestly imposture, and the insolence of oppressions too long established, I have thought it right to place this little work under your safeguard.<br/><br/>When we reflect on the long and dense night in which France and all Europe have remained plunged by their governments and their priests, we must feel less surprise than grief at the bewilderment caused by the first burst of light that dispels the darkness. The eye accustomed to darkness can hardly bear at first the broad daylight. It is by usage the eye learns to see, and it is the same in passing from any situation to its opposite.<br/><br/>As we have not at one instant renounced all our errors, we cannot at one stroke acquire knowledge of all our rights. France has had the honor of adding to the word Liberty that of Equality; and this word signifies essentially a principle that admits of no gradation in the things to which it applies. But equality is often misunderstood, often misapplied, and often violated.<br/><br/>Liberty and Property are words expressing all those of our possessions which are not of an intellectual nature. There are two kinds of property. Firstly, natural property, or that which comes to us from the Creator of the universe—such as the earth, air, water. Secondly, artificial or acquired property—the invention of men.</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_do">
 		<svg class="Rectangle_177_dq">
 			<linearGradient id="Rectangle_177_dq" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3028,7 +3040,7 @@ window.application = new Application();
 			<rect id="Rectangle_177_dq" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_dr">
 			<span>W</span>
 		</div>
 	</div>

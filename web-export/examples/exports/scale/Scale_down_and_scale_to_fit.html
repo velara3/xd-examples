@@ -54,7 +54,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_bl {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -64,7 +64,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_bl {
 		overflow: visible;
 		position: absolute;
 		width: 600.002px;
@@ -73,10 +73,10 @@
 		top: 56.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_443 {
+	#Rectangle_443_bm {
 		fill: rgba(255,93,93,1);
 	}
-	.Rectangle_443 {
+	.Rectangle_443_bm {
 		position: absolute;
 		overflow: visible;
 		width: 600px;
@@ -112,7 +112,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_bp {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -131,7 +131,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_bs {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2387,7 +2387,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2640,6 +2644,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2657,7 +2668,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2979,12 +2991,12 @@ window.application = new Application();
 	<div id="Scale_down_and_scale_up_to_fit">
 		<span>Scale down and scale up to fit</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 600 1">
-		<path id="Line_1" d="M 0 1 L 600 0">
+	<svg class="Line_1_bl" viewBox="0 0 600 1">
+		<path id="Line_1_bl" d="M 0 1 L 600 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_443">
-		<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="600" height="129">
+	<svg class="Rectangle_443_bm">
+		<rect id="Rectangle_443_bm" rx="0" ry="0" x="0" y="0" width="600" height="129">
 		</rect>
 	</svg>
 	<div id="This_page_will_scale_down_or_s">
@@ -2993,7 +3005,7 @@ window.application = new Application();
 	<div id="Agrarian_Justice_is_the_title_">
 		<span>Agrarian Justice is the title of a pamphlet written by Thomas Paine and published in 1797, which proposed that those who possess cultivated land owe the community a ground rent, [1] and that this justifies an estate tax to fund universal old-age and disability pensions, as well as a fixed sum to be paid to all citizens upon reaching maturity.<br/><br/>It was written in the winter of 1795–96, but remained unpublished for a year, Paine being undecided whether or not it would be best to wait until the end of the ongoing war with France before publishing. However, having read a sermon by Richard Watson, the Bishop of Llandaff, which discussed the "Wisdom ... of God, in having made both Rich and Poor", he felt the need to publish, under the argument that "rich" and "poor" were arbitrary divisions, not divinely created ones.</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_bp">
 		<svg class="Rectangle_177_br">
 			<linearGradient id="Rectangle_177_br" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3002,7 +3014,7 @@ window.application = new Application();
 			<rect id="Rectangle_177_br" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_bs">
 			<span>W</span>
 		</div>
 	</div>

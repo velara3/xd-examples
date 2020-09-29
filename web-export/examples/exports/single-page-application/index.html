@@ -4,15 +4,15 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Export Artboards As Single Page</title>
+<title>Cats 20th Anniversary</title>
 <style id="applicationStylesheet" type="text/css">
 :root {
-	--web-view-ids: Cats,Whiskers,Mittens,Snowball,Ending,Export_Artboards_As_Single_Page;
-	--web-view-name: Export Artboards As Single Page;
-	--web-view-id: Export_Artboards_As_Single_Page;
+	--web-view-ids: Cats,Whiskers,Mittens,Snowball,Ending;
+	--web-view-name: Cats;
+	--web-view-id: Cats;
 	--web-scale-to-fit: false;
 	--web-scale-to-fit-type: default;
-	--web-enable-scale-up: false;
+	--web-enable-scale-up: true;
 	--web-scale-on-resize: true;
 	--web-show-scale-controls: false;
 	--web-scale-on-double-click: false;
@@ -32,11 +32,10 @@
 #Whiskers,
 #Mittens,
 #Snowball,
-#Ending,
-#Export_Artboards_As_Single_Page {
+#Ending {
 	display: none;
 }
-@media (min-width: 960px) {
+@media (min-width: 0px) {
 	.mediaViewInfo {
 		--web-view-name: Cats;
 		--web-view-id: Cats;
@@ -227,7 +226,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 960px) {
+@media (min-width: 0px) {
 	.mediaViewInfo {
 		--web-view-name: Whiskers;
 		--web-view-id: Whiskers;
@@ -389,7 +388,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 960px) {
+@media (min-width: 0px) {
 	.mediaViewInfo {
 		--web-view-name: Mittens;
 		--web-view-id: Mittens;
@@ -549,7 +548,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 960px) {
+@media (min-width: 0px) {
 	.mediaViewInfo {
 		--web-view-name: Snowball;
 		--web-view-id: Snowball;
@@ -711,7 +710,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 960px) {
+@media (min-width: 0px) {
 	.mediaViewInfo {
 		--web-view-name: Ending;
 		--web-view-id: Ending;
@@ -857,63 +856,6 @@
 		left: 329px;
 		top: 278px;
 		overflow: visible;
-	}
-}
-@media (min-width: 0px) and (max-width: 959px) {
-	.mediaViewInfo {
-		--web-view-name: Export Artboards As Single Page;
-		--web-view-id: Export_Artboards_As_Single_Page;
-		--web-scale-on-resize: true;
-		--web-center-horizontally: true;
-		--web-center-vertically: true;
-		--web-application: true;
-		--web-enable-deep-linking: true;
-	}
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		border: none;
-	}
-	#Export_Artboards_As_Single_Page {
-		position: absolute;
-		display: block;
-		width: 650px;
-		height: 116px;
-		background-color: rgba(255,255,255,1);
-		overflow: hidden;
-		--web-view-name: Export Artboards As Single Page;
-		--web-view-id: Export_Artboards_As_Single_Page;
-		--web-scale-on-resize: true;
-		--web-center-horizontally: true;
-		--web-center-vertically: true;
-		--web-application: true;
-		--web-enable-deep-linking: true;
-	}
-	#Export_this_artboard_to_export {
-		left: 27px;
-		top: 36.908px;
-		position: absolute;
-		overflow: visible;
-		width: 323px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Arial;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 13px;
-		color: rgba(75,75,75,1);
-	}
-	#Rectangle_443 {
-		fill: rgba(200,207,214,1);
-	}
-	.Rectangle_443 {
-		position: absolute;
-		overflow: visible;
-		width: 600px;
-		height: 20px;
-		left: 25px;
-		top: 86px;
 	}
 }
 
@@ -3158,7 +3100,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3409,6 +3355,13 @@ var Application = function() {
 		var element = elementId ? document.getElementById(elementId) : null;
 
 		return element;
+	}
+
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
 	}
 
 	self.resizeHandler = function(event) {
@@ -3961,15 +3914,6 @@ body {
 		</div>
 	</div>
 	<img id="Ellipse_2" src="images/Ellipse_2.png" srcset="images/Ellipse_2.png 1x, images/Ellipse_2@2x.png 2x">
-</div>
-<div id="Export_Artboards_As_Single_Page">
-	<div id="Export_this_artboard_to_export">
-		<span>Export this artboard to export artboards to a single page</span>
-	</div>
-	<svg class="Rectangle_443">
-		<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="600" height="20">
-		</rect>
-	</svg>
 </div>
 
 </body>

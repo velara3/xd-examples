@@ -449,7 +449,7 @@
 	}
 	.Polygon_1 {
 		mix-blend-mode: multiply;
-		overflow: hidden;
+		overflow: visible;
 		position: absolute;
 		width: 37.926px;
 		height: 32px;
@@ -3021,7 +3021,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3449,7 +3450,7 @@ window.application = new Application();
 		</ellipse>
 	</svg>
 	<svg class="Polygon_1" viewBox="0 0 37.926 32">
-		<path id="Polygon_1" d="M 18.96296310424805 0 L 37.92592620849609 32 L 0 32 Z">
+		<path id="Polygon_1" d="M 18.96296119689941 0 L 37.92592620849609 32 L 0 32 Z">
 		</path>
 	</svg>
 	<svg class="Line_85" viewBox="0 0 32 32">

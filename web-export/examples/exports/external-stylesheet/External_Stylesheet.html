@@ -2499,6 +2499,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2516,7 +2523,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2846,8 +2854,14 @@ window.application = new Application();
 	<div id="This_page_uses_an_external_sty">
 		<span>This page uses an external stylesheet</span>
 	</div>
-	<div id="External_Stylesheet_j">
+	<div id="Check_the_source_code_to_see_t">
+		<span>Check the source code to see the link to an external stylesheet</span>
+	</div>
+	<div id="External_Stylesheet_k">
 		<span>External Stylesheet</span>
+	</div>
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/href</span>
 	</div>
 </div>
 </body>

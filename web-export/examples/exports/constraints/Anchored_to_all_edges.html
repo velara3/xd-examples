@@ -38,7 +38,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83 {
+	#Line_83_ee {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -47,7 +47,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_ee {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -73,7 +73,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Group_82 {
+	#Group_82_eg {
 		position: absolute;
 		width: 554px;
 		height: 161.631px;
@@ -83,7 +83,7 @@
 		overflow: visible;
 		animation:  resize92to50 2500ms linear 0s infinite;
 	}
-	#Rectangle_445 {
+	#Rectangle_445_eh {
 		fill: rgba(234,234,234,1);
 		stroke: rgba(183,183,183,1);
 		stroke-width: 1px;
@@ -92,7 +92,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_445 {
+	.Rectangle_445_eh {
 		position: absolute;
 		overflow: visible;
 		width: 100%;
@@ -231,7 +231,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#View_the_page_source_to_see_th {
+	#View_the_page_source_to_see_th_er {
 		left: 20px;
 		top: 482px;
 		position: absolute;
@@ -245,7 +245,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#RESIZE_TRANSITION {
+	#RESIZE_TRANSITION_es {
 		left: 459px;
 		top: 489px;
 		position: absolute;
@@ -273,7 +273,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_eu {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -292,7 +292,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_ex {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -315,7 +315,7 @@
 		top: 460px;
 		overflow: visible;
 	}
-	#ADD_HOVER_STYLE_TO_EVERY_ELEME {
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME_ez {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -2840,7 +2840,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3159,16 +3160,16 @@ window.application = new Application();
 </head>
 <body>
 <div id="Anchored_to_all_edges">
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+	<svg class="Line_83_ee" viewBox="0 0 560 1">
+		<path id="Line_83_ee" d="M 0 0 L 560 0">
 		</path>
 	</svg>
 	<div id="Anchoring_to_all_edges">
 		<span>Anchoring to all edges</span>
 	</div>
-	<div id="Group_82" class="resize92to50">
-		<svg class="Rectangle_445">
-			<rect id="Rectangle_445" rx="0" ry="0" x="0" y="0" width="100%" height="100%">
+	<div id="Group_82_eg" class="resize92to50">
+		<svg class="Rectangle_445_eh">
+			<rect id="Rectangle_445_eh" rx="0" ry="0" x="0" y="0" width="100%" height="100%">
 			</rect>
 		</svg>
 		<div id="Top_Left">
@@ -3199,7 +3200,7 @@ window.application = new Application();
 			<span>Center Right</span>
 		</div>
 	</div>
-	<div id="View_the_page_source_to_see_th">
+	<div id="View_the_page_source_to_see_th_er">
 		<span>View the page source to see the left and right properties in use</span>
 	</div>
 	<style>
@@ -3231,7 +3232,7 @@ window.application = new Application();
 	<div id="Each_text_field_is_anchored_to">
 		<span>Each text field is anchored to one or more edges or centered horizontally or vertically</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_eu">
 		<svg class="Rectangle_177_ew">
 			<linearGradient id="Rectangle_177_ew" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3240,12 +3241,12 @@ window.application = new Application();
 			<rect id="Rectangle_177_ew" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_ex">
 			<span>W</span>
 		</div>
 	</div>
 	<div id="Component_2__2" class="Component_2___2">
-		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME">
+		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME_ez">
 			<style>
 
 *:hover {

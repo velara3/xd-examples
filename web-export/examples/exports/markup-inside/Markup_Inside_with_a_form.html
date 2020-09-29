@@ -34,7 +34,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#View_the_page_source_to_see_ma {
+	#View_the_page_source_to_see_ma_ {
 		left: 22px;
 		top: 292px;
 		position: absolute;
@@ -74,7 +74,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_83 {
+	#Line_83_ {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -83,7 +83,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_ {
 		overflow: visible;
 		position: absolute;
 		width: 808px;
@@ -123,7 +123,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#httpsdevelopermozillaorgen-USd {
+	#httpsdevelopermozillaorgen-USd_ {
 		left: 22px;
 		top: 316px;
 		position: absolute;
@@ -137,7 +137,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_ba {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -156,7 +156,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_bd {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2412,7 +2412,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2665,6 +2669,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2682,7 +2693,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3001,7 +3013,7 @@ window.application = new Application();
 </head>
 <body>
 <div id="Markup_Inside_with_a_form">
-	<div id="View_the_page_source_to_see_ma">
+	<div id="View_the_page_source_to_see_ma_">
 		<span>View the page source to see markup inside</span>
 	</div>
 	<div id="Rectangle_1">
@@ -3047,8 +3059,8 @@ label {
 	<div id="HTML_of_form">
 		<span>HTML of form:</span>
 	</div>
-	<svg class="Line_83" viewBox="0 0 808 0.24">
-		<path id="Line_83" d="M 0 0 L 808 0.239990234375">
+	<svg class="Line_83_" viewBox="0 0 808 0.24">
+		<path id="Line_83_" d="M 0 0 L 808 0.239990234375">
 		</path>
 	</svg>
 	<div id="The_element_below_has_the_HTML">
@@ -3058,11 +3070,11 @@ label {
 		<span>Markup inside with a form</span>
 	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
-	<div id="httpsdevelopermozillaorgen-USd">
+	<div id="httpsdevelopermozillaorgen-USd_">
 		<span>https://developer.mozilla.org/en-US/docs/Glossary/HTML</span>
 	</div>
 	</a>
-	<div id="Icon">
+	<div id="Icon_ba">
 		<svg class="Rectangle_177_bc">
 			<linearGradient id="Rectangle_177_bc" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3071,7 +3083,7 @@ label {
 			<rect id="Rectangle_177_bc" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_bd">
 			<span>W</span>
 		</div>
 	</div>

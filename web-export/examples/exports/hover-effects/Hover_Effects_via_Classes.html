@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hover Effect Styles</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
@@ -31,7 +32,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#View_page_source_to_see_how_st {
+	#View_page_source_to_see_how_st_ {
 		left: 20px;
 		top: 204px;
 		position: absolute;
@@ -45,7 +46,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_83 {
+	#Line_83_ {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -54,7 +55,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_ {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -108,10 +109,10 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#MyRectangle {
+	#MyRectangle_ {
 		fill: rgba(0,255,49,1);
 	}
-	.MyRectangle {
+	.MyRectangle_ {
 		position: absolute;
 		overflow: visible;
 		width: 56px;
@@ -144,7 +145,7 @@
 		left: 101px;
 		top: 116px;
 	}
-	#httpsdevelopermozillaorgen-USd {
+	#httpsdevelopermozillaorgen-USd_ {
 		left: 20px;
 		top: 339px;
 		position: absolute;
@@ -186,7 +187,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#icon2 {
+	#icon2_bb {
 		position: absolute;
 		width: 24.256px;
 		height: 24.256px;
@@ -194,7 +195,7 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#httpsdevelopermozillaorgen-USd_bd {
+	#httpsdevelopermozillaorgen-USd_bc {
 		left: 20px;
 		top: 300px;
 		position: absolute;
@@ -2726,6 +2727,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2743,7 +2751,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3062,11 +3071,11 @@ window.application = new Application();
 </head>
 <body>
 <div id="Hover_Effects_via_Classes">
-	<div id="View_page_source_to_see_how_st">
+	<div id="View_page_source_to_see_how_st_">
 		<span>View page source to see how styles are applied</span>
 	</div>
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+	<svg class="Line_83_" viewBox="0 0 560 1">
+		<path id="Line_83_" d="M 0 0 L 560 0">
 		</path>
 	</svg>
 	<div id="The_elements_have_hover_style_">
@@ -3078,8 +3087,8 @@ window.application = new Application();
 	<div id="Move_the_mouse_over_the_elemen">
 		<span>Move the mouse over the elements</span>
 	</div>
-	<svg class="MyRectangle">
-		<rect id="MyRectangle" class="myHoverStyle" rx="0" ry="0" x="0" y="0" width="56" height="56">
+	<svg class="MyRectangle_">
+		<rect id="MyRectangle_" class="myHoverStyle" rx="0" ry="0" x="0" y="0" width="56" height="56">
 		</rect>
 	</svg>
 	<div id="Elements_with_myHoverEffect_ap">
@@ -3090,7 +3099,7 @@ window.application = new Application();
 		</ellipse>
 	</svg>
 	<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
-	<div id="httpsdevelopermozillaorgen-USd">
+	<div id="httpsdevelopermozillaorgen-USd_">
 		<span>https://developer.mozilla.org/en-US/docs/Glossary/HTML</span>
 	</div>
 	</a>
@@ -3104,9 +3113,9 @@ window.application = new Application();
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/:hover</span>
 	</div>
 	</a>
-	<img id="icon2" src="images/icon2.png" srcset="images/icon2.png 1x, images/icon2@2x.png 2x">
+	<img id="icon2_bb" src="images/icon2_bb.png" srcset="images/icon2_bb.png 1x, images/icon2_bb@2x.png 2x">
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">
-	<div id="httpsdevelopermozillaorgen-USd_bd">
+	<div id="httpsdevelopermozillaorgen-USd_bc">
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity</span>
 	</div>
 	</a>

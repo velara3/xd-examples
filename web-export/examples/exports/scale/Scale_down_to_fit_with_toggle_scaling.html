@@ -60,7 +60,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_ci {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -70,7 +70,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_ci {
 		overflow: visible;
 		position: absolute;
 		width: 600.002px;
@@ -79,10 +79,10 @@
 		top: 56.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_443 {
+	#Rectangle_443_cj {
 		fill: rgba(255,93,93,1);
 	}
-	.Rectangle_443 {
+	.Rectangle_443_cj {
 		position: absolute;
 		overflow: visible;
 		width: 600px;
@@ -120,7 +120,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_cm {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -139,7 +139,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_cp {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2395,7 +2395,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2648,6 +2652,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2665,7 +2676,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2987,12 +2999,12 @@ window.application = new Application();
 	<div id="Scale_down_to_fit_with_scaling">
 		<span>Scale down to fit with scaling toggled</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 600 1">
-		<path id="Line_1" d="M 0 1 L 600 0">
+	<svg class="Line_1_ci" viewBox="0 0 600 1">
+		<path id="Line_1_ci" d="M 0 1 L 600 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_443">
-		<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="600" height="130">
+	<svg class="Rectangle_443_cj">
+		<rect id="Rectangle_443_cj" rx="0" ry="0" x="0" y="0" width="600" height="130">
 		</rect>
 	</svg>
 	<div id="This_page_is_scaled_down_to_th">
@@ -3001,7 +3013,7 @@ window.application = new Application();
 	<div id="Last_week_as_world_leaders_and">
 		<span>Last week, as world leaders and business elites arrived in Davos for the World Economic Forum, a billionaire tweeted an infographic to his 46 million followers showing that the world has been getting better and better. “This is one of my favourite infographics,” he wrote. “A lot of people underestimate just how much life has improved over the past two centuries.”<br/><br/>Of the six graphs – developed by Max Roser of Our World in Data – the first has attracted the most attention by far. It shows that the proportion of people living in poverty has declined from 94% in 1820 to only 10% today. The claim is simple and compelling. These figures have been trotted out in the past year by everyone from Steven Pinker to Nick Kristof and much of the rest of the Davos set to argue that the global extension of free-market capitalism has been great for everyone. Pinker et al have gone even further, saying we shouldn’t complain about rising inequality when the very forces that deliver such immense wealth to the richest are also eradicating poverty before our very eyes.<br/><br/>There are a number of problems with this graph, though. First of all, real data on poverty has only been collected since 1981. Anything before that is extremely sketchy, and to go back as far as 1820 is meaningless. Roser draws on a dataset that was never intended to describe poverty, but rather inequality in the distribution of world GDP – and that for only a limited range of countries. There is no actual research to bolster the claims about long-term poverty. It’s not science; it’s social media.<br/><br/>What Roser’s numbers actually reveal is that the world went from a situation where most of humanity had no need of money at all to one where today most of humanity struggles to survive on extremely small amounts of money. The graph casts this as a decline in poverty, but in reality what was going on was a process of dispossession that bulldozed people into the capitalist labour system, during the enclosure movements in Europe and the colonisation of the global south.<br/><br/>Prior to colonisation, most people lived in subsistence economies where they enjoyed access to abundant commons – land, water, forests, livestock and robust systems of sharing and reciprocity. They had little if any money, but then they didn’t need it in order to live well – so it makes little sense to claim that they were poor. This way of life was violently destroyed by colonisers who forced people off the land and into European-owned mines, factories and plantations, where they were paid paltry wages for work they never wanted to do in the first place.<br/><br/>In other words, Roser’s graph illustrates a story of coerced proletarianisation. It is not at all clear that this represents an improvement in people’s lives, as in most cases we know that the new income people earned from wages didn’t come anywhere close to compensating for their loss of land and resources, which were of course gobbled up by colonisers. The favourite infographic takes the violence of colonisation and repackages it as a happy story of progress.<br/><br/>But that’s not all that’s wrong here. The trend that the graph depicts is based on a poverty line of $1.90 (£1.44) per day, which is the equivalent of what $1.90 could buy in the US in 2011. It’s obscenely low by any standard, and we now have piles of evidence that people living just above this line have terrible levels of malnutrition and mortality. Earning $2 per day doesn’t mean that you’re somehow suddenly free of extreme poverty. Not by a long shot.</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_cm">
 		<svg class="Rectangle_177_co">
 			<linearGradient id="Rectangle_177_co" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3010,7 +3022,7 @@ window.application = new Application();
 			<rect id="Rectangle_177_co" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_cp">
 			<span>W</span>
 		</div>
 	</div>

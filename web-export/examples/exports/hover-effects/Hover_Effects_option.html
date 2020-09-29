@@ -32,7 +32,7 @@
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83 {
+	#Line_83_bt {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -41,7 +41,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_bt {
 		overflow: visible;
 		position: absolute;
 		width: 660px;
@@ -351,7 +351,7 @@
 		overflow: visible;
 		transition: all .3s ease-out;
 	}
-	#Rectangle_2_cl {
+	#Rectangle_2_ck {
 		fill: rgba(247,247,247,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -360,7 +360,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_2_cl {
+	.Rectangle_2_ck {
 		position: absolute;
 		overflow: visible;
 		width: 56px;
@@ -397,7 +397,7 @@
 		overflow: visible;
 		transition: all .3s ease-out;
 	}
-	#Rectangle {
+	#Rectangle_cp {
 		left: 20px;
 		top: 89px;
 		position: absolute;
@@ -481,7 +481,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_cw {
+	#Group_cv {
 		left: 20px;
 		top: 205px;
 		position: absolute;
@@ -495,7 +495,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Symbol_cx {
+	#Symbol_cw {
 		left: 107px;
 		top: 205px;
 		position: absolute;
@@ -523,7 +523,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Image_cz {
+	#Image_cy {
 		left: 288px;
 		top: 205px;
 		position: absolute;
@@ -537,7 +537,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd {
+	#httpsdevelopermozillaorgen-USd_cz {
 		left: 20px;
 		top: 455px;
 		position: absolute;
@@ -3045,6 +3045,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -3062,7 +3069,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3381,8 +3389,8 @@ window.application = new Application();
 </head>
 <body>
 <div id="Hover_Effects_option">
-	<svg class="Line_83" viewBox="0 0 660 1">
-		<path id="Line_83" d="M 0 0 L 660 0">
+	<svg class="Line_83_bt" viewBox="0 0 660 1">
+		<path id="Line_83_bt" d="M 0 0 L 660 0">
 		</path>
 	</svg>
 	<div id="Hover_Property">
@@ -3440,8 +3448,8 @@ window.application = new Application();
 	<div id="Group">
 	</div>
 	<div id="Symbol" class="Symbol">
-		<svg class="Rectangle_2_cl" title="Rectangle">
-			<rect id="Rectangle_2_cl" rx="12" ry="12" x="0" y="0" width="56" height="56" title="Rectangle (sub)">
+		<svg class="Rectangle_2_ck" title="Rectangle">
+			<rect id="Rectangle_2_ck" rx="12" ry="12" x="0" y="0" width="56" height="56" title="Rectangle (sub)">
 			</rect>
 		</svg>
 	</div>
@@ -3449,7 +3457,7 @@ window.application = new Application();
 		Markup inside
 	</div>
 	<img id="image" src="images/image.png" srcset="images/image.png 1x, images/image@2x.png 2x">
-	<div id="Rectangle">
+	<div id="Rectangle_cp">
 		<span>Rectangle</span>
 	</div>
 	<div id="Repeat_Grid">
@@ -3467,20 +3475,20 @@ window.application = new Application();
 	<div id="Text">
 		<span>Text</span>
 	</div>
-	<div id="Group_cw">
+	<div id="Group_cv">
 		<span>Group</span>
 	</div>
-	<div id="Symbol_cx">
+	<div id="Symbol_cw">
 		<span>Symbol</span>
 	</div>
 	<div id="HTML">
 		<span>HTML*</span>
 	</div>
-	<div id="Image_cz">
+	<div id="Image_cy">
 		<span>Image</span>
 	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">
-	<div id="httpsdevelopermozillaorgen-USd">
+	<div id="httpsdevelopermozillaorgen-USd_cz">
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/:hover</span>
 	</div>
 	</a>

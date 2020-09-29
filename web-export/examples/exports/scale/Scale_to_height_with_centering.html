@@ -56,7 +56,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_hb {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -66,7 +66,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_hb {
 		overflow: visible;
 		position: absolute;
 		width: 600.002px;
@@ -75,10 +75,10 @@
 		top: 56.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_443 {
+	#Rectangle_443_hc {
 		fill: rgba(137,255,93,1);
 	}
-	.Rectangle_443 {
+	.Rectangle_443_hc {
 		position: absolute;
 		overflow: visible;
 		width: 600px;
@@ -86,7 +86,7 @@
 		left: 20px;
 		top: 433px;
 	}
-	#This_page_is_scaled_down_to_th {
+	#This_page_is_scaled_down_to_th_hd {
 		left: 24px;
 		top: 76px;
 		position: absolute;
@@ -100,7 +100,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_he {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -119,7 +119,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_hh {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2375,7 +2375,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2628,6 +2632,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2645,7 +2656,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2967,18 +2979,18 @@ window.application = new Application();
 	<div id="Scale_to_height_with_centering_ha">
 		<span>Scale to height with centering</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 600 1">
-		<path id="Line_1" d="M 0 1 L 600 0">
+	<svg class="Line_1_hb" viewBox="0 0 600 1">
+		<path id="Line_1_hb" d="M 0 1 L 600 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_443">
-		<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="600" height="100">
+	<svg class="Rectangle_443_hc">
+		<rect id="Rectangle_443_hc" rx="0" ry="0" x="0" y="0" width="600" height="100">
 		</rect>
 	</svg>
-	<div id="This_page_is_scaled_down_to_th">
+	<div id="This_page_is_scaled_down_to_th_hd">
 		<span>This page is scaled down to the available height of the browser with centering</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_he">
 		<svg class="Rectangle_177_hg">
 			<linearGradient id="Rectangle_177_hg" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -2987,7 +2999,7 @@ window.application = new Application();
 			<rect id="Rectangle_177_hg" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_hh">
 			<span>W</span>
 		</div>
 	</div>

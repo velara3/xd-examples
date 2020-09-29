@@ -38,7 +38,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83 {
+	#Line_83_di {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -47,7 +47,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_di {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -73,7 +73,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Group_82 {
+	#Group_82_dk {
 		position: absolute;
 		width: 537px;
 		height: 177.928px;
@@ -84,7 +84,7 @@
 		animation:  resize92to50 2500ms linear 0s infinite;
 		transform-origin:  center;
 	}
-	#Rectangle_445 {
+	#Rectangle_445_dl {
 		fill: rgba(234,234,234,1);
 		stroke: rgba(183,183,183,1);
 		stroke-width: 1px;
@@ -93,7 +93,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_445 {
+	.Rectangle_445_dl {
 		position: absolute;
 		overflow: visible;
 		width: 100%;
@@ -116,7 +116,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#View_the_page_source_to_see_th {
+	#View_the_page_source_to_see_th_dn {
 		left: 20px;
 		top: 376px;
 		position: absolute;
@@ -158,7 +158,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_dq {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -177,7 +177,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_dt {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -200,7 +200,7 @@
 		top: 405px;
 		overflow: visible;
 	}
-	#ADD_HOVER_STYLE_TO_EVERY_ELEME {
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME_dv {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -2725,7 +2725,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3044,23 +3045,23 @@ window.application = new Application();
 </head>
 <body>
 <div id="Horizontally_and_vertically_centered">
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+	<svg class="Line_83_di" viewBox="0 0 560 1">
+		<path id="Line_83_di" d="M 0 0 L 560 0">
 		</path>
 	</svg>
 	<div id="Horizontally_and_Vertically_ce">
 		<span>Horizontally and Vertically centered</span>
 	</div>
-	<div id="Group_82" class="resize92to50">
-		<svg class="Rectangle_445">
-			<rect id="Rectangle_445" rx="0" ry="0" x="0" y="0" width="100%" height="100%">
+	<div id="Group_82_dk" class="resize92to50">
+		<svg class="Rectangle_445_dl">
+			<rect id="Rectangle_445_dl" rx="0" ry="0" x="0" y="0" width="100%" height="100%">
 			</rect>
 		</svg>
 		<div id="This_text_will_be_centered_hor">
 			<span>This text will be centered horizontally and vertically in this group</span>
 		</div>
 	</div>
-	<div id="View_the_page_source_to_see_th">
+	<div id="View_the_page_source_to_see_th_dn">
 		<span>View the page source to see the left, top and transform properties in use</span>
 	</div>
 	<style>
@@ -3092,7 +3093,7 @@ window.application = new Application();
 	<div id="The_text_is_below_will_be_hori">
 		<span>The text is below will be horizontally and vertically centered in the page and may be positioned different than in the artboard</span>
 	</div>
-	<div id="Icon">
+	<div id="Icon_dq">
 		<svg class="Rectangle_177_ds">
 			<linearGradient id="Rectangle_177_ds" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3101,12 +3102,12 @@ window.application = new Application();
 			<rect id="Rectangle_177_ds" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_dt">
 			<span>W</span>
 		</div>
 	</div>
 	<div id="Component_2__6" class="Component_2___6">
-		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME">
+		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME_dv">
 			<style>
 
 *:hover {

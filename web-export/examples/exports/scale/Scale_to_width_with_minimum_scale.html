@@ -58,7 +58,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_fg {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -68,7 +68,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_fg {
 		overflow: visible;
 		position: absolute;
 		width: 600.002px;
@@ -77,10 +77,10 @@
 		top: 56.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Rectangle_443 {
+	#Rectangle_443_fh {
 		fill: rgba(93,218,255,1);
 	}
-	.Rectangle_443 {
+	.Rectangle_443_fh {
 		position: absolute;
 		overflow: visible;
 		width: 600px;
@@ -116,7 +116,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_fk {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -135,7 +135,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_fn {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2391,7 +2391,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2644,6 +2648,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2661,7 +2672,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2983,12 +2995,12 @@ window.application = new Application();
 	<div id="Scale_to_width_minimum_scale_a">
 		<span>Scale to width minimum scale and centering</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 600 1">
-		<path id="Line_1" d="M 0 1 L 600 0">
+	<svg class="Line_1_fg" viewBox="0 0 600 1">
+		<path id="Line_1_fg" d="M 0 1 L 600 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_443">
-		<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="600" height="100">
+	<svg class="Rectangle_443_fh">
+		<rect id="Rectangle_443_fh" rx="0" ry="0" x="0" y="0" width="600" height="100">
 		</rect>
 	</svg>
 	<div id="This_page_is_scaled_down_to_fi">
@@ -3001,7 +3013,7 @@ body {
 }
 </style>
 	</div>
-	<div id="Icon">
+	<div id="Icon_fk">
 		<svg class="Rectangle_177_fm">
 			<linearGradient id="Rectangle_177_fm" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3010,7 +3022,7 @@ body {
 			<rect id="Rectangle_177_fm" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_fn">
 			<span>W</span>
 		</div>
 	</div>

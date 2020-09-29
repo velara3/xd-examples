@@ -54,7 +54,7 @@
 		font-size: 18px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_1 {
+	#Line_1_dv {
 		opacity: 0.486;
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
@@ -64,7 +64,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_1 {
+	.Line_1_dv {
 		overflow: visible;
 		position: absolute;
 		width: 960px;
@@ -87,7 +87,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#THE_plan_contained_in_this_wor {
+	#THE_plan_contained_in_this_wor_dx {
 		left: 472px;
 		top: 96px;
 		position: absolute;
@@ -101,10 +101,10 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Rectangle_444 {
+	#Rectangle_444_dy {
 		fill: rgba(93,218,255,1);
 	}
-	.Rectangle_444 {
+	.Rectangle_444_dy {
 		position: absolute;
 		overflow: visible;
 		width: 960px;
@@ -112,7 +112,7 @@
 		left: 20px;
 		top: 1021px;
 	}
-	#Image_3 {
+	#Image_3_dz {
 		position: absolute;
 		width: 412px;
 		height: 568px;
@@ -120,7 +120,7 @@
 		top: 125px;
 		overflow: visible;
 	}
-	#Icon {
+	#Icon_d {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -128,10 +128,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_d {
-		fill: url(#Rectangle_177_d);
+	#Rectangle_177_ea {
+		fill: url(#Rectangle_177_ea);
 	}
-	.Rectangle_177_d {
+	.Rectangle_177_ea {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -139,7 +139,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_d {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2395,7 +2395,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2648,6 +2652,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2665,7 +2676,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -2987,31 +2999,31 @@ window.application = new Application();
 	<div id="Scale_to_fit_width_with_scale_">
 		<span>Scale to fit width with scale up</span>
 	</div>
-	<svg class="Line_1" viewBox="0 0 960 1">
-		<path id="Line_1" d="M 0 0 L 960 0">
+	<svg class="Line_1_dv" viewBox="0 0 960 1">
+		<path id="Line_1_dv" d="M 0 0 L 960 0">
 		</path>
 	</svg>
 	<div id="This_page_will_scaled_to_fit_a">
 		<span>This page will scaled to fit all available width</span>
 	</div>
-	<div id="THE_plan_contained_in_this_wor">
+	<div id="THE_plan_contained_in_this_wor_dx">
 		<span>THE plan contained in this work is not adapted for any particular country alone: the principle on which it is based is general. But as the rights of man are a new study in this world, and one needing protection from priestly imposture, and the insolence of oppressions too long established, I have thought it right to place this little work under your safeguard.<br/><br/>When we reflect on the long and dense night in which France and all Europe have remained plunged by their governments and their priests, we must feel less surprise than grief at the bewilderment caused by the first burst of light that dispels the darkness. The eye accustomed to darkness can hardly bear at first the broad daylight. It is by usage the eye learns to see, and it is the same in passing from any situation to its opposite.<br/><br/>As we have not at one instant renounced all our errors, we cannot at one stroke acquire knowledge of all our rights. France has had the honor of adding to the word Liberty that of Equality; and this word signifies essentially a principle that admits of no gradation in the things to which it applies. But equality is often misunderstood, often misapplied, and often violated.<br/><br/>Liberty and Property are words expressing all those of our possessions which are not of an intellectual nature. There are two kinds of property. Firstly, natural property, or that which comes to us from the Creator of the universe—such as the earth, air, water. Secondly, artificial or acquired property—the invention of men.<br/><br/>In the latter, equality is impossible; for to distribute it equally it would be necessary that all should have contributed in the same proportion, which can never be the case; and this being the case, every individual would hold on to his own property, as his right share. Equality of natural property is the subject of this little essay. Every individual in the world is born therein with legitimate claims on a certain kind of property, or its equivalent.<br/><br/>The right of voting for persons charged with the execution of the laws that govern society is inherent in the word liberty, and constitutes the equality of personal rights. But even if that right (of voting) were inherent in property, which I deny, the right of suffrage would still belong to all equally, because, as I have said, all individuals have legitimate birthrights in a certain species of property.<br/><br/>I have always considered the present Constitution of the French Republic the best organized system the human mind has yet produced. But I hope my former colleagues will not be offended if I warn them of an error which has slipped into its principle. Equality of the right of suffrage is not maintained. This right is in it connected with a condition on which it ought not to depend; that is, with a proportion of a certain tax called”direct.”<br/><br/>The dignity of suffrage is thus lowered; and, in placing it in the scale with an inferior thing, the enthusiasm that right is capable of inspiring is diminished. It is impossible to find any equivalent counterpoise for the right of suffrage, because it is alone worthy to be its own basis, and cannot thrive as a graft, or an appendage.<br/><br/>Since the Constitution was established we have seen two conspiracies stranded—that of Babeuf, and that of some obscure personages who decorate themselves with the despicable name of “royalists.” The defect in principle of the Constitution was the origin of Babeuf’s conspiracy.<br/><br/>He availed himself of the resentment caused by this flaw, and instead of seeking a remedy by legitimate and constitutional means, or proposing some measure useful to society, the conspirators did their best to renew disorder and confusion, and constituted themselves personally into a Directory, which is formally destructive of election and representation. They were, in fine, extravagant enough to suppose that society, occupied with its domestic affairs, would blindly yield to them a directorship usurped by violence.<br/><br/>From Agrarian Justice</span>
 	</div>
-	<svg class="Rectangle_444">
-		<rect id="Rectangle_444" rx="0" ry="0" x="0" y="0" width="960" height="140">
+	<svg class="Rectangle_444_dy">
+		<rect id="Rectangle_444_dy" rx="0" ry="0" x="0" y="0" width="960" height="140">
 		</rect>
 	</svg>
-	<img id="Image_3" src="Image_3.png" srcset="Image_3.png 1x, Image_3@2x.png 2x">
-	<div id="Icon">
-		<svg class="Rectangle_177_d">
-			<linearGradient id="Rectangle_177_d" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+	<img id="Image_3_dz" src="Image_3_dz.png" srcset="Image_3_dz.png 1x, Image_3_dz@2x.png 2x">
+	<div id="Icon_d">
+		<svg class="Rectangle_177_ea">
+			<linearGradient id="Rectangle_177_ea" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_d" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_ea" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_d">
 			<span>W</span>
 		</div>
 	</div>

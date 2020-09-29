@@ -23,7 +23,7 @@
 	--web-refresh-for-changes: false;
 	--web-add-image-compare: false;
 	--web-show-by-media-query: false;
-	--web-application: true;
+	--web-application: false;
 	--web-show-navigation-controls: false;
 	--web-enable-deep-linking: true;
 	--web-is-overlay: false;
@@ -38,7 +38,6 @@
 	.mediaViewInfo {
 		--web-view-name: Pop Up Menu;
 		--web-view-id: Pop_Up_Menu;
-		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
@@ -58,7 +57,6 @@
 		overflow: hidden;
 		--web-view-name: Pop Up Menu;
 		--web-view-id: Pop_Up_Menu;
-		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
@@ -110,13 +108,14 @@
 		right: 21.5px;
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
+		border:  .5px solid gray;
 	}
-	#Clickin_on_the_links_will_show {
+	#Clicking_on_the_links_will_sho {
 		right: 21px;
 		top: 31px;
 		position: absolute;
 		overflow: visible;
-		width: 195px;
+		width: 201px;
 		white-space: nowrap;
 		text-align: right;
 		font-family: Helvetica Neue, sans-serif;
@@ -274,6 +273,7 @@
 		right: 21.5px;
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
+		border:  .5px solid gray;
 	}
 }
 @media (min-width: 0px) and (max-width: 602px) {
@@ -281,7 +281,6 @@
 		--web-view-name: MainMenu;
 		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
-		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -302,7 +301,6 @@
 		--web-view-name: MainMenu;
 		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
-		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -450,7 +448,6 @@
 		--web-view-name: MainMenu Right;
 		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
-		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -471,7 +468,6 @@
 		--web-view-name: MainMenu Right;
 		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
-		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 		right: 0px;
@@ -624,12 +620,12 @@
 	<div id="Slide_in_View">
 		<span>Slide in View</span>
 	</div>
-	<svg class="Line_85_" viewBox="0 0 559.269 1">
+	<hr class="Line_85_" viewBox="0 0 559.269 1">
 		<path id="Line_85_" d="M 0 0 L 559.2686767578125 0">
 		</path>
-	</svg>
-	<div id="Clickin_on_the_links_will_show">
-		<span>Clickin on the links will show pop up view</span>
+	</hr>
+	<div id="Clicking_on_the_links_will_sho">
+		<span>Clicking on the links will show pop up view</span>
 	</div>
 	<div id="Slide_in">
 		<span>Slide in</span>
@@ -662,10 +658,10 @@
 	<div onclick="application.showOverlay(event,'MainMenu',0,0)" id="menu-group_" class="menu_group">
 		<img id="Group_60_" src="images/Group_60_.png" srcset="images/Group_60_.png 1x, images/Group_60_@2x.png 2x">
 	</div>
-	<svg class="Line_85_" viewBox="0 0 559.269 1">
+	<hr class="Line_85_" viewBox="0 0 559.269 1">
 		<path id="Line_85_" d="M 0 0 L 559.2686767578125 0">
 		</path>
-	</svg>
+	</hr>
 </div>
 <div id="MainMenu" onclick="application.goBack()">
 	<svg class="Line_90" viewBox="0 0 189 1">

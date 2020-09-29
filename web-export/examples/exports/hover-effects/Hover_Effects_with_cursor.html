@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hover Effect Styles</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
@@ -31,7 +32,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#View_page_source_to_see_how_st {
+	#View_page_source_to_see_how_st_bg {
 		left: 20px;
 		top: 193px;
 		position: absolute;
@@ -45,10 +46,10 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#MyRectangle {
+	#MyRectangle_bh {
 		fill: rgba(0,255,49,1);
 	}
-	.MyRectangle {
+	.MyRectangle_bh {
 		position: absolute;
 		overflow: visible;
 		width: 56px;
@@ -57,7 +58,7 @@
 		top: 91px;
 		cursor:  pointer;
 	}
-	#Rectangle {
+	#Rectangle_bi {
 		left: 20px;
 		top: 71px;
 		position: absolute;
@@ -71,7 +72,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_83 {
+	#Line_83_bj {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -80,7 +81,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_bj {
 		overflow: visible;
 		position: absolute;
 		width: 559.5px;
@@ -89,7 +90,7 @@
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#The_elements_have_hover_style_ {
+	#The_elements_have_hover_style__bk {
 		left: 300px;
 		top: 34px;
 		position: absolute;
@@ -120,7 +121,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Hover_effect_with_id_selector_ {
+	#Hover_effect_with_id_selector__bm {
 		left: 20px;
 		top: 164px;
 		position: absolute;
@@ -134,7 +135,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd {
+	#httpsdevelopermozillaorgen-USd_bn {
 		left: 20px;
 		top: 222px;
 		position: absolute;
@@ -148,7 +149,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_bp {
+	#httpsdevelopermozillaorgen-USd_bo {
 		left: 20px;
 		top: 246px;
 		position: absolute;
@@ -162,7 +163,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_bq {
+	#httpsdevelopermozillaorgen-USd_bp {
 		left: 20px;
 		top: 269px;
 		position: absolute;
@@ -176,7 +177,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#icon2 {
+	#icon2_bq {
 		position: absolute;
 		width: 24.256px;
 		height: 24.256px;
@@ -2684,6 +2685,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2701,7 +2709,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3020,45 +3029,45 @@ window.application = new Application();
 </head>
 <body>
 <div id="Hover_Effects_with_cursor">
-	<div id="View_page_source_to_see_how_st">
+	<div id="View_page_source_to_see_how_st_bg">
 		<span>View page source to see how styles are applied</span>
 	</div>
-	<svg class="MyRectangle">
-		<rect id="MyRectangle" rx="0" ry="0" x="0" y="0" width="56" height="56">
+	<svg class="MyRectangle_bh">
+		<rect id="MyRectangle_bh" rx="0" ry="0" x="0" y="0" width="56" height="56">
 		</rect>
 	</svg>
-	<div id="Rectangle">
+	<div id="Rectangle_bi">
 		<span>Rectangle</span>
 	</div>
-	<svg class="Line_83" viewBox="0 0 559.5 1">
-		<path id="Line_83" d="M 0 0 L 559.5 0">
+	<svg class="Line_83_bj" viewBox="0 0 559.5 1">
+		<path id="Line_83_bj" d="M 0 0 L 559.5 0">
 		</path>
 	</svg>
-	<div id="The_elements_have_hover_style_">
+	<div id="The_elements_have_hover_style__bk">
 		<span>The elements have hover style with a pointer cursor applied</span>
 	</div>
 	<div id="Hover_with_cursor">
 		<span>Hover with cursor</span>
 	</div>
-	<div id="Hover_effect_with_id_selector_">
+	<div id="Hover_effect_with_id_selector__bm">
 		<span>Hover effect with id selector and cursor set to pointer. Move the mouse over the element</span>
 	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
-	<div id="httpsdevelopermozillaorgen-USd">
+	<div id="httpsdevelopermozillaorgen-USd_bn">
 		<span>https://developer.mozilla.org/en-US/docs/Glossary/HTML</span>
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">
-	<div id="httpsdevelopermozillaorgen-USd_bp">
+	<div id="httpsdevelopermozillaorgen-USd_bo">
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/:hover</span>
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">
-	<div id="httpsdevelopermozillaorgen-USd_bq">
+	<div id="httpsdevelopermozillaorgen-USd_bp">
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/cursor</span>
 	</div>
 	</a>
-	<img id="icon2" src="images/icon2.png" srcset="images/icon2.png 1x, images/icon2@2x.png 2x">
+	<img id="icon2_bq" src="images/icon2_bq.png" srcset="images/icon2_bq.png 1x, images/icon2_bq@2x.png 2x">
 </div>
 </body>
 </html>

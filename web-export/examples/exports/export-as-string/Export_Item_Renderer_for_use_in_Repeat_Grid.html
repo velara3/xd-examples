@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Export Item Renderer for use in Repeat Grid</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Export Item Renderer for use in Repeat Grid;
+		--web-view-id: Export_Item_Renderer_for_use_in_Repeat_Grid;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-refresh-for-changes: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Export_Item_Renderer_for_use_in_Repeat_Grid;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Export_Item_Renderer_for_use_in_Repeat_Grid {
+		position: absolute;
+		width: 770px;
+		height: 525px;
+		background-color: rgba(255,255,255,1);
+		overflow: auto;
+		--web-view-name: Export Item Renderer for use in Repeat Grid;
+		--web-view-id: Export_Item_Renderer_for_use_in_Repeat_Grid;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-refresh-for-changes: true;
+		--web-enable-deep-linking: true;
+	}
+	#Line_83 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_83 {
+		overflow: visible;
+		position: absolute;
+		width: 730px;
+		height: 1px;
+		left: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Export_Item_Renderer_for_use_i {
+		left: 50px;
+		top: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 416px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Export_as_string_converts_the_ {
+		left: 20px;
+		top: 413px;
+		position: absolute;
+		overflow: visible;
+		width: 269px;
+		white-space: nowrap;
+		line-height: 22px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#View_the_source_code_to_see_th {
+		left: 19px;
+		top: 442px;
+		position: absolute;
+		overflow: visible;
+		width: 262px;
+		white-space: nowrap;
+		line-height: 22px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd {
+		left: 19px;
+		top: 485px;
+		position: absolute;
+		overflow: visible;
+		width: 298px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#The_grid_item_renderer_below_i {
+		left: 20px;
+		top: 80px;
+		position: absolute;
+		overflow: visible;
+		width: 564px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Grid_inside_of_a_Group {
+		left: 20px;
+		top: 115px;
+		position: absolute;
+		overflow: visible;
+		width: 119px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_s {
+		fill: url(#Rectangle_177_s);
+	}
+	.Rectangle_177_s {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#Group_3 {
+		position: absolute;
+		width: 149px;
+		height: 116px;
+		left: 19px;
+		top: 144px;
+		overflow: auto;
+	}
+	#Repeat_Grid_2 {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		overflow: visible;
+	}
+	#Group_1 {
+		position: relative;
+		width: 149px;
+		height: 26px;
+		align-self: auto;
+		overflow: visible;
+	}
+	#Rectangle_447 {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_447 {
+		position: absolute;
+		overflow: visible;
+		width: 149px;
+		height: 26px;
+		left: 0px;
+		top: 0px;
+	}
+	#Item {
+		left: 27px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#ID100 {
+		left: 121px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#image {
+		position: absolute;
+		width: 17px;
+		height: 17px;
+		left: 4px;
+		top: 4px;
+		overflow: visible;
+	}
+	#Group_1_ {
+		position: relative;
+		width: 149px;
+		height: 26px;
+		align-self: auto;
+		overflow: visible;
+	}
+	#Rectangle_447_ {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_447_ {
+		position: absolute;
+		overflow: visible;
+		width: 149px;
+		height: 26px;
+		left: 0px;
+		top: 0px;
+	}
+	#Item_ {
+		left: 27px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#ID100_ {
+		left: 121px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#image_ {
+		position: absolute;
+		width: 17px;
+		height: 17px;
+		left: 4px;
+		top: 4px;
+		overflow: visible;
+	}
+	#Group_1_ba {
+		position: relative;
+		width: 149px;
+		height: 26px;
+		align-self: auto;
+		overflow: visible;
+	}
+	#Rectangle_447_ba {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_447_ba {
+		position: absolute;
+		overflow: visible;
+		width: 149px;
+		height: 26px;
+		left: 0px;
+		top: 0px;
+	}
+	#Item_ba {
+		left: 27px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#ID100_ba {
+		left: 121px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#image_ba {
+		position: absolute;
+		width: 17px;
+		height: 17px;
+		left: 4px;
+		top: 4px;
+		overflow: visible;
+	}
+	#Group_1_bb {
+		position: relative;
+		width: 149px;
+		height: 26px;
+		align-self: auto;
+		overflow: visible;
+	}
+	#Rectangle_447_bc {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_447_bc {
+		position: absolute;
+		overflow: visible;
+		width: 149px;
+		height: 26px;
+		left: 0px;
+		top: 0px;
+	}
+	#Item_bd {
+		left: 27px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#ID100_be {
+		left: 121px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#image_bf {
+		position: absolute;
+		width: 17px;
+		height: 17px;
+		left: 4px;
+		top: 4px;
+		overflow: visible;
+	}
+	#renderer {
+		position: relative;
+		width: 149px;
+		height: 26px;
+		overflow: visible;
+		margin-bottom:  8px;
+	}
+	#Rectangle_447_bh {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_447_bh {
+		position: absolute;
+		overflow: visible;
+		width: 149px;
+		height: 26px;
+		left: 0px;
+		top: 0px;
+	}
+	#Item_bi {
+		left: 27px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#ID100_bj {
+		left: 121px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#image_bk {
+		position: absolute;
+		width: 17px;
+		height: 17px;
+		left: 4px;
+		top: 4px;
+		overflow: visible;
+	}
+	#FILL_REPEAT_GRID_ON_PAGE_LOAD {
+		left: 351px;
+		top: 236px;
+		position: absolute;
+		overflow: visible;
+		width: 268px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(95,90,90,1);
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="Export_Item_Renderer_for_use_in_Repeat_Grid.js"></script>
+</head>
+<body>
+<div id="Export_Item_Renderer_for_use_in_Repeat_Grid">
+	<svg class="Line_83" viewBox="0 0 730 1">
+		<path id="Line_83" d="M 0 0 L 730 0">
+		</path>
+	</svg>
+	<div id="Export_Item_Renderer_for_use_i">
+		<span>Export Item Renderer for use in Repeat Grid</span>
+	</div>
+	<div id="Export_as_string_converts_the_">
+		<span>Export as string converts the element into a string.</span>
+	</div>
+	<div id="View_the_source_code_to_see_th">
+		<span>View the source code to see the element markup</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img</span>
+	</div>
+	</a>
+	<div id="The_grid_item_renderer_below_i">
+		<span>The grid item renderer below is using the export as string option and then that HTML is repeated in a grid</span>
+	</div>
+	<div id="Grid_inside_of_a_Group">
+		<span>Grid inside of a Group</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_s">
+			<linearGradient id="Rectangle_177_s" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_s" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="Group_3">
+		<div id="Repeat_Grid_2" class="contentGrid">
+			<div id="Group_1" class="Group_1">
+				<svg class="Rectangle_447">
+					<rect id="Rectangle_447" rx="0" ry="0" x="0" y="0" width="149" height="26">
+					</rect>
+				</svg>
+				<div id="Item">
+					<span>Item</span>
+				</div>
+				<div id="ID100">
+					<span>1.00</span>
+				</div>
+				<img id="image" src="images/image.png" srcset="images/image.png 1x, images/image@2x.png 2x">
+			</div>
+			<div id="Group_1_" class="Group_1">
+				<svg class="Rectangle_447_">
+					<rect id="Rectangle_447_" rx="0" ry="0" x="0" y="0" width="149" height="26">
+					</rect>
+				</svg>
+				<div id="Item_">
+					<span>Item</span>
+				</div>
+				<div id="ID100_">
+					<span>1.00</span>
+				</div>
+				<img id="image_" src="images/image_.png" srcset="images/image_.png 1x, images/image_@2x.png 2x">
+			</div>
+			<div id="Group_1_ba" class="Group_1">
+				<svg class="Rectangle_447_ba">
+					<rect id="Rectangle_447_ba" rx="0" ry="0" x="0" y="0" width="149" height="26">
+					</rect>
+				</svg>
+				<div id="Item_ba">
+					<span>Item</span>
+				</div>
+				<div id="ID100_ba">
+					<span>1.00</span>
+				</div>
+				<img id="image_ba" src="images/image_ba.png" srcset="images/image_ba.png 1x, images/image_ba@2x.png 2x">
+			</div>
+			<div id="Group_1_bb" class="Group_1">
+				<svg class="Rectangle_447_bc">
+					<rect id="Rectangle_447_bc" rx="0" ry="0" x="0" y="0" width="149" height="26">
+					</rect>
+				</svg>
+				<div id="Item_bd">
+					<span>Item</span>
+				</div>
+				<div id="ID100_be">
+					<span>1.00</span>
+				</div>
+				<img id="image_bf" src="images/image_bf.png" srcset="images/image_bf.png 1x, images/image_bf@2x.png 2x">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	var renderer = `
+	<div id="renderer">
+		<svg class="Rectangle_447_bh" title="Rectangle">
+			<rect id="Rectangle_447_bh" rx="0" ry="0" x="0" y="0" width="149" height="26">
+			</rect>
+		</svg>
+		<div id="Item_bi">
+			<span>Item</span>
+		</div>
+		<div id="ID100_bj">
+			<span>1.00</span>
+		</div>
+		<img id="image_bk" src="images/image_bk.png" srcset="images/image_bk.png 1x, images/image_bk@2x.png 2x">
+	</div>
+	`;
+	</script>
+	<script>
+var grid = application.getElementByClass("contentGrid");
+
+grid.innerHTML = renderer.repeat(6);
+</script>
+
+</div>
+</body>
+</html>

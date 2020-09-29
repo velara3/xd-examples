@@ -37,7 +37,7 @@
 		--web-refresh-for-changes: true;
 		--web-enable-deep-linking: true;
 	}
-	#View_the_page_source_to_see_ma {
+	#View_the_page_source_to_see_ma_bg {
 		left: 22px;
 		top: 312px;
 		position: absolute;
@@ -51,7 +51,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Rectangle_1 {
+	#Rectangle_1_bi {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -77,7 +77,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_83 {
+	#Line_83_bk {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -86,7 +86,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_83_bk {
 		overflow: visible;
 		position: absolute;
 		width: 808px;
@@ -95,7 +95,7 @@
 		top: 53.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#The_element_below_has_the_HTML {
+	#The_element_below_has_the_HTML_bl {
 		left: 619px;
 		top: 31px;
 		position: absolute;
@@ -126,7 +126,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#httpsdevelopermozillaorgen-USd {
+	#httpsdevelopermozillaorgen-USd_bn {
 		left: 20px;
 		top: 336px;
 		position: absolute;
@@ -140,7 +140,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon {
+	#Icon_bo {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -159,7 +159,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_br {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2415,7 +2415,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2668,6 +2672,13 @@ var Application = function() {
 		return element;
 	}
 
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
+	}
+
 	self.resizeHandler = function(event) {
 		
 		if (self.showByMediaQuery) {
@@ -2685,7 +2696,8 @@ var Application = function() {
 			var visibleViews = self.getVisibleViews();
 
 			for (let index = 0; index < visibleViews.length; index++) {	
-				self.scaleViewIfNeeded();
+				var view = visibleViews[index];
+				self.scaleViewIfNeeded(view);
 			}
 		}
 
@@ -3004,10 +3016,10 @@ window.application = new Application();
 </head>
 <body>
 <div id="Markup_Inside_with_a_table">
-	<div id="View_the_page_source_to_see_ma">
+	<div id="View_the_page_source_to_see_ma_bg">
 		<span>View the page source to see markup inside</span>
 	</div>
-	<div id="Rectangle_1">
+	<div id="Rectangle_1_bi">
 		<table class="tableStyle">
 	<thead>
 		<tr>
@@ -3084,22 +3096,22 @@ window.application = new Application();
 	<div id="HTML_of_table">
 		<span>HTML of table:</span>
 	</div>
-	<svg class="Line_83" viewBox="0 0 808 0.24">
-		<path id="Line_83" d="M 0 0 L 808 0.239990234375">
+	<svg class="Line_83_bk" viewBox="0 0 808 0.24">
+		<path id="Line_83_bk" d="M 0 0 L 808 0.239990234375">
 		</path>
 	</svg>
-	<div id="The_element_below_has_the_HTML">
+	<div id="The_element_below_has_the_HTML_bl">
 		<span>The element below has the HTML for a form </span>
 	</div>
 	<div id="Markup_inside_with_a_table">
 		<span>Markup inside with a table</span>
 	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
-	<div id="httpsdevelopermozillaorgen-USd">
+	<div id="httpsdevelopermozillaorgen-USd_bn">
 		<span>https://developer.mozilla.org/en-US/docs/Glossary/HTML</span>
 	</div>
 	</a>
-	<div id="Icon">
+	<div id="Icon_bo">
 		<svg class="Rectangle_177_bq">
 			<linearGradient id="Rectangle_177_bq" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
@@ -3108,7 +3120,7 @@ window.application = new Application();
 			<rect id="Rectangle_177_bq" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W">
+		<div id="W_br">
 			<span>W</span>
 		</div>
 	</div>
