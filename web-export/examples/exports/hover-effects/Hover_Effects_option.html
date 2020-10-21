@@ -177,6 +177,10 @@
 		fill: rgba(63,181,72,1);
 		stroke: rgba(57,57,57,1);
 		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
 	}
 	#Repeat_Grid_1 {
 		position: absolute;
@@ -341,6 +345,10 @@
 		fill: rgba(63,181,72,1);
 		stroke: rgba(57,57,57,1);
 		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
 	}
 	#Symbol {
 		position: absolute;
@@ -2792,7 +2800,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);

@@ -102,7 +102,7 @@
 		top: 98.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Column_Layout_r {
+	#Column_Layout_s {
 		left: 50px;
 		top: 22px;
 		position: absolute;
@@ -402,7 +402,7 @@
 		flex-wrap: nowrap;
 		overflow: visible;
 	}
-	#Home_bd {
+	#Home_be {
 		position: relative;
 		align-self: stretch;
 		overflow: visible;
@@ -415,7 +415,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Products_be {
+	#Products_bf {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -428,7 +428,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Services_bf {
+	#Services_bg {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -441,7 +441,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#About_bg {
+	#About_bh {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -454,7 +454,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Contact_bh {
+	#Contact_bi {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -475,10 +475,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_bk {
-		fill: url(#Rectangle_177_bk);
+	#Rectangle_177_bl {
+		fill: url(#Rectangle_177_bl);
 	}
-	.Rectangle_177_bk {
+	.Rectangle_177_bl {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -2756,7 +2756,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3007,6 +3011,13 @@ var Application = function() {
 		var element = elementId ? document.getElementById(elementId) : null;
 
 		return element;
+	}
+
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
 	}
 
 	self.resizeHandler = function(event) {
@@ -3362,7 +3373,7 @@ window.application = new Application();
 		<path id="Line_96" d="M 0 0 L 256.5 0">
 		</path>
 	</svg>
-	<div id="Column_Layout_r">
+	<div id="Column_Layout_s">
 		<span>Column Layout</span>
 	</div>
 	<div id="Group_85" class="group">
@@ -3427,7 +3438,6 @@ window.application = new Application();
    outline: 1px solid rgba(0,0,0,.2);
 }
 </style>
-
 	<style>
 /* add animation to class  */
 .group, .group2 {
@@ -3453,31 +3463,30 @@ window.application = new Application();
 	}
 }
 </style>
-
 	<div id="Group_103" class="group">
-		<div id="Home_bd">
+		<div id="Home_be">
 			<span>Home</span>
 		</div>
-		<div id="Products_be">
+		<div id="Products_bf">
 			<span>Products</span>
 		</div>
-		<div id="Services_bf">
+		<div id="Services_bg">
 			<span>Services</span>
 		</div>
-		<div id="About_bg">
+		<div id="About_bh">
 			<span>About</span>
 		</div>
-		<div id="Contact_bh">
+		<div id="Contact_bi">
 			<span>Contact</span>
 		</div>
 	</div>
 	<div id="Icon">
-		<svg class="Rectangle_177_bk">
-			<linearGradient id="Rectangle_177_bk" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<svg class="Rectangle_177_bl">
+			<linearGradient id="Rectangle_177_bl" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_bk" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_bl" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
 		<div id="W">

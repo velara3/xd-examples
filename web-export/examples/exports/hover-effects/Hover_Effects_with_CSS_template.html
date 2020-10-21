@@ -10,6 +10,7 @@
 		--web-view-name: Hover Effects with CSS template;
 		--web-view-id: Hover_Effects_with_CSS_template;
 		--web-center-horizontally: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
@@ -30,9 +31,10 @@
 		--web-view-name: Hover Effects with CSS template;
 		--web-view-id: Hover_Effects_with_CSS_template;
 		--web-center-horizontally: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 	}
-	#View_page_source_to_see_how_st_c {
+	#View_page_source_to_see_how_st {
 		left: 20px;
 		top: 193px;
 		position: absolute;
@@ -46,10 +48,10 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#MyRectangle_c {
+	#MyRectangle {
 		fill: rgba(0,255,49,1);
 	}
-	.MyRectangle_c {
+	.MyRectangle {
 		position: absolute;
 		overflow: visible;
 		width: 56px;
@@ -58,10 +60,10 @@
 		top: 91px;
 	}
 	/* change the fill on hover */
-	#MyRectangle_c:hover {
+	#MyRectangle:hover {
 	    fill: blue;
 	}
-	#Rectangle_c {
+	#Rectangle {
 		left: 20px;
 		top: 71px;
 		position: absolute;
@@ -75,7 +77,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Line_83_c {
+	#Line_83 {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -84,7 +86,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83_c {
+	.Line_83 {
 		overflow: visible;
 		position: absolute;
 		width: 559.5px;
@@ -93,7 +95,7 @@
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#The_elements_have_hover_style__c {
+	#The_elements_have_hover_style_ {
 		left: 399px;
 		top: 34px;
 		position: absolute;
@@ -138,7 +140,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_c {
+	#httpsdevelopermozillaorgen-USd {
 		left: 20px;
 		top: 272px;
 		position: absolute;
@@ -152,7 +154,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_da {
+	#httpsdevelopermozillaorgen-USd_t {
 		left: 20px;
 		top: 296px;
 		position: absolute;
@@ -166,7 +168,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#icon2_db {
+	#icon2 {
 		position: absolute;
 		width: 24.256px;
 		height: 24.256px;
@@ -2415,7 +2417,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3012,21 +3018,21 @@ window.application = new Application();
 </head>
 <body>
 <div id="Hover_Effects_with_CSS_template">
-	<div id="View_page_source_to_see_how_st_c">
+	<div id="View_page_source_to_see_how_st">
 		<span>View page source to see how styles are applied</span>
 	</div>
-	<svg class="MyRectangle_c">
-		<rect id="MyRectangle_c" rx="0" ry="0" x="0" y="0" width="56" height="56">
+	<svg class="MyRectangle">
+		<rect id="MyRectangle" rx="0" ry="0" x="0" y="0" width="56" height="56">
 		</rect>
 	</svg>
-	<div id="Rectangle_c">
+	<div id="Rectangle">
 		<span>Rectangle</span>
 	</div>
-	<svg class="Line_83_c" viewBox="0 0 559.5 1">
-		<path id="Line_83_c" d="M 0 0 L 559.5 0">
+	<svg class="Line_83" viewBox="0 0 559.5 1">
+		<path id="Line_83" d="M 0 0 L 559.5 0">
 		</path>
 	</svg>
-	<div id="The_elements_have_hover_style__c">
+	<div id="The_elements_have_hover_style_">
 		<span>The elements have hover style applied</span>
 	</div>
 	<div id="Hover_Effects_with_CSS_templat">
@@ -3036,16 +3042,16 @@ window.application = new Application();
 		<span>Hover effect added in the CSS Template field</span>
 	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
-	<div id="httpsdevelopermozillaorgen-USd_c">
+	<div id="httpsdevelopermozillaorgen-USd">
 		<span>https://developer.mozilla.org/en-US/docs/Glossary/HTML</span>
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">
-	<div id="httpsdevelopermozillaorgen-USd_da">
+	<div id="httpsdevelopermozillaorgen-USd_t">
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/:hover</span>
 	</div>
 	</a>
-	<img id="icon2_db" src="images/icon2_db.png" srcset="images/icon2_db.png 1x, images/icon2_db@2x.png 2x">
+	<img id="icon2" src="images/icon2.png" srcset="images/icon2.png 1x, images/icon2@2x.png 2x">
 </div>
 </body>
 </html>

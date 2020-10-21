@@ -2460,7 +2460,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2711,6 +2715,13 @@ var Application = function() {
 		var element = elementId ? document.getElementById(elementId) : null;
 
 		return element;
+	}
+
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
 	}
 
 	self.resizeHandler = function(event) {
@@ -3091,7 +3102,6 @@ window.application = new Application();
 		}
 	}
 </style>
-
 	<div id="Using_left_and_right_anchors_t_c">
 		<span>Using left and right anchors the rectangle dynamically fills in the container it is in. The width and height have been removed in the additional styles field in the element options</span>
 	</div>

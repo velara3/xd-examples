@@ -112,7 +112,7 @@ input, select {
 		top: 51.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Form_Elements_j {
+	#Form_Elements_k {
 		left: 20px;
 		top: 20px;
 		position: absolute;
@@ -477,7 +477,7 @@ input, select {
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#nameInput_ {
+	#nameInput_ba {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -488,7 +488,7 @@ input, select {
 		top: 0px;
 		overflow: visible;
 	}
-	#emailInput_ba {
+	#emailInput_bb {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -499,7 +499,7 @@ input, select {
 		top: 26px;
 		overflow: visible;
 	}
-	#subjectSelect_bb {
+	#subjectSelect_bc {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -510,7 +510,7 @@ input, select {
 		top: 52px;
 		overflow: visible;
 	}
-	#subscribeCheckbox_bc {
+	#subscribeCheckbox_bd {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -521,7 +521,7 @@ input, select {
 		top: 78px;
 		overflow: visible;
 	}
-	#yesRadioButton_bd {
+	#yesRadioButton_be {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -532,7 +532,7 @@ input, select {
 		top: 100px;
 		overflow: visible;
 	}
-	#noRadioButton_be {
+	#noRadioButton_bf {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -543,7 +543,7 @@ input, select {
 		top: 100px;
 		overflow: visible;
 	}
-	#submitButton_bf {
+	#submitButton_bg {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -2890,7 +2890,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3499,7 +3503,7 @@ window.application = new Application();
 		<path id="Line_2" d="M 0 0 L 588 0.760009765625">
 		</path>
 	</svg>
-	<div id="Form_Elements_j">
+	<div id="Form_Elements_k">
 		<span>Form Elements</span>
 	</div>
 	<form action="#" method="get">
@@ -3585,30 +3589,30 @@ window.application = new Application();
 		<div id="No_">
 			<span>No</span>
 		</div>
-		<div id="nameInput_">
+		<div id="nameInput_ba">
 			<input type="text" name="name" class="fillContainer"/>
 		</div>
-		<div id="emailInput_ba">
+		<div id="emailInput_bb">
 			<input type="email" name="email"  class="fillContainer"/>
 		</div>
-		<div id="subjectSelect_bb">
+		<div id="subjectSelect_bc">
 			<select name="subject" class="fillContainer">
   <option value="support" selected>Support Request</option>
   <option value="feedback">Feedback</option>
   <option value="other">Other</option>
 </select>
 		</div>
-		<div id="subscribeCheckbox_bc">
+		<div id="subscribeCheckbox_bd">
 			<input type="hidden"  name="subscribe" value="false" />
 <input type="checkbox" class="fillContainer" name="subscribe" value="true"/>
 		</div>
-		<div id="yesRadioButton_bd">
+		<div id="yesRadioButton_be">
 			<input type="radio" name="radioGroup1" checked="true" value="yes" class="fillContainer"/>
 		</div>
-		<div id="noRadioButton_be">
+		<div id="noRadioButton_bf">
 			<input type="radio" name="radioGroup1" value="no" class="fillContainer"/>
 		</div>
-		<div id="submitButton_bf">
+		<div id="submitButton_bg">
 			<button type="submit">
     Submit
 </button>

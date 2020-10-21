@@ -30,7 +30,7 @@
 		--web-view-id: Column_Self_Alignment_Push;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83_hx {
+	#Line_83_hy {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -39,7 +39,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83_hx {
+	.Line_83_hy {
 		overflow: visible;
 		position: absolute;
 		width: 660px;
@@ -66,7 +66,7 @@
 		top: 118.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Column_Self_Alignment_Push_hz {
+	#Column_Self_Alignment_Push_h {
 		left: 50px;
 		top: 22px;
 		position: absolute;
@@ -210,7 +210,7 @@
 		flex-wrap: nowrap;
 		overflow: visible;
 	}
-	#Home_h {
+	#Home_ia {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -223,7 +223,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Products_ia {
+	#Products_ib {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -236,7 +236,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Services_ib {
+	#Services_ic {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -262,7 +262,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Contact_id {
+	#Contact_ie {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -275,7 +275,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_89_ie {
+	#Group_89_if {
 		position: absolute;
 		width: 50px;
 		height: 141px;
@@ -288,7 +288,7 @@
 		flex-wrap: nowrap;
 		overflow: visible;
 	}
-	#Home_if {
+	#Home_ig {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -301,7 +301,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Products_ig {
+	#Products_ih {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -314,7 +314,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Services_ih {
+	#Services_ii {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -327,7 +327,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#About_ii {
+	#About_ij {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -340,7 +340,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Push_Top_ij {
+	#Push_Top_ik {
 		position: relative;
 		margin-top: auto;
 		overflow: visible;
@@ -353,7 +353,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Push_Bottom_ik {
+	#Push_Bottom_il {
 		left: 247px;
 		top: 100px;
 		position: absolute;
@@ -417,7 +417,7 @@
 		top: 118.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Icon_io {
+	#Icon_ip {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -425,10 +425,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_iq {
-		fill: url(#Rectangle_177_iq);
+	#Rectangle_177_ir {
+		fill: url(#Rectangle_177_ir);
 	}
-	.Rectangle_177_iq {
+	.Rectangle_177_ir {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -436,7 +436,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W_ir {
+	#W_is {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -464,7 +464,7 @@
 		flex-wrap: nowrap;
 		overflow: hidden;
 	}
-	#Default_it {
+	#Default_iu {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -477,7 +477,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Push_Top_and_Bottom_iu {
+	#Push_Top_and_Bottom_iv {
 		position: relative;
 		margin: auto 0px;
 		overflow: visible;
@@ -490,7 +490,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Default_iv {
+	#Default_iw {
 		position: relative;
 		align-self: flex-start;
 		overflow: visible;
@@ -503,7 +503,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#ADD_HOVER_STYLE_TO_EVERY_ELEME_ix {
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME_iy {
 		left: 450px;
 		top: 378px;
 		position: absolute;
@@ -2758,7 +2758,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3009,6 +3013,13 @@ var Application = function() {
 		var element = elementId ? document.getElementById(elementId) : null;
 
 		return element;
+	}
+
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
 	}
 
 	self.resizeHandler = function(event) {
@@ -3348,15 +3359,15 @@ window.application = new Application();
 </head>
 <body>
 <div id="Column_Self_Alignment_Push">
-	<svg class="Line_83_hx" viewBox="0 0 660 1">
-		<path id="Line_83_hx" d="M 0 0 L 660 0">
+	<svg class="Line_83_hy" viewBox="0 0 660 1">
+		<path id="Line_83_hy" d="M 0 0 L 660 0">
 		</path>
 	</svg>
 	<svg class="Line_92" viewBox="0 0 162.5 1">
 		<path id="Line_92" d="M 0 0 L 162.5 0">
 		</path>
 	</svg>
-	<div id="Column_Self_Alignment_Push_hz">
+	<div id="Column_Self_Alignment_Push_h">
 		<span>Column Self Alignment Push</span>
 	</div>
 	<div id="In_the_group_above_an_item_has">
@@ -3368,14 +3379,12 @@ window.application = new Application();
    outline: 1px solid rgba(0,0,0,.2);
 }
 </style>
-
 	<style>
 /* add padding to right of each group item */
 .group > * {
    padding-right: 2px;
 }
 </style>
-
 	<div id="Push_Top">
 		<span>Push Top</span>
 	</div>
@@ -3419,42 +3428,41 @@ window.application = new Application();
 	}
 }
 </style>
-
 	<div id="Group_100" class="group">
-		<div id="Home_h">
+		<div id="Home_ia">
 			<span>Home</span>
 		</div>
-		<div id="Products_ia">
+		<div id="Products_ib">
 			<span>Products</span>
 		</div>
-		<div id="Services_ib">
+		<div id="Services_ic">
 			<span>Services</span>
 		</div>
 		<div id="Push_Bottom">
 			<span>Push Bottom</span>
 		</div>
-		<div id="Contact_id">
+		<div id="Contact_ie">
 			<span>Contact</span>
 		</div>
 	</div>
-	<div id="Group_89_ie" class="group">
-		<div id="Home_if">
+	<div id="Group_89_if" class="group">
+		<div id="Home_ig">
 			<span>Home</span>
 		</div>
-		<div id="Products_ig">
+		<div id="Products_ih">
 			<span>Products</span>
 		</div>
-		<div id="Services_ih">
+		<div id="Services_ii">
 			<span>Services</span>
 		</div>
-		<div id="About_ii">
+		<div id="About_ij">
 			<span>About</span>
 		</div>
-		<div id="Push_Top_ij">
+		<div id="Push_Top_ik">
 			<span>Push Top</span>
 		</div>
 	</div>
-	<div id="Push_Bottom_ik">
+	<div id="Push_Bottom_il">
 		<span>Push Bottom</span>
 	</div>
 	<div id="Push_Top_and_Bottom">
@@ -3468,31 +3476,31 @@ window.application = new Application();
 		<path id="Line_98" d="M 0 0.239990234375 L 168.5 0">
 		</path>
 	</svg>
-	<div id="Icon_io">
-		<svg class="Rectangle_177_iq">
-			<linearGradient id="Rectangle_177_iq" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+	<div id="Icon_ip">
+		<svg class="Rectangle_177_ir">
+			<linearGradient id="Rectangle_177_ir" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_iq" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_ir" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W_ir">
+		<div id="W_is">
 			<span>W</span>
 		</div>
 	</div>
 	<div id="Group_105" class="group">
-		<div id="Default_it">
+		<div id="Default_iu">
 			<span>Default</span>
 		</div>
-		<div id="Push_Top_and_Bottom_iu">
+		<div id="Push_Top_and_Bottom_iv">
 			<span>Push Top and Bottom</span>
 		</div>
-		<div id="Default_iv">
+		<div id="Default_iw">
 			<span>Default</span>
 		</div>
 	</div>
-	<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME_ix">
+	<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME_iy">
 		<style>
 
 *:hover {

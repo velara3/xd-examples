@@ -2851,7 +2851,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3447,7 +3447,7 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Tag_Names">
+<artboardtag id="Tag_Names">
 	<div id="Group_3">
 		<svg class="Rectangle_3">
 			<rect id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="56" height="56">
@@ -3583,6 +3583,6 @@ window.application = new Application();
 			<span>W</span>
 		</div>
 	</div>
-</div>
+</artboardtag>
 </body>
 </html>

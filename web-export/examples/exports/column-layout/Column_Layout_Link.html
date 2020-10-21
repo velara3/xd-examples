@@ -30,7 +30,7 @@
 		--web-view-id: Column_Layout_Link;
 		--web-enable-deep-linking: true;
 	}
-	#Line_83_bp {
+	#Line_83_bq {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -39,7 +39,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83_bp {
+	.Line_83_bq {
 		overflow: visible;
 		position: absolute;
 		width: 560px;
@@ -48,7 +48,7 @@
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Column_Layout_Link_bq {
+	#Column_Layout_Link_br {
 		left: 50px;
 		top: 22px;
 		position: absolute;
@@ -91,7 +91,7 @@
 		flex-wrap: nowrap;
 		overflow: visible;
 	}
-	#Home_bt {
+	#Home_bu {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -103,7 +103,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Products_bu {
+	#Products_bv {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -115,7 +115,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Services_bv {
+	#Services_bw {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -127,7 +127,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#About_bw {
+	#About_bx {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -139,7 +139,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Contact_bx {
+	#Contact_by {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -165,7 +165,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_bz {
+	#httpsdevelopermozillaorgen-USd_b {
 		left: 20px;
 		top: 298px;
 		position: absolute;
@@ -179,7 +179,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_b {
+	#httpsdevelopermozillaorgen-USd_ca {
 		left: 20px;
 		top: 318px;
 		position: absolute;
@@ -2482,7 +2482,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2733,6 +2737,13 @@ var Application = function() {
 		var element = elementId ? document.getElementById(elementId) : null;
 
 		return element;
+	}
+
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
 	}
 
 	self.resizeHandler = function(event) {
@@ -3072,30 +3083,30 @@ window.application = new Application();
 </head>
 <body>
 <div id="Column_Layout_Link">
-	<svg class="Line_83_bp" viewBox="0 0 560 1">
-		<path id="Line_83_bp" d="M 0 0 L 560 0">
+	<svg class="Line_83_bq" viewBox="0 0 560 1">
+		<path id="Line_83_bq" d="M 0 0 L 560 0">
 		</path>
 	</svg>
-	<div id="Column_Layout_Link_bq">
+	<div id="Column_Layout_Link_br">
 		<span>Column Layout Link</span>
 	</div>
 	<div id="Links_styles_have_been_added_t">
 		<span>Links styles have been added to the items in the column</span>
 	</div>
 	<div id="menubar">
-		<a id="Home_bt" href="#home">
+		<a id="Home_bu" href="#home">
 			<span>Home</span>
 		</a>
-		<a id="Products_bu" href="#products">
+		<a id="Products_bv" href="#products">
 			<span>Products</span>
 		</a>
-		<a id="Services_bv" href="#services">
+		<a id="Services_bw" href="#services">
 			<span>Services</span>
 		</a>
-		<a id="About_bw" href="#about">
+		<a id="About_bx" href="#about">
 			<span>About</span>
 		</a>
-		<a id="Contact_bx" href="#contact">
+		<a id="Contact_by" href="#contact">
 			<span>Contact</span>
 		</a>
 	</div>
@@ -3127,14 +3138,13 @@ a {
 }
 
 </style>
-
 	<a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox">
-	<div id="httpsdevelopermozillaorgen-USd_bz">
+	<div id="httpsdevelopermozillaorgen-USd_b">
 		<span>https://developer.mozilla.org/en-US/docs/Glossary/Flexbox</span>
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">
-	<div id="httpsdevelopermozillaorgen-USd_b">
+	<div id="httpsdevelopermozillaorgen-USd_ca">
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction</span>
 	</div>
 	</a>

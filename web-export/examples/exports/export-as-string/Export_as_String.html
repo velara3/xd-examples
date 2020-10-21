@@ -58,7 +58,7 @@
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Export_as_String_i {
+	#Export_as_String_j {
 		left: 50px;
 		top: 22px;
 		position: absolute;
@@ -143,10 +143,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_p {
-		fill: url(#Rectangle_177_p);
+	#Rectangle_177_q {
+		fill: url(#Rectangle_177_q);
 	}
-	.Rectangle_177_p {
+	.Rectangle_177_q {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -286,7 +286,7 @@
 		top: 245px;
 		overflow: visible;
 	}
-	#Rectangle_2_z {
+	#Rectangle_2_ {
 		fill: rgba(247,247,247,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -295,7 +295,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_2_z {
+	.Rectangle_2_ {
 		position: absolute;
 		overflow: visible;
 		width: 56px;
@@ -493,7 +493,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_bf {
+	#Group_bg {
 		left: 20px;
 		top: 225px;
 		position: absolute;
@@ -507,7 +507,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Symbol_bg {
+	#Symbol_bh {
 		left: 107px;
 		top: 225px;
 		position: absolute;
@@ -535,7 +535,7 @@
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#Image_bi {
+	#Image_bj {
 		left: 288px;
 		top: 225px;
 		position: absolute;
@@ -2790,7 +2790,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3041,6 +3045,13 @@ var Application = function() {
 		var element = elementId ? document.getElementById(elementId) : null;
 
 		return element;
+	}
+
+	self.getElementByClass = function(className) {
+		className = className ? className.trim() : className;
+		var elements = document.getElementsByClassName(className);
+
+		return elements.length ? elements[0] : null;
 	}
 
 	self.resizeHandler = function(event) {
@@ -3384,7 +3395,7 @@ window.application = new Application();
 		<path id="Line_83" d="M 0 0 L 730 0">
 		</path>
 	</svg>
-	<div id="Export_as_String_i">
+	<div id="Export_as_String_j">
 		<span>Export as String</span>
 	</div>
 	<div id="Export_as_string_converts_the_">
@@ -3402,12 +3413,12 @@ window.application = new Application();
 		<span>The elements below are using the export as string option</span>
 	</div>
 	<div id="Icon">
-		<svg class="Rectangle_177_p">
-			<linearGradient id="Rectangle_177_p" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<svg class="Rectangle_177_q">
+			<linearGradient id="Rectangle_177_q" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_p" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_q" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
 		<div id="W">
@@ -3466,8 +3477,8 @@ window.application = new Application();
 	<script type="text/javascript">
 	var Symbol = `
 	<div id="Symbol" class="Symbol">
-		<svg class="Rectangle_2_z" title="Rectangle">
-			<rect id="Rectangle_2_z" rx="12" ry="12" x="0" y="0" width="56" height="56" title="Rectangle (sub)">
+		<svg class="Rectangle_2_" title="Rectangle">
+			<rect id="Rectangle_2_" rx="12" ry="12" x="0" y="0" width="56" height="56" title="Rectangle (sub)">
 			</rect>
 		</svg>
 	</div>
@@ -3535,16 +3546,16 @@ window.application = new Application();
 	<div id="Text">
 		<span>Text</span>
 	</div>
-	<div id="Group_bf">
+	<div id="Group_bg">
 		<span>Group</span>
 	</div>
-	<div id="Symbol_bg">
+	<div id="Symbol_bh">
 		<span>Symbol</span>
 	</div>
 	<div id="HTML">
 		<span>HTML*</span>
 	</div>
-	<div id="Image_bi">
+	<div id="Image_bj">
 		<span>Image</span>
 	</div>
 </div>

@@ -78,11 +78,11 @@ a>div:hover {
 		color: rgba(112,112,112,1);
 	}
 	#header {
-		left: 22px;
+		left: 52px;
 		top: 22px;
 		position: absolute;
 		overflow: visible;
-		width: 294px;
+		width: 385px;
 		white-space: nowrap;
 		line-height: 56px;
 		margin-top: -18px;
@@ -101,29 +101,13 @@ a>div:hover {
 		top: 0px;
 		position: absolute;
 		overflow: visible;
-		width: 373px;
+		width: 465px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 12px;
-	}
-	#The_styles_are_defined_in_the_ {
-		transform: matrix(1,0,0,1,22,156.5994) rotate(0deg);
-		transform-origin: center;
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 295px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica Neue;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 12px;
-		color: rgba(93,93,93,1);
 	}
 	#httpsdevelopermozillaorgen-USd {
 		left: 22px;
@@ -152,6 +136,56 @@ a>div:hover {
 		font-weight: normal;
 		font-size: 10px;
 		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_r {
+		fill: url(#Rectangle_177_r);
+	}
+	.Rectangle_177_r {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#You_may_need_to_remove_the_col {
+		transform: matrix(1,0,0,1,22,164.5994) rotate(0deg);
+		transform-origin: center;
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 503px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(93,93,93,1);
 	}
 </style>
 <script id="applicationScript">
@@ -2394,7 +2428,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2999,16 +3037,13 @@ window.application = new Application();
 		<span>This page defines hyperlink styles</span>
 	</div>
 	<div id="header">
-		<span>Hyperlink Styles via Stylesheet</span>
+		<span>Hyperlink Styles via Stylesheet Template</span>
 	</div>
 	<a href="#header">
 	<div id="This_text_has_its_own_hyperlin">
-		<span>This text has it’s own hyperlink styles in the stylesheet template field. </span>
+		<span>This text has it’s own hyperlink styles defined in the artboard stylesheet template field. </span>
 	</div>
 	</a>
-	<div id="The_styles_are_defined_in_the_">
-		<span>The styles are defined in the stylesheet template field.  </span>
-	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links">
 	<div id="httpsdevelopermozillaorgen-USd">
 		<span>https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links</span>
@@ -3019,6 +3054,22 @@ window.application = new Application();
 		<span>https://developer.mozilla.org/en-US/docs/Web/CSS</span>
 	</div>
 	</a>
+	<div id="Icon">
+		<svg class="Rectangle_177_r">
+			<linearGradient id="Rectangle_177_r" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_r" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="You_may_need_to_remove_the_col">
+		<span>You may need to remove the color style from the text or use !important in the style declaration</span>
+	</div>
 </div>
 </body>
 </html>

@@ -2390,7 +2390,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2988,7 +2992,6 @@ window.application = new Application();
 <body>
 <div id="Page_1">
 	<iframe class="Rectangle_1" src="Page_2.html">
-		
 	</iframe>
 	<div id="Iframe_embedded_in_page">
 		<span>Iframe embedded in page</span>

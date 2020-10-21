@@ -50,7 +50,7 @@
 		left: 20px;
 		top: 91px;
 	}
-	#Id_m {
+	#Id_l {
 		left: 50px;
 		top: 22px;
 		position: absolute;
@@ -127,7 +127,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_r {
+	#httpsdevelopermozillaorgen-USd_q {
 		left: 20px;
 		top: 338px;
 		position: absolute;
@@ -149,10 +149,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_u {
-		fill: url(#Rectangle_177_u);
+	#Rectangle_177_t {
+		fill: url(#Rectangle_177_t);
 	}
-	.Rectangle_177_u {
+	.Rectangle_177_t {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -2416,7 +2416,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3017,7 +3021,7 @@ window.application = new Application();
 		<rect id="myRectangle" rx="0" ry="0" x="0" y="0" width="56" height="56">
 		</rect>
 	</svg>
-	<div id="Id_m">
+	<div id="Id_l">
 		<span>Id</span>
 	</div>
 	<svg class="Line_85" viewBox="0 0 722.269 1">
@@ -3036,17 +3040,17 @@ window.application = new Application();
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id">
-	<div id="httpsdevelopermozillaorgen-USd_r">
+	<div id="httpsdevelopermozillaorgen-USd_q">
 		<span>https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id</span>
 	</div>
 	</a>
 	<div id="Icon">
-		<svg class="Rectangle_177_u">
-			<linearGradient id="Rectangle_177_u" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<svg class="Rectangle_177_t">
+			<linearGradient id="Rectangle_177_t" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_u" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_t" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
 		<div id="W">

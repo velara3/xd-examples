@@ -61,7 +61,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Line_85_be {
+	#Line_85_bd {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -70,7 +70,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_85_be {
+	.Line_85_bd {
 		overflow: visible;
 		position: absolute;
 		width: 722.269px;
@@ -107,7 +107,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_bh {
+	#httpsdevelopermozillaorgen-USd_bg {
 		left: 20px;
 		top: 281.853px;
 		position: absolute;
@@ -121,7 +121,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#httpsdevelopermozillaorgen-USd_bi {
+	#httpsdevelopermozillaorgen-USd_bh {
 		left: 20px;
 		top: 308px;
 		position: absolute;
@@ -140,7 +140,7 @@
 		top: 157px;
 		position: absolute;
 		overflow: visible;
-		width: 732px;
+		width: 739px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
@@ -149,7 +149,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Icon_bk {
+	#Icon_bj {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -157,10 +157,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_bm {
-		fill: url(#Rectangle_177_bm);
+	#Rectangle_177_bl {
+		fill: url(#Rectangle_177_bl);
 	}
-	.Rectangle_177_bm {
+	.Rectangle_177_bl {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -168,7 +168,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W_bn {
+	#W_bm {
 		left: 50%;
 		transform: translateX(-50%);
 		top: 7.5px;
@@ -2424,7 +2424,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3027,15 +3031,14 @@ window.application = new Application();
 	</svg>
 <script type="text/javascript">
 var element = document.getElementById("myRectangle2");
-var element = document.getElementById("myRectangle2");
 element.style.outline = "2px dashed green";
 console.log(element);
 </script>
 	<div id="Getting_element_by_Id_">
 		<span>Getting element by Id </span>
 	</div>
-	<svg class="Line_85_be" viewBox="0 0 722.269 1">
-		<path id="Line_85_be" d="M 0 0 L 722.2686767578125 0">
+	<svg class="Line_85_bd" viewBox="0 0 722.269 1">
+		<path id="Line_85_bd" d="M 0 0 L 722.2686767578125 0">
 		</path>
 	</svg>
 	<div id="The_element_is_referenced_by_I">
@@ -3045,28 +3048,28 @@ console.log(element);
 		<span>The JavaScript is added in the JavaScript field of the rectangle. Remember, when using JavaScript, make sure you reference the element after it’s created. <br/>Also, if you are exporting multiple artboards at the same time that the ID is not renamed because it’s been used already. Check the messages console after export to see any naming conflicts.</span>
 	</div>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">
-	<div id="httpsdevelopermozillaorgen-USd_bh">
+	<div id="httpsdevelopermozillaorgen-USd_bg">
 		<span>https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id</span>
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id">
-	<div id="httpsdevelopermozillaorgen-USd_bi">
+	<div id="httpsdevelopermozillaorgen-USd_bh">
 		<span>https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id</span>
 	</div>
 	</a>
 	<div id="The_element_above_has_an_id_of">
-		<span>The element above has an id of “myRectangle”. We use JavaScript to find and add an outline to the element and writing it to the console</span>
+		<span>The element above has an id of “myRectangle2”. We use JavaScript to find and add an outline to the element and writing it to the console</span>
 	</div>
-	<div id="Icon_bk">
-		<svg class="Rectangle_177_bm">
-			<linearGradient id="Rectangle_177_bm" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+	<div id="Icon_bj">
+		<svg class="Rectangle_177_bl">
+			<linearGradient id="Rectangle_177_bl" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_bm" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_bl" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W_bn">
+		<div id="W_bm">
 			<span>W</span>
 		</div>
 	</div>

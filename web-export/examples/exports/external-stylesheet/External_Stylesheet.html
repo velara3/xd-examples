@@ -2246,7 +2246,11 @@ var Application = function() {
 				}
 			}
 			else {
-				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+				selectorText = cssRule.selectorText;
+				
+				if (selectorText==null) continue;
+
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2857,7 +2861,7 @@ window.application = new Application();
 	<div id="Check_the_source_code_to_see_t">
 		<span>Check the source code to see the link to an external stylesheet</span>
 	</div>
-	<div id="External_Stylesheet_k">
+	<div id="External_Stylesheet_l">
 		<span>External Stylesheet</span>
 	</div>
 	<div id="httpsdevelopermozillaorgen-USd">

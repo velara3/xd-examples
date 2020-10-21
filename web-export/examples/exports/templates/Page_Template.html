@@ -33,12 +33,13 @@
 	#Page_Template {
 		position: absolute;
 		width: 857px;
-		height: 292px;
+		height: 400px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
 		--web-view-name: Page Template;
 		--web-view-id: Page_Template;
 		--web-enable-deep-linking: true;
+		cursor: arrow;
 	}
 	#Rectangle_1 {
 		fill: rgba(244,244,244,1);
@@ -89,7 +90,7 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Page_Template_n {
+	#Page_Template_p {
 		left: 52px;
 		top: 22px;
 		position: absolute;
@@ -137,7 +138,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#myLabel_q {
+	#myLabel_s {
 		left: 354px;
 		top: 102px;
 		position: absolute;
@@ -153,7 +154,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#myLabel_r {
+	#myLabel_t {
 		left: 28px;
 		top: 257px;
 		position: absolute;
@@ -177,10 +178,10 @@
 		top: 22px;
 		overflow: visible;
 	}
-	#Rectangle_177_u {
-		fill: url(#Rectangle_177_u);
+	#Rectangle_177_w {
+		fill: url(#Rectangle_177_w);
 	}
-	.Rectangle_177_u {
+	.Rectangle_177_w {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -2448,7 +2449,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3044,7 +3045,6 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Page_Template">
 	<svg class="Rectangle_1">
 		<rect id="Rectangle_1" rx="14" ry="14" x="0" y="0" width="75" height="75">
 		</rect>
@@ -3056,7 +3056,7 @@ window.application = new Application();
 	<div id="This_page_has_a_user_defined_p">
 		<span>This page has a user defined page template</span>
 	</div>
-	<div id="Page_Template_n">
+	<div id="Page_Template_p">
 		<span>Page Template</span>
 	</div>
 	<svg class="Ellipse_1">
@@ -3066,21 +3066,21 @@ window.application = new Application();
 	<div id="myLabel">
 		<span> </span>
 	</div>
-	<div id="myLabel_q">
+	<div id="myLabel_s">
 		<span>In the page template we’ve added a script block that listens for a click event on the page<br/>We’ve also added a style block that sets the text color to green<br/>Click anywhere on the page</span>
 	</div>
 	<noscript>
-	<div id="myLabel_r">
+	<div id="myLabel_t">
 		<span>You need JavaScript enabled for some features in this example</span>
 	</div>
 	</noscript>
 	<div id="Icon">
-		<svg class="Rectangle_177_u">
-			<linearGradient id="Rectangle_177_u" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<svg class="Rectangle_177_w">
+			<linearGradient id="Rectangle_177_w" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_u" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_w" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
 		<div id="W">

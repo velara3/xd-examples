@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positioned Hover Menus</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Positioned Hover Menus;
+		--web-view-id: Positioned_Hover_Menus;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: Positioned_Hover_Menus;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Positioned_Hover_Menus {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Positioned Hover Menus;
+		--web-view-id: Positioned_Hover_Menus;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	#Positioned_Hover_Menu {
+		left: 51px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 222px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 20px;
+		right: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+		border:  .5px solid gray;
+	}
+	#Menu_items_will_show_when_hove {
+		right: 31px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 251px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when {
+		left: 20px;
+		top: 68px;
+		position: absolute;
+		overflow: visible;
+		width: 270px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when_p {
+		left: 20px;
+		top: 91px;
+		position: absolute;
+		overflow: visible;
+		width: 243px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_s {
+		fill: url(#Rectangle_177_s);
+	}
+	.Rectangle_177_s {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#Dropdown_Group {
+		position: absolute;
+		width: 93px;
+		height: 12px;
+		left: 20px;
+		top: 154px;
+		overflow: visible;
+	}
+	#Menu_using_classes {
+		right: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 94px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Dropdown_Content {
+		position: absolute;
+		width: 61px;
+		height: 56px;
+		left: 0px;
+		top: 12px;
+		background-color: rgba(255,255,255,1);
+		border:  1px solid rgba(112,112,112,1);
+		display: none;
+		overflow: visible;
+	}
+	#Item_1 {
+		left: 4px;
+		top: 2px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_2 {
+		left: 4px;
+		top: 20px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_3 {
+		left: 4px;
+		top: 39px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Ellipse_3 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_3 {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 6px;
+	}
+	#Polygon_1 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Polygon_1 {
+		overflow: visible;
+		position: absolute;
+		width: 9px;
+		height: 7px;
+		left: 44px;
+		top: 23px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Rectangle_493 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_493 {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 43px;
+	}
+	#Line_91 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_91 {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 17.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_92 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_92 {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 36px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Dropdown_Group_ {
+		position: absolute;
+		width: 78px;
+		height: 12px;
+		left: 504px;
+		top: 148px;
+		overflow: visible;
+	}
+	#Right_Side_Menu {
+		right: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 79px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Dropdown_Content_ {
+		position: absolute;
+		width: 61px;
+		height: 56px;
+		left: 17px;
+		top: 12px;
+		background-color: rgba(255,255,255,1);
+		border:  1px solid rgba(112,112,112,1);
+		display: none;
+		overflow: visible;
+	}
+	#Item_1_ba {
+		left: 4px;
+		top: 2px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_2_bb {
+		left: 4px;
+		top: 20px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_3_bc {
+		left: 4px;
+		top: 39px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Ellipse_3_bd {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_3_bd {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 6px;
+	}
+	#Polygon_1_be {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Polygon_1_be {
+		overflow: visible;
+		position: absolute;
+		width: 9px;
+		height: 7px;
+		left: 44px;
+		top: 23px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Rectangle_493_bf {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_493_bf {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 43px;
+	}
+	#Line_91_bg {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_91_bg {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 17.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_92_bh {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_92_bh {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 36px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+
+.dropdown {
+     cursor: pointer;
+}
+
+.dropdown:hover .dropdown-menu-1 {
+     display: block !important;
+     cursor: pointer;
+}
+
+.dropdown:hover .dropdown-menu-2 {
+     display: block !important;
+     cursor: pointer;
+}
+
+
+/** menu 2 **/
+
+.dropdown-menu-2 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu-2 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu-2 a:hover {
+   background-color: #ddd;
+}
+
+/** menu 1 **/
+
+.dropdown-menu-1 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu-1 a {
+  color: black;
+  padding: 9px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu-1 a:hover {
+   background-color: #ddd;
+}
+</style>
+<script id="applicationScript" type="text/javascript" src="Positioned_Hover_Menus.js"></script>
+</head>
+<body>
+<div id="Positioned_Hover_Menus">
+	<div id="Positioned_Hover_Menu">
+		<span>Positioned Hover Menu</span>
+	</div>
+	<hr class="Line_85" viewBox="0 0 563 1">
+		<path id="Line_85" d="M 0 0 L 563 0">
+		</path>
+	</hr>
+	<div id="Menu_items_will_show_when_hove">
+		<span>Menu items will show when hovering over an element</span>
+	</div>
+	<div id="A_Menu_items_will_show_up_when">
+		<span>Menu items will show up when hovering over the element</span>
+	</div>
+	<div id="A_Menu_items_will_show_up_when_p">
+		<span>CSS is in the stylesheet and menu has class names</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_s">
+			<linearGradient id="Rectangle_177_s" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_s" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="Dropdown_Group" class="dropdown">
+		<div id="Menu_using_classes">
+			<span>Menu using classes</span>
+		</div>
+		<div id="Dropdown_Content" class="dropdown-menu-1">
+			<a href="#item1">
+			<div id="Item_1">
+				<span>Item 1</span>
+			</div>
+			</a>
+			<a href="#item2">
+			<div id="Item_2">
+				<span>Item 2</span>
+			</div>
+			</a>
+			<a href="#item3">
+			<div id="Item_3">
+				<span>Item 3</span>
+			</div>
+			</a>
+			<svg class="Ellipse_3">
+				<ellipse id="Ellipse_3" rx="3.5" ry="3.5" cx="3.5" cy="3.5">
+				</ellipse>
+			</svg>
+			<svg class="Polygon_1" viewBox="0 0 9 7">
+				<path id="Polygon_1" d="M 4.5 0 L 9 7 L 0 7 Z">
+				</path>
+			</svg>
+			<svg class="Rectangle_493">
+				<rect id="Rectangle_493" rx="0" ry="0" x="0" y="0" width="7" height="7">
+				</rect>
+			</svg>
+			<svg class="Line_91" viewBox="0 0 60 1">
+				<path id="Line_91" d="M 0 0 L 60 0">
+				</path>
+			</svg>
+			<svg class="Line_92" viewBox="0 0 60 1">
+				<path id="Line_92" d="M 0 0 L 60 0">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<div id="Dropdown_Group_" class="dropdown">
+		<div id="Right_Side_Menu">
+			<span>Right Side Menu</span>
+		</div>
+		<div id="Dropdown_Content_" class="dropdown-menu-1">
+			<a href="#item1">
+			<div id="Item_1_ba">
+				<span>Item 1</span>
+			</div>
+			</a>
+			<a href="#item2">
+			<div id="Item_2_bb">
+				<span>Item 2</span>
+			</div>
+			</a>
+			<a href="#item3">
+			<div id="Item_3_bc">
+				<span>Item 3</span>
+			</div>
+			</a>
+			<svg class="Ellipse_3_bd">
+				<ellipse id="Ellipse_3_bd" rx="3.5" ry="3.5" cx="3.5" cy="3.5">
+				</ellipse>
+			</svg>
+			<svg class="Polygon_1_be" viewBox="0 0 9 7">
+				<path id="Polygon_1_be" d="M 4.5 0 L 9 7 L 0 7 Z">
+				</path>
+			</svg>
+			<svg class="Rectangle_493_bf">
+				<rect id="Rectangle_493_bf" rx="0" ry="0" x="0" y="0" width="7" height="7">
+				</rect>
+			</svg>
+			<svg class="Line_91_bg" viewBox="0 0 60 1">
+				<path id="Line_91_bg" d="M 0 0 L 60 0">
+				</path>
+			</svg>
+			<svg class="Line_92_bh" viewBox="0 0 60 1">
+				<path id="Line_92_bh" d="M 0 0 L 60 0">
+				</path>
+			</svg>
+		</div>
+	</div>
+</div>
+</body>
+</html>

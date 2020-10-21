@@ -2858,7 +2858,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3565,23 +3565,18 @@ window.application = new Application();
 	<ul id="Repeat_Grid_4_et">
 		<li id="Repeat_Grid_4_et_0" class="">
 			Apple
-		
 		</li>
 		<li id="Repeat_Grid_4_et_1" class="">
 			Grapes
-		
 		</li>
 		<li id="Repeat_Grid_4_et_2" class="">
 			Honeydew
-		
 		</li>
 		<li id="Repeat_Grid_4_et_3" class="">
 			Watermelon
-		
 		</li>
 		<li id="Repeat_Grid_4_et_4" class="">
 			Cantelope
-		
 		</li>
 	</ul>
 	<ul id="Repeat_Grid_2_e">

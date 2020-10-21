@@ -30,14 +30,14 @@
 	#Stylesheet_Template {
 		position: absolute;
 		width: 857px;
-		height: 292px;
+		height: 400px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
 		--web-view-name: Stylesheet Template;
 		--web-view-id: Stylesheet_Template;
 		--web-enable-deep-linking: true;
 	}
-	#Line_85_y {
+	#Line_85_ {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -46,7 +46,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_85_y {
+	.Line_85_ {
 		overflow: visible;
 		position: absolute;
 		width: 806.269px;
@@ -2379,7 +2379,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2976,8 +2976,8 @@ window.application = new Application();
 </head>
 <body>
 <div id="Stylesheet_Template">
-	<svg class="Line_85_y" viewBox="0 0 806.269 1">
-		<path id="Line_85_y" d="M 0 0 L 806.2686767578125 0">
+	<svg class="Line_85_" viewBox="0 0 806.269 1">
+		<path id="Line_85_" d="M 0 0 L 806.2686767578125 0">
 		</path>
 	</svg>
 	<div id="This_page_has_a_user_defined_s">
