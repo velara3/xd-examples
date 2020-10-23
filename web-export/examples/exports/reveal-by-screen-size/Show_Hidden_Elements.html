@@ -72,13 +72,13 @@
 		top: 34px;
 		position: absolute;
 		overflow: visible;
-		width: 231px;
+		width: 242px;
 		white-space: nowrap;
 		text-align: right;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10.5px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Resize_the_browser_to_see_the__ {
@@ -101,13 +101,13 @@
 		bottom: 19px;
 		position: absolute;
 		overflow: visible;
-		width: 302px;
+		width: 332px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Icon_ {
@@ -4145,7 +4145,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);

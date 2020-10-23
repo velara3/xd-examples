@@ -7,7 +7,7 @@
 <title>Pop Ups</title>
 <style id="applicationStylesheet" type="text/css">
 :root {
-	--web-view-ids: Pop_Ups,Menu,Anchored_Right_Menu,Centered_Horizontal,Bottom_Menu,Centered_Vertical,Centered,Menu_Close_Button;
+	--web-view-ids: Pop_Ups,Menu,Anchored_Right_Menu,Centered_Horizontal,Bottom_Menu,Centered_Vertical,Centered,Menu_Close_Button,Bottom_Centered_Menu;
 	--web-view-name: Pop Ups;
 	--web-view-id: Pop_Ups;
 	--web-scale-to-fit: false;
@@ -20,10 +20,10 @@
 	--web-center-vertically: false;
 	--web-actual-size-on-double-click: false;
 	--web-navigate-on-keypress: false;
-	--web-refresh-for-changes: false;
+	--web-refresh-for-changes: true;
 	--web-add-image-compare: false;
 	--web-show-by-media-query: false;
-	--web-application: false;
+	--web-application: true;
 	--web-show-navigation-controls: false;
 	--web-enable-deep-linking: true;
 	--web-is-overlay: false;
@@ -36,13 +36,16 @@
 #Bottom_Menu,
 #Centered_Vertical,
 #Centered,
-#Menu_Close_Button {
+#Menu_Close_Button,
+#Bottom_Centered_Menu {
 	display: none;
 }
 @media (min-width: 603px) {
 	.mediaViewInfo {
 		--web-view-name: Pop Ups;
 		--web-view-id: Pop_Ups;
+		--web-refresh-for-changes: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
@@ -62,6 +65,8 @@
 		overflow: hidden;
 		--web-view-name: Pop Ups;
 		--web-view-id: Pop_Ups;
+		--web-refresh-for-changes: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
@@ -107,6 +112,13 @@
 	
 		0% {
 			transform: translateX(100%);
+		}
+	
+	}
+	@keyframes slide-bottom {
+	
+		0% {
+			transform: translateY(100%);
 		}
 	
 	}
@@ -200,13 +212,13 @@
 		bottom: 37px;
 		position: absolute;
 		overflow: visible;
-		width: 533px;
+		width: 559px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10.5px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Icon {
@@ -217,10 +229,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_z {
-		fill: url(#Rectangle_177_z);
+	#Rectangle_177_ {
+		fill: url(#Rectangle_177_);
 	}
-	.Rectangle_177_z {
+	.Rectangle_177_ {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -247,7 +259,7 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 225.5px;
+		left: 222px;
 		top: 135.5px;
 		overflow: visible;
 		cursor: pointer;
@@ -296,7 +308,7 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 223.5px;
+		left: 222px;
 		top: 198.5px;
 		overflow: visible;
 		cursor: pointer;
@@ -317,7 +329,7 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 223.5px;
+		left: 222px;
 		top: 254.5px;
 		overflow: visible;
 		cursor: pointer;
@@ -362,8 +374,8 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Centered_bb {
-		left: 371px;
+	#Centered_bc {
+		left: 341px;
 		top: 113px;
 		position: absolute;
 		overflow: visible;
@@ -377,7 +389,7 @@
 		color: rgba(112,112,112,1);
 	}
 	#Horizontal_Centered {
-		left: 371px;
+		left: 341px;
 		top: 169px;
 		position: absolute;
 		overflow: visible;
@@ -391,7 +403,7 @@
 		color: rgba(112,112,112,1);
 	}
 	#Vertical_Centered {
-		left: 371px;
+		left: 341px;
 		top: 225px;
 		position: absolute;
 		overflow: visible;
@@ -446,9 +458,23 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
+	#Anchored_horizontal_bottom {
+		right: 20px;
+		top: 169px;
+		position: absolute;
+		overflow: visible;
+		width: 132px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
 	#Anchored_bottom {
-		right: 24px;
-		top: 229px;
+		right: 20px;
+		top: 225px;
 		position: absolute;
 		overflow: visible;
 		width: 83px;
@@ -460,36 +486,15 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#menu-group_bi {
-		position: absolute;
-		width: 28px;
-		height: 14.5px;
-		left: 221.5px;
-		top: 310.5px;
-		overflow: visible;
-		cursor: pointer;
-		--web-animation: slide-top 0.3s ease-out forwards;
-		--web-action-type: view;
-		--web-action-target: Menu;
-	}
-	#Group_60_bj {
-		position: absolute;
-		width: 28px;
-		height: 14.5px;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-		cursor:  pointer;
-	}
 	#menu-group_bk {
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 126.5px;
-		top: 135.5px;
+		left: 222px;
+		top: 310.5px;
 		overflow: visible;
 		cursor: pointer;
-		--web-animation: fadein 0.3s ease-out;
+		--web-animation: slide-top 0.3s ease-out forwards;
 		--web-action-type: view;
 		--web-action-target: Menu;
 	}
@@ -506,13 +511,13 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 372.5px;
+		left: 126.5px;
 		top: 135.5px;
 		overflow: visible;
 		cursor: pointer;
-		--web-animation: ;
+		--web-animation: fadein 0.3s ease-out;
 		--web-action-type: view;
-		--web-action-target: Centered;
+		--web-action-target: Menu;
 	}
 	#Group_60_bn {
 		position: absolute;
@@ -527,13 +532,13 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 372.5px;
-		top: 191.5px;
+		left: 343px;
+		top: 135.5px;
 		overflow: visible;
 		cursor: pointer;
 		--web-animation: ;
 		--web-action-type: view;
-		--web-action-target: Centered_Horizontal;
+		--web-action-target: Centered;
 	}
 	#Group_60_bp {
 		position: absolute;
@@ -548,13 +553,13 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 372.5px;
-		top: 247.5px;
+		left: 343px;
+		top: 191.5px;
 		overflow: visible;
 		cursor: pointer;
 		--web-animation: ;
 		--web-action-type: view;
-		--web-action-target: Centered_Vertical;
+		--web-action-target: Centered_Horizontal;
 	}
 	#Group_60_br {
 		position: absolute;
@@ -569,13 +574,13 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 20.5px;
-		top: 135.5px;
+		left: 343px;
+		top: 247.5px;
 		overflow: visible;
 		cursor: pointer;
 		--web-animation: ;
 		--web-action-type: view;
-		--web-action-target: Menu;
+		--web-action-target: Centered_Vertical;
 	}
 	#Group_60_bt {
 		position: absolute;
@@ -590,13 +595,13 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		left: 20.5px;
-		top: 195.5px;
+		left: 21px;
+		top: 135.5px;
 		overflow: visible;
 		cursor: pointer;
 		--web-animation: ;
 		--web-action-type: view;
-		--web-action-target: Menu_Close_Button;
+		--web-action-target: Menu;
 	}
 	#Group_60_bv {
 		position: absolute;
@@ -611,13 +616,13 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		right: 20px;
-		top: 135.5px;
+		left: 21px;
+		top: 195.5px;
 		overflow: visible;
 		cursor: pointer;
-		--web-animation: slide-left 0.3s ease-out forwards;
+		--web-animation: ;
 		--web-action-type: view;
-		--web-action-target: Anchored_Right_Menu;
+		--web-action-target: Menu_Close_Button;
 	}
 	#Group_60_bx {
 		position: absolute;
@@ -632,15 +637,57 @@
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
-		right: 27.5px;
-		top: 251.5px;
+		right: 20px;
+		top: 135.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-left 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Anchored_Right_Menu;
+	}
+	#Group_60_bz {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_b {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		right:  20px;
+		top: 191.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-bottom 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Bottom_Centered_Menu;
+	}
+	#Group_60_b {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_ca {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		right:  20px;
+		top: 247.5px;
 		overflow: visible;
 		cursor: pointer;
 		--web-animation: slide-bottom 0.3s ease-out forwards;
 		--web-action-type: view;
 		--web-action-target: Bottom_Menu;
 	}
-	#Group_60_bz {
+	#Group_60_ca {
 		position: absolute;
 		width: 28px;
 		height: 14.5px;
@@ -655,6 +702,7 @@
 		--web-view-name: Menu;
 		--web-view-id: Menu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -674,6 +722,7 @@
 		--web-view-name: Menu;
 		--web-view-id: Menu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -756,6 +805,7 @@
 		--web-view-name: Anchored Right Menu;
 		--web-view-id: Anchored_Right_Menu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -775,11 +825,12 @@
 		--web-view-name: Anchored Right Menu;
 		--web-view-id: Anchored_Right_Menu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 		right:  20px;
 	}
-	#Rectangle_491_b {
+	#Rectangle_491_cd {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -788,7 +839,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_491_b {
+	.Rectangle_491_cd {
 		position: absolute;
 		overflow: visible;
 		width: 100px;
@@ -796,7 +847,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Component_5__2_ca {
+	#Component_5__2_ce {
 		position: absolute;
 		width: 77px;
 		height: 58px;
@@ -804,7 +855,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#Item_1__cb {
+	#Item_1__cf {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -820,7 +871,7 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_2_cc {
+	#Item_2_cg {
 		left: 0px;
 		top: 21px;
 		position: absolute;
@@ -836,7 +887,7 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_3_cd {
+	#Item_3_ch {
 		left: 0px;
 		top: 42px;
 		position: absolute;
@@ -859,6 +910,7 @@
 		--web-view-id: Centered_Horizontal;
 		--web-scale-on-resize: true;
 		--web-center-horizontally: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -879,10 +931,11 @@
 		--web-view-id: Centered_Horizontal;
 		--web-scale-on-resize: true;
 		--web-center-horizontally: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
-	#Rectangle_491_cg {
+	#Rectangle_491_ck {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -891,7 +944,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_491_cg {
+	.Rectangle_491_ck {
 		position: absolute;
 		overflow: visible;
 		width: 100px;
@@ -899,7 +952,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Component_5__2_ch {
+	#Component_5__2_cl {
 		position: absolute;
 		width: 77px;
 		height: 58px;
@@ -907,7 +960,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#Item_1__ci {
+	#Item_1__cm {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -923,7 +976,7 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_2_cj {
+	#Item_2_cn {
 		left: 0px;
 		top: 21px;
 		position: absolute;
@@ -939,7 +992,7 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_3_ck {
+	#Item_3_co {
 		left: 0px;
 		top: 42px;
 		position: absolute;
@@ -961,6 +1014,7 @@
 		--web-view-name: Bottom Menu;
 		--web-view-id: Bottom_Menu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -980,12 +1034,13 @@
 		--web-view-name: Bottom Menu;
 		--web-view-id: Bottom_Menu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 		bottom:  20px;
 		right:  20px;
 	}
-	#Rectangle_491_cn {
+	#Rectangle_491_cr {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -994,7 +1049,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_491_cn {
+	.Rectangle_491_cr {
 		position: absolute;
 		overflow: visible;
 		width: 100px;
@@ -1002,7 +1057,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Component_5__2_co {
+	#Component_5__2_cs {
 		position: absolute;
 		width: 77px;
 		height: 58px;
@@ -1010,7 +1065,7 @@
 		top: 10px;
 		overflow: visible;
 	}
-	#Item_1__cp {
+	#Item_1__ct {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -1026,7 +1081,7 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_2_cq {
+	#Item_2_cu {
 		left: 0px;
 		top: 21px;
 		position: absolute;
@@ -1042,7 +1097,7 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_3_cr {
+	#Item_3_cv {
 		left: 0px;
 		top: 42px;
 		position: absolute;
@@ -1065,6 +1120,7 @@
 		--web-view-id: Centered_Vertical;
 		--web-scale-on-resize: true;
 		--web-center-vertically: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -1085,10 +1141,11 @@
 		--web-view-id: Centered_Vertical;
 		--web-scale-on-resize: true;
 		--web-center-vertically: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
-	#Rectangle_491_cu {
+	#Rectangle_491_cy {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -1097,7 +1154,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_491_cu {
+	.Rectangle_491_cy {
 		position: absolute;
 		overflow: visible;
 		width: 100px;
@@ -1105,112 +1162,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Component_5__2_cv {
-		position: absolute;
-		width: 77px;
-		height: 58px;
-		left: 12px;
-		top: 10px;
-		overflow: visible;
-	}
-	#Item_1__cw {
-		left: 0px;
-		top: 0px;
-		position: absolute;
-		overflow: visible;
-		width: 77px;
-		height: 16px;
-		line-height: 50px;
-		margin-top: -18px;
-		text-align: left;
-		font-family: Arial;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		color: rgba(95,95,95,1);
-	}
-	#Item_2_cx {
-		left: 0px;
-		top: 21px;
-		position: absolute;
-		overflow: visible;
-		width: 76px;
-		height: 16px;
-		line-height: 50px;
-		margin-top: -18px;
-		text-align: left;
-		font-family: Arial;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		color: rgba(95,95,95,1);
-	}
-	#Item_3_cy {
-		left: 0px;
-		top: 42px;
-		position: absolute;
-		overflow: visible;
-		width: 78px;
-		height: 16px;
-		line-height: 50px;
-		margin-top: -18px;
-		text-align: left;
-		font-family: Arial;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		color: rgba(95,95,95,1);
-	}
-}
-@media (min-width: 0px) and (max-width: 602px) {
-	.mediaViewInfo {
-		--web-view-name: Centered;
-		--web-view-id: Centered;
-		--web-scale-on-resize: true;
-		--web-center-horizontally: true;
-		--web-center-vertically: true;
-		--web-enable-deep-linking: true;
-		--web-is-overlay: true;
-	}
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		border: none;
-	}
-	#Centered {
-		position: absolute;
-		display: block;
-		width: 100px;
-		height: 105px;
-		overflow: hidden;
-		cursor: pointer;
-		--web-view-name: Centered;
-		--web-view-id: Centered;
-		--web-scale-on-resize: true;
-		--web-center-horizontally: true;
-		--web-center-vertically: true;
-		--web-enable-deep-linking: true;
-		--web-is-overlay: true;
-	}
-	#Rectangle_491_c {
-		fill: rgba(255,255,255,1);
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectangle_491_c {
-		position: absolute;
-		overflow: visible;
-		width: 100px;
-		height: 105px;
-		left: 0px;
-		top: 0px;
-	}
-	#Component_5__2_c {
+	#Component_5__2_cz {
 		position: absolute;
 		width: 77px;
 		height: 58px;
@@ -1269,9 +1221,12 @@
 }
 @media (min-width: 0px) and (max-width: 602px) {
 	.mediaViewInfo {
-		--web-view-name: Menu Close Button;
-		--web-view-id: Menu_Close_Button;
+		--web-view-name: Centered;
+		--web-view-id: Centered;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-center-vertically: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -1281,19 +1236,23 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Menu_Close_Button {
+	#Centered {
 		position: absolute;
 		display: block;
 		width: 100px;
 		height: 105px;
 		overflow: hidden;
-		--web-view-name: Menu Close Button;
-		--web-view-id: Menu_Close_Button;
+		cursor: pointer;
+		--web-view-name: Centered;
+		--web-view-id: Centered;
 		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-center-vertically: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
-	#Rectangle_491_da {
+	#Rectangle_491_c {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -1302,7 +1261,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_491_da {
+	.Rectangle_491_c {
 		position: absolute;
 		overflow: visible;
 		width: 100px;
@@ -1310,7 +1269,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Component_5__2_da {
+	#Component_5__2_c {
 		position: absolute;
 		width: 77px;
 		height: 58px;
@@ -1334,7 +1293,7 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_2_db {
+	#Item_2_da {
 		left: 0px;
 		top: 21px;
 		position: absolute;
@@ -1350,7 +1309,109 @@
 		font-size: 14px;
 		color: rgba(95,95,95,1);
 	}
-	#Item_3_dc {
+	#Item_3_da {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Menu Close Button;
+		--web-view-id: Menu_Close_Button;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Menu_Close_Button {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		--web-view-name: Menu Close Button;
+		--web-view-id: Menu_Close_Button;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	#Rectangle_491_dc {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_dc {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_dd {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__de {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_df {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_dg {
 		left: 0px;
 		top: 42px;
 		position: absolute;
@@ -1429,6 +1490,112 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 }
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Bottom Centered Menu;
+		--web-view-id: Bottom_Centered_Menu;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Bottom_Centered_Menu {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: Bottom Centered Menu;
+		--web-view-id: Bottom_Centered_Menu;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+		bottom:  20px;
+	}
+	#Rectangle_491_dn {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_dn {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_do {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__dp {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_dq {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_dr {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
 
 </style>
 <script id="applicationScript" type="text/javascript" src="Pop_Ups.js"></script>
@@ -1455,12 +1622,12 @@
 		<span>Be sure to export as a single page application and include the pop up in the artboards to export (select artboards)</span>
 	</div>
 	<div id="Icon">
-		<svg class="Rectangle_177_z">
-			<linearGradient id="Rectangle_177_z" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<svg class="Rectangle_177_">
+			<linearGradient id="Rectangle_177_" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_z" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
 		<div id="W">
@@ -1488,7 +1655,7 @@
 	<div id="Dissolve">
 		<span>Dissolve</span>
 	</div>
-	<div id="Centered_bb">
+	<div id="Centered_bc">
 		<span>Centered</span>
 	</div>
 	<div id="Horizontal_Centered">
@@ -1506,35 +1673,41 @@
 	<div id="Anchored_right">
 		<span>Anchored right</span>
 	</div>
+	<div id="Anchored_horizontal_bottom">
+		<span>Anchored horizontal bottom</span>
+	</div>
 	<div id="Anchored_bottom">
 		<span>Anchored bottom</span>
 	</div>
-	<div onclick="application.showOverlay(event,'Menu',220,327)" id="menu-group_bi" class="menu_group">
-		<img id="Group_60_bj" src="images/Group_60_bj.png" srcset="images/Group_60_bj.png 1x, images/Group_60_bj@2x.png 2x">
-	</div>
-	<div onclick="application.showOverlay(event,'Menu',123,152)" id="menu-group_bk" class="menu_group">
+	<div onclick="application.showOverlay(event,'Menu',220,327)" id="menu-group_bk" class="menu_group">
 		<img id="Group_60_bl" src="images/Group_60_bl.png" srcset="images/Group_60_bl.png 1x, images/Group_60_bl@2x.png 2x">
 	</div>
-	<div onclick="application.showOverlay(event,'Centered',487,61)" id="menu-group_bm" class="menu_group">
+	<div onclick="application.showOverlay(event,'Menu',123,152)" id="menu-group_bm" class="menu_group">
 		<img id="Group_60_bn" src="images/Group_60_bn.png" srcset="images/Group_60_bn.png 1x, images/Group_60_bn@2x.png 2x">
 	</div>
-	<div onclick="application.showOverlay(event,'Centered_Horizontal',494,55)" id="menu-group_bo" class="menu_group">
+	<div onclick="application.showOverlay(event,'Centered',487,61)" id="menu-group_bo" class="menu_group">
 		<img id="Group_60_bp" src="images/Group_60_bp.png" srcset="images/Group_60_bp.png 1x, images/Group_60_bp@2x.png 2x">
 	</div>
-	<div onclick="application.showOverlay(event,'Centered_Vertical',483,57)" id="menu-group_bq" class="menu_group">
+	<div onclick="application.showOverlay(event,'Centered_Horizontal',494,55)" id="menu-group_bq" class="menu_group">
 		<img id="Group_60_br" src="images/Group_60_br.png" srcset="images/Group_60_br.png 1x, images/Group_60_br@2x.png 2x">
 	</div>
-	<div onclick="application.showOverlay(event,'Menu',19,154)" id="menu-group_bs" class="menu_group">
+	<div onclick="application.showOverlay(event,'Centered_Vertical',483,57)" id="menu-group_bs" class="menu_group">
 		<img id="Group_60_bt" src="images/Group_60_bt.png" srcset="images/Group_60_bt.png 1x, images/Group_60_bt@2x.png 2x">
 	</div>
-	<div onclick="application.showOverlay(event,'Menu_Close_Button',18,212)" id="menu-group_bu" class="menu_group">
+	<div onclick="application.showOverlay(event,'Menu',19,154)" id="menu-group_bu" class="menu_group">
 		<img id="Group_60_bv" src="images/Group_60_bv.png" srcset="images/Group_60_bv.png 1x, images/Group_60_bv@2x.png 2x">
 	</div>
-	<div onclick="application.showOverlay(event,'Anchored_Right_Menu',477,153)" id="menu-group_bw" class="menu_group">
+	<div onclick="application.showOverlay(event,'Menu_Close_Button',18,212)" id="menu-group_bw" class="menu_group">
 		<img id="Group_60_bx" src="images/Group_60_bx.png" srcset="images/Group_60_bx.png 1x, images/Group_60_bx@2x.png 2x">
 	</div>
-	<div onclick="application.showOverlay(event,'Bottom_Menu',492,381)" id="menu-group_by" class="menu_group">
+	<div onclick="application.showOverlay(event,'Anchored_Right_Menu',477,153)" id="menu-group_by" class="menu_group">
 		<img id="Group_60_bz" src="images/Group_60_bz.png" srcset="images/Group_60_bz.png 1x, images/Group_60_bz@2x.png 2x">
+	</div>
+	<div onclick="application.showOverlay(event,'Bottom_Centered_Menu',0,395)" id="menu-group_b" class="menu_group">
+		<img id="Group_60_b" src="images/Group_60_b.png" srcset="images/Group_60_b.png 1x, images/Group_60_b@2x.png 2x">
+	</div>
+	<div onclick="application.showOverlay(event,'Bottom_Menu',492,381)" id="menu-group_ca" class="menu_group">
+		<img id="Group_60_ca" src="images/Group_60_ca.png" srcset="images/Group_60_ca.png 1x, images/Group_60_ca@2x.png 2x">
 	</div>
 </div>
 <div id="Menu" onclick="application.goBack()">
@@ -1561,103 +1734,80 @@
 	</div>
 </div>
 <div id="Anchored_Right_Menu" onclick="application.goBack()">
-	<svg class="Rectangle_491_b">
-		<rect id="Rectangle_491_b" rx="0" ry="0" x="0" y="0" width="100" height="105">
+	<svg class="Rectangle_491_cd">
+		<rect id="Rectangle_491_cd" rx="0" ry="0" x="0" y="0" width="100" height="105">
 		</rect>
 	</svg>
-	<div id="Component_5__2_ca" class="Component_5___2">
+	<div id="Component_5__2_ce" class="Component_5___2">
 		<a href="#home">
-		<div id="Item_1__cb">
+		<div id="Item_1__cf">
 			<span>Item 1 </span>
 		</div>
 		</a>
 		<a href="#about">
-		<div id="Item_2_cc">
+		<div id="Item_2_cg">
 			<span>Item 2</span>
 		</div>
 		</a>
 		<a href="#contact">
-		<div id="Item_3_cd">
+		<div id="Item_3_ch">
 			<span>Item 3</span>
 		</div>
 		</a>
 	</div>
 </div>
 <div id="Centered_Horizontal" onclick="application.goBack()">
-	<svg class="Rectangle_491_cg">
-		<rect id="Rectangle_491_cg" rx="0" ry="0" x="0" y="0" width="100" height="105">
+	<svg class="Rectangle_491_ck">
+		<rect id="Rectangle_491_ck" rx="0" ry="0" x="0" y="0" width="100" height="105">
 		</rect>
 	</svg>
-	<div id="Component_5__2_ch" class="Component_5___2">
+	<div id="Component_5__2_cl" class="Component_5___2">
 		<a href="#home">
-		<div id="Item_1__ci">
+		<div id="Item_1__cm">
 			<span>Item 1 </span>
 		</div>
 		</a>
 		<a href="#about">
-		<div id="Item_2_cj">
+		<div id="Item_2_cn">
 			<span>Item 2</span>
 		</div>
 		</a>
 		<a href="#contact">
-		<div id="Item_3_ck">
+		<div id="Item_3_co">
 			<span>Item 3</span>
 		</div>
 		</a>
 	</div>
 </div>
 <div id="Bottom_Menu" onclick="application.goBack()">
-	<svg class="Rectangle_491_cn">
-		<rect id="Rectangle_491_cn" rx="0" ry="0" x="0" y="0" width="100" height="105">
+	<svg class="Rectangle_491_cr">
+		<rect id="Rectangle_491_cr" rx="0" ry="0" x="0" y="0" width="100" height="105">
 		</rect>
 	</svg>
-	<div id="Component_5__2_co" class="Component_5___2">
+	<div id="Component_5__2_cs" class="Component_5___2">
 		<a href="#home">
-		<div id="Item_1__cp">
+		<div id="Item_1__ct">
 			<span>Item 1 </span>
 		</div>
 		</a>
 		<a href="#about">
-		<div id="Item_2_cq">
+		<div id="Item_2_cu">
 			<span>Item 2</span>
 		</div>
 		</a>
 		<a href="#contact">
-		<div id="Item_3_cr">
+		<div id="Item_3_cv">
 			<span>Item 3</span>
 		</div>
 		</a>
 	</div>
 </div>
 <div id="Centered_Vertical" onclick="application.goBack()">
-	<svg class="Rectangle_491_cu">
-		<rect id="Rectangle_491_cu" rx="0" ry="0" x="0" y="0" width="100" height="105">
+	<svg class="Rectangle_491_cy">
+		<rect id="Rectangle_491_cy" rx="0" ry="0" x="0" y="0" width="100" height="105">
 		</rect>
 	</svg>
-	<div id="Component_5__2_cv" class="Component_5___2">
-		<a href="#home">
-		<div id="Item_1__cw">
-			<span>Item 1 </span>
-		</div>
-		</a>
-		<a href="#about">
-		<div id="Item_2_cx">
-			<span>Item 2</span>
-		</div>
-		</a>
-		<a href="#contact">
-		<div id="Item_3_cy">
-			<span>Item 3</span>
-		</div>
-		</a>
-	</div>
-</div>
-<div id="Centered" onclick="application.goBack()">
-	<svg class="Rectangle_491_c">
-		<rect id="Rectangle_491_c" rx="0" ry="0" x="0" y="0" width="100" height="105">
-		</rect>
-	</svg>
-	<div id="Component_5__2_c" class="Component_5___2">
+	<div id="Component_5__2_cz" class="Component_5___2">
 		<a href="#home">
 		<div id="Item_1__c">
 			<span>Item 1 </span>
@@ -1675,24 +1825,47 @@
 		</a>
 	</div>
 </div>
-<div id="Menu_Close_Button">
-	<svg class="Rectangle_491_da">
-		<rect id="Rectangle_491_da" rx="0" ry="0" x="0" y="0" width="100" height="105">
+<div id="Centered" onclick="application.goBack()">
+	<svg class="Rectangle_491_c">
+		<rect id="Rectangle_491_c" rx="0" ry="0" x="0" y="0" width="100" height="105">
 		</rect>
 	</svg>
-	<div id="Component_5__2_da" class="Component_5___2">
+	<div id="Component_5__2_c" class="Component_5___2">
 		<a href="#home">
 		<div id="Item_1__da">
 			<span>Item 1 </span>
 		</div>
 		</a>
 		<a href="#about">
-		<div id="Item_2_db">
+		<div id="Item_2_da">
 			<span>Item 2</span>
 		</div>
 		</a>
 		<a href="#contact">
-		<div id="Item_3_dc">
+		<div id="Item_3_da">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+<div id="Menu_Close_Button">
+	<svg class="Rectangle_491_dc">
+		<rect id="Rectangle_491_dc" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_dd" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__de">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_df">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_dg">
 			<span>Item 3</span>
 		</div>
 		</a>
@@ -1710,6 +1883,29 @@
 			<path id="Line_89" d="M 10 0 L 0 10">
 			</path>
 		</svg>
+	</div>
+</div>
+<div id="Bottom_Centered_Menu" onclick="application.goBack()">
+	<svg class="Rectangle_491_dn">
+		<rect id="Rectangle_491_dn" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_do" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__dp">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_dq">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_dr">
+			<span>Item 3</span>
+		</div>
+		</a>
 	</div>
 </div>
 

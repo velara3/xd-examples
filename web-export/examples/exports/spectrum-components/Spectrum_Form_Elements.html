@@ -1,3 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spectrum Form Elements</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Spectrum Form Elements;
+		--web-view-id: Spectrum_Form_Elements;
+		--web-enable-deep-linking: true;
+		--web-page-font: Arial;
+	}
+	:root {
+		--web-view-ids: Spectrum_Form_Elements;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Spectrum_Form_Elements {
+		position: absolute;
+		width: 628px;
+		height: 1153px;
+		font-family: Arial;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Spectrum Form Elements;
+		--web-view-id: Spectrum_Form_Elements;
+		--web-enable-deep-linking: true;
+		--web-page-font: Arial;
+	}
+	#Group_16 {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		width: 31px;
+		height: 31px;
+		left: 39px;
+		top: 626px;
+		overflow: visible;
+	}
+	#Line_2 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_2 {
+		overflow: visible;
+		position: absolute;
+		width: 588.001px;
+		height: 1.76px;
+		left: 20px;
+		top: 51.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Spectrum_Form_Elements_k {
+		left: 20px;
+		top: 20px;
+		position: absolute;
+		overflow: visible;
+		width: 242px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#CTA {
+		left: 49px;
+		top: 131px;
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Button {
+		left: 40px;
+		top: 100px;
+		position: absolute;
+		overflow: visible;
+		width: 31px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#CTA_disabled {
+		left: 39px;
+		top: 206px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Quiet {
+		left: 151px;
+		top: 206px;
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Quiet_p {
+		left: 299px;
+		top: 516px;
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Action_Button {
+		left: 40px;
+		top: 288px;
+		position: absolute;
+		overflow: visible;
+		width: 62px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Action_Button_with_icon {
+		left: 40px;
+		top: 360px;
+		position: absolute;
+		overflow: visible;
+		width: 105px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Action_Button_Toggle {
+		left: 40px;
+		top: 433px;
+		position: absolute;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Textfield {
+		left: 39px;
+		top: 516px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Action_Menu {
+		left: 39px;
+		top: 597px;
+		position: absolute;
+		overflow: visible;
+		width: 58px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Toast {
+		left: 40px;
+		top: 823px;
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Primary {
+		left: 158px;
+		top: 131px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Secondary {
+		left: 261px;
+		top: 131px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Negative {
+		left: 367px;
+		top: 131px;
+		position: absolute;
+		overflow: visible;
+		width: 40px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsopensourceadobecomspectru {
+		left: 28px;
+		top: 1112px;
+		position: absolute;
+		overflow: visible;
+		width: 298px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#The_page_shows_examples_using_ {
+		left: 381px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 228px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#See_the_Spectrum_Web_Component {
+		left: 28px;
+		top: 1080px;
+		position: absolute;
+		overflow: visible;
+		width: 353px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Button-CTA {
+		position: absolute;
+		left: 39px;
+		top: 146px;
+		overflow: visible;
+	}
+	#BUTTON {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(255,255,255,1);
+	}
+	#Group_6 {
+		position: absolute;
+		left: 278px;
+		top: 863px;
+		overflow: visible;
+	}
+	#Click_Me {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(255,255,255,1);
+	}
+	#Group_14 {
+		display: none;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		width: 81px;
+		height: 32px;
+		left: 40px;
+		top: 729px;
+		overflow: visible;
+	}
+	    overlay-trigger {
+	        flex: none;
+	    }
+
+	    .tooltip {
+	        background-color: var(--spectrum-global-color-gray-800);
+	        color: var(--spectrum-global-color-gray-50);
+	        padding: 4px 10px;
+	        font-size: 10px;
+	    }
+	#Component_6__1 {
+		position: absolute;
+		width: 79px;
+		height: 32px;
+		left: 144px;
+		top: 146px;
+		overflow: visible;
+	}
+	#Primary_bd {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(75,75,75,1);
+	}
+	#Component_7__1 {
+		position: absolute;
+		width: 79px;
+		height: 32px;
+		left: 145px;
+		top: 227px;
+		overflow: visible;
+	}
+	#Primary_bg {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(75,75,75,1);
+	}
+	#Component_5__1 {
+		position: absolute;
+		width: 94px;
+		height: 32px;
+		left: 244px;
+		top: 146px;
+		overflow: visible;
+	}
+	#Secondary_bj {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(110,110,110,1);
+	}
+	#Component_8__1 {
+		position: absolute;
+		width: 94px;
+		height: 32px;
+		left: 245px;
+		top: 227px;
+		overflow: visible;
+	}
+	#Secondary_bm {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(110,110,110,1);
+	}
+	#Component_4__1 {
+		position: absolute;
+		width: 84px;
+		height: 32px;
+		left: 359px;
+		top: 146px;
+		overflow: visible;
+	}
+	#Negative_bp {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(201,37,46,1);
+	}
+	#Component_9__1 {
+		position: absolute;
+		width: 84px;
+		height: 32px;
+		left: 360px;
+		top: 227px;
+		overflow: visible;
+	}
+	#Negative_bs {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(201,37,46,1);
+	}
+	#SPECTRUM_FONTS {
+		left: 514px;
+		top: 61px;
+		position: absolute;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Button_-_CTA_disabled {
+		position: absolute;
+		width: 84px;
+		height: 32px;
+		left: 40px;
+		top: 228px;
+		overflow: visible;
+	}
+	#BUTTON_bw {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(179,179,179,1);
+	}
+	#Group_2 {
+		position: absolute;
+		width: 33.751px;
+		height: 31.773px;
+		left: 40px;
+		top: 309.055px;
+		overflow: visible;
+	}
+	#Union_1 {
+		fill: rgba(185,185,185,1);
+	}
+	.Union_1 {
+		overflow: visible;
+		position: absolute;
+		width: 15.751px;
+		height: 15.773px;
+		left: 9px;
+		top: 8px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Group_9 {
+		position: absolute;
+		width: 33.751px;
+		height: 31.773px;
+		left: 92px;
+		top: 309px;
+		overflow: visible;
+	}
+	#Union_1_b {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		width: 15.751px;
+		height: 15.773px;
+		left: 9px;
+		top: 8px;
+		overflow: visible;
+	}
+	#Group_3 {
+		position: absolute;
+		left: 40px;
+		top: 380.5px;
+		overflow: visible;
+	}
+	#Group_4 {
+		position: absolute;
+		width: 162.317px;
+		height: 17px;
+		left: 9px;
+		top: 8px;
+		overflow: visible;
+	}
+	#Union_1_ca {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		width: 15.751px;
+		height: 15.773px;
+		left: 0px;
+		top: 0.614px;
+		overflow: visible;
+	}
+	#This_is_an_action_button {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(179,179,179,1);
+	}
+	#Group_5 {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		left: 40px;
+		top: 454.5px;
+		overflow: visible;
+	}
+	#This_is_a_toggle_button {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(179,179,179,1);
+	}
+	#Group_12 {
+		position: absolute;
+		left: 39px;
+		top: 535.5px;
+		overflow: visible;
+	}
+	#This_is_a_textfield_with_defau {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(179,179,179,1);
+	}
+	#Group_13 {
+		position: absolute;
+		left: 299.5px;
+		top: 535.5px;
+		overflow: visible;
+	}
+	#This_is_a_textfield_default_ {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(179,179,179,1);
+	}
+	#Path_1 {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Path_1 {
+		overflow: visible;
+		position: absolute;
+		width: 192px;
+		height: 2px;
+		left: 0px;
+		top: 31px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#toast1 {
+		position: absolute;
+		left: 40px;
+		top: 854.5px;
+		overflow: visible;
+	}
+	#This_is_a_toast_message {
+		overflow: visible;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Adobe Clean, Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		color: rgba(255,255,255,1);
+	}
+	#toast1_co {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		left: 386px;
+		top: 854.5px;
+		overflow: visible;
+	}
+</style>
+<script id="applicationScript">
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
@@ -2241,7 +2924,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -2834,3 +3517,186 @@ var Application = function() {
 }
 
 window.application = new Application();
+</script>
+<script src="https://jspm.dev/@spectrum-web-components/bundle/elements.js" type="module"></script>
+</head>
+<body>
+<sp-theme id="Spectrum_Form_Elements" scale="medium" color="light">
+	<sp-action-menu id="Group_16" label="More Actions">
+    <sp-menu>
+        <sp-menu-item>
+            Deselect
+        </sp-menu-item>
+        <sp-menu-item>
+            Select inverse
+        </sp-menu-item>
+        <sp-menu-item>
+            Feather...
+        </sp-menu-item>
+        <sp-menu-item>
+            Select and mask...
+        </sp-menu-item>
+        <sp-menu-divider></sp-menu-divider>
+        <sp-menu-item>
+            Save selection
+        </sp-menu-item>
+        <sp-menu-item disabled>
+            Make work path
+        </sp-menu-item>
+    </sp-menu>
+</sp-action-menu>
+	<svg class="Line_2" viewBox="0 0 588 0.76">
+		<path id="Line_2" d="M 0 0 L 588 0.760009765625">
+		</path>
+	</svg>
+	<div id="Spectrum_Form_Elements_k">
+		<span>Spectrum Form Elements</span>
+	</div>
+	<div id="CTA">
+		<span>CTA</span>
+	</div>
+	<div id="Button">
+		<span>Button</span>
+	</div>
+	<div id="CTA_disabled">
+		<span>CTA disabled</span>
+	</div>
+	<div id="Quiet">
+		<span>Quiet</span>
+	</div>
+	<div id="Quiet_p">
+		<span>Quiet</span>
+	</div>
+	<div id="Action_Button">
+		<span>Action Button</span>
+	</div>
+	<div id="Action_Button_with_icon">
+		<span>Action Button with icon</span>
+	</div>
+	<div id="Action_Button_Toggle" toggles>
+		<span>Action Button Toggle</span>
+	</div>
+	<div id="Textfield" toggles>
+		<span>Textfield</span>
+	</div>
+	<div id="Action_Menu" toggles>
+		<span>Action Menu</span>
+	</div>
+	<sp-label id="Toast" toggles>
+		<span>Toast</span>
+	</sp-label>
+	<div id="Primary">
+		<span>Primary</span>
+	</div>
+	<div id="Secondary">
+		<span>Secondary</span>
+	</div>
+	<div id="Negative">
+		<span>Negative</span>
+	</div>
+	<a href="https://opensource.adobe.com/spectrum-web-components/">
+	<div id="httpsopensourceadobecomspectru">
+		<span>https://opensource.adobe.com/spectrum-web-components/</span>
+	</div>
+	</a>
+	<div id="The_page_shows_examples_using_">
+		<span>The page shows examples using Spectrum Tags</span>
+	</div>
+	<div id="See_the_Spectrum_Web_Component">
+		<span>See the Spectrum Web Components examples for more examples of forms</span>
+	</div>
+	<sp-button id="Button-CTA" class="Button_CTA" variant="cta">
+		BUTTON
+	</sp-button>
+	<sp-button id="Group_6" variant="cta" onclick="toast1.open = !toast1.open">
+		Click Me
+	</sp-button>
+	<overlay-trigger id="Group_14" placement="bottom" offset="6">
+    <sp-button variant="primary" slot="trigger">
+        Bottopopover
+    </sp-button>
+    <sp-popover dialog slot="click-content" direction="bottom" tip open>
+        <div class="options-popover-content">
+            <sp-slider
+                value="5"
+                step="0.5"
+                min="0"
+                max="20"
+                label="Awesomeness"
+            ></sp-slider>
+            <sp-button>Press me</sp-button>
+        </div>
+    </sp-popover>
+    <sp-tooltip slot="hover-content" delayed open>
+        Tooltip
+    </sp-tooltip>
+</overlay-trigger>
+	<sp-button id="Component_6__1" class="Component_6___1" variant="primary">
+		Primary
+	</sp-button>
+	<sp-button id="Component_7__1" class="Component_7___1" variant="primary" quiet>
+		Primary
+	</sp-button>
+	<sp-button id="Component_5__1" class="Component_5___1" variant="secondary">
+		Secondary
+	</sp-button>
+	<sp-button id="Component_8__1" class="Component_8___1" variant="secondary" quiet>
+		Secondary
+	</sp-button>
+	<sp-button id="Component_4__1" class="Component_4___1" variant="negative">
+		Negative
+	</sp-button>
+	<sp-button id="Component_9__1" class="Component_9___1" variant="negative" quiet>
+		Negative
+	</sp-button>
+	<div id="SPECTRUM_FONTS">
+		<style type="text/css">
+@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/aa41d0/00000000000000003b9b3f86/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/aa41d0/00000000000000003b9b3f86/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/aa41d0/00000000000000003b9b3f86/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/284620/00000000000000003b9b3f89/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/284620/00000000000000003b9b3f89/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/284620/00000000000000003b9b3f89/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/37eaae/00000000000000003b9b3f83/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/37eaae/00000000000000003b9b3f83/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/37eaae/00000000000000003b9b3f83/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/ad2a79/00000000000000003b9b3f8c/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/ad2a79/00000000000000003b9b3f8c/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/ad2a79/00000000000000003b9b3f8c/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/b17c8a/00000000000000003b9b3f8d/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff2"),url(https://use.typekit.net/af/b17c8a/00000000000000003b9b3f8d/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff"),url(https://use.typekit.net/af/b17c8a/00000000000000003b9b3f8d/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("opentype");font-weight:900;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/a0c22f/00000000000000003b9b3f84/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/a0c22f/00000000000000003b9b3f84/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/a0c22f/00000000000000003b9b3f84/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/505d17/00000000000000003b9aee44/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/505d17/00000000000000003b9aee44/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/505d17/00000000000000003b9aee44/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/f42203/00000000000000003b9aee42/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff2"),url(https://use.typekit.net/af/f42203/00000000000000003b9aee42/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff"),url(https://use.typekit.net/af/f42203/00000000000000003b9aee42/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("opentype");font-weight:900;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/0dddd1/00000000000000003b9aee48/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/0dddd1/00000000000000003b9aee48/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/0dddd1/00000000000000003b9aee48/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/634d69/00000000000000003b9aee46/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/634d69/00000000000000003b9aee46/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/634d69/00000000000000003b9aee46/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/507e89/00000000000000003b9aee49/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/507e89/00000000000000003b9aee49/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/507e89/00000000000000003b9aee49/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/e09494/00000000000000003b9aee45/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/e09494/00000000000000003b9aee45/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/e09494/00000000000000003b9aee45/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}
+</style>
+	</div>
+	<sp-button id="Button_-_CTA_disabled" class="Button___CTA_disabled" disabled>
+		BUTTON
+	</sp-button>
+	<sp-action-button id="Group_2">
+		<svg class="Union_1" viewBox="1.684 0.414 15.751 15.773">
+			<path id="Union_1" d="M 1.694700002670288 15.9237003326416 L 3.232800006866455 11.30670070648193 C 3.262432098388672 11.21948146820068 3.342798233032227 11.17013072967529 3.424438238143921 11.17027854919434 C 3.454176187515259 10.96399974822998 3.548394918441772 10.76520538330078 3.70710015296936 10.60650062561035 L 13.60620021820068 0.7074000239372253 C 13.99680042266846 0.3167999982833862 14.63040065765381 0.3167999982833862 15.02099990844727 0.7074000239372253 L 17.14229965209961 2.828700065612793 C 17.53289985656738 3.219300031661987 17.53289985656738 3.851999998092651 17.14229965209961 4.242599964141846 L 7.242300033569336 14.14170074462891 C 7.088816165924072 14.29518413543701 6.897902965545654 14.38832187652588 6.699033260345459 14.42118453979492 C 6.710891246795654 14.51122760772705 6.660576343536377 14.60551357269287 6.563700199127197 14.63759994506836 L 1.94760000705719 16.17659950256348 C 1.925778865814209 16.18387413024902 1.904109001159668 16.18724822998047 1.883123517036438 16.1872501373291 C 1.753505945205688 16.187255859375 1.649773716926575 16.05847930908203 1.694700002670288 15.9237003326416 Z">
+			</path>
+		</svg>
+	</sp-action-button>
+	<sp-action-button id="Group_9">
+		    <svg slot="icon" id="spectrum-icon-18-Edit" viewBox="0 0 36 36">
+        <path
+            d="M33.567 8.2L27.8 2.432a1.215 1.215 0 0 0-.866-.353H26.9a1.371 1.371 0 0 0-.927.406L5.084 23.372a.99.99 0 0 0-.251.422L2.055 33.1c-.114.377.459.851.783.851a.251.251 0 0 0 .062-.007c.276-.063 7.866-2.344 9.311-2.778a.972.972 0 0 0 .414-.249l20.888-20.889a1.372 1.372 0 0 0 .4-.883 1.221 1.221 0 0 0-.346-.945zM11.4 29.316c-2.161.649-4.862 1.465-6.729 2.022l2.009-6.73z"
+        ></path>
+    </svg>
+	</sp-action-button>
+	<sp-action-button id="Group_3">
+		
+			    <svg slot="icon" id="spectrum-icon-18-Edit" viewBox="0 0 36 36">
+        <path
+            d="M33.567 8.2L27.8 2.432a1.215 1.215 0 0 0-.866-.353H26.9a1.371 1.371 0 0 0-.927.406L5.084 23.372a.99.99 0 0 0-.251.422L2.055 33.1c-.114.377.459.851.783.851a.251.251 0 0 0 .062-.007c.276-.063 7.866-2.344 9.311-2.778a.972.972 0 0 0 .414-.249l20.888-20.889a1.372 1.372 0 0 0 .4-.883 1.221 1.221 0 0 0-.346-.945zM11.4 29.316c-2.161.649-4.862 1.465-6.729 2.022l2.009-6.73z"
+        ></path>
+    </svg>
+			This is an action button
+		
+	</sp-action-button>
+	<sp-action-button id="Group_5" toggles>
+		This is a toggle button
+</sp-action-button>
+	<sp-textfield id="Group_12" placeholder="Enter your name">
+		This is a textfield with default
+	</sp-textfield>
+	<sp-textfield id="Group_13" placeholder="Enter your name" quiet>
+		This is a textfield default 
+		<svg class="Path_1" viewBox="0 0 192 2">
+			<path id="Path_1" d="M 0 0 L 192.0000152587891 0">
+			</path>
+		</svg>
+	</sp-textfield>
+	<sp-toast id="toast1">
+		This is a toast message
+	</sp-toast>
+	<sp-toast id="toast1_co" variant="positive">Here is a message</sp-toast>
+</sp-theme>
+</body>
+</html>

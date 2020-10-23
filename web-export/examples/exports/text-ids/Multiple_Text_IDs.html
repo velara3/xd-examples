@@ -69,17 +69,17 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 	#The_text_in_the_text_field_has_ {
-		left: 370px;
+		left: 360px;
 		top: 34px;
 		position: absolute;
 		overflow: visible;
-		width: 210px;
+		width: 220px;
 		white-space: nowrap;
 		text-align: right;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10.5px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Multiple_Text_IDs_ {
@@ -2448,7 +2448,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3091,7 +3091,6 @@ window.application = new Application();
 var element = document.getElementById("firstname");
 element.innerHTML = "Jane";
 </script>
-
 </div>
 <script>
 var element = document.getElementById("nameID");

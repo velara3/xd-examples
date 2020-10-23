@@ -74,28 +74,28 @@
 		top: 34px;
 		position: absolute;
 		overflow: visible;
-		width: 292px;
+		width: 305px;
 		white-space: nowrap;
 		text-align: right;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10.5px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Resize_the_browser_to_see_the_ {
 		opacity: 1;
 		left: 21px;
-		top: 85px;
+		top: 86px;
 		position: absolute;
 		overflow: visible;
-		width: 199px;
+		width: 183px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 12px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#httpsdevelopermozillaorgen-USd {
@@ -103,13 +103,13 @@
 		bottom: 19px;
 		position: absolute;
 		overflow: visible;
-		width: 302px;
+		width: 332px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Icon {
@@ -2432,7 +2432,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);

@@ -49,7 +49,7 @@
 		font-size: 44px;
 		color: rgba(112,112,112,1);
 	}
-	#menu_y {
+	#menu {
 		position: absolute;
 		width: 960px;
 		height: 50px;
@@ -57,10 +57,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Rectangle_3_z {
+	#Rectangle_3 {
 		fill: rgba(235,235,235,1);
 	}
-	.Rectangle_3_z {
+	.Rectangle_3 {
 		filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 		position: absolute;
 		overflow: visible;
@@ -69,7 +69,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Cats_ {
+	#Cats_s {
 		left: 26px;
 		top: 13px;
 		position: absolute;
@@ -83,7 +83,7 @@
 		font-size: 15px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_2_ {
+	#Group_2 {
 		position: absolute;
 		width: 309px;
 		height: 16px;
@@ -91,7 +91,7 @@
 		top: 17px;
 		overflow: visible;
 	}
-	#Whiskers_ {
+	#Whiskers_u {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -105,7 +105,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Mittens_ {
+	#Mittens_v {
 		left: 100px;
 		top: 0px;
 		position: absolute;
@@ -119,7 +119,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Snowball_ {
+	#Snowball_w {
 		left: 192px;
 		top: 0px;
 		position: absolute;
@@ -133,7 +133,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#End_ {
+	#End {
 		left: 288px;
 		top: 0px;
 		position: absolute;
@@ -2408,7 +2408,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3008,34 +3008,34 @@ window.application = new Application();
 	<div id="Multiple_page_application">
 		<span>Multiple page application</span>
 	</div>
-	<div id="menu_y" class="menu">
-		<svg class="Rectangle_3_z">
-			<rect id="Rectangle_3_z" rx="0" ry="0" x="0" y="0" width="960" height="50">
+	<div id="menu" class="menu">
+		<svg class="Rectangle_3">
+			<rect id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="960" height="50">
 			</rect>
 		</svg>
 		<a href="Cats.html">
-		<div id="Cats_">
+		<div id="Cats_s">
 			<span>Cats</span>
 		</div>
 		</a>
-		<div id="Group_2_">
+		<div id="Group_2">
 			<a href="Whiskers.html">
-			<div id="Whiskers_">
+			<div id="Whiskers_u">
 				<span>Whiskers</span>
 			</div>
 			</a>
 			<a href="Mittens.html">
-			<div id="Mittens_">
+			<div id="Mittens_v">
 				<span>Mittens</span>
 			</div>
 			</a>
 			<a href="Snowball.html">
-			<div id="Snowball_">
+			<div id="Snowball_w">
 				<span>Snowball</span>
 			</div>
 			</a>
 			<a href="Ending.html">
-			<div id="End_">
+			<div id="End">
 				<span>End</span>
 			</div>
 			</a>

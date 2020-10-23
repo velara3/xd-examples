@@ -20,10 +20,10 @@
 	--web-center-vertically: false;
 	--web-actual-size-on-double-click: false;
 	--web-navigate-on-keypress: false;
-	--web-refresh-for-changes: false;
+	--web-refresh-for-changes: true;
 	--web-add-image-compare: false;
 	--web-show-by-media-query: false;
-	--web-application: false;
+	--web-application: true;
 	--web-show-navigation-controls: false;
 	--web-enable-deep-linking: true;
 	--web-is-overlay: false;
@@ -38,6 +38,8 @@
 	.mediaViewInfo {
 		--web-view-name: Pop Up Menu;
 		--web-view-id: Pop_Up_Menu;
+		--web-refresh-for-changes: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
@@ -57,6 +59,8 @@
 		overflow: hidden;
 		--web-view-name: Pop Up Menu;
 		--web-view-id: Pop_Up_Menu;
+		--web-refresh-for-changes: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
@@ -157,13 +161,13 @@
 		bottom: 37px;
 		position: absolute;
 		overflow: visible;
-		width: 533px;
+		width: 559px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10.5px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Icon {
@@ -174,10 +178,10 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_z {
-		fill: url(#Rectangle_177_z);
+	#Rectangle_177_ {
+		fill: url(#Rectangle_177_);
 	}
-	.Rectangle_177_z {
+	.Rectangle_177_ {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -281,6 +285,7 @@
 		--web-view-name: MainMenu;
 		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -294,15 +299,17 @@
 		position: absolute;
 		display: block;
 		width: 211px;
-		height: 500px;
-		background-color: rgba(255,255,255,1);
+		height: 100%;
+		background-color: rgba(238,238,238,1);
 		overflow: hidden;
 		cursor: pointer;
 		--web-view-name: MainMenu;
 		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
+		filter:  drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.502));
 	}
 	#Line_90 {
 		fill: transparent;
@@ -322,7 +329,7 @@
 		top: 52.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Menu_ba {
+	#Menu_bb {
 		left: 9px;
 		top: 15px;
 		position: absolute;
@@ -442,12 +449,27 @@
 		top: 4.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
+	#Setting_this_artboard_to_100_h {
+		left: 15px;
+		bottom: 16px;
+		position: absolute;
+		overflow: visible;
+		width: 172px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
 }
 @media (min-width: 0px) and (max-width: 602px) {
 	.mediaViewInfo {
 		--web-view-name: MainMenu Right;
 		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -461,18 +483,20 @@
 		position: absolute;
 		display: block;
 		width: 211px;
-		height: 500px;
-		background-color: rgba(255,255,255,1);
+		height: 100%;
+		background-color: rgba(238,238,238,1);
 		overflow: hidden;
 		cursor: pointer;
 		--web-view-name: MainMenu Right;
 		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 		right: 0px;
+		filter:  drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.502));
 	}
-	#Line_90_bk {
+	#Line_90_bm {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -481,7 +505,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_90_bk {
+	.Line_90_bm {
 		overflow: visible;
 		position: absolute;
 		width: 189px;
@@ -490,7 +514,7 @@
 		top: 52.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Menu_bl {
+	#Menu_bn {
 		left: 9px;
 		top: 15px;
 		position: absolute;
@@ -507,7 +531,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Item_1_bm {
+	#Item_1_bo {
 		left: 14px;
 		top: 74px;
 		position: absolute;
@@ -521,7 +545,7 @@
 		font-size: 21px;
 		color: rgba(112,112,112,1);
 	}
-	#Item_2_bn {
+	#Item_2_bp {
 		left: 14px;
 		top: 110px;
 		position: absolute;
@@ -535,7 +559,7 @@
 		font-size: 21px;
 		color: rgba(112,112,112,1);
 	}
-	#Item_3_bo {
+	#Item_3_bq {
 		left: 14px;
 		top: 145px;
 		position: absolute;
@@ -549,7 +573,7 @@
 		font-size: 21px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_61_bp {
+	#Group_61_br {
 		position: absolute;
 		width: 19px;
 		height: 19px;
@@ -557,7 +581,7 @@
 		top: 12px;
 		overflow: visible;
 	}
-	#Ellipse_1_bq {
+	#Ellipse_1_bs {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -566,7 +590,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Ellipse_1_bq {
+	.Ellipse_1_bs {
 		position: absolute;
 		overflow: visible;
 		width: 19px;
@@ -574,7 +598,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Line_88_br {
+	#Line_88_bt {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -583,7 +607,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_88_br {
+	.Line_88_bt {
 		overflow: visible;
 		position: absolute;
 		width: 11.673px;
@@ -592,7 +616,7 @@
 		top: 4.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Line_89_bs {
+	#Line_89_bu {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -601,7 +625,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_89_bs {
+	.Line_89_bu {
 		overflow: visible;
 		position: absolute;
 		width: 10.707px;
@@ -609,6 +633,20 @@
 		left: 4.5px;
 		top: 4.5px;
 		transform: matrix(1,0,0,1,0,0);
+	}
+	#Setting_this_artboard_to_100_h_bv {
+		left: 22px;
+		bottom: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 172px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
 	}
 }
 
@@ -637,12 +675,12 @@
 		<span>Be sure to export as a single page application and include the pop up in the artboards to export (select artboards)</span>
 	</div>
 	<div id="Icon">
-		<svg class="Rectangle_177_z">
-			<linearGradient id="Rectangle_177_z" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<svg class="Rectangle_177_">
+			<linearGradient id="Rectangle_177_" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect id="Rectangle_177_z" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			<rect id="Rectangle_177_" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
 		<div id="W">
@@ -668,7 +706,7 @@
 		<path id="Line_90" d="M 0 0 L 189 0">
 		</path>
 	</svg>
-	<div id="Menu_ba">
+	<div id="Menu_bb">
 		<span>Menu</span>
 	</div>
 	<div id="Item_1">
@@ -694,37 +732,43 @@
 			</path>
 		</svg>
 	</div>
+	<div id="Setting_this_artboard_to_100_h">
+		<span>Setting this artboard to 100% height</span>
+	</div>
 </div>
 <div id="MainMenu_Right" onclick="application.goBack()">
-	<svg class="Line_90_bk" viewBox="0 0 189 1">
-		<path id="Line_90_bk" d="M 0 0 L 189 0">
+	<svg class="Line_90_bm" viewBox="0 0 189 1">
+		<path id="Line_90_bm" d="M 0 0 L 189 0">
 		</path>
 	</svg>
-	<div id="Menu_bl">
+	<div id="Menu_bn">
 		<span>Menu</span>
 	</div>
-	<div id="Item_1_bm">
+	<div id="Item_1_bo">
 		<span>Item 1</span>
 	</div>
-	<div id="Item_2_bn">
+	<div id="Item_2_bp">
 		<span>Item 2</span>
 	</div>
-	<div id="Item_3_bo">
+	<div id="Item_3_bq">
 		<span>Item 3</span>
 	</div>
-	<div id="Group_61_bp">
-		<svg class="Ellipse_1_bq">
-			<ellipse id="Ellipse_1_bq" rx="9.5" ry="9.5" cx="9.5" cy="9.5">
+	<div id="Group_61_br">
+		<svg class="Ellipse_1_bs">
+			<ellipse id="Ellipse_1_bs" rx="9.5" ry="9.5" cx="9.5" cy="9.5">
 			</ellipse>
 		</svg>
-		<svg class="Line_88_br" viewBox="0 0 11 10">
-			<path id="Line_88_br" d="M 0 0 L 11 10">
+		<svg class="Line_88_bt" viewBox="0 0 11 10">
+			<path id="Line_88_bt" d="M 0 0 L 11 10">
 			</path>
 		</svg>
-		<svg class="Line_89_bs" viewBox="0 0 10 10">
-			<path id="Line_89_bs" d="M 10 0 L 0 10">
+		<svg class="Line_89_bu" viewBox="0 0 10 10">
+			<path id="Line_89_bu" d="M 10 0 L 0 10">
 			</path>
 		</svg>
+	</div>
+	<div id="Setting_this_artboard_to_100_h_bv">
+		<span>Setting this artboard to 100% height</span>
 	</div>
 </div>
 

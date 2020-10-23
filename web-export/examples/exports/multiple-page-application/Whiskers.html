@@ -44,7 +44,7 @@
 		top: 163px;
 		overflow: visible;
 	}
-	#menu_bb {
+	#menu_ {
 		position: absolute;
 		width: 960px;
 		height: 50px;
@@ -52,10 +52,10 @@
 		top: 0px;
 		overflow: visible;
 	}
-	#Rectangle_3_bc {
+	#Rectangle_3_ {
 		fill: rgba(235,235,235,1);
 	}
-	.Rectangle_3_bc {
+	.Rectangle_3_ {
 		filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 		position: absolute;
 		overflow: visible;
@@ -64,7 +64,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Cats_bd {
+	#Cats_ {
 		left: 26px;
 		top: 13px;
 		position: absolute;
@@ -78,7 +78,7 @@
 		font-size: 15px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_2_be {
+	#Group_2_ {
 		position: absolute;
 		width: 309px;
 		height: 16px;
@@ -86,7 +86,7 @@
 		top: 17px;
 		overflow: visible;
 	}
-	#Whiskers_bf {
+	#Whiskers_ {
 		left: 0px;
 		top: 0px;
 		position: absolute;
@@ -100,7 +100,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Mittens_bg {
+	#Mittens_ {
 		left: 100px;
 		top: 0px;
 		position: absolute;
@@ -114,7 +114,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Snowball_bh {
+	#Snowball_ {
 		left: 192px;
 		top: 0px;
 		position: absolute;
@@ -128,7 +128,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#End_bi {
+	#End_ba {
 		left: 288px;
 		top: 0px;
 		position: absolute;
@@ -142,7 +142,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Whiskers_bj {
+	#Whiskers_bb {
 		left: 20px;
 		top: 75px;
 		position: absolute;
@@ -2415,7 +2415,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
@@ -3013,40 +3013,40 @@ window.application = new Application();
 <body>
 <div id="Whiskers">
 	<img id="Rectangle_1" src="images/Rectangle_1.png" srcset="images/Rectangle_1.png 1x, images/Rectangle_1@2x.png 2x">
-	<div id="menu_bb" class="menu">
-		<svg class="Rectangle_3_bc">
-			<rect id="Rectangle_3_bc" rx="0" ry="0" x="0" y="0" width="960" height="50">
+	<div id="menu_" class="menu">
+		<svg class="Rectangle_3_">
+			<rect id="Rectangle_3_" rx="0" ry="0" x="0" y="0" width="960" height="50">
 			</rect>
 		</svg>
 		<a href="Cats.html">
-		<div id="Cats_bd">
+		<div id="Cats_">
 			<span>Cats</span>
 		</div>
 		</a>
-		<div id="Group_2_be">
+		<div id="Group_2_">
 			<a href="Whiskers.html">
-			<div id="Whiskers_bf">
+			<div id="Whiskers_">
 				<span>Whiskers</span>
 			</div>
 			</a>
 			<a href="Mittens.html">
-			<div id="Mittens_bg">
+			<div id="Mittens_">
 				<span>Mittens</span>
 			</div>
 			</a>
 			<a href="Snowball.html">
-			<div id="Snowball_bh">
+			<div id="Snowball_">
 				<span>Snowball</span>
 			</div>
 			</a>
 			<a href="Ending.html">
-			<div id="End_bi">
+			<div id="End_ba">
 				<span>End</span>
 			</div>
 			</a>
 		</div>
 	</div>
-	<div id="Whiskers_bj">
+	<div id="Whiskers_bb">
 		<span>Whiskers</span>
 	</div>
 	<div id="text">

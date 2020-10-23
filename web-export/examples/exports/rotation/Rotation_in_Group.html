@@ -118,8 +118,8 @@
 	}
 	#W_bs {
 		left: 50%;
-		transform: translateX(-50%);
-		top: 7.5px;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
 		position: absolute;
 		overflow: visible;
 		width: 10px;
@@ -2775,7 +2775,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);

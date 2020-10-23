@@ -57,17 +57,17 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 	#The_text_in_the_text_field_has {
-		left: 385px;
+		left: 376px;
 		top: 34px;
 		position: absolute;
 		overflow: visible;
-		width: 195px;
+		width: 204px;
 		white-space: nowrap;
 		text-align: right;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10.5px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Text_Token_n {
@@ -102,7 +102,7 @@
 		color: rgba(112,112,112,1);
 	}
 	#The_quick_brown_fox_jumps_over {
-		left: 20px;
+		left: 320px;
 		top: 94px;
 		position: absolute;
 		overflow: visible;
@@ -116,7 +116,7 @@
 		color: rgba(112,112,112,1);
 	}
 	#The_quick_brown_fox_jumps_over_q {
-		left: 318px;
+		left: 18px;
 		top: 94px;
 		position: absolute;
 		overflow: visible;
@@ -130,7 +130,7 @@
 		color: rgba(112,112,112,1);
 	}
 	#Original {
-		left: 318px;
+		left: 18px;
 		top: 72px;
 		position: absolute;
 		overflow: visible;
@@ -144,7 +144,7 @@
 		color: rgba(112,112,112,1);
 	}
 	#Replaced {
-		left: 21px;
+		left: 321px;
 		top: 72px;
 		position: absolute;
 		overflow: visible;
@@ -2458,7 +2458,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);
