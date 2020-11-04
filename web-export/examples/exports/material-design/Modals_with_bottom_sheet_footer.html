@@ -119,17 +119,17 @@
       		color: rgba(112,112,112,1);
       	}
       	#The_element_below_defines_form_ik {
-      		left: 443px;
+      		left: 434px;
       		top: 34px;
       		position: absolute;
       		overflow: visible;
-      		width: 197px;
+      		width: 206px;
       		white-space: nowrap;
       		text-align: right;
       		font-family: Helvetica Neue;
       		font-style: normal;
       		font-weight: normal;
-      		font-size: 10.5px;
+      		font-size: 11px;
       		color: rgba(112,112,112,1);
       	}
       	#Click_on_the_icon_below_to_ope_il {
@@ -216,6 +216,20 @@
       		font-size: 11px;
       		color: rgba(112,112,112,1);
       	}
+      	#CODE_BLOCK {
+      		left: 211px;
+      		top: 160px;
+      		position: absolute;
+      		overflow: visible;
+      		width: 72px;
+      		white-space: nowrap;
+      		text-align: left;
+      		font-family: Helvetica Neue;
+      		font-style: normal;
+      		font-weight: normal;
+      		font-size: 11px;
+      		color: rgba(112,112,112,1);
+      	}
       </style>
       <script id="applicationScript" type="text/javascript" src="Modals_with_bottom_sheet_footer.js"></script>
       <!--Import Google Icon Font-->
@@ -257,13 +271,13 @@
       		<span>Click on the icon below to open an modal</span>
       	</div>
       	<div id="SubmitButton_im">
-      		<a class="waves-effect waves-light btn modal-trigger" href="#modal1">OPEN</a>
+      		<a class="waves-effect waves-light btn modal-trigger" href="#bottomSheetFooterModal">OPEN</a>
 
 
       	</div>
       	<div id="modal1">
       		  <!-- Modal Structure -->
-        <div id="modal1" class="modal bottom-sheet">
+        <div id="bottomSheetFooterModal" class="modal bottom-sheet">
           <div class="modal-content">
             <h4>Modal Header</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Amet luctus venenatis lectus magna fringilla. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Sagittis orci a scelerisque purus semper eget duis. Nulla pharetra diam sit amet nisl suscipit. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Fusce ut placerat orci nulla. Pharetra vel turpis nunc eget lorem dolor. Tristique senectus et netus et malesuada.</p>
@@ -288,6 +302,23 @@
       	</div>
       	<div id="Export_this_artboard_individua_is">
       		<span>Export this artboard individually or update the ID if it has been renamed</span>
+      	</div>
+      	<div id="CODE_BLOCK">
+      		<script>
+
+       window.addEventListener('DOMContentLoaded', function() {
+          console.log("Page ready.");
+          try {
+             var elements = document.querySelectorAll('.modal');
+             var options = {inDuration:250};
+             var instances = M.Modal.init(elements[0], options);
+          }
+          catch(e) {
+             console.log(e);
+          }
+      });
+
+      </script>
       	</div>
       </div>
 

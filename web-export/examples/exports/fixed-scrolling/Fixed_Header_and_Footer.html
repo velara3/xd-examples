@@ -4,16 +4,16 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fixed Header Method 2</title>
+<title>Fixed Header and Footer</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Fixed Header Method 2;
-		--web-view-id: Fixed_Header_Method_2;
+		--web-view-name: Fixed Header and Footer;
+		--web-view-id: Fixed_Header_and_Footer;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Fixed_Header_Method_2;
+		--web-view-ids: Fixed_Header_and_Footer;
 	}
 	* {
 		margin: 0;
@@ -21,14 +21,14 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Fixed_Header_Method_2 {
+	#Fixed_Header_and_Footer {
 		position: absolute;
 		width: 778px;
 		height: 100%;
 		background-color: rgba(181,224,250,1);
 		overflow: hidden;
-		--web-view-name: Fixed Header Method 2;
-		--web-view-id: Fixed_Header_Method_2;
+		--web-view-name: Fixed Header and Footer;
+		--web-view-id: Fixed_Header_and_Footer;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
 	}
@@ -42,7 +42,7 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
-	#This_is_the_same_as_setting__p_x {
+	#This_is_the_same_as_setting__p_z {
 		left: 20px;
 		top: 52px;
 		position: absolute;
@@ -56,7 +56,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#This_page_has_a_header_that_st_y {
+	#This_page_has_a_header_that_st_ {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -110,12 +110,12 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Fixed_Header_2 {
+	#Fixed_Header_and_Footer_ {
 		left: 50px;
 		top: 14px;
 		position: absolute;
 		overflow: visible;
-		width: 143px;
+		width: 234px;
 		white-space: nowrap;
 		line-height: 56px;
 		margin-top: -18px;
@@ -3044,12 +3044,12 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="Fixed_Header_Method_2">
+<div id="Fixed_Header_and_Footer">
 	<div id="Content">
-		<div id="This_is_the_same_as_setting__p_x">
+		<div id="This_is_the_same_as_setting__p_z">
 			<span>This is the same as setting { position: sticky; top: 0px; left: 0px; z-index: 1 }</span>
 		</div>
-		<div id="This_page_has_a_header_that_st_y">
+		<div id="This_page_has_a_header_that_st_">
 			<span>This page has a header that stays fixed in position when scrolling</span>
 		</div>
 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline">
@@ -3062,8 +3062,8 @@ window.application = new Application();
 		<div id="The_header_group_is_fixed_to_t_">
 			<span>The header group is fixed to the top of the page as the page scrolls</span>
 		</div>
-		<div id="Fixed_Header_2">
-			<span>Fixed Header 2</span>
+		<div id="Fixed_Header_and_Footer_">
+			<span>Fixed Header and Footer</span>
 		</div>
 		<div id="Icon_">
 			<svg class="Rectangle_177_ba">

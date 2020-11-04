@@ -60,17 +60,17 @@
 	transform: matrix(1,0,0,1,0,0);
 }
 #This_page_uses_an_external_sty {
-	left: 652px;
+	left: 644px;
 	top: 32px;
 	position: absolute;
 	overflow: visible;
-	width: 177px;
+	width: 185px;
 	white-space: nowrap;
 	text-align: right;
 	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 10.5px;
+	font-size: 11px;
 	color: rgba(112,112,112,1);
 }
 #Check_the_source_code_to_see_t {
@@ -78,13 +78,13 @@
 	top: 243px;
 	position: absolute;
 	overflow: visible;
-	width: 296px;
+	width: 310px;
 	white-space: nowrap;
 	text-align: left;
 	font-family: Helvetica Neue;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 10.5px;
+	font-size: 11px;
 	color: rgba(112,112,112,1);
 }
 #External_Stylesheet_l {

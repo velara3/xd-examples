@@ -24,7 +24,7 @@
 	#YouTube {
 		position: absolute;
 		width: 778px;
-		height: 412px;
+		height: 471px;
 		background-color: rgba(255,255,255,1);
 		overflow: visible;
 		--web-view-name: YouTube;
@@ -40,7 +40,7 @@
 		width: 372px;
 		height: 200px;
 		left: 30px;
-		top: 69px;
+		top: 79px;
 		overflow: visible;
 	}
 	#Line_85 {
@@ -62,17 +62,17 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 	#The_elements_below_is_replaced {
-		left: 482px;
+		left: 469px;
 		top: 31px;
 		position: absolute;
 		overflow: visible;
-		width: 277px;
+		width: 290px;
 		white-space: nowrap;
 		text-align: right;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10.5px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#YouTube_j {
@@ -94,44 +94,44 @@
 	}
 	#View_the_page_source_to_see_ma {
 		left: 32px;
-		top: 328px;
+		top: 377px;
 		position: absolute;
 		overflow: visible;
-		width: 163px;
+		width: 179px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: italic;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#httpssupportgooglecomyoutubean {
 		left: 32px;
-		top: 355px;
+		top: 405px;
 		position: absolute;
 		overflow: visible;
-		width: 266px;
+		width: 292px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#httpsdevelopersgooglecomyoutub {
 		left: 32px;
-		top: 374px;
+		top: 424px;
 		position: absolute;
 		overflow: visible;
-		width: 264px;
+		width: 290px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
 	#Icon {
@@ -2413,7 +2413,7 @@ var Application = function() {
 				
 				if (selectorText==null) continue;
 
-				selectorText = selectorText.replace(/[\.|#|\s|*]?/g, "");
+				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
 					self.addView(selectorText, cssRule, null, stateValue);

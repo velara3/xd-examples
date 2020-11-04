@@ -4,16 +4,16 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hover Effect Styles</title>
+<title>Accordion</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Style Transfer;
-		--web-view-id: Style_Transfer;
-		--web-refresh-for-changes: true;
+		--web-view-name: Accordion;
+		--web-view-id: Accordion;
 		--web-enable-deep-linking: true;
+		--web-page-font: Arial;
 	}
 	:root {
-		--web-view-ids: Style_Transfer;
+		--web-view-ids: Accordion;
 	}
 	* {
 		margin: 0;
@@ -21,68 +21,19 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Style_Transfer {
+	#Accordion {
 		position: absolute;
-		width: 600px;
-		height: 724px;
+		width: 628px;
+		height: 521px;
+		font-family: Arial;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
-		--web-view-name: Style Transfer;
-		--web-view-id: Style_Transfer;
-		--web-refresh-for-changes: true;
+		--web-view-name: Accordion;
+		--web-view-id: Accordion;
 		--web-enable-deep-linking: true;
+		--web-page-font: Arial;
 	}
-	#View_page_source_to_see_how_st {
-		left: 20px;
-		top: 474px;
-		position: absolute;
-		overflow: visible;
-		width: 212px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica Neue;
-		font-style: italic;
-		font-weight: normal;
-		font-size: 10px;
-		color: rgba(112,112,112,1);
-	}
-	#MyRectangle {
-		fill: rgba(0,255,49,1);
-	}
-	.MyRectangle {
-		position: absolute;
-		overflow: visible;
-		width: 56px;
-		height: 56px;
-		left: 20px;
-		top: 91px;
-	}
-	#MyRectangle:hover {
-		fill:rgba(0,219,42,1);
-		stroke:rgba(112,112,112,1);
-		stroke-width:1px;
-		stroke-linejoin:miter;
-		stroke-linecap:butt;
-		stroke-dasharray:2;
-		stroke-dashoffset:0;
-		stroke-miterlimit:4;
-		shape-rendering:auto;
-	}
-	#The_Rectangle_below_has_the_sa {
-		left: 20px;
-		top: 71px;
-		position: absolute;
-		overflow: visible;
-		width: 347px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica Neue;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 10px;
-		color: rgba(112,112,112,1);
-	}
-	#Line_83 {
+	#Line_2 {
 		fill: transparent;
 		stroke: rgba(177,177,177,1);
 		stroke-width: 1px;
@@ -91,167 +42,151 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_83 {
+	.Line_2 {
 		overflow: visible;
 		position: absolute;
-		width: 560px;
-		height: 1px;
+		width: 588.001px;
+		height: 1.76px;
 		left: 20px;
-		top: 53.74px;
+		top: 51.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#The_elements_have_a_hover_id_s {
-		left: 322px;
-		top: 34px;
+	#Accordion_k {
+		left: 20px;
+		top: 20px;
 		position: absolute;
 		overflow: visible;
-		width: 258px;
-		white-space: nowrap;
-		text-align: right;
-		font-family: Helvetica Neue;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 10.5px;
-		color: rgba(112,112,112,1);
-	}
-	#Style_Transfer_o {
-		left: 50px;
-		top: 22px;
-		position: absolute;
-		overflow: visible;
-		width: 133px;
+		width: 99px;
 		white-space: nowrap;
 		line-height: 56px;
 		margin-top: -18px;
 		text-align: left;
-		font-family: Arial;
+		font-family: Arial, Arial;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 20px;
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#All_styles_that_are_different_ {
-		left: 20px;
-		top: 164px;
+	#Accordion_l {
+		left: 40px;
+		top: 100px;
 		position: absolute;
 		overflow: visible;
-		width: 422px;
+		width: 51px;
 		white-space: nowrap;
 		text-align: left;
-		font-family: Helvetica Neue;
+		font-family: Helvetica Neue, Arial;
 		font-style: normal;
 		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Accordion_allow_multiple {
+		left: 326px;
+		top: 100px;
+		position: absolute;
+		overflow: visible;
+		width: 127px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsopensourceadobecomspectru {
+		left: 28px;
+		top: 472px;
+		position: absolute;
+		overflow: visible;
+		width: 298px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#The_page_shows_examples_using_ {
+		left: 370px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 239px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#See_the_Spectrum_Web_Component {
+		left: 28px;
+		top: 440px;
+		position: absolute;
+		overflow: visible;
+		width: 312px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#SPECTRUM_FONTS {
+		left: 38px;
+		top: 71px;
+		position: absolute;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: bold;
 		font-size: 10px;
 		color: rgba(112,112,112,1);
 	}
-	#The_elements_can_be_on_the_sam {
-		left: 19px;
-		top: 205px;
+	#Group_17 {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		width: 260px;
+		height: 40px;
+		left: 38px;
+		top: 130.5px;
+		overflow: visible;
+	}
+	#Group_19 {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		width: 260px;
+		height: 40px;
+		left: 326px;
+		top: 130.5px;
+		overflow: visible;
+	}
+	#SPECTRUM_SETUP {
+		left: 156px;
+		top: 69px;
 		position: absolute;
 		overflow: visible;
-		width: 282px;
+		width: 94px;
 		white-space: nowrap;
 		text-align: left;
-		font-family: Helvetica Neue;
+		font-family: Helvetica Neue, Arial;
 		font-style: normal;
-		font-weight: normal;
+		font-weight: bold;
 		font-size: 10px;
 		color: rgba(112,112,112,1);
-	}
-	#You_may_want_to_add_a_transiti {
-		left: 19px;
-		top: 326px;
-		position: absolute;
-		overflow: visible;
-		width: 406px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica Neue;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 10px;
-		color: rgba(112,112,112,1);
-	}
-	#You_may_want_to_exclude_the_el {
-		left: 19px;
-		top: 362px;
-		position: absolute;
-		overflow: visible;
-		width: 413px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica Neue;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 10px;
-		color: rgba(112,112,112,1);
-	}
-	#httpsdevelopermozillaorgen-USd {
-		left: 20px;
-		top: 662px;
-		position: absolute;
-		overflow: visible;
-		width: 258px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica Neue;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 10px;
-		color: rgba(112,112,112,1);
-	}
-	#httpsdevelopermozillaorgen-USd_u {
-		left: 20px;
-		top: 689px;
-		position: absolute;
-		overflow: visible;
-		width: 263px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Helvetica Neue;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 10px;
-		color: rgba(112,112,112,1);
-	}
-	#icon2 {
-		position: absolute;
-		width: 24.256px;
-		height: 24.256px;
-		left: 20px;
-		top: 20px;
-		overflow: visible;
-	}
-	#Ellipse_2 {
-		fill: rgba(247,247,247,1);
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Ellipse_2 {
-		position: absolute;
-		overflow: visible;
-		width: 56px;
-		height: 56px;
-		left: 19px;
-		top: 241px;
-	}
-
-
-	#Ellipse_2:hover {
-		fill:rgba(63,181,72,1);
-		stroke:rgba(57,57,57,1);
-		stroke-width:2px;
-	}
-
-	.Ellipse_2:hover {
-		filter:drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
-		width:72px;
-		height:72px;
 	}
 </style>
 <script id="applicationScript">
@@ -3092,56 +3027,89 @@ var Application = function() {
 
 window.application = new Application();
 </script>
+<script src="https://jspm.dev/@spectrum-web-components/bundle/elements.js" type="module"></script>
 </head>
 <body>
-<div id="Style_Transfer">
-	<div id="View_page_source_to_see_how_st">
-		<span>View page source to see how styles are applied</span>
-	</div>
-	<svg class="MyRectangle">
-		<rect id="MyRectangle" rx="0" ry="0" x="0" y="0" width="56" height="56">
-		</rect>
-	</svg>
-	<div id="The_Rectangle_below_has_the_sa">
-		<span>The Rectangle below has the same styles transferred as the second rectangle</span>
-	</div>
-	<svg class="Line_83" viewBox="0 0 560 1">
-		<path id="Line_83" d="M 0 0 L 560 0">
+<sp-theme id="Accordion" scale="medium" color="light">
+	<svg class="Line_2" viewBox="0 0 588 0.76">
+		<path id="Line_2" d="M 0 0 L 588 0.760009765625">
 		</path>
 	</svg>
-	<div id="The_elements_have_a_hover_id_s">
-		<span>The elements have a hover id selector in the stylesheet</span>
+	<div id="Accordion_k">
+		<span>Accordion</span>
 	</div>
-	<div id="Style_Transfer_o">
-		<span>Style Transfer</span>
+	<div id="Accordion_l">
+		<span>Accordion</span>
 	</div>
-	<div id="All_styles_that_are_different_">
-		<span>All styles that are different are transferred including size and position unless you exclude those</span>
+	<div id="Accordion_allow_multiple">
+		<span>Accordion (allow multiple)</span>
 	</div>
-	<div id="The_elements_can_be_on_the_sam">
-		<span>The elements can be on the same artboard or another artboard</span>
-	</div>
-	<div id="You_may_want_to_add_a_transiti">
-		<span>You may want to add a transition effect “transition: all .3s ease-out” to the element or page</span>
-	</div>
-	<div id="You_may_want_to_exclude_the_el">
-		<span>You may want to exclude the element you transfer the style from. Uncheck the export option</span>
-	</div>
-	<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">
-	<div id="httpsdevelopermozillaorgen-USd">
-		<span>https://developer.mozilla.org/en-US/docs/Glossary/HTML</span>
+	<a href="https://opensource.adobe.com/spectrum-web-components/">
+	<div id="httpsopensourceadobecomspectru">
+		<span>https://opensource.adobe.com/spectrum-web-components/</span>
 	</div>
 	</a>
-	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">
-	<div id="httpsdevelopermozillaorgen-USd_u">
-		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/:hover</span>
+	<div id="The_page_shows_examples_using_">
+		<span>The page shows examples using Spectrum Tags</span>
 	</div>
-	</a>
-	<img id="icon2" src="images/icon2.png" srcset="images/icon2.png 1x, images/icon2@2x.png 2x">
-	<svg class="Ellipse_2">
-		<ellipse id="Ellipse_2" rx="28" ry="28" cx="28" cy="28">
-		</ellipse>
-	</svg>
-</div>
+	<div id="See_the_Spectrum_Web_Component">
+		<span>See the Spectrum Web Components examples for more examples</span>
+	</div>
+	<div id="SPECTRUM_FONTS">
+		<style type="text/css">
+@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/aa41d0/00000000000000003b9b3f86/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/aa41d0/00000000000000003b9b3f86/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/aa41d0/00000000000000003b9b3f86/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/284620/00000000000000003b9b3f89/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/284620/00000000000000003b9b3f89/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/284620/00000000000000003b9b3f89/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/37eaae/00000000000000003b9b3f83/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/37eaae/00000000000000003b9b3f83/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/37eaae/00000000000000003b9b3f83/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/ad2a79/00000000000000003b9b3f8c/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/ad2a79/00000000000000003b9b3f8c/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/ad2a79/00000000000000003b9b3f8c/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/b17c8a/00000000000000003b9b3f8d/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff2"),url(https://use.typekit.net/af/b17c8a/00000000000000003b9b3f8d/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff"),url(https://use.typekit.net/af/b17c8a/00000000000000003b9b3f8d/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("opentype");font-weight:900;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/a0c22f/00000000000000003b9b3f84/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/a0c22f/00000000000000003b9b3f84/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/a0c22f/00000000000000003b9b3f84/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/505d17/00000000000000003b9aee44/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/505d17/00000000000000003b9aee44/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/505d17/00000000000000003b9aee44/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/f42203/00000000000000003b9aee42/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff2"),url(https://use.typekit.net/af/f42203/00000000000000003b9aee42/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("woff"),url(https://use.typekit.net/af/f42203/00000000000000003b9aee42/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i9&v=3) format("opentype");font-weight:900;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/0dddd1/00000000000000003b9aee48/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/0dddd1/00000000000000003b9aee48/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/0dddd1/00000000000000003b9aee48/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/634d69/00000000000000003b9aee46/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/634d69/00000000000000003b9aee46/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/634d69/00000000000000003b9aee46/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/507e89/00000000000000003b9aee49/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/507e89/00000000000000003b9aee49/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/507e89/00000000000000003b9aee49/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;font-display:auto;}@font-face{font-family:adobe-clean-serif;src:url(https://use.typekit.net/af/e09494/00000000000000003b9aee45/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/e09494/00000000000000003b9aee45/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/e09494/00000000000000003b9aee45/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-display:auto;}
+</style>
+	</div>
+	<sp-accordion id="Group_17">
+    <sp-accordion-item label="Heading 1">
+        <div>Item 1</div>
+    </sp-accordion-item>
+    <sp-accordion-item disabled label="Heading 2">
+        <div>Item 2</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 3">
+        <div>Item 3</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 4">
+        <div>Item 4</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 5">
+        <div>Item 5</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 6">
+        <div>Item 6</div>
+    </sp-accordion-item>
+</sp-accordion>
+	<sp-accordion id="Group_19" allow-multiple>
+    <sp-accordion-item label="Heading 1">
+        <div>Item 1</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 2">
+        <div>Item 2</div>
+        <div>Item 2.1</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 3">
+        <div>Item 3</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 4">
+        <div>Item 4</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 5">
+        <div>Item 5</div>
+    </sp-accordion-item>
+    <sp-accordion-item label="Heading 6">
+        <div>Item 6.0</div>
+        <div>Item 6.1</div>
+        <div>Item 6.2</div>
+    </sp-accordion-item>
+</sp-accordion>
+	<div id="SPECTRUM_SETUP">
+		<script>
+window.process = window.process || {};
+window.process.env = window.process.env || {};
+window.process.env.NODE_ENV = window.process.env.NODE_ENV || 'production';
+</script>
+	</div>
+</sp-theme>
 </body>
 </html>

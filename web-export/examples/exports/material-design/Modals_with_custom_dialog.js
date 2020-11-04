@@ -2834,8 +2834,3 @@ var Application = function() {
 }
 
 window.application = new Application();
- window.addEventListener('DOMContentLoaded', function() {
-    var elements = document.querySelectorAll('.modal');
-    var options = {inDuration:250};
-    var instances = M.Modal.init(elements[0], options);
-});
