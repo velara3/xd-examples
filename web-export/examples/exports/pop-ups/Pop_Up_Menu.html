@@ -7,7 +7,7 @@
 <title>Pop Up Menu</title>
 <style id="applicationStylesheet" type="text/css">
 :root {
-	--web-view-ids: Pop_Up_Menu,MainMenu,MainMenu_Right;
+	--web-view-ids: Pop_Up_Menu,MainMenu_Right,MainMenu;
 	--web-view-name: Pop Up Menu;
 	--web-view-id: Pop_Up_Menu;
 	--web-scale-to-fit: false;
@@ -30,8 +30,8 @@
 	--web-page-font: sans-serif;
 }
 #Pop_Up_Menu,
-#MainMenu,
-#MainMenu_Right {
+#MainMenu_Right,
+#MainMenu {
 	display: none;
 }
 @media (min-width: 603px) {
@@ -280,8 +280,8 @@
 }
 @media (min-width: 0px) and (max-width: 602px) {
 	.mediaViewInfo {
-		--web-view-name: MainMenu;
-		--web-view-id: MainMenu;
+		--web-view-name: MainMenu Right;
+		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
@@ -292,7 +292,7 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#MainMenu {
+	#MainMenu_Right {
 		position: absolute;
 		display: block;
 		width: 211px;
@@ -300,11 +300,12 @@
 		background-color: rgba(238,238,238,1);
 		overflow: hidden;
 		cursor: pointer;
-		--web-view-name: MainMenu;
-		--web-view-id: MainMenu;
+		--web-view-name: MainMenu Right;
+		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
+		right: 0px;
 		filter:  drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.502));
 	}
 	#Line_90 {
@@ -446,8 +447,8 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 	#Setting_this_artboard_to_100_h {
-		left: 15px;
-		bottom: 16px;
+		left: 22px;
+		bottom: 22px;
 		position: absolute;
 		overflow: visible;
 		width: 172px;
@@ -462,8 +463,8 @@
 }
 @media (min-width: 0px) and (max-width: 602px) {
 	.mediaViewInfo {
-		--web-view-name: MainMenu Right;
-		--web-view-id: MainMenu_Right;
+		--web-view-name: MainMenu;
+		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
@@ -474,7 +475,7 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#MainMenu_Right {
+	#MainMenu {
 		position: absolute;
 		display: block;
 		width: 211px;
@@ -482,12 +483,11 @@
 		background-color: rgba(238,238,238,1);
 		overflow: hidden;
 		cursor: pointer;
-		--web-view-name: MainMenu Right;
-		--web-view-id: MainMenu_Right;
+		--web-view-name: MainMenu;
+		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
-		right: 0px;
 		filter:  drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.502));
 	}
 	#Line_90_bm {
@@ -629,8 +629,8 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 	#Setting_this_artboard_to_100_h_bv {
-		left: 22px;
-		bottom: 22px;
+		left: 15px;
+		bottom: 16px;
 		position: absolute;
 		overflow: visible;
 		width: 172px;
@@ -697,7 +697,7 @@
 		</path>
 	</hr>
 </div>
-<div id="MainMenu" onclick="application.goBack()">
+<div id="MainMenu_Right" onclick="application.goBack()">
 	<svg class="Line_90" viewBox="0 0 189 1">
 		<path id="Line_90" d="M 0 0 L 189 0">
 		</path>
@@ -732,7 +732,7 @@
 		<span>Setting this artboard to 100% height</span>
 	</div>
 </div>
-<div id="MainMenu_Right" onclick="application.goBack()">
+<div id="MainMenu" onclick="application.goBack()">
 	<svg class="Line_90_bm" viewBox="0 0 189 1">
 		<path id="Line_90_bm" d="M 0 0 L 189 0">
 		</path>

@@ -75,7 +75,7 @@
 }
 #Check_the_source_code_to_see_t {
 	left: 22px;
-	top: 243px;
+	top: 209px;
 	position: absolute;
 	overflow: visible;
 	width: 310px;
@@ -88,8 +88,8 @@
 	color: rgba(112,112,112,1);
 }
 #External_Stylesheet_l {
-	left: 22px;
-	top: 22px;
+	left: 54px;
+	top: 14px;
 	position: absolute;
 	overflow: visible;
 	width: 184px;
@@ -117,4 +117,38 @@
 	font-weight: normal;
 	font-size: 11px;
 	color: rgba(112,112,112,1);
+}
+#Icon {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 20px;
+	top: 13px;
+	overflow: visible;
+}
+#Rectangle_177_p {
+	fill: url(#Rectangle_177_p);
+}
+.Rectangle_177_p {
+	position: absolute;
+	overflow: visible;
+	width: 24px;
+	height: 24px;
+	left: 0px;
+	top: 0px;
+}
+#W {
+	left: 50%;
+	transform: translateX(-50%);
+	top: 7.5px;
+	position: absolute;
+	overflow: visible;
+	width: 10px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Helvetica;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 10px;
+	color: rgba(255,255,255,1);
 }

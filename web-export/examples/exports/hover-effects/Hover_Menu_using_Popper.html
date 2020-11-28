@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Menu using Popper</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Hover Menu using Popper;
+		--web-view-id: Hover_Menu_using_Popper;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: Hover_Menu_using_Popper;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Hover_Menu_using_Popper {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Hover Menu using Popper;
+		--web-view-id: Hover_Menu_using_Popper;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	#Hover_Menu_using_Popper_hn {
+		left: 51px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 248px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85_ho {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85_ho {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 20px;
+		right: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+		border:  .5px solid gray;
+	}
+	#Menu_items_will_show_when_hove_hp {
+		right: 31px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 251px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when_hq {
+		left: 20px;
+		top: 68px;
+		position: absolute;
+		overflow: visible;
+		width: 270px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when_hr {
+		left: 20px;
+		top: 91px;
+		position: absolute;
+		overflow: visible;
+		width: 180px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when_hs {
+		left: 20px;
+		top: 117px;
+		position: absolute;
+		overflow: visible;
+		width: 228px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when_ht {
+		left: 20px;
+		top: 140px;
+		position: absolute;
+		overflow: visible;
+		width: 179px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when_hu {
+		left: 22px;
+		top: 462px;
+		position: absolute;
+		overflow: visible;
+		width: 141px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_Menu_items_will_show_up_when_hv {
+		left: 22px;
+		top: 436px;
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon_hw {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_hy {
+		fill: url(#Rectangle_177_hy);
+	}
+	.Rectangle_177_hy {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W_hz {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#Dropdown_Group_h {
+		position: absolute;
+		width: 91px;
+		height: 12px;
+		left: 20px;
+		top: 198px;
+		overflow: visible;
+		cursor: pointer;
+	}
+	#myButton {
+		right: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 92px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#tooltip {
+		position: absolute;
+		width: 61px;
+		height: 56px;
+		left: 0px;
+		top: 12px;
+		background-color: rgba(255,255,255,1);
+		border:  1px solid rgba(112,112,112,1);
+		display: none;
+		overflow: visible;
+	}
+	#Item_1_h {
+		left: 4px;
+		top: 2px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_2_h {
+		left: 4px;
+		top: 20px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_3_h {
+		left: 4px;
+		top: 39px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Ellipse_3_h {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_3_h {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 6px;
+	}
+	#Polygon_1_h {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Polygon_1_h {
+		overflow: visible;
+		position: absolute;
+		width: 9px;
+		height: 7px;
+		left: 44px;
+		top: 23px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Rectangle_493_h {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_493_h {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 43px;
+	}
+	#Line_91_ia {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_91_ia {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 17.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_92_ib {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_92_ib {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 36px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="Hover_Menu_using_Popper.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+</head>
+<body>
+<div id="Hover_Menu_using_Popper">
+	<div id="Hover_Menu_using_Popper_hn">
+		<span>Hover Menu using Popper</span>
+	</div>
+	<hr class="Line_85_ho" viewBox="0 0 563 1">
+		<path id="Line_85_ho" d="M 0 0 L 563 0">
+		</path>
+	</hr>
+	<div id="Menu_items_will_show_when_hove_hp">
+		<span>Menu items will show when hovering over an element</span>
+	</div>
+	<div id="A_Menu_items_will_show_up_when_hq">
+		<span>Menu items will show up when hovering over the element</span>
+	</div>
+	<div id="A_Menu_items_will_show_up_when_hr">
+		<span>This uses the Popper javascript library</span>
+	</div>
+	<div id="A_Menu_items_will_show_up_when_hs">
+		<span>It links to this library in the HTML page template </span>
+	</div>
+	<div id="A_Menu_items_will_show_up_when_ht">
+		<span>https://unpkg.com/@popperjs/core@2</span>
+	</div>
+	<a href="https://popper.js.org/docs/v2/">
+	<div id="A_Menu_items_will_show_up_when_hu">
+		<span>https://popper.js.org/docs/v2/</span>
+	</div>
+	</a>
+	<a href="https://popper.js.org/">
+	<div id="A_Menu_items_will_show_up_when_hv">
+		<span>https://popper.js.org/</span>
+	</div>
+	</a>
+	<div id="Icon_hw">
+		<svg class="Rectangle_177_hy">
+			<linearGradient id="Rectangle_177_hy" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_hy" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W_hz">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="Dropdown_Group_h">
+		<div id="myButton">
+			<span>Menu using popper</span>
+		</div>
+		<div id="tooltip">
+			<a href="#item1">
+			<div id="Item_1_h">
+				<span>Item 1</span>
+			</div>
+			</a>
+			<a href="#item2">
+			<div id="Item_2_h">
+				<span>Item 2</span>
+			</div>
+			</a>
+			<a href="#item3">
+			<div id="Item_3_h">
+				<span>Item 3</span>
+			</div>
+			</a>
+			<svg class="Ellipse_3_h">
+				<ellipse id="Ellipse_3_h" rx="3.5" ry="3.5" cx="3.5" cy="3.5">
+				</ellipse>
+			</svg>
+			<svg class="Polygon_1_h" viewBox="0 0 9 7">
+				<path id="Polygon_1_h" d="M 4.5 0 L 9 7 L 0 7 Z">
+				</path>
+			</svg>
+			<svg class="Rectangle_493_h">
+				<rect id="Rectangle_493_h" rx="0" ry="0" x="0" y="0" width="7" height="7">
+				</rect>
+			</svg>
+			<svg class="Line_91_ia" viewBox="0 0 60 1">
+				<path id="Line_91_ia" d="M 0 0 L 60 0">
+				</path>
+			</svg>
+			<svg class="Line_92_ib" viewBox="0 0 60 1">
+				<path id="Line_92_ib" d="M 0 0 L 60 0">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<script type="text/javascript">
+			const button = Dropdown_Group_h;
+	const tooltip = document.querySelector('#tooltip');
+
+	function show() {
+	  tooltip.style.display = "block";
+	  Popper.createPopper(button, tooltip, {placement: "right"});
+	}
+
+	function hide() {
+	  tooltip.style.display = "none";
+	}
+
+	const showEvents = ['mouseenter', 'focus'];
+	const hideEvents = ['mouseleave', 'blur'];
+
+	showEvents.forEach(event => {
+	  button.addEventListener(event, show);
+	});
+
+	hideEvents.forEach(event => {
+	  button.addEventListener(event, hide);
+	});
+			</script>
+</div>
+</body>
+</html>

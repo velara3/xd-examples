@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show on Hover </title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Show on Hover ;
+		--web-view-id: Show_on_Hover_;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: Show_on_Hover_;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Show_on_Hover_ {
+		position: absolute;
+		width: 603px;
+		height: 638px;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Show on Hover ;
+		--web-view-id: Show_on_Hover_;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	#Show_on_Hover {
+		left: 51px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 146px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 22.231px;
+		right: 21.5px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Menu_items_will_show_when_hove {
+		right: 31px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 251px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Menu_items_will_show_up_when_h {
+		left: 20px;
+		top: 68px;
+		position: absolute;
+		overflow: visible;
+		width: 270px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Typical_CSS_in_the_CSS_Templat {
+		left: 23px;
+		top: 280px;
+		position: absolute;
+		overflow: visible;
+		width: 245px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Minimum_CSS_in_the_CSS_Templat {
+		left: 178px;
+		top: 137px;
+		position: absolute;
+		overflow: visible;
+		width: 256px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_u {
+		fill: url(#Rectangle_177_u);
+	}
+	.Rectangle_177_u {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#Dropdown_Group {
+		position: absolute;
+		width: 32px;
+		height: 15px;
+		left: 22.5px;
+		top: 137px;
+		overflow: visible;
+	}
+	#Dropdown_Group:hover * {
+	    display: block;
+	    z-index: 1;
+	}
+
+	#Dropdown_Group a {
+	    padding: 9px 16px;
+	}
+
+	#Dropdown_Group a:hover {
+	    background-color: #ddd; 
+	}
+	#Group_61 {
+		mix-blend-mode: normal;
+		position: absolute;
+		width: 32px;
+		height: 15px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Menu {
+		right: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Dropdown_Content {
+		position: absolute;
+		width: 61px;
+		height: 56px;
+		left: 0px;
+		top: 13px;
+		background-color: rgba(255,255,255,1);
+		border:  1px solid rgba(112,112,112,1);
+		display: none;
+		overflow: visible;
+	}
+	#Item_1 {
+		left: 4px;
+		top: 2px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_2 {
+		left: 4px;
+		top: 20px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Item_3 {
+		left: 4px;
+		top: 39px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Ellipse_3 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_3 {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 6px;
+	}
+	#Polygon_1 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Polygon_1 {
+		overflow: visible;
+		position: absolute;
+		width: 9px;
+		height: 7px;
+		left: 44px;
+		top: 23px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Rectangle_493 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_493 {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 43px;
+	}
+	#Line_91 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_91 {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 17.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_92 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_92 {
+		overflow: visible;
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		left: 0px;
+		top: 36px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Image_6 {
+		position: absolute;
+		width: 358px;
+		height: 90px;
+		left: 178px;
+		top: 160px;
+		overflow: visible;
+	}
+	#Image_7 {
+		position: absolute;
+		width: 405px;
+		height: 213px;
+		left: 23px;
+		top: 303px;
+		overflow: visible;
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="Show_on_Hover_.js"></script>
+</head>
+<body>
+<div id="Show_on_Hover_">
+	<div id="Show_on_Hover">
+		<span>Show on Hover</span>
+	</div>
+	<svg class="Line_85" viewBox="0 0 559.269 1">
+		<path id="Line_85" d="M 0 0 L 559.2686767578125 0">
+		</path>
+	</svg>
+	<div id="Menu_items_will_show_when_hove">
+		<span>Menu items will show when hovering over an element</span>
+	</div>
+	<div id="Menu_items_will_show_up_when_h">
+		<span>Menu items will show up when hovering over the element</span>
+	</div>
+	<div id="Typical_CSS_in_the_CSS_Templat">
+		<span>Typical CSS in the CSS Template of the menu group</span>
+	</div>
+	<div id="Minimum_CSS_in_the_CSS_Templat">
+		<span>Minimum CSS in the CSS Template of the menu group</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_u">
+			<linearGradient id="Rectangle_177_u" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_u" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="Dropdown_Group">
+		<div id="Group_61">
+			<div id="Menu">
+				<span>Menu</span>
+			</div>
+			<div id="Dropdown_Content">
+				<a href="#item1">
+				<div id="Item_1">
+					<span>Item 1</span>
+				</div>
+				</a>
+				<a href="#item2">
+				<div id="Item_2">
+					<span>Item 2</span>
+				</div>
+				</a>
+				<a href="#item3">
+				<div id="Item_3">
+					<span>Item 3</span>
+				</div>
+				</a>
+				<svg class="Ellipse_3">
+					<ellipse id="Ellipse_3" rx="3.5" ry="3.5" cx="3.5" cy="3.5">
+					</ellipse>
+				</svg>
+				<svg class="Polygon_1" viewBox="0 0 9 7">
+					<path id="Polygon_1" d="M 4.5 0 L 9 7 L 0 7 Z">
+					</path>
+				</svg>
+				<svg class="Rectangle_493">
+					<rect id="Rectangle_493" rx="0" ry="0" x="0" y="0" width="7" height="7">
+					</rect>
+				</svg>
+				<svg class="Line_91" viewBox="0 0 60 1">
+					<path id="Line_91" d="M 0 0 L 60 0">
+					</path>
+				</svg>
+				<svg class="Line_92" viewBox="0 0 60 1">
+					<path id="Line_92" d="M 0 0 L 60 0">
+					</path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<img id="Image_6" src="images/Image_6.png" srcset="images/Image_6.png 1x, images/Image_6@2x.png 2x">
+		
+	<img id="Image_7" src="images/Image_7.png" srcset="images/Image_7.png 1x, images/Image_7@2x.png 2x">
+		
+</div>
+</body>
+</html>

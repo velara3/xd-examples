@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Order</title>
+<style id="applicationStylesheet" type="text/css">
+:root {
+	--web-view-ids: Side_Nav,Recipe_Side_Nav,Coffee_Order;
+	--web-view-name: Coffee Order;
+	--web-view-id: Coffee_Order;
+	--web-scale-to-fit: false;
+	--web-scale-to-fit-type: default;
+	--web-enable-scale-up: false;
+	--web-scale-on-resize: true;
+	--web-show-scale-controls: false;
+	--web-scale-on-double-click: false;
+	--web-center-horizontally: false;
+	--web-center-vertically: false;
+	--web-actual-size-on-double-click: false;
+	--web-navigate-on-keypress: false;
+	--web-refresh-for-changes: false;
+	--web-add-image-compare: false;
+	--web-show-by-media-query: false;
+	--web-application: true;
+	--web-show-navigation-controls: false;
+	--web-enable-deep-linking: true;
+	--web-is-overlay: false;
+	--web-page-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+#Side_Nav,
+#Recipe_Side_Nav,
+#Coffee_Order {
+	display: none;
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Side Nav;
+		--web-view-id: Side_Nav;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Coffee_Bean {
+		left: 6px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 117px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Home {
+		left: 9px;
+		top: 41px;
+		position: absolute;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#About {
+		left: 9px;
+		top: 72px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Divider {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Divider {
+		overflow: visible;
+		position: absolute;
+		width: 101px;
+		height: 1px;
+		left: 9.418px;
+		top: 104.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Contact {
+		left: 9px;
+		top: 115px;
+		position: absolute;
+		overflow: visible;
+		width: 70px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Recipe Side Nav;
+		--web-view-id: Recipe_Side_Nav;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Recipe_Container {
+		position: absolute;
+		width: 505px;
+		height: 170px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#New_Recipe {
+		left: 6px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 113px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Divider_ba {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Divider_ba {
+		overflow: visible;
+		position: absolute;
+		width: 101px;
+		height: 1px;
+		left: 9.5px;
+		top: 38.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Name_Input {
+		left: 9px;
+		top: 51px;
+		position: absolute;
+		overflow: visible;
+		width: 104px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Ingredients {
+		left: 9px;
+		top: 80px;
+		position: absolute;
+		overflow: visible;
+		width: 99px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+	#Add_Group {
+		position: absolute;
+		width: 35px;
+		height: 22px;
+		left: 9px;
+		top: 125px;
+		overflow: visible;
+	}
+	#Add_be {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 36px;
+		white-space: nowrap;
+		line-height: 50px;
+		margin-top: -15px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(0,0,0,1);
+		letter-spacing: -0.03px;
+	}
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Coffee Order;
+		--web-view-id: Coffee_Order;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Coffee_Order {
+		position: absolute;
+		display: block;
+		width: 100%;
+		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+		background-color: rgba(245,245,245,1);
+		overflow: visible;
+		--web-view-name: Coffee Order;
+		--web-view-id: Coffee_Order;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	}
+	#Menu_Header {
+		position: relative;
+		width: 100%;
+		height: 40px;
+		margin-left: 0px;
+		margin-top: 59px;
+		overflow: visible;
+	}
+	#Menu_Items {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 89px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		color: rgba(0,0,0,0.584);
+		letter-spacing: -0.03px;
+	}
+	#Recipe_Container_bk {
+		position: relative;
+		overflow: hidden;
+	}
+	#recipes {
+		position: relative;
+		width: 80%;
+		height: auto;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0px;
+		overflow: visible;
+		max-width: 900px;
+	}
+	#Footer_Group {
+		position: relative;
+		width: 100%;
+		height: 40px;
+		overflow: visible;
+	}
+	#footer {
+		position: absolute;
+		width: 80%;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0px;
+		overflow: visible;
+		max-width: 900px;
+	}
+	#Group_8 {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		overflow: visible;
+		cursor: pointer;
+	}
+	#Ellipse_1 {
+		fill: rgba(255,136,22,1);
+	}
+	.Ellipse_1 {
+		filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.404));
+		position: absolute;
+		overflow: visible;
+		width: 39px;
+		height: 39px;
+		left: 0px;
+		top: 0px;
+	}
+	#Group_7 {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		overflow: visible;
+	}
+	#Line_95 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_95 {
+		overflow: visible;
+		position: absolute;
+		width: 2px;
+		height: 12px;
+		left: 6px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_96 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_96 {
+		overflow: visible;
+		position: absolute;
+		width: 12px;
+		height: 2px;
+		left: 0px;
+		top: 6px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#header_container {
+		position: absolute;
+		width: 100%;
+		height: 59px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Top_Background {
+		fill: rgba(238,110,114,1);
+	}
+	.Top_Background {
+		position: absolute;
+		overflow: visible;
+		width: 100%;
+		height: 48.4px;
+		left: 0px;
+		top: 0px;
+	}
+	#Bottom_Background {
+		fill: rgba(253,225,196,1);
+	}
+	.Bottom_Background {
+		position: absolute;
+		overflow: visible;
+		width: 100%;
+		height: 11px;
+		left: 0px;
+		top: 48px;
+	}
+	#Header {
+		position: absolute;
+		width: 80%;
+		height: 17px;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 20.5px;
+		overflow: visible;
+		max-width: 900px;
+	}
+	#COFFEE_BEAN {
+		left: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+		overflow: visible;
+		width: 115px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		color: rgba(255,255,255,1);
+		letter-spacing: -0.03px;
+	}
+	#Group_4 {
+		position: absolute;
+		width: 19px;
+		height: 10px;
+		right: 0px;
+		top: 3.5px;
+		overflow: visible;
+		cursor: pointer;
+	}
+	#Line_92 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_92 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_93 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_93 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_94 {
+		fill: transparent;
+		stroke: rgba(255,255,255,1);
+		stroke-width: 2px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_94 {
+		overflow: visible;
+		position: absolute;
+		width: 19px;
+		height: 2px;
+		left: 0px;
+		top: 10px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+}
+
+</style>
+
+
+  <!-- materialize icons, css & js -->
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+<link rel="manifest" href="/manifest.json">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+  <meta name="theme-color" content="#FFE1C4">
+
+</head>
+<body class="grey lighten-4">
+<div id="Side_Nav" class="grey lighten-4">
+	<!-- top nav -->
+	<ul id="side-menu" class="sidenav side-menu">
+		<li>
+			<a class="subheader">Coffee Bean</a>
+		</li>
+		<li>
+			<a class="waves-effect" href="/">Home</a>
+		</li>
+		<li>
+			<a class="waves-effect" href="/pages/about.html">About</a>
+		</li>
+		<li>
+			<div class="divider">
+			</div>
+		</li>
+		<li>
+			    <a href="/pages/contact.html" class="waves-effect">
+      <i class="material-icons">mail_outline</i>Contact
+    </a>
+    
+		</li>
+	</ul>
+</div>
+<div id="Recipe_Side_Nav" class="grey lighten-4">
+	<!-- top nav -->
+	<div id="side-form" class="sidenav side-form">
+		<form class="add-recipe container section">
+			<h6>
+				New Recipe
+			</h6>
+			
+				<div class="divider">
+				</div>
+			
+			<div class="input-field">
+				    <input placeholder="Coffee Type" id="title" type="text" class="validate">
+    <label for="title">Coffee Title</label>
+			</div>
+			<div class="input-field">
+				    <input placeholder="Ingredients" id="ingredients" type="text" class="validate">
+    <label for="ingredients">Ingredients</label>
+			</div>
+			<div class="input-field center">
+				<button class="btn-small">
+					Add
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div id="Coffee_Order">
+	<div id="Menu_Header">
+		<div id="Menu_Items">
+			<span>Menu Items</span>
+		</div>
+	</div>
+	<div id="Recipe_Container_bk">
+		<div id="recipes" class="recipes">
+		</div>
+	</div>
+	<div id="Footer_Group">
+		<div id="footer">
+		</div>
+		<div id="Group_8" class="sidenav-trigger" data-target="side-form">
+			<svg class="Ellipse_1">
+				<ellipse id="Ellipse_1" rx="15" ry="15" cx="15" cy="15">
+				</ellipse>
+			</svg>
+			<div id="Group_7">
+				<svg class="Line_95" viewBox="0 0 2 12">
+					<path id="Line_95" d="M 0 0 L 0 12">
+					</path>
+				</svg>
+				<svg class="Line_96" viewBox="0 0 12 2">
+					<path id="Line_96" d="M 0 0 L 12 0">
+					</path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<nav id="Nav" class="Nav z-depth-0">
+		<div id="header_container" class="z-depth-0">
+			<svg class="Top_Background">
+				<rect id="Top_Background" rx="0" ry="0" x="0" y="0" width="100%" height="48.4">
+				</rect>
+			</svg>
+			<svg class="Bottom_Background">
+				<rect id="Bottom_Background" rx="0" ry="0" x="0" y="0" width="100%" height="11">
+				</rect>
+			</svg>
+			<div id="Header">
+				<a href="/">
+				<div id="COFFEE_BEAN">
+					<span>COFFEE BEAN</span>
+				</div>
+				</a>
+				<div id="Group_4" class="sidenav-trigger" data-target="side-menu">
+					<svg class="Line_92" viewBox="0 0 19 2">
+						<path id="Line_92" d="M 0 0 L 19 0">
+						</path>
+					</svg>
+					<svg class="Line_93" viewBox="0 0 19 2">
+						<path id="Line_93" d="M 0 0 L 19 0">
+						</path>
+					</svg>
+					<svg class="Line_94" viewBox="0 0 19 2">
+						<path id="Line_94" d="M 0 0 L 19 0">
+						</path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUrGte99fzVzPLkYyCMwKLUj44xi9WBAo",
+    authDomain: "webexport-a4558.firebaseapp.com",
+    databaseURL: "https://webexport-a4558.firebaseio.com",
+    projectId: "webexport-a4558",
+    storageBucket: "webexport-a4558.appspot.com",
+    messagingSenderId: "7257624656",
+    appId: "1:7257624656:web:de40cc10b8f3cf15e8c155"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/db.js"></script>
+  <script type="text/javascript" src="/js/ui.js"></script>
+</body>
+<style>
+#Side_Nav,#Recipe_Side_Nav,#Coffee_Order {
+     display: block;
+}
+</style>
+</html>
