@@ -9,8 +9,6 @@
 	.mediaViewInfo {
 		--web-view-name: Linear Gradients as Background;
 		--web-view-id: Linear_Gradients_as_Background;
-		--web-scale-to-fit: true;
-		--web-scale-to-fit-type: width;
 		--web-enable-scale-up: true;
 		--web-scale-on-resize: true;
 		--web-refresh-for-changes: true;
@@ -35,8 +33,6 @@
 		overflow: hidden;
 		--web-view-name: Linear Gradients as Background;
 		--web-view-id: Linear_Gradients_as_Background;
-		--web-scale-to-fit: true;
-		--web-scale-to-fit-type: width;
 		--web-enable-scale-up: true;
 		--web-scale-on-resize: true;
 		--web-refresh-for-changes: true;
@@ -113,11 +109,10 @@
 	}
 	#W_ {
 		left: 50%;
-		transform: translateX(-50%);
-		top: 7.5px;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
 		position: absolute;
 		overflow: visible;
-		width: 10px;
 		white-space: nowrap;
 		text-align: right;
 		font-family: Helvetica, sans-serif;

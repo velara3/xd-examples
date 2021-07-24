@@ -23,7 +23,7 @@
 	}
 	#Spectrum_Form_Elements {
 		position: absolute;
-		width: 628px;
+		width: 100%;
 		height: 1153px;
 		font-family: Arial;
 		background-color: rgba(255,255,255,1);
@@ -56,11 +56,12 @@
 	.Line_2 {
 		overflow: visible;
 		position: absolute;
-		width: 588.001px;
 		height: 1.76px;
 		left: 20px;
+		right: 20px;
 		top: 51.74px;
 		transform: matrix(1,0,0,1,0,0);
+		border:  1px solid rgba(177,177,177,1);
 	}
 	#Line_89 {
 		fill: transparent;
@@ -99,7 +100,7 @@
 	}
 	#CTA {
 		left: 39px;
-		top: 131px;
+		top: 161px;
 		position: absolute;
 		overflow: visible;
 		width: 21px;
@@ -111,12 +112,12 @@
 		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
-	#Button {
+	#Buttons {
 		left: 39px;
-		top: 100px;
+		top: 135px;
 		position: absolute;
 		overflow: visible;
-		width: 34px;
+		width: 40px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, Arial;
@@ -127,7 +128,7 @@
 	}
 	#CTA_disabled {
 		left: 39px;
-		top: 206px;
+		top: 236px;
 		position: absolute;
 		overflow: visible;
 		width: 66px;
@@ -141,7 +142,7 @@
 	}
 	#Quiet {
 		left: 151px;
-		top: 206px;
+		top: 236px;
 		position: absolute;
 		overflow: visible;
 		width: 27px;
@@ -155,7 +156,7 @@
 	}
 	#Quiet_t {
 		left: 299px;
-		top: 516px;
+		top: 546px;
 		position: absolute;
 		overflow: visible;
 		width: 27px;
@@ -169,7 +170,7 @@
 	}
 	#Action_Button {
 		left: 40px;
-		top: 288px;
+		top: 318px;
 		position: absolute;
 		overflow: visible;
 		width: 68px;
@@ -183,7 +184,7 @@
 	}
 	#Action_Button_with_icon {
 		left: 40px;
-		top: 360px;
+		top: 390px;
 		position: absolute;
 		overflow: visible;
 		width: 116px;
@@ -197,7 +198,7 @@
 	}
 	#Action_Button_Toggle {
 		left: 40px;
-		top: 433px;
+		top: 463px;
 		position: absolute;
 		overflow: visible;
 		width: 104px;
@@ -211,7 +212,7 @@
 	}
 	#Textfield {
 		left: 39px;
-		top: 516px;
+		top: 546px;
 		position: absolute;
 		overflow: visible;
 		width: 42px;
@@ -267,7 +268,7 @@
 	}
 	#Primary {
 		left: 158px;
-		top: 131px;
+		top: 161px;
 		position: absolute;
 		overflow: visible;
 		width: 39px;
@@ -281,7 +282,7 @@
 	}
 	#Secondary {
 		left: 261px;
-		top: 131px;
+		top: 161px;
 		position: absolute;
 		overflow: visible;
 		width: 54px;
@@ -295,7 +296,7 @@
 	}
 	#Negative {
 		left: 367px;
-		top: 131px;
+		top: 161px;
 		position: absolute;
 		overflow: visible;
 		width: 44px;
@@ -335,6 +336,20 @@
 		font-size: 11px;
 		color: rgba(112,112,112,1);
 	}
+	#The_form_items_below_require_i {
+		left: 26px;
+		top: 75px;
+		position: absolute;
+		overflow: visible;
+		width: 552px;
+		height: 24px;
+		text-align: left;
+		font-family: Helvetica Neue, Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
 	#See_the_Spectrum_Web_Component {
 		left: 28px;
 		top: 1080px;
@@ -352,8 +367,9 @@
 	#Button-CTA {
 		position: absolute;
 		left: 39px;
-		top: 146px;
+		top: 176px;
 		overflow: visible;
+		padding: 7px 16px 8px 16px;
 	}
 	#BUTTON {
 		overflow: visible;
@@ -370,6 +386,7 @@
 		left: 278px;
 		top: 863px;
 		overflow: visible;
+		padding: 7px 16px 8px 16px;
 	}
 	#Click_Me {
 		overflow: visible;
@@ -386,8 +403,9 @@
 		left: 278px;
 		top: 863px;
 		overflow: visible;
+		padding: 7px 16px 8px 16px;
 	}
-	#Click_Me_bf {
+	#Click_Me_bg {
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
@@ -423,10 +441,11 @@
 		width: 79px;
 		height: 32px;
 		left: 144px;
-		top: 146px;
+		top: 176px;
 		overflow: visible;
+		padding: 7px 16px 8px 16px;
 	}
-	#Primary_bl {
+	#Primary_bm {
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
@@ -441,10 +460,10 @@
 		width: 79px;
 		height: 32px;
 		left: 145px;
-		top: 227px;
+		top: 257px;
 		overflow: visible;
 	}
-	#Primary_bo {
+	#Primary_bp {
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
@@ -459,10 +478,11 @@
 		width: 94px;
 		height: 32px;
 		left: 244px;
-		top: 146px;
+		top: 176px;
 		overflow: visible;
+		padding: 7px 16px 8px 16px;
 	}
-	#Secondary_br {
+	#Secondary_bs {
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
@@ -477,10 +497,10 @@
 		width: 94px;
 		height: 32px;
 		left: 245px;
-		top: 227px;
+		top: 257px;
 		overflow: visible;
 	}
-	#Secondary_bu {
+	#Secondary_bv {
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
@@ -495,10 +515,11 @@
 		width: 84px;
 		height: 32px;
 		left: 359px;
-		top: 146px;
+		top: 176px;
 		overflow: visible;
+		padding: 7px 16px 8px 16px;
 	}
-	#Negative_bx {
+	#Negative_by {
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
@@ -513,7 +534,7 @@
 		width: 84px;
 		height: 32px;
 		left: 360px;
-		top: 227px;
+		top: 257px;
 		overflow: visible;
 	}
 	#Negative_b {
@@ -527,8 +548,8 @@
 		color: rgba(201,37,46,1);
 	}
 	#SPECTRUM_FONTS {
-		left: 38px;
-		top: 69px;
+		left: 515px;
+		top: 140px;
 		position: absolute;
 		overflow: visible;
 		width: 95px;
@@ -545,8 +566,9 @@
 		width: 84px;
 		height: 32px;
 		left: 40px;
-		top: 228px;
+		top: 258px;
 		overflow: visible;
+		padding: 7px 16px 8px 16px;
 	}
 	#BUTTON_b {
 		overflow: visible;
@@ -563,8 +585,9 @@
 		width: 33.751px;
 		height: 31.773px;
 		left: 40px;
-		top: 309.055px;
+		top: 339.055px;
 		overflow: visible;
+		padding: 8px 9px 8px 9px;
 	}
 	#Union_1 {
 		fill: rgba(185,185,185,1);
@@ -583,10 +606,11 @@
 		width: 33.751px;
 		height: 31.773px;
 		left: 92px;
-		top: 309px;
+		top: 339px;
 		overflow: visible;
+		padding: 8px 9px 8px 9px;
 	}
-	#Union_1_ca {
+	#Union_1_cb {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -600,8 +624,9 @@
 	#Group_3 {
 		position: absolute;
 		left: 40px;
-		top: 380.5px;
+		top: 410.5px;
 		overflow: visible;
+		padding: 8px 13px 8px 9px;
 	}
 	#Group_4 {
 		position: absolute;
@@ -611,7 +636,7 @@
 		top: 8px;
 		overflow: visible;
 	}
-	#Union_1_ce {
+	#Union_1_cf {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -640,7 +665,7 @@
 		width: 152px;
 		height: 33px;
 		left: 40px;
-		top: 454.5px;
+		top: 484.5px;
 		overflow: visible;
 	}
 	#This_is_a_toggle_button {
@@ -661,7 +686,7 @@
 		width: 195px;
 		height: 33px;
 		left: 39px;
-		top: 535.5px;
+		top: 565.5px;
 		overflow: visible;
 	}
 	#This_is_a_textfield_with_defau {
@@ -682,7 +707,7 @@
 		width: 192px;
 		height: 33px;
 		left: 299.5px;
-		top: 535.5px;
+		top: 565.5px;
 		overflow: visible;
 	}
 	#This_is_a_textfield_default_ {
@@ -700,6 +725,7 @@
 		left: 40px;
 		top: 854.5px;
 		overflow: visible;
+		padding: 8px 21px 9px 14px;
 	}
 	#This_is_a_toast_message {
 		overflow: visible;
@@ -711,11 +737,12 @@
 		font-size: 14px;
 		color: rgba(255,255,255,1);
 	}
-	#toast1_cw {
+	#toast1_cx {
 		position: absolute;
 		left: 40px;
 		top: 854.5px;
 		overflow: visible;
+		padding: 8px 21px 9px 14px;
 	}
 	#This_is_a_toast_message_c {
 		overflow: visible;
@@ -736,8 +763,8 @@
 		overflow: visible;
 	}
 	#SPECTRUM_SETUP {
-		left: 145px;
-		top: 69px;
+		left: 516px;
+		top: 157px;
 		position: absolute;
 		overflow: visible;
 		width: 94px;
@@ -3623,10 +3650,10 @@ window.application = new Application();
         </sp-menu-item>
     </sp-menu>
 </sp-action-menu>
-	<svg class="Line_2" viewBox="0 0 588 0.76">
+	<hr class="Line_2" viewBox="0 0 588 0.76">
 		<path id="Line_2" d="M 0 0 L 588 0.760009765625">
 		</path>
-	</svg>
+	</hr>
 	<svg class="Line_89" viewBox="0 0 558.5 0.76">
 		<path id="Line_89" d="M 0 0 L 558.5 0.760009765625">
 		</path>
@@ -3637,8 +3664,8 @@ window.application = new Application();
 	<div id="CTA">
 		<span>CTA</span>
 	</div>
-	<div id="Button">
-		<span>Button</span>
+	<div id="Buttons">
+		<span>Buttons</span>
 	</div>
 	<div id="CTA_disabled">
 		<span>CTA disabled</span>
@@ -3686,6 +3713,9 @@ window.application = new Application();
 	</a>
 	<div id="The_page_shows_examples_using_">
 		<span>The page shows examples using Spectrum Tags</span>
+	</div>
+	<div id="The_form_items_below_require_i">
+		<span>The form items below require importing an online library from Adobe. If you are not online the page will not load the form items. This integration is in development. Please report any issues on the forums</span>
 	</div>
 	<div id="See_the_Spectrum_Web_Component">
 		<span>See the Spectrum Web Components examples for more examples</span>
@@ -3780,7 +3810,7 @@ window.application = new Application();
 	<sp-toast id="toast1">
 		This is a toast message
 	</sp-toast>
-	<sp-toast id="toast1_cw">
+	<sp-toast id="toast1_cx">
 		This is a toast message
 	</sp-toast>
 	<sp-toast id="toast1_c" variant="positive">Here is a message</sp-toast>

@@ -7,7 +7,7 @@
 <title>Pop Up Menu</title>
 <style id="applicationStylesheet" type="text/css">
 :root {
-	--web-view-ids: Pop_Up_Menu,MainMenu_Right,MainMenu;
+	--web-view-ids: Pop_Up_Menu,MainMenu,MainMenu_Right;
 	--web-view-name: Pop Up Menu;
 	--web-view-id: Pop_Up_Menu;
 	--web-scale-to-fit: false;
@@ -23,15 +23,15 @@
 	--web-refresh-for-changes: true;
 	--web-add-image-compare: false;
 	--web-show-by-media-query: false;
-	--web-application: false;
+	--web-application: true;
 	--web-show-navigation-controls: false;
 	--web-enable-deep-linking: true;
 	--web-is-overlay: false;
 	--web-page-font: sans-serif;
 }
 #Pop_Up_Menu,
-#MainMenu_Right,
-#MainMenu {
+#MainMenu,
+#MainMenu_Right {
 	display: none;
 }
 @media (min-width: 603px) {
@@ -39,6 +39,7 @@
 		--web-view-name: Pop Up Menu;
 		--web-view-id: Pop_Up_Menu;
 		--web-refresh-for-changes: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
@@ -59,8 +60,10 @@
 		--web-view-name: Pop Up Menu;
 		--web-view-id: Pop_Up_Menu;
 		--web-refresh-for-changes: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
+		cursor: default;
 	}
 	@keyframes slide-left {
 	
@@ -280,9 +283,10 @@
 }
 @media (min-width: 0px) and (max-width: 602px) {
 	.mediaViewInfo {
-		--web-view-name: MainMenu Right;
-		--web-view-id: MainMenu_Right;
+		--web-view-name: MainMenu;
+		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -292,20 +296,20 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#MainMenu_Right {
+	#MainMenu {
 		position: absolute;
 		display: block;
 		width: 211px;
 		height: 100%;
 		background-color: rgba(238,238,238,1);
 		overflow: hidden;
-		cursor: pointer;
-		--web-view-name: MainMenu Right;
-		--web-view-id: MainMenu_Right;
+		cursor: default;
+		--web-view-name: MainMenu;
+		--web-view-id: MainMenu;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
-		right: 0px;
 		filter:  drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.502));
 	}
 	#Line_90 {
@@ -326,7 +330,7 @@
 		top: 52.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Menu_bb {
+	#Menu_bc {
 		left: 9px;
 		top: 15px;
 		position: absolute;
@@ -364,6 +368,7 @@
 		overflow: visible;
 		width: 60px;
 		white-space: nowrap;
+		cursor: default;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
@@ -447,8 +452,8 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 	#Setting_this_artboard_to_100_h {
-		left: 22px;
-		bottom: 22px;
+		left: 15px;
+		bottom: 16px;
 		position: absolute;
 		overflow: visible;
 		width: 172px;
@@ -463,9 +468,10 @@
 }
 @media (min-width: 0px) and (max-width: 602px) {
 	.mediaViewInfo {
-		--web-view-name: MainMenu;
-		--web-view-id: MainMenu;
+		--web-view-name: MainMenu Right;
+		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
 	}
@@ -475,22 +481,24 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#MainMenu {
+	#MainMenu_Right {
 		position: absolute;
 		display: block;
 		width: 211px;
 		height: 100%;
 		background-color: rgba(238,238,238,1);
 		overflow: hidden;
-		cursor: pointer;
-		--web-view-name: MainMenu;
-		--web-view-id: MainMenu;
+		cursor: default;
+		--web-view-name: MainMenu Right;
+		--web-view-id: MainMenu_Right;
 		--web-scale-on-resize: true;
+		--web-application: true;
 		--web-enable-deep-linking: true;
 		--web-is-overlay: true;
+		right: 0px;
 		filter:  drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.502));
 	}
-	#Line_90_bm {
+	#Line_90_bn {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -499,7 +507,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_90_bm {
+	.Line_90_bn {
 		overflow: visible;
 		position: absolute;
 		width: 189px;
@@ -508,7 +516,7 @@
 		top: 52.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Menu_bn {
+	#Menu_bo {
 		left: 9px;
 		top: 15px;
 		position: absolute;
@@ -525,7 +533,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Item_1_bo {
+	#Item_1_bp {
 		left: 14px;
 		top: 74px;
 		position: absolute;
@@ -539,7 +547,7 @@
 		font-size: 21px;
 		color: rgba(112,112,112,1);
 	}
-	#Item_2_bp {
+	#Item_2_bq {
 		left: 14px;
 		top: 110px;
 		position: absolute;
@@ -553,7 +561,7 @@
 		font-size: 21px;
 		color: rgba(112,112,112,1);
 	}
-	#Item_3_bq {
+	#Item_3_br {
 		left: 14px;
 		top: 145px;
 		position: absolute;
@@ -567,7 +575,7 @@
 		font-size: 21px;
 		color: rgba(112,112,112,1);
 	}
-	#Group_61_br {
+	#Group_61_bs {
 		position: absolute;
 		width: 19px;
 		height: 19px;
@@ -575,7 +583,7 @@
 		top: 12px;
 		overflow: visible;
 	}
-	#Ellipse_1_bs {
+	#Ellipse_1_bt {
 		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -584,7 +592,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Ellipse_1_bs {
+	.Ellipse_1_bt {
 		position: absolute;
 		overflow: visible;
 		width: 19px;
@@ -592,7 +600,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#Line_88_bt {
+	#Line_88_bu {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -601,7 +609,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_88_bt {
+	.Line_88_bu {
 		overflow: visible;
 		position: absolute;
 		width: 11.673px;
@@ -610,7 +618,7 @@
 		top: 4.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Line_89_bu {
+	#Line_89_bv {
 		fill: transparent;
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
@@ -619,7 +627,7 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Line_89_bu {
+	.Line_89_bv {
 		overflow: visible;
 		position: absolute;
 		width: 10.707px;
@@ -628,9 +636,9 @@
 		top: 4.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Setting_this_artboard_to_100_h_bv {
-		left: 15px;
-		bottom: 16px;
+	#Setting_this_artboard_to_100_h_bw {
+		left: 22px;
+		bottom: 22px;
 		position: absolute;
 		overflow: visible;
 		width: 172px;
@@ -697,12 +705,12 @@
 		</path>
 	</hr>
 </div>
-<div id="MainMenu_Right" onclick="application.goBack()">
+<div id="MainMenu" onclick="application.goBack()">
 	<svg class="Line_90" viewBox="0 0 189 1">
 		<path id="Line_90" d="M 0 0 L 189 0">
 		</path>
 	</svg>
-	<div id="Menu_bb">
+	<div id="Menu_bc">
 		<span>Menu</span>
 	</div>
 	<div id="Item_1">
@@ -732,38 +740,38 @@
 		<span>Setting this artboard to 100% height</span>
 	</div>
 </div>
-<div id="MainMenu" onclick="application.goBack()">
-	<svg class="Line_90_bm" viewBox="0 0 189 1">
-		<path id="Line_90_bm" d="M 0 0 L 189 0">
+<div id="MainMenu_Right" onclick="application.goBack()">
+	<svg class="Line_90_bn" viewBox="0 0 189 1">
+		<path id="Line_90_bn" d="M 0 0 L 189 0">
 		</path>
 	</svg>
-	<div id="Menu_bn">
+	<div id="Menu_bo">
 		<span>Menu</span>
 	</div>
-	<div id="Item_1_bo">
+	<div id="Item_1_bp">
 		<span>Item 1</span>
 	</div>
-	<div id="Item_2_bp">
+	<div id="Item_2_bq">
 		<span>Item 2</span>
 	</div>
-	<div id="Item_3_bq">
+	<div id="Item_3_br">
 		<span>Item 3</span>
 	</div>
-	<div id="Group_61_br">
-		<svg class="Ellipse_1_bs">
-			<ellipse id="Ellipse_1_bs" rx="9.5" ry="9.5" cx="9.5" cy="9.5">
+	<div id="Group_61_bs">
+		<svg class="Ellipse_1_bt">
+			<ellipse id="Ellipse_1_bt" rx="9.5" ry="9.5" cx="9.5" cy="9.5">
 			</ellipse>
 		</svg>
-		<svg class="Line_88_bt" viewBox="0 0 11 10">
-			<path id="Line_88_bt" d="M 0 0 L 11 10">
+		<svg class="Line_88_bu" viewBox="0 0 11 10">
+			<path id="Line_88_bu" d="M 0 0 L 11 10">
 			</path>
 		</svg>
-		<svg class="Line_89_bu" viewBox="0 0 10 10">
-			<path id="Line_89_bu" d="M 10 0 L 0 10">
+		<svg class="Line_89_bv" viewBox="0 0 10 10">
+			<path id="Line_89_bv" d="M 10 0 L 0 10">
 			</path>
 		</svg>
 	</div>
-	<div id="Setting_this_artboard_to_100_h_bv">
+	<div id="Setting_this_artboard_to_100_h_bw">
 		<span>Setting this artboard to 100% height</span>
 	</div>
 </div>

@@ -4,15 +4,15 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cats 20th Anniversary</title>
+<title>Export Artboards As Single Page</title>
 <style id="applicationStylesheet" type="text/css">
 :root {
-	--web-view-ids: Cats,Whiskers,Mittens,Snowball,Ending;
-	--web-view-name: Cats;
-	--web-view-id: Cats;
+	--web-view-ids: Cats,Whiskers,Mittens,Snowball,Ending,Export_Artboards_As_Single_Page;
+	--web-view-name: Export Artboards As Single Page;
+	--web-view-id: Export_Artboards_As_Single_Page;
 	--web-scale-to-fit: false;
 	--web-scale-to-fit-type: default;
-	--web-enable-scale-up: true;
+	--web-enable-scale-up: false;
 	--web-scale-on-resize: true;
 	--web-show-scale-controls: false;
 	--web-scale-on-double-click: false;
@@ -32,10 +32,11 @@
 #Whiskers,
 #Mittens,
 #Snowball,
-#Ending {
+#Ending,
+#Export_Artboards_As_Single_Page {
 	display: none;
 }
-@media (min-width: 0px) {
+@media (min-width: 960px) {
 	.mediaViewInfo {
 		--web-view-name: Cats;
 		--web-view-id: Cats;
@@ -226,7 +227,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 0px) {
+@media (min-width: 960px) {
 	.mediaViewInfo {
 		--web-view-name: Whiskers;
 		--web-view-id: Whiskers;
@@ -388,7 +389,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 0px) {
+@media (min-width: 960px) {
 	.mediaViewInfo {
 		--web-view-name: Mittens;
 		--web-view-id: Mittens;
@@ -548,7 +549,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 0px) {
+@media (min-width: 960px) {
 	.mediaViewInfo {
 		--web-view-name: Snowball;
 		--web-view-id: Snowball;
@@ -710,7 +711,7 @@
 		color: rgba(112,112,112,1);
 	}
 }
-@media (min-width: 0px) {
+@media (min-width: 960px) {
 	.mediaViewInfo {
 		--web-view-name: Ending;
 		--web-view-id: Ending;
@@ -856,6 +857,52 @@
 		left: 329px;
 		top: 278px;
 		overflow: visible;
+	}
+}
+@media (min-width: 0px) and (max-width: 959px) {
+	.mediaViewInfo {
+		--web-view-name: Export Artboards As Single Page;
+		--web-view-id: Export_Artboards_As_Single_Page;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-center-vertically: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Export_Artboards_As_Single_Page {
+		position: absolute;
+		display: block;
+		width: 650px;
+		height: 90px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Export Artboards As Single Page;
+		--web-view-id: Export_Artboards_As_Single_Page;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-center-vertically: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	#Export_this_artboard_or_the_Ca {
+		left: 27px;
+		top: 36px;
+		position: absolute;
+		overflow: visible;
+		width: 577px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 17px;
+		color: rgba(75,75,75,1);
 	}
 }
 
@@ -3920,6 +3967,11 @@ body {
 	</div>
 	<img id="Ellipse_2" src="images/Ellipse_2.png" srcset="images/Ellipse_2.png 1x, images/Ellipse_2@2x.png 2x">
 		
+</div>
+<div id="Export_Artboards_As_Single_Page">
+	<div id="Export_this_artboard_or_the_Ca">
+		<span>Export this artboard or the Cats artboard to export artboards to a single page</span>
+	</div>
 </div>
 
 </body>

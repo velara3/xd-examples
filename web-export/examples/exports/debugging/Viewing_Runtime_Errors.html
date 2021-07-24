@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viewing Runtime Errors</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Viewing Runtime Errors;
+		--web-view-id: Viewing_Runtime_Errors;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Viewing_Runtime_Errors;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Viewing_Runtime_Errors {
+		position: absolute;
+		width: 778px;
+		height: 544px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Viewing Runtime Errors;
+		--web-view-id: Viewing_Runtime_Errors;
+		--web-enable-deep-linking: true;
+		cursor: default;
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		width: 738px;
+		height: 1px;
+		left: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#The_elements_below_show_an_out {
+		left: 471px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 288px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Viewing_Runtime_Errors_j {
+		left: 50px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 226px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_m {
+		fill: url(#Rectangle_177_m);
+	}
+	.Rectangle_177_m {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#errorBox {
+		left: 20px;
+		top: 127px;
+		position: absolute;
+		overflow: visible;
+		width: 342px;
+		height: 101px;
+		cursor: default;
+		text-align: left;
+		font-family: Courier;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(255,0,0,1);
+		border:  1px solid gray;
+		background-color:  white;
+		z-index:  1;
+	}
+	#Runtime_Error_Messages_appear_ {
+		left: 20px;
+		top: 99px;
+		position: absolute;
+		overflow: visible;
+		width: 187px;
+		white-space: nowrap;
+		cursor: default;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Click_here_to_create_an_error {
+		left: 20px;
+		top: 238px;
+		position: absolute;
+		overflow: visible;
+		width: 195px;
+		white-space: nowrap;
+		cursor: pointer;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(92,92,92,1);
+		text-transform: uppercase;
+	}
+	#This_element_will_create_an_er {
+		left: 20px;
+		top: 269px;
+		position: absolute;
+		overflow: visible;
+		width: 241px;
+		white-space: nowrap;
+		cursor: pointer;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(255,0,0,1);
+	}
+	#Clear {
+		left: 324px;
+		top: 238px;
+		position: absolute;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		cursor: pointer;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+		text-transform: uppercase;
+	}
+	#Add_the_following_red_text_fie {
+		left: 20px;
+		top: 67px;
+		position: absolute;
+		overflow: visible;
+		width: 391px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Alternatively_open_the_web_dev {
+		left: 21px;
+		top: 462px;
+		position: absolute;
+		overflow: visible;
+		width: 464px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#JavaScript_needs_to_be_enabled {
+		left: 21px;
+		top: 354px;
+		position: absolute;
+		overflow: visible;
+		width: 257px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#You_may_need_to_view_the_web_p {
+		left: 21px;
+		top: 405px;
+		position: absolute;
+		overflow: visible;
+		width: 258px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Important_Notes {
+		left: 21px;
+		top: 326px;
+		position: absolute;
+		overflow: visible;
+		width: 116px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+		text-transform: uppercase;
+	}
+	#If_you_open_the_web_developer_ {
+		left: 20px;
+		top: 378px;
+		position: absolute;
+		overflow: visible;
+		width: 493px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd {
+		left: 20px;
+		top: 498px;
+		position: absolute;
+		overflow: visible;
+		width: 254px;
+		white-space: nowrap;
+		cursor: default;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="Viewing_Runtime_Errors.js"></script>
+</head>
+<body>
+<div id="Viewing_Runtime_Errors">
+	<svg class="Line_85" viewBox="0 0 738 1">
+		<path id="Line_85" d="M 0 0 L 738 0">
+		</path>
+	</svg>
+	<div id="The_elements_below_show_an_out">
+		<span>The elements below show an outline of their bounding box</span>
+	</div>
+	<div id="Viewing_Runtime_Errors_j">
+		<span>Viewing Runtime Errors</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_m">
+			<linearGradient id="Rectangle_177_m" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_m" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<textarea id="errorBox">
+		Error Messages will appear here in this text area:
+	</textarea>
+	<script type="text/javascript">
+			window.onerror = function (message, url, lineNumber, columnNumber, error) {
+	      errorBox.value += message+"\n";
+	      return false;
+	  }
+			</script>
+	<div id="Runtime_Error_Messages_appear_">
+		<span>Runtime Error Messages appear here:</span>
+	</div>
+	<div id="Click_here_to_create_an_error" onClick="throw new Error('runtime error')">
+		<span>Click here to create an error</span>
+	</div>
+	<div id="This_element_will_create_an_er">
+		<span>This element will create an error on page load</span>
+	</div>
+	<script type="text/javascript">
+			throw new Error("page error");
+			</script>
+	<div id="Clear" onClick="errorBox.value=''">
+		<span>Clear</span>
+	</div>
+	<div id="Add_the_following_red_text_fie">
+		<span>Add the following red text field to your artboard to see any runtime errors</span>
+	</div>
+	<div id="Alternatively_open_the_web_dev">
+		<span>Alternatively, open the web developer tools in your browser and view the console</span>
+	</div>
+	<div id="JavaScript_needs_to_be_enabled">
+		<span>JavaScript needs to be enabled in your browser</span>
+	</div>
+	<div id="You_may_need_to_view_the_web_p">
+		<span>You may need to view the web page on a server</span>
+	</div>
+	<div id="Important_Notes">
+		<span>Important Notes</span>
+	</div>
+	<div id="If_you_open_the_web_developer_">
+		<span>If you open the web developer tools errors may only show in the console not in the text area</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Tools">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Tools</span>
+	</div>
+	</a>
+</div>
+</body>
+</html>

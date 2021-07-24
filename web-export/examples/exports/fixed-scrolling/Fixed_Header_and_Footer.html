@@ -31,6 +31,7 @@
 		--web-view-id: Fixed_Header_and_Footer;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
+		cursor: default;
 	}
 	#Content {
 		position: absolute;
@@ -42,7 +43,7 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
-	#This_is_the_same_as_setting__p {
+	#This_is_the_same_as_setting__p_z {
 		left: 20px;
 		top: 52px;
 		position: absolute;
@@ -56,7 +57,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#This_page_has_a_header_that_st {
+	#This_page_has_a_header_that_st_ {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -85,7 +86,7 @@
 		color: rgba(112,112,112,1);
 		padding-bottom:  10px;
 	}
-	#Header {
+	#Header_ {
 		position: absolute;
 		width: 778px;
 		height: 47px;
@@ -96,7 +97,7 @@
 		filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
 		overflow: visible;
 	}
-	#The_header_group_is_fixed_to_t {
+	#The_header_group_is_fixed_to_t_ {
 		left: 443px;
 		top: 24px;
 		position: absolute;
@@ -110,7 +111,7 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Fixed_Header_and_Footer_s {
+	#Fixed_Header_and_Footer_ {
 		left: 50px;
 		top: 14px;
 		position: absolute;
@@ -127,7 +128,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Icon {
+	#Icon_ {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -135,10 +136,10 @@
 		top: 13px;
 		overflow: visible;
 	}
-	#Rectangle_177_v {
-		fill: url(#Rectangle_177_v);
+	#Rectangle_177_ba {
+		fill: url(#Rectangle_177_ba);
 	}
-	.Rectangle_177_v {
+	.Rectangle_177_ba {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -146,14 +147,15 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_ {
 		left: 50%;
-		transform: translateX(-50%);
-		top: 7.5px;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
 		position: absolute;
 		overflow: visible;
 		width: 10px;
 		white-space: nowrap;
+		cursor: default;
 		text-align: right;
 		font-family: Helvetica;
 		font-style: normal;
@@ -161,7 +163,7 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-	#Header_x {
+	#Header_ba {
 		position: absolute;
 		width: 778px;
 		height: 47px;
@@ -3046,10 +3048,10 @@ window.application = new Application();
 <body>
 <div id="Fixed_Header_and_Footer">
 	<div id="Content">
-		<div id="This_is_the_same_as_setting__p">
+		<div id="This_is_the_same_as_setting__p_z">
 			<span>This is the same as setting { position: sticky; top: 0px; left: 0px; z-index: 1 }</span>
 		</div>
-		<div id="This_page_has_a_header_that_st">
+		<div id="This_page_has_a_header_that_st_">
 			<span>This page has a header that stays fixed in position when scrolling</span>
 		</div>
 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline">
@@ -3058,28 +3060,28 @@ window.application = new Application();
 		</div>
 		</a>
 	</div>
-	<div id="Header">
-		<div id="The_header_group_is_fixed_to_t">
+	<div id="Header_">
+		<div id="The_header_group_is_fixed_to_t_">
 			<span>The header group is fixed to the top of the page as the page scrolls</span>
 		</div>
-		<div id="Fixed_Header_and_Footer_s">
+		<div id="Fixed_Header_and_Footer_">
 			<span>Fixed Header and Footer</span>
 		</div>
-		<div id="Icon">
-			<svg class="Rectangle_177_v">
-				<linearGradient id="Rectangle_177_v" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<div id="Icon_">
+			<svg class="Rectangle_177_ba">
+				<linearGradient id="Rectangle_177_ba" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 					<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 					<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 				</linearGradient>
-				<rect id="Rectangle_177_v" rx="3" ry="3" x="0" y="0" width="24" height="24">
+				<rect id="Rectangle_177_ba" rx="3" ry="3" x="0" y="0" width="24" height="24">
 				</rect>
 			</svg>
-			<div id="W">
+			<div id="W_">
 				<span>W</span>
 			</div>
 		</div>
 	</div>
-	<div id="Header_x">
+	<div id="Header_ba">
 		<div id="The_footer_group_is_fixed_to_t">
 			<span>The footer group is fixed to the bottom of the page as the page scrolls</span>
 		</div>

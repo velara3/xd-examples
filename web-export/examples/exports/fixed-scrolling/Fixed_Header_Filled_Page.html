@@ -31,8 +31,9 @@
 		--web-view-id: Fixed_Header_Filled_Page;
 		--web-center-horizontally: true;
 		--web-enable-deep-linking: true;
+		cursor: default;
 	}
-	#Content {
+	#Content_bn {
 		position: absolute;
 		width: 100%;
 		top: 63.5px;
@@ -41,8 +42,9 @@
 		border: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
+		cursor: default;
 	}
-	#This_is_the_same_as_setting__p {
+	#This_is_the_same_as_setting__p_bp {
 		left: 20px;
 		top: 52px;
 		position: absolute;
@@ -56,7 +58,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#This_page_has_a_header_that_st {
+	#This_page_has_a_header_that_st_bq {
 		left: 20px;
 		top: 18px;
 		position: absolute;
@@ -70,7 +72,7 @@
 		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#Bottom_of_the_page {
+	#Bottom_of_the_page_br {
 		left: 40px;
 		top: 928px;
 		position: absolute;
@@ -85,7 +87,7 @@
 		color: rgba(112,112,112,1);
 		padding-bottom:  10px;
 	}
-	#Header {
+	#Header_bs {
 		position: absolute;
 		width: 100%;
 		height: 47px;
@@ -95,14 +97,16 @@
 		border: 0;
 		filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
 		overflow: visible;
+		cursor: default;
 	}
-	#The_header_group_is_fixed_to_t {
+	#The_header_group_is_fixed_to_t_bu {
 		right: 20px;
 		top: 24px;
 		position: absolute;
 		overflow: visible;
 		width: 316px;
 		white-space: nowrap;
+		cursor: default;
 		text-align: right;
 		font-family: Helvetica Neue;
 		font-style: normal;
@@ -110,7 +114,7 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Fixed_Header_Filled_Page_s {
+	#Fixed_Header_Filled_Page_bv {
 		left: 50px;
 		top: 14px;
 		position: absolute;
@@ -127,7 +131,7 @@
 		color: rgba(93,93,93,1);
 		letter-spacing: -0.03px;
 	}
-	#Icon {
+	#Icon_bw {
 		position: absolute;
 		width: 24px;
 		height: 24px;
@@ -135,10 +139,10 @@
 		top: 13px;
 		overflow: visible;
 	}
-	#Rectangle_177_v {
-		fill: url(#Rectangle_177_v);
+	#Rectangle_177_by {
+		fill: url(#Rectangle_177_by);
 	}
-	.Rectangle_177_v {
+	.Rectangle_177_by {
 		position: absolute;
 		overflow: visible;
 		width: 24px;
@@ -146,14 +150,15 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W {
+	#W_bz {
 		left: 50%;
-		transform: translateX(-50%);
-		top: 7.5px;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
 		position: absolute;
 		overflow: visible;
 		width: 10px;
 		white-space: nowrap;
+		cursor: default;
 		text-align: right;
 		font-family: Helvetica;
 		font-style: normal;
@@ -161,7 +166,7 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-	#Header_x {
+	#Header_b {
 		position: absolute;
 		width: 100%;
 		height: 47px;
@@ -171,14 +176,16 @@
 		border: 0;
 		filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
 		overflow: visible;
+		cursor: default;
 	}
-	#The_footer_group_is_fixed_to_t {
+	#The_footer_group_is_fixed_to_t_b {
 		right: 20px;
 		top: 24px;
 		position: absolute;
 		overflow: visible;
 		width: 329px;
 		white-space: nowrap;
+		cursor: default;
 		text-align: right;
 		font-family: Helvetica Neue;
 		font-style: normal;
@@ -186,7 +193,7 @@
 		font-size: 10.5px;
 		color: rgba(112,112,112,1);
 	}
-	#Fixed_Footer {
+	#Fixed_Footer_b {
 		left: 50px;
 		top: 14px;
 		position: absolute;
@@ -3045,45 +3052,45 @@ window.application = new Application();
 </head>
 <body>
 <div id="Fixed_Header_Filled_Page">
-	<div id="Content">
-		<div id="This_is_the_same_as_setting__p">
+	<div id="Content_bn">
+		<div id="This_is_the_same_as_setting__p_bp">
 			<span>This is the same as setting { position: sticky; top: 0px; left: 0px; z-index: 1 }</span>
 		</div>
-		<div id="This_page_has_a_header_that_st">
+		<div id="This_page_has_a_header_that_st_bq">
 			<span>This page has a header that stays fixed in position when scrolling</span>
 		</div>
 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline">
-		<div id="Bottom_of_the_page">
+		<div id="Bottom_of_the_page_br">
 			<span>Bottom of the page</span>
 		</div>
 		</a>
 	</div>
-	<div id="Header">
-		<div id="The_header_group_is_fixed_to_t">
+	<div id="Header_bs">
+		<div id="The_header_group_is_fixed_to_t_bu">
 			<span>The header group is fixed to the top of the page as the page scrolls</span>
 		</div>
-		<div id="Fixed_Header_Filled_Page_s">
+		<div id="Fixed_Header_Filled_Page_bv">
 			<span>Fixed Header Filled Page</span>
 		</div>
-		<div id="Icon">
-			<svg class="Rectangle_177_v">
-				<linearGradient id="Rectangle_177_v" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+		<div id="Icon_bw">
+			<svg class="Rectangle_177_by">
+				<linearGradient id="Rectangle_177_by" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
 					<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
 					<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
 				</linearGradient>
-				<rect id="Rectangle_177_v" rx="3" ry="3" x="0" y="0" width="24" height="24">
+				<rect id="Rectangle_177_by" rx="3" ry="3" x="0" y="0" width="24" height="24">
 				</rect>
 			</svg>
-			<div id="W">
+			<div id="W_bz">
 				<span>W</span>
 			</div>
 		</div>
 	</div>
-	<div id="Header_x">
-		<div id="The_footer_group_is_fixed_to_t">
+	<div id="Header_b">
+		<div id="The_footer_group_is_fixed_to_t_b">
 			<span>The footer group is fixed to the bottom of the page as the page scrolls</span>
 		</div>
-		<div id="Fixed_Footer">
+		<div id="Fixed_Footer_b">
 			<span>Fixed Footer</span>
 		</div>
 	</div>

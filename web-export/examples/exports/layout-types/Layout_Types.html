@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Types</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Layout Types;
+		--web-view-id: Layout_Types;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: Layout_Types;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Layout_Types {
+		position: absolute;
+		width: 782px;
+		height: 797px;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Layout Types;
+		--web-view-id: Layout_Types;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+		cursor: default;
+	}
+	#Flex_Row {
+		position: absolute;
+		width: 188px;
+		height: 56px;
+		left: 44px;
+		top: 115px;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		overflow: visible;
+		cursor: default;
+		outline: 1px dashed red;
+	}
+	#Rectangle_1 {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1 {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_443 {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443 {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_444 {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444 {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Flex_Column {
+		position: absolute;
+		width: 56px;
+		height: 188px;
+		left: 44px;
+		top: 232px;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		overflow: visible;
+		cursor: default;
+		outline: 1px dashed red;
+	}
+	#Rectangle_444_m {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_m {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_443_n {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_n {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_1_o {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_o {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Table {
+		position: absolute;
+		width: 56px;
+		height: 188px;
+		left: 44px;
+		top: 460px;
+		display: table;
+		overflow: visible;
+		cursor: default;
+		outline: 1px dashed red;
+	}
+	#Rectangle_444_q {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_q {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 0px;
+		top: 132px;
+	}
+	#Rectangle_443_r {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_r {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 0px;
+		top: 66px;
+	}
+	#Rectangle_1_s {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_s {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Grid {
+		position: absolute;
+		width: 208px;
+		height: 188px;
+		left: 183px;
+		top: 460px;
+		display: grid;
+		overflow: visible;
+		cursor: default;
+		outline: 1px dashed red;
+	}
+	#Rectangle_444_u {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_u {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 0px;
+		top: 132px;
+	}
+	#Rectangle_443_v {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_v {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 0px;
+		top: 66px;
+	}
+	#Rectangle_1_w {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_w {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 0px;
+		top: 0px;
+	}
+	#Rectangle_444_x {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_x {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 76px;
+		top: 132px;
+	}
+	#Rectangle_443_y {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_y {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 76px;
+		top: 66px;
+	}
+	#Rectangle_1_z {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_z {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 76px;
+		top: 0px;
+	}
+	#Rectangle_444_ {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_ {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 152px;
+		top: 132px;
+	}
+	#Rectangle_443_ {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_ {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 152px;
+		top: 66px;
+	}
+	#Rectangle_1_ {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_ {
+		position: absolute;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		left: 152px;
+		top: 0px;
+	}
+	#Flex_Column_Reverse {
+		position: absolute;
+		width: 56px;
+		height: 188px;
+		left: 180px;
+		top: 232px;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		overflow: visible;
+		cursor: default;
+		outline: 1px dashed red;
+	}
+	#Rectangle_444_ba {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_ba {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_443_ba {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_ba {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_1_ba {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_ba {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Stack_Flex_Column_Reverse {
+		position: absolute;
+		width: 56px;
+		height: 188px;
+		left: 316px;
+		top: 232px;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: stretch;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		overflow: visible;
+		cursor: default;
+		padding: 0px;
+		outline: 1px dashed red;
+	}
+	#Rectangle_444_bb {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_bb {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+	}
+	#Rectangle_443_bb {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_bb {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		margin-bottom: 10px;
+	}
+	#Rectangle_1_bb {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_bb {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		margin-bottom: 10px;
+	}
+	#Flex_Row_Reverse {
+		position: absolute;
+		width: 188px;
+		height: 56px;
+		left: 267px;
+		top: 115px;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		overflow: visible;
+		cursor: default;
+		outline: 1px dashed red;
+	}
+	#Rectangle_1_bc {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_bc {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_443_bd {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_bd {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Rectangle_444_be {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_be {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		align-self: auto;
+	}
+	#Stack_Flex_Row_Reverse {
+		position: absolute;
+		width: 188px;
+		height: 56px;
+		left: 490px;
+		top: 115px;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: stretch;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		overflow: visible;
+		cursor: default;
+		padding: 0px;
+		outline: 1px dashed red;
+	}
+	#Rectangle_444_bg {
+		fill: rgba(183,183,183,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_444_bg {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+	}
+	#Rectangle_443_bh {
+		fill: rgba(227,227,227,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_443_bh {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		margin-right: 10px;
+	}
+	#Rectangle_1_bi {
+		fill: rgba(247,247,247,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1_bi {
+		position: relative;
+		overflow: visible;
+		width: 56px;
+		height: 56px;
+		margin-right: 10px;
+	}
+	#Flex_Row_ {
+		left: 44px;
+		top: 95px;
+		position: absolute;
+		overflow: visible;
+		width: 50px;
+		white-space: nowrap;
+		cursor: default;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Flex_Column_bk {
+		left: 44px;
+		top: 212px;
+		position: absolute;
+		overflow: visible;
+		width: 63px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Table_bl {
+		left: 44px;
+		top: 440px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Grid_bm {
+		left: 183px;
+		top: 440px;
+		position: absolute;
+		overflow: visible;
+		width: 22px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Flex_Column_Reverse_bn {
+		left: 180px;
+		top: 212px;
+		position: absolute;
+		overflow: visible;
+		width: 106px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Stack_-_Flex_Column_Reverse {
+		left: 316px;
+		top: 212px;
+		position: absolute;
+		overflow: visible;
+		width: 144px;
+		white-space: nowrap;
+		cursor: default;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Flex_Row_Reverse_bp {
+		left: 267px;
+		top: 95px;
+		position: absolute;
+		overflow: visible;
+		width: 90px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Stack_-_Flex_Row_Reverse {
+		left: 490px;
+		top: 95px;
+		position: absolute;
+		overflow: visible;
+		width: 128px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Layout_Types_on_Groups {
+		left: 51px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 234px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		width: 722.269px;
+		height: 1px;
+		left: 22.231px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#The_elements_have_different_la {
+		left: 546px;
+		top: 34px;
+		position: absolute;
+		overflow: visible;
+		width: 199px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#View_source_to_see_display_typ {
+		left: 32px;
+		top: 719px;
+		position: absolute;
+		overflow: visible;
+		width: 176px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd {
+		left: 32px;
+		top: 745px;
+		position: absolute;
+		overflow: visible;
+		width: 320px;
+		white-space: nowrap;
+		cursor: default;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_by {
+		fill: url(#Rectangle_177_by);
+	}
+	.Rectangle_177_by {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		cursor: default;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="Layout_Types.js"></script>
+</head>
+<body>
+<div id="Layout_Types">
+	<div id="Flex_Row">
+		<svg class="Rectangle_1">
+			<rect id="Rectangle_1" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443">
+			<rect id="Rectangle_443" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_444">
+			<rect id="Rectangle_444" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Flex_Column">
+		<svg class="Rectangle_444_m">
+			<rect id="Rectangle_444_m" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_n">
+			<rect id="Rectangle_443_n" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_o">
+			<rect id="Rectangle_1_o" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Table">
+		<svg class="Rectangle_444_q">
+			<rect id="Rectangle_444_q" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_r">
+			<rect id="Rectangle_443_r" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_s">
+			<rect id="Rectangle_1_s" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Grid">
+		<svg class="Rectangle_444_u">
+			<rect id="Rectangle_444_u" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_v">
+			<rect id="Rectangle_443_v" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_w">
+			<rect id="Rectangle_1_w" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_444_x">
+			<rect id="Rectangle_444_x" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_y">
+			<rect id="Rectangle_443_y" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_z">
+			<rect id="Rectangle_1_z" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_444_">
+			<rect id="Rectangle_444_" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_">
+			<rect id="Rectangle_443_" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_">
+			<rect id="Rectangle_1_" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Flex_Column_Reverse">
+		<svg class="Rectangle_444_ba">
+			<rect id="Rectangle_444_ba" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_ba">
+			<rect id="Rectangle_443_ba" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_ba">
+			<rect id="Rectangle_1_ba" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Stack_Flex_Column_Reverse">
+		<svg class="Rectangle_444_bb">
+			<rect id="Rectangle_444_bb" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_bb">
+			<rect id="Rectangle_443_bb" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_bb">
+			<rect id="Rectangle_1_bb" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Flex_Row_Reverse">
+		<svg class="Rectangle_1_bc">
+			<rect id="Rectangle_1_bc" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_bd">
+			<rect id="Rectangle_443_bd" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_444_be">
+			<rect id="Rectangle_444_be" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Stack_Flex_Row_Reverse">
+		<svg class="Rectangle_444_bg">
+			<rect id="Rectangle_444_bg" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_443_bh">
+			<rect id="Rectangle_443_bh" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+		<svg class="Rectangle_1_bi">
+			<rect id="Rectangle_1_bi" rx="0" ry="0" x="0" y="0" width="56" height="56">
+			</rect>
+		</svg>
+	</div>
+	<div id="Flex_Row_">
+		<span>Flex Row </span>
+	</div>
+	<div id="Flex_Column_bk">
+		<span>Flex Column</span>
+	</div>
+	<div id="Table_bl">
+		<span>Table</span>
+	</div>
+	<div id="Grid_bm">
+		<span>Grid</span>
+	</div>
+	<div id="Flex_Column_Reverse_bn">
+		<span>Flex Column Reverse</span>
+	</div>
+	<div id="Stack_-_Flex_Column_Reverse">
+		<span>Stack - Flex Column Reverse</span>
+	</div>
+	<div id="Flex_Row_Reverse_bp">
+		<span>Flex Row Reverse</span>
+	</div>
+	<div id="Stack_-_Flex_Row_Reverse">
+		<span>Stack - Flex Row Reverse</span>
+	</div>
+	<div id="Layout_Types_on_Groups">
+		<span>Layout Types on Groups</span>
+	</div>
+	<svg class="Line_85" viewBox="0 0 722.269 1">
+		<path id="Line_85" d="M 0 0 L 722.2686767578125 0">
+		</path>
+	</svg>
+	<div id="The_elements_have_different_la">
+		<span>The elements have different layout types</span>
+	</div>
+	<div id="View_source_to_see_display_typ">
+		<span>View source to see display types</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/display</span>
+	</div>
+	</a>
+	<div id="Icon">
+		<svg class="Rectangle_177_by">
+			<linearGradient id="Rectangle_177_by" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_by" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>
