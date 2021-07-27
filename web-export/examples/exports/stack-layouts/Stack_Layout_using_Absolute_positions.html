@@ -1,3 +1,850 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stack Layout using Absolute positions</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Stack Layout using Absolute positions;
+		--web-view-id: Stack_Layout_using_Absolute_positions;
+		--web-refresh-for-changes: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Stack_Layout_using_Absolute_positions;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Stack_Layout_using_Absolute_positions {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(242,242,242,1);
+		overflow: hidden;
+		--web-view-name: Stack Layout using Absolute positions;
+		--web-view-id: Stack_Layout_using_Absolute_positions;
+		--web-refresh-for-changes: true;
+		--web-enable-deep-linking: true;
+	}
+	#Path_1 {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Path_1 {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 20px;
+		right: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Stack_Layout_using_Absolute_Po {
+		left: 50px;
+		top: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 368px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Group_107 {
+		position: absolute;
+		width: 324px;
+		left: 285px;
+		top: 248px;
+		overflow: visible;
+		padding: 0px;
+	}
+	#Contact {
+		left: 281px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#About {
+		left: 243px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 34px;
+		height: 21px;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#About_n {
+		left: 171px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Services {
+		left: 120px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Products {
+		left: 42px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Home {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Each_group_item_can_override_t {
+		left: 21px;
+		top: 437px;
+		position: absolute;
+		overflow: visible;
+		width: 512px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Items_are_ordered_by_their_ord {
+		left: 20px;
+		top: 405px;
+		position: absolute;
+		overflow: visible;
+		width: 504px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Items_are_laid_out_in_a_horizo {
+		left: 20px;
+		top: 341px;
+		position: absolute;
+		overflow: visible;
+		width: 459px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#You_must_select_the_group_and_ {
+		left: 20px;
+		top: 373px;
+		position: absolute;
+		overflow: visible;
+		width: 576px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(255,0,0,1);
+	}
+	#httpsdevelopermozillaorgen-USd {
+		left: 21px;
+		top: 510px;
+		position: absolute;
+		overflow: visible;
+		width: 266px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd_w {
+		left: 21px;
+		top: 530px;
+		position: absolute;
+		overflow: visible;
+		width: 293px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#ADD_OUTLINE_AROUND_GROUP {
+		left: 599px;
+		top: 548px;
+		position: absolute;
+		overflow: visible;
+		width: 180px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#RESIZE_WIDTH_TRANSITION {
+		left: 622px;
+		top: 524px;
+		position: absolute;
+		overflow: visible;
+		width: 157px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd_z {
+		left: 20px;
+		top: 550px;
+		position: absolute;
+		overflow: visible;
+		width: 517px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_ {
+		fill: url(#Rectangle_177_);
+	}
+	.Rectangle_177_ {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#ADD_BORDER_BOTTOM_ON_HOVER {
+		left: 581px;
+		top: 500px;
+		position: absolute;
+		overflow: visible;
+		width: 198px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Component_2__1 {
+		position: absolute;
+		width: 227px;
+		height: 14px;
+		left: 553px;
+		top: 479px;
+		overflow: visible;
+	}
+	#ADD_HOVER_STYLE_TO_EVERY_ELEME {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 228px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		width: 229px;
+		height: 1px;
+		left: 21px;
+		top: 107px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_88 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_88 {
+		overflow: visible;
+		position: absolute;
+		width: 154.5px;
+		height: 1px;
+		left: 280px;
+		top: 106px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_99 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_99 {
+		overflow: visible;
+		position: absolute;
+		width: 154.5px;
+		height: 1px;
+		left: 616px;
+		top: 106px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_86 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_86 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 80px;
+		left: 279.5px;
+		top: 118.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_87 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_87 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 36px;
+		left: 279.5px;
+		top: 235.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Group_110 {
+		position: absolute;
+		width: 90px;
+		left: 628px;
+		top: 179px;
+		overflow: visible;
+		padding: 0px;
+	}
+	#Products_bd {
+		left: 42px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Home_be {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_108 {
+		position: absolute;
+		width: 52px;
+		left: 96px;
+		top: 115px;
+		overflow: visible;
+		padding: 0px;
+	}
+	#Contact_bg {
+		left: 0px;
+		top: 165px;
+		position: absolute;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#About_bh {
+		left: 0px;
+		top: 146px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#About_bi {
+		left: 0px;
+		top: 82px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Services_bj {
+		left: 0px;
+		top: 63px;
+		position: absolute;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Products_bk {
+		left: 4px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Home_bl {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_111 {
+		position: absolute;
+		width: 62px;
+		left: 178px;
+		top: 114px;
+		overflow: visible;
+		padding: 0px;
+	}
+	#Products_bn {
+		left: 14px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Home_bo {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Horizontal {
+		left: 286px;
+		top: 89px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Horizontal_short_list {
+		left: 620px;
+		top: 89px;
+		position: absolute;
+		overflow: visible;
+		width: 120px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Vertical {
+		left: 21px;
+		top: 89px;
+		position: absolute;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_98 {
+		position: absolute;
+		width: 48px;
+		left: 21px;
+		top: 115px;
+		overflow: visible;
+		padding: 0px;
+	}
+	#Contact_bt {
+		left: 0px;
+		top: 96px;
+		position: absolute;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#About_bu {
+		left: 0px;
+		top: 72px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Services_bv {
+		left: 0px;
+		top: 48px;
+		position: absolute;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Products_bw {
+		left: 0px;
+		top: 24px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Home_bx {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_85 {
+		position: absolute;
+		width: 241px;
+		left: 287px;
+		top: 124px;
+		overflow: visible;
+		padding: 0px;
+	}
+	#Contact_bz {
+		left: 198px;
+		top: 56px;
+		position: absolute;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#About_b {
+		left: 156px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Services_b {
+		left: 100px;
+		top: 28px;
+		position: absolute;
+		overflow: visible;
+		width: 47px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Products_b {
+		left: 42px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Home_b {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Group_109 {
+		position: absolute;
+		width: 90px;
+		left: 628px;
+		top: 115px;
+		overflow: visible;
+		padding: 0px;
+	}
+	#Products_ca {
+		left: 42px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+	#Home_ca {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		color: rgba(112,112,112,1);
+	}
+</style>
+<script id="applicationScript">
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
@@ -35,14 +882,11 @@ var Application = function() {
 	this.LastModifiedDateLabelName = "LastModifiedDateLabel";
 	this.viewScaleSliderId = "ViewScaleSliderInput";
 	this.pageRefreshedName = "showPageRefreshedNotification";
-	this.application = null;
 	this.applicationStylesheet = null;
-	this.showByMediaQuery = null;
 	this.mediaQueryDictionary = {};
 	this.viewsDictionary = {};
 	this.addedViews = [];
-	this.viewStates = [];
-	this.views = [];
+	this.views = {};
 	this.viewIds = [];
 	this.viewQueries = {};
 	this.overlays = {};
@@ -583,9 +1427,8 @@ var Application = function() {
 		// loop through rules and hide media queries except selected
 		for (var i=0;i<numberOfRules;i++) {
 			var rule = rules[i];
-			var cssText = rule && rule.cssText;
 
-			if (rule.media!=null && cssText.match("--web-view-name:")) {
+			if (rule.media!=null) {
 
 				if (queryIndex==selectedIndex) {
 					self.currentQuery.mediaText = rule.conditionText;
@@ -616,49 +1459,6 @@ var Application = function() {
 		var viewIndex = view ? self.getViewIndex(view) : -1;
 
 		return viewIndex==selectedIndex ? view : null;
-	}
-
-	/**
-	 * If single page application hide all of the views. 
-	 * @param {HTMLElement} selectedItem if provided shows the view at index provided
-	 **/
-	 self.hideViews2 = function(selectedItem, animation) {
-		var views = self.views;
-		var queryIndex = 0;
-		var numberOfViews = views!=null ? views.length : 0;
-
-		// loop through rules and hide media queries except selected
-		for (var i=0;i<numberOfViews;i++) {
-			var viewData = views[i];
-			var view = viewData && viewData.view;
-			var mediaRule = viewData && viewData.mediaRule;
-			
-			if (view==selectedItem) {
-				self.currentQuery.mediaText = mediaRule.conditionText;
-				self.currentQuery.index = queryIndex;
-				self.currentQuery.rule = mediaRule;
-				self.enableMediaQuery(mediaRule);
-			}
-			else {
-				if (animation) {
-					self.fadeOut(mediaRule)
-				}
-				else {
-					self.disableMediaQuery(mediaRule);
-				}
-			}
-			
-			queryIndex++;
-		}
-
-		self.numberOfViews = queryIndex;
-		self.updateViewLabel();
-		self.updateURL();
-		self.dispatchViewChange();
-
-		var visibleView = self.getVisibleView();
-
-		return visibleView==selectedItem ? selectedItem : null;
 	}
 
 	/**
@@ -2236,8 +3036,7 @@ var Application = function() {
 		var selectorText = null;
 		var property = self.prefix + "view-id";
 		var stateName = self.prefix + "state";
-		var stateValue = null;
-		var view = null;
+		var stateValue;
 		
 		for (var j=0;j<numOfCSSRules;j++) {
 			cssRule = cssRules[j];
@@ -2260,11 +3059,10 @@ var Application = function() {
 
 						selectorIDText = "#" + mediaId;
 						selectorClassText = "." + mediaId + "_Class";
-						view = self.getElement(mediaId);
 						
 						// prevent duplicates from load and domcontentloaded events
 						if (self.addedViews.indexOf(mediaId)==-1) {
-							self.addView(view, mediaId, cssRule, mediaRule, stateValue);
+							self.addView(mediaId, cssRule, mediaRule, stateValue);
 						}
 
 						viewsFound.push(mediaId);
@@ -2293,8 +3091,7 @@ var Application = function() {
 				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
-					view = self.getElement(selectorText);
-					self.addView(view, selectorText, cssRule, null, stateValue);
+					self.addView(selectorText, cssRule, null, stateValue);
 
 					if (viewsNotFound.indexOf(selectorText)!=-1) {
 						viewsNotFound.splice(viewsNotFound.indexOf(selectorText));
@@ -2312,24 +3109,14 @@ var Application = function() {
 	}
 
 	/**
-	 * Adds a view
-	 * @param {HTMLElement} view view element
-	 * @param {String} id id of view element
-	 * @param {CSSRule} cssRule of view element
-	 * @param {CSSMediaRule} mediaRule media rule of view element
-	 * @param {String} stateName name of state if applicable
-	 **/
-	self.addView = function(view, viewId, cssRule, mediaRule, stateName) {
-		var viewData = {};
-		viewData.name = viewId;
-		viewData.rule = cssRule;
-		viewData.id = viewId;
-		viewData.mediaRule = mediaRule;
-		viewData.stateName = stateName;
-
-		self.views.push(viewData);
+	 * Adds a view. A view object contains the id of the view and the style rule
+	 * Use enableMediaQuery(rule) to enable
+	 * An array of view names are in self.addedViews array
+	 */
+	self.addView = function(viewId, cssRule, mediaRule, stateName) {
+		var state = {name:viewId, rule:cssRule, id:viewId, mediaRule:mediaRule, stateName:stateName};
 		self.addedViews.push(viewId);
-		self.viewsDictionary[viewId] = viewData;
+		self.viewsDictionary[viewId] = state;
 		self.mediaQueryDictionary[viewId] = cssRule;
 	}
 
@@ -2346,7 +3133,7 @@ var Application = function() {
 	 * @param {String} id id of view in current
 	 * @param {Boolean} maintainPreviousState if true then do not hide other views
 	 * @param {String} parent id of parent view
-	 **/
+	 */
 	self.goToView = function(id, maintainPreviousState, parent) {
 		var state = self.viewsDictionary[id];
 
@@ -2367,7 +3154,7 @@ var Application = function() {
 
 	/**
 	 * Go to the view in the event targets CSS variable
-	 **/
+	 */
 	self.goToTargetView = function(event) {
 		var button = event.currentTarget;
 		var buttonComputedStyles = getComputedStyle(button);
@@ -2894,3 +3681,234 @@ var Application = function() {
 }
 
 window.application = new Application();
+</script>
+</head>
+<body>
+<div id="Stack_Layout_using_Absolute_positions">
+	<svg class="Path_1" viewBox="0 0 760 1">
+		<path id="Path_1" d="M 0 0 L 760 0">
+		</path>
+	</svg>
+	<div id="Stack_Layout_using_Absolute_Po">
+		<span>Stack Layout using Absolute Positions</span>
+	</div>
+	<div id="Group_107">
+		<div id="Contact">
+			<span>Contact</span>
+		</div>
+		<div id="About">
+			<span>About</span>
+		</div>
+		<div id="About_n">
+			<span>About</span>
+		</div>
+		<div id="Services">
+			<span>Services</span>
+		</div>
+		<div id="Products">
+			<span>Products</span>
+		</div>
+		<div id="Home">
+			<span>Home</span>
+		</div>
+	</div>
+	<div id="Each_group_item_can_override_t">
+		<span>Each group item can override the margin. Set to default to use the spacing from the stack group</span>
+	</div>
+	<div id="Items_are_ordered_by_their_ord">
+		<span>Items are ordered by their order in the layers panel. The don’t have to be aligned correctly now</span>
+	</div>
+	<div id="Items_are_laid_out_in_a_horizo">
+		<span>Items are laid out in a horizontal or vertical stack and are spaced out by the layout gap</span>
+	</div>
+	<div id="You_must_select_the_group_and_">
+		<span>You must select the group and set the Layout Type to Stack in the Element Panel and in XD properties panel</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Glossary/Flexbox">
+	<div id="httpsdevelopermozillaorgen-USd">
+		<span>https://developer.mozilla.org/en-US/docs/Glossary/Flexbox</span>
+	</div>
+	</a>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">
+	<div id="httpsdevelopermozillaorgen-USd_w">
+		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction</span>
+	</div>
+	</a>
+	<style>
+/* add outline around group */
+.group {
+   outline: 1px solid rgba(0,0,0,.2);
+}
+</style>
+	<style>
+/* add animation to class  */
+.group, .group2 {
+	animation: resize 2500ms linear 0s infinite;
+}
+
+/* size width transition */
+@keyframes resize {
+	0% {
+		width: 72%;
+	}
+	37.5% {
+		width: 72%;
+	}
+	50% {
+		width: 50%;
+	}
+	87.5% {
+		width: 50%;
+	}
+	100% {
+		width: 72%;
+	}
+}
+</style>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">
+	<div id="httpsdevelopermozillaorgen-USd_z">
+		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container</span>
+	</div>
+	</a>
+	<div id="Icon">
+		<svg class="Rectangle_177_">
+			<linearGradient id="Rectangle_177_" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<style>
+.group > div:hover {
+   cursor: pointer;
+   border-bottom: 2px solid #686868;
+}
+</style>
+	
+		<div id="ADD_HOVER_STYLE_TO_EVERY_ELEME">
+			<style>
+
+*:hover {
+    background: rgba(59, 143, 220, .20);
+    cursor: arrow;
+    outline: 1px dashed rgba(59, 143, 220, .40);
+}
+
+</style>
+		</div>
+	
+	<svg class="Line_85" viewBox="0 0 229 1">
+		<path id="Line_85" d="M 0 0 L 229 0">
+		</path>
+	</svg>
+	<svg class="Line_88" viewBox="0 0 154.5 1">
+		<path id="Line_88" d="M 0 0 L 154.5 0">
+		</path>
+	</svg>
+	<svg class="Line_99" viewBox="0 0 154.5 1">
+		<path id="Line_99" d="M 0 0 L 154.5 0">
+		</path>
+	</svg>
+	<svg class="Line_86" viewBox="0 0 1 80">
+		<path id="Line_86" d="M 0 0 L 0 80">
+		</path>
+	</svg>
+	<svg class="Line_87" viewBox="0 0 1 36">
+		<path id="Line_87" d="M 0 0 L 0 36">
+		</path>
+	</svg>
+	<div id="Group_110">
+		<div id="Products_bd">
+			<span>Products</span>
+		</div>
+		<div id="Home_be">
+			<span>Home</span>
+		</div>
+	</div>
+	<div id="Group_108">
+		<div id="Contact_bg">
+			<span>Contact</span>
+		</div>
+		<div id="About_bh">
+			<span>About</span>
+		</div>
+		<div id="About_bi">
+			<span>About</span>
+		</div>
+		<div id="Services_bj">
+			<span>Services</span>
+		</div>
+		<div id="Products_bk">
+			<span>Products</span>
+		</div>
+		<div id="Home_bl">
+			<span>Home</span>
+		</div>
+	</div>
+	<div id="Group_111">
+		<div id="Products_bn">
+			<span>Products</span>
+		</div>
+		<div id="Home_bo">
+			<span>Home</span>
+		</div>
+	</div>
+	<div id="Horizontal">
+		<span>Horizontal</span>
+	</div>
+	<div id="Horizontal_short_list">
+		<span>Horizontal (short list)</span>
+	</div>
+	<div id="Vertical">
+		<span>Vertical</span>
+	</div>
+	<div id="Group_98">
+		<div id="Contact_bt">
+			<span>Contact</span>
+		</div>
+		<div id="About_bu">
+			<span>About</span>
+		</div>
+		<div id="Services_bv">
+			<span>Services</span>
+		</div>
+		<div id="Products_bw">
+			<span>Products</span>
+		</div>
+		<div id="Home_bx">
+			<span>Home</span>
+		</div>
+	</div>
+	<div id="Group_85">
+		<div id="Contact_bz">
+			<span>Contact</span>
+		</div>
+		<div id="About_b">
+			<span>About</span>
+		</div>
+		<div id="Services_b">
+			<span>Services</span>
+		</div>
+		<div id="Products_b">
+			<span>Products</span>
+		</div>
+		<div id="Home_b">
+			<span>Home</span>
+		</div>
+	</div>
+	<div id="Group_109">
+		<div id="Products_ca">
+			<span>Products</span>
+		</div>
+		<div id="Home_ca">
+			<span>Home</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

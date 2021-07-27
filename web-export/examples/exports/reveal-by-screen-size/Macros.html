@@ -1,3 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macros</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Macros;
+		--web-view-id: Macros;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	:root {
+		--web-view-ids: Macros;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Macros {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		font-family: sans-serif;
+		background-color: rgba(237,237,237,1);
+		overflow: hidden;
+		--web-view-name: Macros;
+		--web-view-id: Macros;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	#Macros_fx {
+		left: 50px;
+		top: 22px;
+		position: absolute;
+		overflow: visible;
+		width: 71px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85_fy {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85_fy {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 20px;
+		right: 20px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+		border:  .5px solid #b1b1b1;
+	}
+	#Elements_below_have_macros_app {
+		right: 20px;
+		top: 34px;
+		position: absolute;
+		overflow: visible;
+		width: 225px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Resize_the_browser_to_see_the__f {
+		opacity: 1;
+		left: 21px;
+		top: 86px;
+		position: absolute;
+		overflow: visible;
+		width: 183px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#httpsdevelopermozillaorgen-USd_f {
+		left: 20px;
+		bottom: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 332px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon_f {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_ga {
+		fill: url(#Rectangle_177_ga);
+	}
+	.Rectangle_177_ga {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W_f {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#Hide_when_browser_is_less_than {
+		left: 30px;
+		top: 241px;
+		position: absolute;
+		overflow: visible;
+		width: 191px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(0,0,0,1);
+	}
+	@media (max-width: 500px) {
+	  .Hide_when_browser_is_less_than {
+	    display: none !important;
+	  }
+	}
+	#Show_when_browser_is_less_than {
+		display: none;
+		left: 30px;
+		top: 376px;
+		position: absolute;
+		overflow: visible;
+		width: 196px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(0,0,0,1);
+	}
+
+	/** show when less than width */
+	@media (max-width: 500px) {
+	  .Show_when_browser_is_less_than {
+	    display: block !important;
+	  }
+	}
+
+	#Show_when_browser_is_between_4 {
+		display: none;
+		left: 30px;
+		top: 410px;
+		position: absolute;
+		overflow: visible;
+		width: 252px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(0,0,0,1);
+	}
+
+	/** show when between 400 and 600 */
+	@media (min-width: 400px) and (max-width: 600px) {
+	  .Show_when_browser_is_between_4 {
+	    display: block !important;
+	  }
+	}
+
+	#Hide_when_browser_is_between_4 {
+		left: 30px;
+		top: 309px;
+		position: absolute;
+		overflow: visible;
+		width: 247px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(0,0,0,1);
+	}
+
+	/** hide when between 400 and 600 */
+	@media (min-width: 400px) and (max-width: 600px) {
+	  .Hide_when_browser_is_between_4 {
+	    display: none !important;
+	  }
+	}
+
+	#Show_when_browser_is_more_than {
+		display: none;
+		left: 31px;
+		top: 342px;
+		position: absolute;
+		overflow: visible;
+		width: 202px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(0,0,0,1);
+	}
+
+	/** show when more than width */
+	@media (min-width: 500px) {
+	  .Show_when_browser_is_more_than {
+	    display: block !important;
+	  }
+	}
+
+	#Hide_when_browser_is_more_than {
+		left: 30px;
+		top: 275px;
+		position: absolute;
+		overflow: visible;
+		width: 197px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(0,0,0,1);
+	}
+	@media (min-width: 500px) {
+	  .Hide_when_browser_is_more_than {
+	    display: none !important;
+	  }
+	}
+	#Group_2 {
+		position: absolute;
+		width: 500px;
+		height: 12px;
+		left: 0px;
+		top: 165px;
+		overflow: visible;
+	}
+	#Rectangle_446 {
+		fill: rgba(216,216,216,1);
+	}
+	.Rectangle_446 {
+		position: absolute;
+		overflow: visible;
+		width: 500px;
+		height: 12px;
+		left: 0px;
+		top: 0px;
+	}
+	#ID500_px {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(65,65,65,1);
+	}
+	#Group_4 {
+		position: absolute;
+		width: 400px;
+		height: 12px;
+		left: 0px;
+		top: 133px;
+		overflow: visible;
+	}
+	#Rectangle_446_gg {
+		fill: rgba(216,216,216,1);
+	}
+	.Rectangle_446_gg {
+		position: absolute;
+		overflow: visible;
+		width: 400px;
+		height: 12px;
+		left: 0px;
+		top: 0px;
+	}
+	#ID400_px {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(65,65,65,1);
+	}
+	#Group_3 {
+		position: absolute;
+		width: 600px;
+		height: 12px;
+		left: 0px;
+		top: 197px;
+		overflow: visible;
+	}
+	#Rectangle_446_gj {
+		fill: rgba(216,216,216,1);
+	}
+	.Rectangle_446_gj {
+		position: absolute;
+		overflow: visible;
+		width: 600px;
+		height: 12px;
+		left: 0px;
+		top: 0px;
+	}
+	#ID600_px {
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		top: 50%;
+		position: absolute;
+		overflow: visible;
+		width: 32px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(65,65,65,1);
+	}
+</style>
+<script id="applicationScript">
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
@@ -2894,3 +3275,86 @@ var Application = function() {
 }
 
 window.application = new Application();
+</script>
+</head>
+<body>
+<div id="Macros">
+	<div id="Macros_fx">
+		<span>Macros</span>
+	</div>
+	<hr class="Line_85_fy" viewBox="0 0 760 1">
+		<path id="Line_85_fy" d="M 0 0 L 760 0">
+		</path>
+	</hr>
+	<div id="Elements_below_have_macros_app">
+		<span>Elements below have macros applied to them</span>
+	</div>
+	<div id="Resize_the_browser_to_see_the__f">
+		<span>Resize the browser to see the effects</span>
+	</div>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries">
+	<div id="httpsdevelopermozillaorgen-USd_f">
+		<span>https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries</span>
+	</div>
+	</a>
+	<div id="Icon_f">
+		<svg class="Rectangle_177_ga">
+			<linearGradient id="Rectangle_177_ga" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_ga" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W_f">
+			<span>W</span>
+		</div>
+	</div>
+	<div id="Hide_when_browser_is_less_than" class="Hide_when_browser_is_less_than">
+		<span>Hide when browser is less than 500 px</span>
+	</div>
+	<div id="Show_when_browser_is_less_than" class="Show_when_browser_is_less_than">
+		<span>Show when browser is less than 500 px</span>
+	</div>
+	<div id="Show_when_browser_is_between_4" class="Show_when_browser_is_between_4">
+		<span>Show when browser is between 400 px and 600 px</span>
+	</div>
+	<div id="Hide_when_browser_is_between_4" class="Hide_when_browser_is_between_4">
+		<span>Hide when browser is between 400 px and 600 px</span>
+	</div>
+	<div id="Show_when_browser_is_more_than" class="Show_when_browser_is_more_than">
+		<span>Show when browser is more than 500 px</span>
+	</div>
+	<div id="Hide_when_browser_is_more_than" class="Hide_when_browser_is_more_than">
+		<span>Hide when browser is more than 500 px</span>
+	</div>
+	<div id="Group_2">
+		<svg class="Rectangle_446">
+			<rect id="Rectangle_446" rx="0" ry="0" x="0" y="0" width="500" height="12">
+			</rect>
+		</svg>
+		<div id="ID500_px">
+			<span>500 px</span>
+		</div>
+	</div>
+	<div id="Group_4">
+		<svg class="Rectangle_446_gg">
+			<rect id="Rectangle_446_gg" rx="0" ry="0" x="0" y="0" width="400" height="12">
+			</rect>
+		</svg>
+		<div id="ID400_px">
+			<span>400 px</span>
+		</div>
+	</div>
+	<div id="Group_3">
+		<svg class="Rectangle_446_gj">
+			<rect id="Rectangle_446_gj" rx="0" ry="0" x="0" y="0" width="600" height="12">
+			</rect>
+		</svg>
+		<div id="ID600_px">
+			<span>600 px</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

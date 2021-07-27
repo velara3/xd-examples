@@ -129,7 +129,7 @@
 		left: 0px;
 		top: 0px;
 	}
-	#W_ba {
+	#W_bb {
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
 		top: 50%;
@@ -165,13 +165,13 @@
 	}
 	#SHOW_ELEMENTS {
 		left: 467px;
-		top: 67px;
+		top: 65px;
 		position: absolute;
 		overflow: visible;
-		width: 128px;
+		width: 129px;
 		white-space: nowrap;
 		text-align: left;
-		font-family: Malayalam Sangam MN;
+		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 15px;
@@ -1849,10 +1849,10 @@
 	}
 	#Group_1 {
 		position: absolute;
-		height: 276px;
+		height: 275px;
 		left: 25px;
-		right: 24px;
-		top: 174px;
+		right: -22px;
+		top: 173px;
 		display: flex;
 		flex-direction: column;
 		align-items: normal;
@@ -1867,13 +1867,13 @@
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
-		font-family: Malayalam Sangam MN;
+		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 12px;
 		color: rgba(111,111,111,1);
 	}
-	#httpsdevelopermozillaorgen-USd_fa {
+	#httpsdevelopermozillaorgen-USd_fb {
 		position: relative;
 		align-self: auto;
 		overflow: visible;
@@ -1893,7 +1893,7 @@
 		overflow: visible;
 		white-space: nowrap;
 		text-align: left;
-		font-family: Malayalam Sangam MN;
+		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 12px;
@@ -1939,11 +1939,14 @@ var Application = function() {
 	this.LastModifiedDateLabelName = "LastModifiedDateLabel";
 	this.viewScaleSliderId = "ViewScaleSliderInput";
 	this.pageRefreshedName = "showPageRefreshedNotification";
+	this.application = null;
 	this.applicationStylesheet = null;
+	this.showByMediaQuery = null;
 	this.mediaQueryDictionary = {};
 	this.viewsDictionary = {};
 	this.addedViews = [];
-	this.views = {};
+	this.viewStates = [];
+	this.views = [];
 	this.viewIds = [];
 	this.viewQueries = {};
 	this.overlays = {};
@@ -2484,8 +2487,9 @@ var Application = function() {
 		// loop through rules and hide media queries except selected
 		for (var i=0;i<numberOfRules;i++) {
 			var rule = rules[i];
+			var cssText = rule && rule.cssText;
 
-			if (rule.media!=null) {
+			if (rule.media!=null && cssText.match("--web-view-name:")) {
 
 				if (queryIndex==selectedIndex) {
 					self.currentQuery.mediaText = rule.conditionText;
@@ -2516,6 +2520,49 @@ var Application = function() {
 		var viewIndex = view ? self.getViewIndex(view) : -1;
 
 		return viewIndex==selectedIndex ? view : null;
+	}
+
+	/**
+	 * If single page application hide all of the views. 
+	 * @param {HTMLElement} selectedItem if provided shows the view at index provided
+	 **/
+	 self.hideViews2 = function(selectedItem, animation) {
+		var views = self.views;
+		var queryIndex = 0;
+		var numberOfViews = views!=null ? views.length : 0;
+
+		// loop through rules and hide media queries except selected
+		for (var i=0;i<numberOfViews;i++) {
+			var viewData = views[i];
+			var view = viewData && viewData.view;
+			var mediaRule = viewData && viewData.mediaRule;
+			
+			if (view==selectedItem) {
+				self.currentQuery.mediaText = mediaRule.conditionText;
+				self.currentQuery.index = queryIndex;
+				self.currentQuery.rule = mediaRule;
+				self.enableMediaQuery(mediaRule);
+			}
+			else {
+				if (animation) {
+					self.fadeOut(mediaRule)
+				}
+				else {
+					self.disableMediaQuery(mediaRule);
+				}
+			}
+			
+			queryIndex++;
+		}
+
+		self.numberOfViews = queryIndex;
+		self.updateViewLabel();
+		self.updateURL();
+		self.dispatchViewChange();
+
+		var visibleView = self.getVisibleView();
+
+		return visibleView==selectedItem ? selectedItem : null;
 	}
 
 	/**
@@ -4093,7 +4140,8 @@ var Application = function() {
 		var selectorText = null;
 		var property = self.prefix + "view-id";
 		var stateName = self.prefix + "state";
-		var stateValue;
+		var stateValue = null;
+		var view = null;
 		
 		for (var j=0;j<numOfCSSRules;j++) {
 			cssRule = cssRules[j];
@@ -4116,10 +4164,11 @@ var Application = function() {
 
 						selectorIDText = "#" + mediaId;
 						selectorClassText = "." + mediaId + "_Class";
+						view = self.getElement(mediaId);
 						
 						// prevent duplicates from load and domcontentloaded events
 						if (self.addedViews.indexOf(mediaId)==-1) {
-							self.addView(mediaId, cssRule, mediaRule, stateValue);
+							self.addView(view, mediaId, cssRule, mediaRule, stateValue);
 						}
 
 						viewsFound.push(mediaId);
@@ -4148,7 +4197,8 @@ var Application = function() {
 				selectorText = selectorText.replace(/[#|\s|*]?/g, "");
 
 				if (viewIds.indexOf(selectorText)!=-1) {
-					self.addView(selectorText, cssRule, null, stateValue);
+					view = self.getElement(selectorText);
+					self.addView(view, selectorText, cssRule, null, stateValue);
 
 					if (viewsNotFound.indexOf(selectorText)!=-1) {
 						viewsNotFound.splice(viewsNotFound.indexOf(selectorText));
@@ -4166,14 +4216,24 @@ var Application = function() {
 	}
 
 	/**
-	 * Adds a view. A view object contains the id of the view and the style rule
-	 * Use enableMediaQuery(rule) to enable
-	 * An array of view names are in self.addedViews array
-	 */
-	self.addView = function(viewId, cssRule, mediaRule, stateName) {
-		var state = {name:viewId, rule:cssRule, id:viewId, mediaRule:mediaRule, stateName:stateName};
+	 * Adds a view
+	 * @param {HTMLElement} view view element
+	 * @param {String} id id of view element
+	 * @param {CSSRule} cssRule of view element
+	 * @param {CSSMediaRule} mediaRule media rule of view element
+	 * @param {String} stateName name of state if applicable
+	 **/
+	self.addView = function(view, viewId, cssRule, mediaRule, stateName) {
+		var viewData = {};
+		viewData.name = viewId;
+		viewData.rule = cssRule;
+		viewData.id = viewId;
+		viewData.mediaRule = mediaRule;
+		viewData.stateName = stateName;
+
+		self.views.push(viewData);
 		self.addedViews.push(viewId);
-		self.viewsDictionary[viewId] = state;
+		self.viewsDictionary[viewId] = viewData;
 		self.mediaQueryDictionary[viewId] = cssRule;
 	}
 
@@ -4190,7 +4250,7 @@ var Application = function() {
 	 * @param {String} id id of view in current
 	 * @param {Boolean} maintainPreviousState if true then do not hide other views
 	 * @param {String} parent id of parent view
-	 */
+	 **/
 	self.goToView = function(id, maintainPreviousState, parent) {
 		var state = self.viewsDictionary[id];
 
@@ -4211,7 +4271,7 @@ var Application = function() {
 
 	/**
 	 * Go to the view in the event targets CSS variable
-	 */
+	 **/
 	self.goToTargetView = function(event) {
 		var button = event.currentTarget;
 		var buttonComputedStyles = getComputedStyle(button);
@@ -4769,7 +4829,7 @@ window.application = new Application();
 			<rect id="Rectangle_177_ba" rx="3" ry="3" x="0" y="0" width="24" height="24">
 			</rect>
 		</svg>
-		<div id="W_ba">
+		<div id="W_bb">
 			<span>W</span>
 		</div>
 	</div>
@@ -5376,7 +5436,7 @@ window.application = new Application();
 			<span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et <br/>dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita <br/>kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <br/>sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam <br/>voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata <br/>sanctus est Lorem ipsum dolor sit amet.<br/><br/>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et <br/>dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita <br/>kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <br/>sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam <br/>voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata <br/>sanctus est Lorem ipsum dolor sit amet.<br/>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</span>
 		</div>
 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries">
-		<div id="httpsdevelopermozillaorgen-USd_fa">
+		<div id="httpsdevelopermozillaorgen-USd_fb">
 			<span>https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries</span>
 		</div>
 		</a>
